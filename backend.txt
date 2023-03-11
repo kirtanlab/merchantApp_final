@@ -1,0 +1,22 @@
+1) nameasperaadhar: 
+1) typeofpg : PG,FAMILYROOMS,HOSTEL
+2) isMale,isFemale
+3)name -> pic  
+propertytitle
+4)address -> landmark+ houseno
+5)lat,lng : Number
+6)isWIFI , isAC, isHotWater, isCooler,
+7)About: string
+8)Rules: [{}]
+9)outter image, vide -> one by one 
+10)
+
+1)title: 
+2)availablerooms: 
+3)occupancy: 
+4)isAC,isAttatched
+5)price, About,
+6)images,videos -> room id
+
+
+1)

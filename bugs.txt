@@ -1,0 +1,18 @@
+1) Prices: validation
+2) Button Gen ERror display
+3)Remains Same state of textinput in email
+4)Adding Header
+5)More about property having overlapping text on recycle bin
+6)Space between Next button 
+7)State details gone wihle clicked on back button
+8)timings
+
+
+--> Bugs 2.0s
+ 1)Change Password -> forget password -> clicked on back button -> navigate to login screen
+🤩️2)Mobile Number after Login
+🤩️3)Room Photos 
+🤩️4)propert title
+🤩️5)room id/propery,id in profile -remove
+🤩️6)Total Intrested Users  
+ --> 1!kirtan
