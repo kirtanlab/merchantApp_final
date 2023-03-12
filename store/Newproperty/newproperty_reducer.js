@@ -1,6 +1,6 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {value} from 'react-native-extended-stylesheet';
-import * as newproperty_actions from './newproperty_action';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { value } from "react-native-extended-stylesheet";
+import * as newproperty_actions from "./newproperty_action";
 let initialState = {
   looking_form: {
     pg: false,
@@ -24,18 +24,18 @@ let initialState = {
     hotwater: false,
     cooler: false,
   },
-  about_pg: '',
+  about_pg: "",
   terms_pg: [],
-  propertyName: '',
+  propertyName: "",
 
   //Location Form
-  house_no: '',
+  house_no: "",
 
-  Landmark: '',
-  Description_pg: '',
+  Landmark: "",
+  Description_pg: "",
   checked_propertyName: false,
   checked_house_no: false,
-  adharcard: '',
+  adharcard: "",
   checked_adhar_card: false,
   checked_Landmark: false,
   checked_Description_pg: false,
@@ -73,7 +73,7 @@ const newproperty_reducer = (state = initialState, action) => {
       };
     //Property vaue   bijlikabil, adhar name,location, outer vid,img
     case newproperty_actions.UPDATE_PROPERTY_VALUE:
-      console.log('called all set fun');
+      console.log("called all set fun");
       return {
         ...state,
         gender: action.value.gender,
@@ -190,6 +190,7 @@ const newproperty_reducer = (state = initialState, action) => {
       };
 
     case newproperty_actions.SET_LOOKING:
+      console.log("called", action.looking_form);
       return {
         ...state,
         looking_form: action.looking_form,
