@@ -1,17 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
-} from 'react-native';
-import {Button} from 'react-native';
+} from "react-native";
+import { Button } from "react-native";
 // import {Button} from 'react-native-paper';
-import {COLORS, FONTS, SIZES} from '../../constants';
-import {connect, useSelector} from 'react-redux';
-import * as NewRoomActions from '../../store/NewRooms/Newrooms_actions';
-const AC_attached = ({updateAttached, attached, updateAC, AC}) => {
+import { COLORS, FONTS, SIZES } from "../../constants";
+import { connect, useSelector } from "react-redux";
+import * as NewRoomActions from "../../store/NewRooms/Newrooms_actions";
+const AC_attached = ({ updateAttached, attached, updateAC, AC }) => {
   let [_AC, setAC] = useState(AC);
   let [_attched, setAttched] = useState(attached);
   return (
@@ -22,12 +22,13 @@ const AC_attached = ({updateAttached, attached, updateAC, AC}) => {
           style={{
             color: COLORS.black,
             fontSize: SIZES.custom1,
-            fontWeight: 'bold',
-          }}>
+            fontWeight: "bold",
+          }}
+        >
           Select AC Type
         </Text>
       </View>
-      <View style={{flexDirection: 'row', gap: 14, marginTop: 12}}>
+      <View style={{ flexDirection: "row", gap: 14, marginTop: 12 }}>
         <View>
           <TouchableOpacity
             style={{
@@ -40,22 +41,24 @@ const AC_attached = ({updateAttached, attached, updateAC, AC}) => {
               padding: SIZES.form_button_padding,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
-              backgroundColor: _AC ? COLORS.mobile_theme_back : 'white',
+              backgroundColor: _AC ? COLORS.mobile_theme_back : "white",
             }}
             onPress={async () => {
               if (!_AC) {
                 setAC(true);
-                await updateAC(_AC);
+                await updateAC(true);
               }
 
-              console.log('Pressed0');
-            }}>
+              console.log("Pressed0");
+            }}
+          >
             <Text
               style={{
                 fontSize: SIZES.form_button_text_fontSize,
                 fontWeight: SIZES.form_button_text_fontWeight,
                 color: _AC ? COLORS.font_color : COLORS.lightGray3,
-              }}>
+              }}
+            >
               AC
             </Text>
           </TouchableOpacity>
@@ -72,38 +75,41 @@ const AC_attached = ({updateAttached, attached, updateAC, AC}) => {
               padding: SIZES.form_button_padding,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
-              backgroundColor: !_AC ? COLORS.mobile_theme_back : 'white',
+              backgroundColor: !_AC ? COLORS.mobile_theme_back : "white",
             }}
             onPress={async () => {
               if (_AC) {
                 setAC(false);
                 await updateAC(false);
               }
-              console.log('Pressed1');
-            }}>
+              console.log("Pressed1");
+            }}
+          >
             <Text
               style={{
                 fontSize: SIZES.form_button_text_fontSize,
                 fontWeight: SIZES.form_button_text_fontWeight,
                 color: !_AC ? COLORS.font_color : COLORS.lightGray3,
-              }}>
+              }}
+            >
               Non AC
             </Text>
           </TouchableOpacity>
         </View>
       </View>
       {/* Attached */}
-      <View style={{marginTop: 32}}>
+      <View style={{ marginTop: 32 }}>
         <Text
           style={{
             color: COLORS.black,
             fontSize: SIZES.custom1,
-            fontWeight: 'bold',
-          }}>
+            fontWeight: "bold",
+          }}
+        >
           Select Room Type
         </Text>
       </View>
-      <View style={{flexDirection: 'row', gap: 14, marginTop: 12}}>
+      <View style={{ flexDirection: "row", gap: 14, marginTop: 12 }}>
         <View>
           <TouchableOpacity
             style={{
@@ -116,22 +122,24 @@ const AC_attached = ({updateAttached, attached, updateAC, AC}) => {
               padding: SIZES.form_button_padding,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
-              backgroundColor: _attched ? COLORS.mobile_theme_back : 'white',
+              backgroundColor: _attched ? COLORS.mobile_theme_back : "white",
             }}
             onPress={async () => {
               if (!_attched) {
                 setAttched(true);
-                await updateAttached(_attched);
+                await updateAttached(true);
               }
 
-              console.log('Pressed0');
-            }}>
+              console.log("Pressed0");
+            }}
+          >
             <Text
               style={{
                 fontSize: SIZES.form_button_text_fontSize,
                 fontWeight: SIZES.form_button_text_fontWeight,
                 color: _attched ? COLORS.font_color : COLORS.lightGray3,
-              }}>
+              }}
+            >
               Attached
             </Text>
           </TouchableOpacity>
@@ -148,21 +156,23 @@ const AC_attached = ({updateAttached, attached, updateAC, AC}) => {
               padding: SIZES.form_button_padding,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
-              backgroundColor: !_attched ? COLORS.mobile_theme_back : 'white',
+              backgroundColor: !_attched ? COLORS.mobile_theme_back : "white",
             }}
             onPress={async () => {
               if (_attched) {
                 setAttched(false);
                 await updateAttached(false);
               }
-              console.log('Pressed1');
-            }}>
+              console.log("Pressed1");
+            }}
+          >
             <Text
               style={{
                 fontSize: SIZES.form_button_text_fontSize,
                 fontWeight: SIZES.form_button_text_fontWeight,
                 color: !_attched ? COLORS.font_color : COLORS.lightGray3,
-              }}>
+              }}
+            >
               Non attached
             </Text>
           </TouchableOpacity>
@@ -181,10 +191,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    updateAttached: value => {
+    updateAttached: (value) => {
       return dispatch(NewRoomActions.udpateAttached(value));
     },
-    updateAC: value => {
+    updateAC: (value) => {
       return dispatch(NewRoomActions.updateAC(value));
     },
   };

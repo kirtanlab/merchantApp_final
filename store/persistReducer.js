@@ -1,21 +1,23 @@
-import {combineReducers} from 'redux';
-import {persistStore, persistReducer} from 'redux-persist';
-import {PersistGate} from 'redux-persist/integration/react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import marketReducer from './market/marketReducer';
-import authReducer from './auth/authReducer';
-import tabReducer from './tab/tabReducer';
-import newproperty_reducer from './Newproperty/newproperty_reducer';
-import Newrooms_reducer from './NewRooms/Newrooms_reducer';
-import Ele_Bill_reducer from './Ele_Bill/Ele_Bill_reducer';
-import vidImage_reducer from './vidImage/vidImage_reducer';
-import room_vidImage_reducer from './room_vidImage/room_vidImage_reducer';
+import { combineReducers } from "redux";
+import { persistStore, persistReducer } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import marketReducer from "./market/marketReducer";
+import authReducer from "./auth/authReducer";
+import tabReducer from "./tab/tabReducer";
+import newproperty_reducer from "./Newproperty/newproperty_reducer";
+import Newrooms_reducer from "./NewRooms/Newrooms_reducer";
+import Ele_Bill_reducer from "./Ele_Bill/Ele_Bill_reducer";
+import vidImage_reducer from "./vidImage/vidImage_reducer";
+import AdharCard_reducer from "./AdharCard/AdharCard_reducer";
+import room_vidImage_reducer from "./room_vidImage/room_vidImage_reducer";
+import Location_reducer from "./Location/Locations_reducer";
 // import storage from 'redux-persist/lib/storage';
 // const persistConfig = {
 //   key: 'persist-store',
 //   storage: AsyncStorage,
 // };
-import Newproperty_ext_reducer from '../store/Newproperty_ext/Newproperty_ext_reducer';
+import Newproperty_ext_reducer from "../store/Newproperty_ext/Newproperty_ext_reducer";
 const rootReducer = combineReducers({
   authReducer,
   marketReducer,
@@ -26,6 +28,8 @@ const rootReducer = combineReducers({
   Ele_Bill_reducer,
   vidImage_reducer,
   room_vidImage_reducer,
+  AdharCard_reducer,
+  Location_reducer,
 });
 // const _persistedReducer = persistReducer(persistConfig, rootReducer);
 export default rootReducer;

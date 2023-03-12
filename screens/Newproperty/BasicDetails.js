@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect} from 'react';
+import React, { Fragment, useEffect } from "react";
 import {
   Text,
   View,
@@ -11,27 +11,28 @@ import {
   AlertIOS,
   Image,
   Alert,
-} from 'react-native';
-import * as Newproperty_ext_actions from '../../store/Newproperty_ext/Newproperty_ext_actions';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import Header from '../../components/NewProperty/Header';
-import * as Progress from 'react-native-progress';
-import {COLORS, SIZES} from '../../constants';
-import Looking_Selection_Button from '../../components/NewProperty/Looking_Selection_Button';
-import {connect} from 'react-redux';
-import * as newproperty_actions from '../../store/Newproperty/newproperty_action';
-import Who_you from '../../components/NewProperty/Who_you';
-import Text_Input from '../../components/NewProperty/Text_Input';
-import DocumentPicker from 'react-native-document-picker';
-import CustomButton_form from '../../components/NewProperty/CustomButton_form';
-import Gender from '../../components/NewProperty/Gender';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Toast from 'react-native-toast-message';
+} from "react-native";
+import * as AdharCard_actions from "../../store/AdharCard/AdharCard_actions";
+import * as Newproperty_ext_actions from "../../store/Newproperty_ext/Newproperty_ext_actions";
+import { SafeAreaView } from "react-native-safe-area-context";
+import Header from "../../components/NewProperty/Header";
+import * as Progress from "react-native-progress";
+import { COLORS, SIZES } from "../../constants";
+import Looking_Selection_Button from "../../components/NewProperty/Looking_Selection_Button";
+import { connect } from "react-redux";
+import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
+import Who_you from "../../components/NewProperty/Who_you";
+import Text_Input from "../../components/NewProperty/Text_Input";
+import DocumentPicker from "react-native-document-picker";
+import CustomButton_form from "../../components/NewProperty/CustomButton_form";
+import Gender from "../../components/NewProperty/Gender";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import Toast from "react-native-toast-message";
 import {
   toastConfig,
   showErrorToast,
-} from '../../components/NewProperty/ToastConfig';
-import Nav_Header from '../../components/NewProperty/Nav_Header';
+} from "../../components/NewProperty/ToastConfig";
+import Nav_Header from "../../components/NewProperty/Nav_Header";
 
 const BasicDetails = ({
   checked_adhar_card,
@@ -42,25 +43,29 @@ const BasicDetails = ({
   checked_adhar_name,
   navigation,
   checked_propertyName,
+  looking_for,
+  adhar_name,
+  gender,
+  propertyName,
 }) => {
   const [imgUri, setimgUri] = React.useState([{}]);
-  const [_img_url, _setimg_url] = React.useState(adharcard);
+  const [_img_url, _setimg_url] = React.useState(adharcard.uri);
   // console.log(imgUri.length);
   //    change_state();s
   //   // console.log('test',test)
   // }, []);useEffect(() => {
 
   function next_page() {
-    navigation.navigate('Location');
-    console.log('next pagee');
+    navigation.navigate("Location");
+    console.log("next pagee");
   }
   function onPress_for() {
     if (checked_adhar_name && checked_propertyName && checked_adhar_card) {
-      console.log('Done');
+      console.log("Done");
       next_page();
     } else {
-      showErrorToast((title = 'Fill Required Fields'));
-      console.log('ckicked');
+      showErrorToast((title = "Fill Required Fields"));
+      console.log("ckicked");
     }
   }
   function back_page() {}
@@ -74,28 +79,41 @@ const BasicDetails = ({
       // setimgUri(res[0]);
       _setimg_url(res[0].uri);
       await checkedAdharCard(true);
-      updateAdharCard(res[0].uri);
+      updateAdharCard(res);
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
-        console.log('User cancelled', err);
+        console.log("User cancelled", err);
       } else {
         console.log(err);
       }
       checkedAdharCard(false);
     }
   };
+  useEffect(() => {
+    console.log(
+      adhar_name,
+      " ",
+      propertyName,
+      " ",
+      looking_for,
+      " ",
+      gender,
+      " ",
+      adharcard
+    );
+  }, [adhar_name, propertyName, adharcard, looking_for, gender]);
   return (
-    <ScrollView style={{backgroundColor: 'white'}}>
+    <ScrollView style={{ backgroundColor: "white" }}>
       {/* <KeyboardAvoidingView
         behavior="position"
         style={{backgroundColor: 'white'}}> */}
       <View style={{}}>
-        <Toast config={toastConfig} ref={ref => Toast.setRef(ref)} />
+        <Toast config={toastConfig} ref={(ref) => Toast.setRef(ref)} />
       </View>
       <StatusBar
         animated={true}
         backgroundColor={COLORS.mobile_theme_back}
-        barStyle={'light-content'}
+        barStyle={"light-content"}
       />
 
       <SafeAreaView
@@ -111,7 +129,7 @@ const BasicDetails = ({
           color={COLORS.progress_bar}
           width={SIZES.width}
           height={SIZES.height * 0.01}
-          style={{position: 'absolute', top: -1}}
+          style={{ position: "absolute", top: -1 }}
         />
       </View>
       <Nav_Header
@@ -128,22 +146,22 @@ const BasicDetails = ({
         back={false}
         onPress_forward={onPress_for}
       />
-      <View style={{padding: 15, marginTop: 25}}>
+      <View style={{ padding: 15, marginTop: 25 }}>
         <View>
           <Header
             step={1}
-            subtitle={'Your intent,Property type & contact details'}
-            title={'Add Basic Details'}
+            subtitle={"Your intent,Property type & contact details"}
+            title={"Add Basic Details"}
           />
         </View>
-        <View style={{marginTop: 30}}>
+        <View style={{ marginTop: 30 }}>
           <Text_Input />
         </View>
 
-        <View style={{marginTop: 0}}>
+        <View style={{ marginTop: 0 }}>
           <Looking_Selection_Button />
         </View>
-        <View style={{marginTop: 30}}>
+        <View style={{ marginTop: 30 }}>
           <Gender />
         </View>
         {/* <View style={{marginTop: 25}}>
@@ -152,7 +170,7 @@ const BasicDetails = ({
         {/* upload adhaar */}
         <View
           style={{
-            flexDirection: 'row',
+            flexDirection: "row",
             // backgroundColor: COLORS.mobile_theme_back,
             // minWidth: 100,
             // width: '100%',
@@ -163,7 +181,8 @@ const BasicDetails = ({
             // alignItems: 'center',
             padding: 5,
             marginBottom: 10,
-          }}>
+          }}
+        >
           <Text
             style={{
               fontSize: SIZES.h2,
@@ -171,18 +190,19 @@ const BasicDetails = ({
               //   bottom: 8,
               // marginTop: 25,
               flex: 1,
-            }}>
+            }}
+          >
             Addhar card
           </Text>
-          {_img_url !== '' && (
+          {_img_url !== "" && (
             <TouchableOpacity
               style={{
                 // marginTop: 18,
                 height: 36,
                 width: 40,
                 // padding: 10,
-                justifyContent: 'center',
-                alignItems: 'center',
+                justifyContent: "center",
+                alignItems: "center",
                 paddingTop: 5,
                 // left: 20,
                 backgroundColor: COLORS.mobile_theme_back,
@@ -192,19 +212,20 @@ const BasicDetails = ({
                 // marginTop: 25,
               }}
               onPress={() => {
-                _setimg_url('');
-              }}>
+                _setimg_url("");
+              }}
+            >
               <Ionicons
                 name="close-circle-outline"
                 size={25}
-                color={true ? COLORS.white : 'lightgray'}
-                style={{flex: 1}}
+                color={true ? COLORS.white : "lightgray"}
+                style={{ flex: 1 }}
               />
             </TouchableOpacity>
           )}
         </View>
-        {_img_url === '' && (
-          <View style={{top: -10}}>
+        {_img_url === "" && (
+          <View style={{ top: -10 }}>
             {/* <Text
               style={{
                 fontSize: SIZES.h2,
@@ -229,14 +250,16 @@ const BasicDetails = ({
               }}
               onPress={() => {
                 selectDoc();
-                console.log('doc clicked');
-              }}>
+                console.log("doc clicked");
+              }}
+            >
               <Text
                 style={{
                   fontSize: SIZES.form_button_text_fontSize,
                   fontWeight: SIZES.form_button_text_fontWeight,
                   color: COLORS.font_color,
-                }}>
+                }}
+              >
                 Select fles
               </Text>
             </TouchableOpacity>
@@ -254,7 +277,7 @@ const BasicDetails = ({
             alignSelf: 'center',
           }}
         /> */}
-        {_img_url !== '' && (
+        {_img_url !== "" && (
           <View
             style={{
               // marginTop: 30,
@@ -264,10 +287,11 @@ const BasicDetails = ({
               width: SIZES.width - 50,
               // height: 300,
               marginLeft: 5,
-            }}>
+            }}
+          >
             <Image
-              source={{uri: _img_url}}
-              style={{height: 300, borderRadius: 10, width: SIZES.width - 50}}
+              source={{ uri: _img_url }}
+              style={{ height: 300, borderRadius: 10, width: SIZES.width - 50 }}
             />
           </View>
         )}
@@ -282,10 +306,13 @@ function mapStateToProps(state) {
     focused_propertyName: state.newproperty_reducer.focused_propertyName,
     propertyName: state.newproperty_reducer.propertyName,
     test: state.newproperty_reducer.new_test,
-    adharcard: state.newproperty_reducer.adharcard,
-    checked_adhar_card: state.newproperty_reducer.checked_adhar_card,
+    adharcard: state.AdharCard_reducer.adharcard,
+    checked_adhar_card: state.AdharCard_reducer.checked_adhar_card,
     checked_adhar_name: state.authReducer.checked_adhar_name,
     checked_phone: state.authReducer.checked_phone,
+    looking_for: state.newproperty_reducer.looking_form,
+    adhar_name: state.authReducer.adhar_name,
+    gender: state.newproperty_reducer.gender,
   };
 }
 
@@ -294,11 +321,11 @@ function mapDispatchToProps(dispatch) {
     change_state: () => {
       dispatch(newproperty_actions.setTest());
     },
-    checkedAdharCard: value => {
-      dispatch(newproperty_actions.checkedAdharCard(value));
+    checkedAdharCard: (value) => {
+      dispatch(AdharCard_actions.checkedAdharCard(value));
     },
-    updateAdharCard: value => {
-      dispatch(newproperty_actions.updateAdharCard(value));
+    updateAdharCard: (value) => {
+      dispatch(AdharCard_actions.updateAdharCard(value));
     },
   };
 }

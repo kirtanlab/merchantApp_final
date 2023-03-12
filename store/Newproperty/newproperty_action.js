@@ -39,7 +39,7 @@ export const setGender = (value) => {
     try {
       console.log("cahge occured", value);
       dispatch({
-        type: SET_LOOKING,
+        type: SET_GENDER,
         value: value,
       });
     } catch (err) {
@@ -141,16 +141,16 @@ export const UPDATE_HOUSE_NO = "UPDATE_HOUSE_NO";
 export const UPDATE_LANDMARK = "UPDATE_LANDMARK";
 export const UPDATE_DESCRIPTION_PG = "UPDATE_DESCRIPTION_PG";
 export const UPDATE_PROPERTY_NAME = "UPDATE_PROPERTY_NAME";
-export const UPDATE_ADHAR_CARD = "UPDATE_ADHAR_CARD";
-export const CHECKED_ADHAR_CARD = "CHECKED_ADHAR_CARD";
-export const updateAdharCard = (value) => ({
-  type: UPDATE_ADHAR_CARD,
-  value: value,
-});
-export const checkedAdharCard = (value) => ({
-  type: CHECKED_ADHAR_CARD,
-  value: value,
-});
+// export const UPDATE_ADHAR_CARD = "UPDATE_ADHAR_CARD";
+// export const CHECKED_ADHAR_CARD = "CHECKED_ADHAR_CARD";
+// export const updateAdharCard = (value) => ({
+//   type: UPDATE_ADHAR_CARD,
+//   value: value,
+// });
+// export const checkedAdharCard = (value) => ({
+//   type: CHECKED_ADHAR_CARD,
+//   value: value,
+// });
 
 export const update_PropertyName = (value) => ({
   type: UPDATE_PROPERTY_NAME,

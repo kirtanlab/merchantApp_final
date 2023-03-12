@@ -1,13 +1,13 @@
-import * as Newrooms_Actions from './Newrooms_actions';
+import * as Newrooms_Actions from "./Newrooms_actions";
 let initialState = {
   AC: false,
-  title_no: '123',
+  title_no: "",
   attached: false,
-  price: '',
-  extra_description: '',
-  terms_property: '',
-  about_property: '',
-  about_room: '',
+  price: "",
+  extra_description: "",
+  terms_property: "",
+  about_property: "",
+  about_room: "",
   baseTerms: {
     govt: false,
     myApp: false,

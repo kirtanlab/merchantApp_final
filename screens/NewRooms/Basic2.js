@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect} from 'react';
+import React, { Fragment, useEffect } from "react";
 import {
   Text,
   View,
@@ -8,31 +8,31 @@ import {
   KeyboardAvoidingView,
   SafeAreaView,
   Platform,
-} from 'react-native';
-import Header from '../../components/NewProperty/Header';
-import * as Progress from 'react-native-progress';
-import {COLORS, SIZES} from '../../constants';
-import Looking_Selection_Button from '../../components/NewProperty/Looking_Selection_Button';
-import {connect} from 'react-redux';
-import * as newproperty_actions from '../../store/Newproperty/newproperty_action';
-import Who_you from '../../components/NewProperty/Who_you';
-import Text_Input from '../../components/NewProperty/Text_Input';
-import DocumentPicker from 'react-native-document-picker';
-import CustomButton_form from '../../components/NewProperty/CustomButton_form';
-import NumericInput from '../../components/NewProperty/NumericInput';
-import Floor_prices from '../../components/NewRooms.js/Floor_prices';
-import Ac_attached from '../../components/NewRooms.js/Ac_attached';
-import InputField from '../../components/InputField';
+} from "react-native";
+import Header from "../../components/NewProperty/Header";
+import * as Progress from "react-native-progress";
+import { COLORS, SIZES } from "../../constants";
+import Looking_Selection_Button from "../../components/NewProperty/Looking_Selection_Button";
+import { connect } from "react-redux";
+import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
+import Who_you from "../../components/NewProperty/Who_you";
+import Text_Input from "../../components/NewProperty/Text_Input";
+import DocumentPicker from "react-native-document-picker";
+import CustomButton_form from "../../components/NewProperty/CustomButton_form";
+import NumericInput from "../../components/NewProperty/NumericInput";
+import Floor_prices from "../../components/NewRooms.js/Floor_prices";
+import Ac_attached from "../../components/NewRooms.js/Ac_attached";
+import InputField from "../../components/InputField";
 // import {Checkbox} from 'react-native-paper';
-import CheckBox from '../../components/CheckBox';
-import Nav_Header from '../../components/NewProperty/Nav_Header';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Terms from '../../components/Terms';
-import Toast from 'react-native-toast-message';
+import CheckBox from "../../components/CheckBox";
+import Nav_Header from "../../components/NewProperty/Nav_Header";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import Terms from "../../components/Terms";
+import Toast from "react-native-toast-message";
 import {
   toastConfig,
   showErrorToast,
-} from '../../components/NewProperty/ToastConfig';
+} from "../../components/NewProperty/ToastConfig";
 const Basic2 = ({
   navigation,
   extra_description,
@@ -42,21 +42,39 @@ const Basic2 = ({
   checked_price,
   about_room,
   price,
+  attached,
+  AC,
+  occupancy,
+  totalRooms,
+  title_no,
 }) => {
+  useEffect(() => {
+    console.log(
+      attached,
+      " ",
+      AC,
+      " ",
+      title_no,
+      " ",
+      occupancy,
+      " ",
+      totalRooms
+    );
+  }, []);
   function next_page() {
-    navigation.navigate('Basic25');
+    navigation.navigate("Basic25");
   }
   function onPress_for() {
     if (checked_price && checked_base_terms) {
-      console.log('Done');
+      console.log("Done");
       next_page();
     } else {
-      showErrorToast((title = 'Fill Required Fields'));
-      console.log('ckicked');
+      showErrorToast((title = "Fill Required Fields"));
+      console.log("ckicked");
     }
   }
   function back_page() {
-    navigation.navigate('Basic1');
+    navigation.navigate("Basic1");
   }
 
   const selectDoc_multiple = async () => {
@@ -71,7 +89,7 @@ const Basic2 = ({
       console.log(res);
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
-        console.log('User cancelled', err);
+        console.log("User cancelled", err);
       } else {
         console.log(err);
       }
@@ -80,17 +98,18 @@ const Basic2 = ({
   return (
     <ScrollView
       keyboardShouldPersistTaps="handled"
-      style={{backgroundColor: 'white'}}>
+      style={{ backgroundColor: "white" }}
+    >
       {/* <KeyboardAvoidingView */}
       {/* // behavior="position" */}
       {/* <ScrollView style={{backgroundColor: 'white'}}> */}
-      <View style={{left: 1}}>
-        <Toast config={toastConfig} ref={ref => Toast.setRef(ref)} />
+      <View style={{ left: 1 }}>
+        <Toast config={toastConfig} ref={(ref) => Toast.setRef(ref)} />
       </View>
       <StatusBar
         animated={true}
         backgroundColor={COLORS.mobile_theme_back}
-        barStyle={'light-content'}
+        barStyle={"light-content"}
       />
 
       <SafeAreaView
@@ -106,7 +125,7 @@ const Basic2 = ({
           color={COLORS.progress_bar}
           width={SIZES.width}
           height={SIZES.height * 0.006}
-          style={{position: 'absolute', top: -1}}
+          style={{ position: "absolute", top: -1 }}
         />
         <Nav_Header
           onPress_forward={onPress_for}
@@ -124,36 +143,38 @@ const Basic2 = ({
           back={true}
         />
       </View>
-      <View style={{flexDirection: 'column', height: SIZES.height}}>
+      <View style={{ flexDirection: "column", height: SIZES.height }}>
         <View
           style={{
             padding: 15,
-            marginTop: '10%',
+            marginTop: "10%",
             // flexShrink: 2,
             // flex: 1,
             // position: 'relative',
-          }}>
+          }}
+        >
           <View>
             <Header
               step={2}
               total={4}
-              subtitle={'Price,Description of Room,T&Cs'}
-              title={'More About Room'}
+              subtitle={"Price,Description of Room,T&Cs"}
+              title={"More About Room"}
             />
           </View>
           {/* Prices */}
           <View>
-            <View style={{marginTop: 30}}>
+            <View style={{ marginTop: 30 }}>
               <Text
                 style={{
                   color: COLORS.black,
                   fontSize: SIZES.custom1,
-                  fontWeight: 'bold',
-                }}>
+                  fontWeight: "bold",
+                }}
+              >
                 Enter Room Price
               </Text>
             </View>
-            <View style={{marginTop: 8, flexDirection: 'row'}}>
+            <View style={{ marginTop: 8, flexDirection: "row" }}>
               <View
                 style={{
                   borderColor: COLORS.mobile_theme_back,
@@ -171,27 +192,20 @@ const Basic2 = ({
                   // justifyContent: 'center',
                   // alignItems:',
                   // justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <Text style={{color: COLORS.font_color, fontSize: SIZES.h1}}>
+                  alignItems: "center",
+                }}
+              >
+                <Text style={{ color: COLORS.font_color, fontSize: SIZES.h1 }}>
                   ₹
                 </Text>
               </View>
-              <View style={{flexDirection: 'row'}}>
-                <View style={{width: SIZES.width * 0.7, marginLeft: 7}}>
+              <View style={{ flexDirection: "row" }}>
+                <View style={{ width: SIZES.width * 0.7, marginLeft: 7 }}>
                   <InputField
-                    label={'Enter Prices'}
-                    type={'prices'}
-                    keyboardType={'phone-pad'}
+                    label={"Enter Prices"}
+                    type={"prices"}
+                    keyboardType={"phone-pad"}
                     value={price}
-                    //   icon={
-                    //     <Ionicons
-                    //       name="call-outline"
-                    //       size={20}
-                    //       color={err ? '#666' : 'red'}
-                    //       style={{marginRight: 5, marginTop: 5}}
-                    //     />
-                    //   }
                   />
                 </View>
                 <TouchableOpacity>
@@ -199,39 +213,40 @@ const Basic2 = ({
                     name="checkmark-done-outline"
                     size={25}
                     color={
-                      checked_price ? COLORS.mobile_theme_back : 'lightgray'
+                      checked_price ? COLORS.mobile_theme_back : "lightgray"
                     }
-                    style={{marginRight: 5, marginTop: 2}}
+                    style={{ marginRight: 5, marginTop: 2 }}
                   />
                 </TouchableOpacity>
               </View>
             </View>
             {focused_price && !checked_price && (
-              <View style={{marginTop: -30, left: 50, marginBottom: 20}}>
-                <Text style={{color: COLORS.lightGray3}}>
+              <View style={{ marginTop: -30, left: 50, marginBottom: 20 }}>
+                <Text style={{ color: COLORS.lightGray3 }}>
                   Enter Valid Prices
                 </Text>
               </View>
             )}
           </View>
           {/* Add ABout */}
-          <View style={{marginTop: 30}}>
-            <View style={{marginTop: 0}}>
+          <View style={{ marginTop: 30 }}>
+            <View style={{ marginTop: 0 }}>
               <Text
                 style={{
                   color: COLORS.black,
                   fontSize: SIZES.custom1,
-                  fontWeight: 'bold',
-                }}>
+                  fontWeight: "bold",
+                }}
+              >
                 About Room
               </Text>
             </View>
-            <View style={{marginTop: 15}}>
+            <View style={{ marginTop: 15 }}>
               <KeyboardAvoidingView>
                 <InputField
-                  label={'Add About Room Here'}
-                  type={'About_room'}
-                  keyboardType={'default'}
+                  label={"Add About Room Here"}
+                  type={"About_room"}
+                  keyboardType={"default"}
                   // value={aboutpg}
                   defaultValue={about_room}
                   multiline
@@ -239,126 +254,14 @@ const Basic2 = ({
               </KeyboardAvoidingView>
             </View>
           </View>
-          {/* Videos of Images
-          <View style={{marginTop: 10}}>
-            <Text
-              style={{
-                color: COLORS.black,
-                fontSize: SIZES.custom1,
-                fontWeight: 'bold',
-              }}>
-              Upload Outer Photo & Videos of Rooms
-            </Text>
-            <TouchableOpacity
-              style={{
-                marginTop: 15,
-                borderColor: COLORS.mobile_theme,
-                // borderWidth: SIZES.form_button_borderWidth,
-                borderRadius: SIZES.form_button_borderRadius,
-                minWidth: SIZES.form_button_minWidth,
-                maxWidth: SIZES.form_button_maxWidth,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
-                alignItems: SIZES.form_button_alignItems,
-                justifyContent: SIZES.form_button_justifyContent,
-                backgroundColor: COLORS.mobile_theme_back,
-              }}
-              onPress={() => {
-                selectDoc_multiple();
-                console.log('doc clicked');
-              }}>
-              <Text
-                style={{
-                  fontSize: SIZES.form_button_text_fontSize,
-                  fontWeight: SIZES.form_button_text_fontWeight,
-                  color: COLORS.font_color,
-                }}>
-                Select fles
-              </Text>
-            </TouchableOpacity>
-          </View>
-          {/* Videos of Images */}
-          {/* <View style={{marginTop: 30}}>
-            <Text
-              style={{
-                color: COLORS.black,
-                fontSize: SIZES.custom1,
-                fontWeight: 'bold',
-              }}>
-              Upload Outer Photo & Videos of Rooms
-            </Text>
-            <TouchableOpacity
-              style={{
-                marginTop: 15,
-                borderColor: COLORS.mobile_theme,
-                // borderWidth: SIZES.form_button_borderWidth,
-                borderRadius: SIZES.form_button_borderRadius,
-                minWidth: SIZES.form_button_minWidth,
-                maxWidth: SIZES.form_button_maxWidth,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
-                alignItems: SIZES.form_button_alignItems,
-                justifyContent: SIZES.form_button_justifyContent,
-                backgroundColor: COLORS.mobile_theme_back,
-              }}
-              onPress={() => {
-                selectDoc_multiple();
-                console.log('doc clicked');
-              }}>
-              <Text
-                style={{
-                  fontSize: SIZES.form_button_text_fontSize,
-                  fontWeight: SIZES.form_button_text_fontWeight,
-                  color: COLORS.font_color,
-                }}>
-                Select fles
-              </Text>
-            </TouchableOpacity>
-          </View>{' '}
-          */}
-          {/* <View
-            style={{
-              marginTop: 20,
-              position: 'relative',
-              justifyContent: 'center',
-              marginLeft: -15,
-            }}>
-            <CustomButton_form
-              fontColor={
-                checked_base_terms && checked_price
-                  ? COLORS.font_color
-                  : COLORS.lightGray3
-              }
-              backgroundColor={
-                checked_base_terms && checked_price
-                  ? COLORS.mobile_theme_back
-                  : COLORS.lightGray4
-              }
-              label={'Go for Next Step '}
-              _borderColor={
-                checked_base_terms && checked_price
-                  ? COLORS.mobile_theme_back
-                  : COLORS.lightGray4
-              }
-              borderRadius
-              onPress={() => {
-                if (checked_base_terms && checked_price) {
-                  console.log('Done');
-                  next_page();
-                } else {
-                  // gen_login_err_method(true);
-                  console.log('ckicked');
-                }
-              }}
-            />
-          </View> */}
         </View>
         <View
           style={{
             marginLeft: 9,
             marginTop: SIZES.height * 0.76,
-            position: 'absolute',
-          }}>
+            position: "absolute",
+          }}
+        >
           <Terms />
         </View>
       </View>
@@ -376,6 +279,11 @@ function mapStateToProps(state) {
     checked_base_terms: state.Newrooms_reducer.checked_base_terms,
     baseTerms: state.Newrooms_reducer.baseTerms,
     extra_description: state.Newrooms_reducer.extra_description,
+    title_no: state.Newrooms_reducer.title_no,
+    totalRooms: state.Newrooms_reducer.totalRooms,
+    occupancy: state.Newrooms_reducer.occupancy,
+    AC: state.Newrooms_reducer.AC,
+    attached: state.Newrooms_reducer.attached,
   };
 }
 

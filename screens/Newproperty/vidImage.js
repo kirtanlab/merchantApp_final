@@ -24,12 +24,16 @@ import Toast from "react-native-toast-message";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import * as vidImage_actions from "../../store/vidImage/vidImage_actions";
 import AppLoader from "../../components/AppLoader";
+import axios from "axios";
+import { REACT_APP_OWNER_API } from "@env";
 import {
   toastConfig,
   showErrorToast,
 } from "../../components/NewProperty/ToastConfig";
 const vidImage = ({
   token,
+  elebill,
+  adhar_card,
   adhar_name,
   propertyName,
   looking_form,
@@ -66,44 +70,70 @@ const vidImage = ({
   }
 
   const upload_all = async () => {
-    // try {
-    // setLoading(true);
-    console.log("valid", gender);
-    const obj = {
-      nameasperaadhar: adhar_name,
-      typeofpg: return_looking(looking_form),
-      propertytitle: propertyName,
-      isMale: gender?.male || gender?.both ? true : false,
-      isMale: gender?.female || gender?.both ? true : false,
-      address: house_no + Landmark,
-      lat: Location.latitude,
-      lng: Location.longitude,
-      isWifi: amneties.wifi,
-      isAC: amneties.AC,
-      isHotWater: amneties.hotwater,
-      isCooler: amneties.cooler,
-      Rules: terms_pg,
-    };
+    try {
+      setLoading(true);
 
-    // const data = await axios.post(
-    //   `${REACT_APP_OWNER_API}/api/v1/owner/updateowner`,
-    //   obj,
-    //   {
-    //     headers: {
-    //       Authorization: `Bearer ${token}`,
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // );
-    // console.log("vid_img", data);
-    // setLoading(false);
-    // navigation.replace("Thankyou");
-    // } catch (err) {
-    //   setLoading(false);
-    //   console.log("lol", err);
-    //   // gen_login_err_method(true);
-    //   // setError(err.response.data.msg);
-    // }
+      const obj = {
+        nameasperaadhar: adhar_name,
+        typeofpg: return_looking(looking_form),
+        propertytitle: propertyName,
+        isMale: gender?.male || gender?.both ? true : false,
+        isFemale: gender?.female || gender?.both ? true : false,
+        address: house_no + " " + Landmark,
+        lat: Location.latitude,
+        lng: Location.longitude,
+        isWIFI: amneties.wifi,
+        isAC: amneties.AC,
+        isHotWater: amneties.hotwater,
+        isCooler: amneties.cooler,
+        Rules: terms_pg,
+      };
+      // let outer_img_obj = {
+      //   name: outerImages[0].name,
+      //   uri: outerImages[0].uri,
+      // };
+      // let outer_vid_obj = {
+      //   name: outerVideos[1].name,
+      //   uri: outerVideos[1].uri,
+      // };
+      console.log("valid", adhar_card[0]);
+      // const data = await axios.post(
+      //   `${REACT_APP_OWNER_API}/api/v1/owner/updateowner`,
+      //   obj,
+      //   {
+      //     headers: {
+      //       Authorization: `Bearer ${token}`,
+      //       "Content-Type": "application/json",
+      //     },
+      //   }
+      // );
+      let adhar_obj = {
+        name: adhar_card[0].name,
+        uri: adhar_card[0].uri,
+        type: adhar_card[0].type,
+      };
+      const formData = new FormData();
+      // formData.append("name", "pic");
+      formData.append("pic", adhar_obj);
+      const data = await axios.post(
+        `${REACT_APP_OWNER_API}/api/v1/addaadharproof`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("vid_img", data.data);
+      setLoading(false);
+      navigation.replace("Thankyou");
+    } catch (err) {
+      setLoading(false);
+      console.log("lol", err);
+      //   // gen_login_err_method(true);
+      //   // setError(err.response.data.msg);
+    }
   };
 
   function onPress_for() {
@@ -463,6 +493,8 @@ function mapStateToProps(state) {
     checked_outer_video: state.vidImage_reducer.checked_outer_video,
     outerVideos: state.vidImage_reducer.outerVideos,
     //imported for uploading
+    adhar_card: state.AdharCard_reducer.adharcard,
+    elebill: state.Ele_Bill_reducer.elebill,
     token: state.authReducer.token,
     adhar_name: state.authReducer.adhar_name,
     propertyName: state.newproperty_reducer.propertyName,
@@ -470,7 +502,7 @@ function mapStateToProps(state) {
     gender: state.newproperty_reducer.gender,
     house_no: state.newproperty_reducer.house_no,
     Landmark: state.newproperty_reducer.Landmark,
-    Location: state.Newproperty_ext_reducer.Location,
+    Location: state.Location_reducer.Location,
     Location_address: state.Newproperty_ext_reducer.Location_address,
     amneties: state.newproperty_reducer.amneties,
     terms_pg: state.newproperty_reducer.terms_pg,

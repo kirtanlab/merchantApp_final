@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -7,19 +7,20 @@ import {
   TouchableOpacity,
   StatusBar,
   KeyboardAvoidingView,
-} from 'react-native';
-import * as newproperty_actions from '../store/Newproperty/newproperty_action';
-import * as Newproperty_ext_actions from '../store/Newproperty_ext/Newproperty_ext_actions';
-import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
-import {REACT_APP_MAPS_API_KEY} from '@env';
-import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
-import Geolocation from '@react-native-community/geolocation';
-import {Searchbar} from 'react-native-paper';
-import {COLORS, SIZES} from '../constants';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import NAVHeader_BLOB from '../components/NavHeader_BLOB';
-import NavHeader_Maps from '../components/NavHeader_Maps';
-import {connect} from 'react-redux';
+} from "react-native";
+import * as newproperty_actions from "../store/Newproperty/newproperty_action";
+import * as Newproperty_ext_actions from "../store/Newproperty_ext/Newproperty_ext_actions";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
+import { REACT_APP_MAPS_API_KEY } from "@env";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import Geolocation from "@react-native-community/geolocation";
+import { Searchbar } from "react-native-paper";
+import { COLORS, SIZES } from "../constants";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import NAVHeader_BLOB from "../components/NavHeader_BLOB";
+import NavHeader_Maps from "../components/NavHeader_Maps";
+import { connect } from "react-redux";
+import * as Location_actions from "../store/Location/Location_actions";
 const MapTest = ({
   updateLocationAddress,
   checked_location,
@@ -33,43 +34,43 @@ const MapTest = ({
   const [value, setValue] = React.useState(null);
   const [location, setLoaction] = React.useState({});
   const [current, setCurrent] = React.useState({});
-  const [dyn_positions, setDynPositions] = React.useState('');
+  const [dyn_positions, setDynPositions] = React.useState("");
   const mapRef = React.useRef(null);
-  function getAddressFromCoordinates({latitude, longitude}) {
+  function getAddressFromCoordinates({ latitude, longitude }) {
     return new Promise((resolve, reject) => {
       fetch(
-        'https://maps.googleapis.com/maps/api/geocode/json?address=' +
+        "https://maps.googleapis.com/maps/api/geocode/json?address=" +
           latitude +
-          ',' +
+          "," +
           longitude +
-          '&key=' +
-          REACT_APP_MAPS_API_KEY,
+          "&key=" +
+          REACT_APP_MAPS_API_KEY
       )
-        .then(response => response.json())
-        .then(responseJson => {
-          if (responseJson.status === 'OK') {
+        .then((response) => response.json())
+        .then((responseJson) => {
+          if (responseJson.status === "OK") {
             resolve(responseJson?.results?.[0]?.formatted_address);
             let address = responseJson?.results?.[0]?.formatted_address;
             // setLocationAddress(address);
             updateLocationAddress(address);
           } else {
-            reject('not found');
+            reject("not found");
           }
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error);
         });
     });
   }
-  navigator.geolocation = require('@react-native-community/geolocation');
-  const moveTo = async position => {
+  navigator.geolocation = require("@react-native-community/geolocation");
+  const moveTo = async (position) => {
     const camera = await mapRef.current?.getCamera();
     if (camera) {
       camera.center = position;
-      mapRef.current?.animateCamera(camera, {duration: 1000});
+      mapRef.current?.animateCamera(camera, { duration: 1000 });
     }
   };
-  const onPlaceSelected = details => {
+  const onPlaceSelected = (details) => {
     const position = {
       latitude: details?.geometry.location.lat || 0,
       longitude: details?.geometry.location.lng || 0,
@@ -77,7 +78,7 @@ const MapTest = ({
     moveTo(position);
     setOrigin(position);
   };
-  const {width, height} = Dimensions.get('window');
+  const { width, height } = Dimensions.get("window");
   const ASPECT_RATIO = width / height;
   const LATITUDE_DELTA = 0.02;
   const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
@@ -102,8 +103,8 @@ const MapTest = ({
   }
   const google_ref = React.useRef();
 
-  const onChangeSearch = e => {
-    console.log('onChangeSearch', e.nativeEvent.text);
+  const onChangeSearch = (e) => {
+    console.log("onChangeSearch", e.nativeEvent.text);
     setValue(e.nativeEvent.text);
   };
   //   setInitialCordinates({latitude: INTIAL_POSITION.latitude,longitude : INTIAL_POSITION.longitude})
@@ -118,10 +119,10 @@ const MapTest = ({
         <StatusBar
           animated={true}
           backgroundColor={COLORS.mobile_theme_back}
-          barStyle={'light-content'}
+          barStyle={"light-content"}
         />
         <NavHeader_Maps
-          screen_name={'Select Location'}
+          screen_name={"Select Location"}
           onPress_back={() => {
             // navigation.navigate('Newproperty', {
             //   screen: 'Location',
@@ -131,7 +132,7 @@ const MapTest = ({
             if (location) {
               checked_location(true);
               update_location(location);
-              console.log('Location', location);
+              console.log("Location", location);
               await getAddressFromCoordinates({
                 latitude: location.latitude,
                 longitude: location.longitude,
@@ -139,14 +140,14 @@ const MapTest = ({
             } else {
               checked_location(true);
               update_location(origin);
-              console.log('origin', origin);
+              console.log("origin", origin);
               await getAddressFromCoordinates({
                 latitude: origin.latitude,
                 longitude: origin.longitude,
               });
             }
-            navigation.navigate('Newproperty', {
-              screen: 'Location',
+            navigation.navigate("Newproperty", {
+              screen: "Location",
             });
           }}
         />
@@ -157,11 +158,11 @@ const MapTest = ({
             size={50}
             style={{
               zIndex: 3,
-              position: 'absolute',
+              position: "absolute",
               marginTop: -37,
               marginLeft: -11,
-              left: '50%',
-              top: '50%',
+              left: "50%",
+              top: "50%",
               color: COLORS.mobile_theme_back,
             }}
           />
@@ -170,8 +171,8 @@ const MapTest = ({
             provider={PROVIDER_GOOGLE}
             initialRegion={INTIAL_POSITION}
             region={region()}
-            onRegionChangeComplete={e => {
-              console.log('region changed', e);
+            onRegionChangeComplete={(e) => {
+              console.log("region changed", e);
               const dyn_position = {
                 latitude: e.latitude,
                 longitude: e.longitude,
@@ -180,17 +181,18 @@ const MapTest = ({
               // moveTo(dyn_position);
               // setOrigin(dyn_position);
             }}
-            ref={mapRef}></MapView>
+            ref={mapRef}
+          ></MapView>
           <View style={styles.searchContainer}>
-            <View style={{flex: 8}}>
+            <View style={{ flex: 8 }}>
               <GooglePlacesAutocomplete
                 placeholder="Search .."
                 minLength={2}
                 keepResultsAfterBlur={false}
                 listViewDisplayed={false}
-                returnKeyType={'search'}
+                returnKeyType={"search"}
                 enablePoweredByContainer={false}
-                renderDescription={row => row.description}
+                renderDescription={(row) => row.description}
                 autoFocus={false}
                 textInputProps={{
                   onChange: onChangeSearch,
@@ -201,25 +203,25 @@ const MapTest = ({
                 fetchDetails
                 styles={{
                   description: {
-                    fontWeight: 'bold',
+                    fontWeight: "bold",
                   },
                   textInput: {
-                    fontWeight: 'bold',
+                    fontWeight: "bold",
                     fontSize: SIZES.h2,
                   },
 
                   row: {
                     // display: 'none',
-                    backgroundColor: '#FFFFFF',
+                    backgroundColor: "#FFFFFF",
                     padding: 13,
                     height: 44,
-                    flexDirection: 'row',
+                    flexDirection: "row",
 
                     // fontSize: 20,
                   },
 
                   predefinedPlacesDescription: {
-                    color: '#1faadb',
+                    color: "#1faadb",
                   },
                 }}
                 onPress={(data, details = null) => {
@@ -227,27 +229,28 @@ const MapTest = ({
                 }}
                 query={{
                   key: REACT_APP_MAPS_API_KEY,
-                  language: 'en',
+                  language: "en",
                 }}
               />
             </View>
             <TouchableOpacity
               onPress={() => {
-                console.log('clicked');
+                console.log("clicked");
                 setValue(null);
                 google_ref.current.blur();
-              }}>
+              }}
+            >
               <Ionicons
                 name="close-circle-outline"
                 size={35}
-                style={{flex: 1, color: COLORS.mobile_theme_back, top: 3}}
+                style={{ flex: 1, color: COLORS.mobile_theme_back, top: 3 }}
               />
             </TouchableOpacity>
           </View>
         </View>
         <TouchableOpacity
           onPress={() => {
-            Geolocation.getCurrentPosition(info => {
+            Geolocation.getCurrentPosition((info) => {
               const ASPECT_RATIO = width / height;
               const LATITUDE_DELTA = 0.02;
               const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
@@ -271,10 +274,10 @@ const MapTest = ({
             });
           }}
           style={{
-            position: 'absolute',
-            top: '80%',
-            left: '25%',
-            minWidth: '45%',
+            position: "absolute",
+            top: "80%",
+            left: "25%",
+            minWidth: "45%",
             maxWidth: 200,
             paddingLeft: 12,
 
@@ -284,23 +287,25 @@ const MapTest = ({
             height: 40,
             backgroundColor: COLORS.mobile_theme_back,
             // justifyContent: 'center',
-            alignItems: 'center',
+            alignItems: "center",
             //   padding: 10,
             borderRadius: 10,
-            flexDirection: 'row',
-          }}>
+            flexDirection: "row",
+          }}
+        >
           <Ionicons
             name="compass-outline"
             size={25}
-            style={{flex: 1, color: COLORS.white, top: 2}}
+            style={{ flex: 1, color: COLORS.white, top: 2 }}
           />
           <Text
             style={{
               fontSize: SIZES.form_button_text_fontSize,
               color: COLORS.white,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               flex: 4,
-            }}>
+            }}
+          >
             current location
           </Text>
         </TouchableOpacity>
@@ -311,20 +316,20 @@ const MapTest = ({
 
 function mapStateToProps(state) {
   return {
-    checked_Location: state.Newproperty_ext_reducer.checked_Location,
-    Location: state.Newproperty_ext_reducer.Location,
+    checked_Location: state.Location_reducer.checked_Location,
+    Location: state.Location_reducer.Location,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    update_location: value => {
-      dispatch(Newproperty_ext_actions.update_location(value));
+    update_location: (value) => {
+      dispatch(Location_actions.update_location(value));
     },
-    checked_location: value => {
-      dispatch(Newproperty_ext_actions.checked_location(value));
+    checked_location: (value) => {
+      dispatch(Location_actions.checked_location(value));
     },
-    updateLocationAddress: value => {
+    updateLocationAddress: (value) => {
       dispatch(Newproperty_ext_actions.updateLocationAddress(value));
     },
   };
@@ -334,14 +339,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(MapTest);
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
   map: {
-    top: '0%',
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    top: "0%",
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
   },
   searchContainer: {
     shadowOpacity: 0.5,
@@ -349,16 +354,16 @@ const styles = StyleSheet.create({
     elevation: 4,
     padding: 8,
     borderRadius: 8,
-    position: 'absolute',
-    width: '90%',
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    shadowColor: 'black',
-    shadowOffset: {width: 2, height: 2},
+    position: "absolute",
+    width: "90%",
+    flexDirection: "row",
+    backgroundColor: "white",
+    shadowColor: "black",
+    shadowOffset: { width: 2, height: 2 },
     top: 40,
   },
   input: {
-    borderColor: '#888',
+    borderColor: "#888",
     borderWidth: 1,
   },
 });

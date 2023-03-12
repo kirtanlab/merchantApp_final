@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect} from 'react';
+import React, { Fragment, useEffect } from "react";
 import {
   Text,
   View,
@@ -8,29 +8,29 @@ import {
   KeyboardAvoidingView,
   SafeAreaView,
   Image,
-} from 'react-native';
-import * as Ele_Bill_actions from '../../store/Ele_Bill/Ele_Bill_actions';
+} from "react-native";
+import * as Ele_Bill_actions from "../../store/Ele_Bill/Ele_Bill_actions";
 // import {} from 'react-native-safe-area-context';
-import * as Newpropert_ext_actions from '../../store/Newproperty_ext/Newproperty_ext_actions';
-import Header from '../../components/NewProperty/Header';
-import * as Progress from 'react-native-progress';
+import * as Newpropert_ext_actions from "../../store/Newproperty_ext/Newproperty_ext_actions";
+import Header from "../../components/NewProperty/Header";
+import * as Progress from "react-native-progress";
 // import * as newproperty_actions from '../../store/Newproperty/newproperty_action';
-import {COLORS, SIZES} from '../../constants';
-import Looking_Selection_Button from '../../components/NewProperty/Looking_Selection_Button';
-import {connect} from 'react-redux';
-import * as newproperty_actions from '../../store/Newproperty/newproperty_action';
-import Who_you from '../../components/NewProperty/Who_you';
-import Text_Input from '../../components/NewProperty/Text_Input';
-import DocumentPicker from 'react-native-document-picker';
-import CustomButton_form from '../../components/NewProperty/CustomButton_form';
-import NumericInput from '../../components/NewProperty/NumericInput';
-import Toast from 'react-native-toast-message';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { COLORS, SIZES } from "../../constants";
+import Looking_Selection_Button from "../../components/NewProperty/Looking_Selection_Button";
+import { connect } from "react-redux";
+import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
+import Who_you from "../../components/NewProperty/Who_you";
+import Text_Input from "../../components/NewProperty/Text_Input";
+import DocumentPicker from "react-native-document-picker";
+import CustomButton_form from "../../components/NewProperty/CustomButton_form";
+import NumericInput from "../../components/NewProperty/NumericInput";
+import Toast from "react-native-toast-message";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import {
   toastConfig,
   showErrorToast,
-} from '../../components/NewProperty/ToastConfig';
-import Nav_Header from '../../components/NewProperty/Nav_Header';
+} from "../../components/NewProperty/ToastConfig";
+import Nav_Header from "../../components/NewProperty/Nav_Header";
 const Location = ({
   checked_Description_pg,
   checked_Location,
@@ -41,29 +41,61 @@ const Location = ({
   elebill,
   checkedElebill,
   updateElebill,
+  house_no,
+  Landmark,
+  Location,
+  adharcard,
+  gender,
+  adhar_name,
+  looking_for,
+  propertyName,
 }) => {
+  // useEffect(() => {
+  //   checked_ele_bill && console.log("checked_ele_bill", checked_ele_bill);
+  // }, [checked_ele_bill]);
   useEffect(() => {
-    checked_ele_bill && console.log('checked_ele_bill', checked_ele_bill);
-  }, [checked_ele_bill]);
+    console.log(
+      adhar_name,
+      " ",
+      propertyName,
+      " ",
+      looking_for,
+      " ",
+      gender,
+      " ",
+      adharcard
+    );
+    console.log(
+      checkedElebill,
+      " ",
+      house_no,
+      " ",
+      Landmark,
+      " ",
+      Location,
+      " "
+    );
+  }, [Location, Landmark, house_no, elebill]);
 
   // const [imgUri, setimgUri] = React.useState(undefined);
-  const [img_url, setimg_url] = React.useState(elebill);
+  const [img_url, setimg_url] = React.useState(elebill.uri);
+  // console.log(img_url);
   function next_page() {
-    navigation.navigate('MoreProperty');
-    console.log('next pagee');
+    navigation.navigate("MoreProperty");
+    console.log("next pagee");
   }
   function onPress_for() {
     if (checked_Landmark && checked_house_no && checked_ele_bill) {
-      console.log('Done');
+      console.log("Done");
       next_page();
     } else {
-      showErrorToast((title = 'Fill Required Fields'));
-      console.log('ckicked');
+      showErrorToast((title = "Fill Required Fields"));
+      console.log("ckicked");
     }
   }
   function back_page() {
-    navigation.navigate('BasicDetails');
-    console.log('back pagee');
+    navigation.navigate("BasicDetails");
+    console.log("back pagee");
   }
 
   const selectDoc = async () => {
@@ -74,10 +106,10 @@ const Location = ({
       console.log(res);
       setimg_url(res[0].uri);
       checkedElebill(true);
-      updateElebill(res[0].uri);
+      updateElebill({ name: res[0].name, uri: res[0].uri });
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
-        console.log('User cancelled', err);
+        console.log("User cancelled", err);
       } else {
         console.log(err);
       }
@@ -92,24 +124,24 @@ const Location = ({
       console.log(res);
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
-        console.log('User cancelled', err);
+        console.log("User cancelled", err);
       } else {
         console.log(err);
       }
     }
   };
   return (
-    <ScrollView style={{backgroundColor: 'white'}}>
+    <ScrollView style={{ backgroundColor: "white" }}>
       {/* <KeyboardAvoidingView
         behavior="position"
         style={{backgroundColor: 'white'}}> */}
       <View style={{}}>
-        <Toast config={toastConfig} ref={ref => Toast.setRef(ref)} />
+        <Toast config={toastConfig} ref={(ref) => Toast.setRef(ref)} />
       </View>
       <StatusBar
         animated={true}
         backgroundColor={COLORS.mobile_theme_back}
-        barStyle={'light-content'}
+        barStyle={"light-content"}
       />
 
       <SafeAreaView
@@ -125,7 +157,7 @@ const Location = ({
           color={COLORS.progress_bar}
           width={SIZES.width}
           height={SIZES.height * 0.01}
-          style={{position: 'absolute', top: -1}}
+          style={{ position: "absolute", top: -1 }}
         />
         <Nav_Header
           onPress_forward={onPress_for}
@@ -143,21 +175,21 @@ const Location = ({
           back={true}
         />
       </View>
-      <View style={{padding: 15, marginTop: 25}}>
+      <View style={{ padding: 15, marginTop: 25 }}>
         <View>
           <Header
             step={2}
-            subtitle={'Your House Number,Landmark,Location & Document'}
-            title={'Add Location Details'}
+            subtitle={"Your House Number,Landmark,Location & Document"}
+            title={"Add Location Details"}
           />
         </View>
-        <View style={{marginTop: 30}}>
+        <View style={{ marginTop: 30 }}>
           <NumericInput navigation={navigation} />
         </View>
         {/* Bijli ka bil*/}
         <View
           style={{
-            flexDirection: 'row',
+            flexDirection: "row",
             // backgroundColor: COLORS.mobile_theme_back,
             // minWidth: 100,
             // width: '100%',
@@ -168,7 +200,8 @@ const Location = ({
             // alignItems: 'center',
             padding: 5,
             marginBottom: 10,
-          }}>
+          }}
+        >
           <Text
             style={{
               fontSize: SIZES.h2,
@@ -176,18 +209,19 @@ const Location = ({
               //   bottom: 8,
               marginTop: 5,
               flex: 1,
-            }}>
+            }}
+          >
             Electricity Bill
           </Text>
-          {img_url !== '' && (
+          {img_url !== "" && (
             <TouchableOpacity
               style={{
                 // marginTop: 18,
                 height: 36,
                 width: 40,
                 // padding: 10,
-                justifyContent: 'center',
-                alignItems: 'center',
+                justifyContent: "center",
+                alignItems: "center",
                 // paddingTop: 5,
                 // left: 20,
                 backgroundColor: COLORS.white,
@@ -197,21 +231,22 @@ const Location = ({
                 // marginTop: 25,
               }}
               onPress={async () => {
-                setimg_url('');
+                setimg_url("");
                 checkedElebill(false);
-                await updateElebill('');
-              }}>
+                await updateElebill("");
+              }}
+            >
               <Ionicons
                 name="close-circle-outline"
                 size={35}
-                color={true ? COLORS.mobile_theme_back : 'lightgray'}
-                style={{flex: 1}}
+                color={true ? COLORS.mobile_theme_back : "lightgray"}
+                style={{ flex: 1 }}
               />
             </TouchableOpacity>
           )}
         </View>
-        {img_url === '' && (
-          <View style={{top: -10}}>
+        {img_url === "" && (
+          <View style={{ top: -10 }}>
             {/* <Text
               style={{
                 fontSize: SIZES.h2,
@@ -236,21 +271,23 @@ const Location = ({
               }}
               onPress={() => {
                 selectDoc();
-                console.log('doc clicked');
-              }}>
+                console.log("doc clicked");
+              }}
+            >
               <Text
                 style={{
                   fontSize: SIZES.form_button_text_fontSize,
                   fontWeight: SIZES.form_button_text_fontWeight,
                   color: COLORS.font_color,
-                }}>
+                }}
+              >
                 Select fles
               </Text>
             </TouchableOpacity>
           </View>
         )}
 
-        {img_url !== '' && (
+        {img_url !== "" && (
           <View
             style={{
               // marginTop: 30,
@@ -261,10 +298,11 @@ const Location = ({
               // height: 300,
               marginLeft: 5,
               top: -10,
-            }}>
+            }}
+          >
             <Image
-              source={{uri: elebill}}
-              style={{height: 300, borderRadius: 10, width: SIZES.width - 50}}
+              source={{ uri: elebill.uri }}
+              style={{ height: 300, borderRadius: 10, width: SIZES.width - 50 }}
             />
           </View>
         )}
@@ -276,6 +314,14 @@ function mapStateToProps(state) {
   return {
     elebill: state.Ele_Bill_reducer.elebill,
     checked_ele_bill: state.Ele_Bill_reducer.checked_ele_bill,
+    house_no: state.newproperty_reducer.house_no,
+    Landmark: state.newproperty_reducer.Landmark,
+    Location: state.Location_reducer.Location,
+    looking_for: state.newproperty_reducer.looking_form,
+    adhar_name: state.authReducer.adhar_name,
+    gender: state.newproperty_reducer.gender,
+    propertyName: state.newproperty_reducer.propertyName,
+    adharcard: state.AdharCard_reducer.adharcard,
     checked_house_no: state.newproperty_reducer.checked_house_no,
     checked_Location: state.Newproperty_ext_reducer.checked_Location,
     checked_Landmark: state.newproperty_reducer.checked_Landmark,
@@ -285,10 +331,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    checkedElebill: value => {
+    checkedElebill: (value) => {
       dispatch(Ele_Bill_actions.checkedElebill(value));
     },
-    updateElebill: value => {
+    updateElebill: (value) => {
       dispatch(Ele_Bill_actions.updateElebill(value));
     },
   };
