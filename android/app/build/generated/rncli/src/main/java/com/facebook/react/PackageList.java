@@ -13,10 +13,16 @@ import java.util.ArrayList;
 
 // @react-native-async-storage/async-storage
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
+// @react-native-community/datetimepicker
+import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 // @react-native-community/geolocation
 import com.reactnativecommunity.geolocation.GeolocationPackage;
+// @react-native-community/netinfo
+import com.reactnativecommunity.netinfo.NetInfoPackage;
 // @react-native-masked-view/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// @react-native-picker/picker
+import com.reactnativecommunity.picker.RNCPickerPackage;
 // lottie-react-native
 import com.airbnb.android.react.lottie.LottiePackage;
 // react-native-blob-util
@@ -39,6 +45,10 @@ import com.horcrux.svg.SvgPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 // react-native-video
 import com.brentvatne.react.ReactVideoPackage;
+// react-native-wheel-pick
+import com.tron.ReactNativeWheelPickerPackage;
+// rn-fetch-blob
+import com.RNFetchBlob.RNFetchBlobPackage;
 
 public class PackageList {
   private Application application;
@@ -85,8 +95,11 @@ public class PackageList {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
       new AsyncStoragePackage(),
+      new RNDateTimePickerPackage(),
       new GeolocationPackage(),
+      new NetInfoPackage(),
       new RNCMaskedViewPackage(),
+      new RNCPickerPackage(),
       new LottiePackage(),
       new ReactNativeBlobUtilPackage(),
       new DocumentPickerPackage(),
@@ -97,7 +110,9 @@ public class PackageList {
       new RNScreensPackage(),
       new SvgPackage(),
       new VectorIconsPackage(),
-      new ReactVideoPackage()
+      new ReactVideoPackage(),
+      new ReactNativeWheelPickerPackage(),
+      new RNFetchBlobPackage()
     ));
   }
 }

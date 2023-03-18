@@ -9,6 +9,8 @@ import {
   SafeAreaView,
   Image,
 } from "react-native";
+import { REACT_APP_OWNER_API } from "@env";
+import axios from "axios";
 import * as Ele_Bill_actions from "../../store/Ele_Bill/Ele_Bill_actions";
 // import {} from 'react-native-safe-area-context';
 import * as Newpropert_ext_actions from "../../store/Newproperty_ext/Newproperty_ext_actions";
@@ -48,6 +50,7 @@ const Location = ({
   gender,
   adhar_name,
   looking_for,
+  token,
   propertyName,
 }) => {
   // useEffect(() => {
@@ -78,7 +81,7 @@ const Location = ({
   }, [Location, Landmark, house_no, elebill]);
 
   // const [imgUri, setimgUri] = React.useState(undefined);
-  const [img_url, setimg_url] = React.useState(elebill.uri);
+  const [img_url, setimg_url] = React.useState(elebill ? elebill.uri : "");
   // console.log(img_url);
   function next_page() {
     navigation.navigate("MoreProperty");
@@ -106,7 +109,7 @@ const Location = ({
       console.log(res);
       setimg_url(res[0].uri);
       checkedElebill(true);
-      updateElebill({ name: res[0].name, uri: res[0].uri });
+      updateElebill(res);
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
         console.log("User cancelled", err);
@@ -231,6 +234,24 @@ const Location = ({
                 // marginTop: 25,
               }}
               onPress={async () => {
+                var pattern = /^((https):\/\/)/;
+
+                if (pattern.test(img_url)) {
+                  try {
+                    const data = await axios.delete(
+                      `${REACT_APP_OWNER_API}/api/v1/deleteaddressproof`,
+                      {
+                        headers: {
+                          Authorization: `Bearer ${token}`,
+                        },
+                        data: { name: elebill.name },
+                      }
+                    );
+                    console.log("data", data);
+                  } catch (err) {
+                    console.log("deleteroom video", err);
+                  }
+                }
                 setimg_url("");
                 checkedElebill(false);
                 await updateElebill("");
@@ -301,7 +322,7 @@ const Location = ({
             }}
           >
             <Image
-              source={{ uri: elebill.uri }}
+              source={{ uri: img_url }}
               style={{ height: 300, borderRadius: 10, width: SIZES.width - 50 }}
             />
           </View>
@@ -312,6 +333,7 @@ const Location = ({
 };
 function mapStateToProps(state) {
   return {
+    token: state.authReducer.token,
     elebill: state.Ele_Bill_reducer.elebill,
     checked_ele_bill: state.Ele_Bill_reducer.checked_ele_bill,
     house_no: state.newproperty_reducer.house_no,

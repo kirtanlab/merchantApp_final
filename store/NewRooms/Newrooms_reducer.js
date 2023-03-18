@@ -12,8 +12,12 @@ let initialState = {
     govt: false,
     myApp: false,
   },
-  totalRooms: 1,
-  occupancy: 1,
+  room_updating: {
+    updating: false,
+    room_id: "",
+  },
+  totalRooms: "",
+  occupancy: "",
   checked_base_terms: false,
   checked_ac: false,
   checked_title_no: false,
@@ -27,14 +31,88 @@ let initialState = {
   focused_price: false,
   focused_totalRooms: false,
   focused_occpancy: false,
+  room_id: "",
 };
 const newRoom_reducer = (state = initialState, action) => {
   switch (action.type) {
+    case Newrooms_Actions.UPDATE_ROOMID:
+      return {
+        ...state,
+        room_updating: action.value,
+      };
+
+    case Newrooms_Actions.RESET_ALL:
+      return {
+        ...state,
+        AC: false,
+        title_no: "",
+        attached: false,
+        price: "",
+        extra_description: "",
+        terms_property: "",
+        about_property: "",
+        about_room: "",
+        baseTerms: {
+          govt: false,
+          myApp: false,
+        },
+        room_updating: {
+          updating: false,
+          room_id: "",
+        },
+        totalRooms: "",
+        occupancy: "",
+        checked_base_terms: false,
+        checked_ac: false,
+        checked_title_no: false,
+        checked_attached: false,
+        checked_price: false,
+        checked_attached: false,
+        checked_totalRooms: false,
+        checked_occupancy: false,
+        focused_title_no: false,
+        focused_attached: false,
+        focused_price: false,
+        focused_totalRooms: false,
+        focused_occpancy: false,
+      };
+
+    case Newrooms_Actions.UPDATE_ALL:
+      return {
+        ...state,
+        AC: action.value.isAC,
+        title_no: action.value.title,
+        attached: action.value.isAttached,
+        room_id: action.value._id,
+        price: action.value.price.$numberDecimal,
+        about_room: action.value.About,
+        baseTerms: {
+          govt: false,
+          myApp: false,
+        },
+        totalRooms: action.value.availablerooms.toString(),
+        occupancy: action.value.occupancy.toString(),
+
+        checked_ac: true,
+        checked_title_no: true,
+        checked_attached: true,
+        checked_price: true,
+        checked_attached: true,
+        checked_totalRooms: true,
+        checked_occupancy: true,
+        focused_title_no: true,
+        focused_attached: true,
+        focused_price: true,
+        focused_totalRooms: true,
+        focused_occpancy: true,
+      };
+
     case Newrooms_Actions.UPDATE_ABOUT_ROOM:
       return {
         ...state,
         about_room: action.value,
       };
+
     //NewRooms Form
     case Newrooms_Actions.UPDATE_OCCUPANCY:
       return {

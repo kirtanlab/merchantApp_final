@@ -1,11 +1,11 @@
-import React from 'react';
-import {View, Text, LogBox, TouchableOpacity} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import {COLORS} from '../../constants';
+import React from "react";
+import { View, Text, LogBox, TouchableOpacity } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { COLORS } from "../../constants";
 {
   /* <ion-icon name="notifications-outline"></ion-icon> */
 }
-const Notifications = ({navigation}) => {
+const Notifications = ({ navigation, views }) => {
   return (
     <View
       style={{
@@ -15,33 +15,36 @@ const Notifications = ({navigation}) => {
         // bottom: 10,
         minHeight: 110,
         maxHeight: 200,
-        flexDirection: 'column',
-      }}>
-      <View style={{flexDirection: 'row'}}>
+        flexDirection: "column",
+      }}
+    >
+      <View style={{ flexDirection: "row" }}>
         <View
           style={{
             //   width: 100,
             height: 100,
-          }}>
+          }}
+        >
           <Ionicons
             name="notifications-circle-outline"
             size={80}
-            color={true ? COLORS.mobile_theme_back : 'red'}
+            color={true ? COLORS.mobile_theme_back : "red"}
             style={{
-              alignItems: 'center',
+              alignItems: "center",
             }}
           />
         </View>
-        <View style={{top: '15%', left: 10, flexDirection: 'row'}}>
+        <View style={{ top: "15%", left: 10, flexDirection: "row" }}>
           <Text
             style={{
               color: COLORS.lightGray2,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               fontSize: 40,
-            }}>
-            0{' '}
+            }}
+          >
+            {views}{" "}
           </Text>
-          <Text style={{color: COLORS.lightGray2, fontSize: 30, top: '7%'}}>
+          <Text style={{ color: COLORS.lightGray2, fontSize: 30, top: "7%" }}>
             Views
           </Text>
         </View>

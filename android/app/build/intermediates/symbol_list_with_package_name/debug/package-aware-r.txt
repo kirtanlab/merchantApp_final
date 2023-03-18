@@ -76,6 +76,8 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array WheelArrayDefault
+array WheelArrayWeek
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -778,6 +780,26 @@ attr useViewLifecycle
 attr viewAspectRatio
 attr viewInflaterClass
 attr voiceIcon
+attr wheel_atmospheric
+attr wheel_curtain
+attr wheel_curtain_color
+attr wheel_curved
+attr wheel_cyclic
+attr wheel_data
+attr wheel_font_path
+attr wheel_indicator
+attr wheel_indicator_color
+attr wheel_indicator_size
+attr wheel_item_align
+attr wheel_item_space
+attr wheel_item_text_color
+attr wheel_item_text_size
+attr wheel_maximum_width_text
+attr wheel_maximum_width_text_position
+attr wheel_same_width
+attr wheel_selected_item_position
+attr wheel_selected_item_text_color
+attr wheel_visible_item_count
 attr windowActionBar
 attr windowActionBarOverlay
 attr windowActionModeOverlay
@@ -1005,6 +1027,10 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
+dimen WheelIndicatorSize
+dimen WheelItemSpace
+dimen WheelItemTextSize
+dimen WheelMargins
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1461,6 +1487,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
+drawable ic_dropdown
 drawable ic_edit_black_24dp
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
@@ -1494,6 +1521,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable redbox_top_border_background
 drawable rn_edit_text_material
+drawable spinner_dropdown_background
 drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -1626,6 +1654,8 @@ id design_menu_item_text
 id design_navigation_view
 id dialog_button
 id disableHome
+id dropdown_background
+id dropdown_icon
 id dropdown_menu
 id edit_query
 id end
@@ -1864,6 +1894,12 @@ id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
 id webview
+id wheel_date_picker_day
+id wheel_date_picker_day_tv
+id wheel_date_picker_month
+id wheel_date_picker_month_tv
+id wheel_date_picker_year
+id wheel_date_picker_year_tv
 id wide
 id window
 id withText
@@ -1993,6 +2029,8 @@ layout redbox_view
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout simple_spinner_dropdown_item
+layout simple_spinner_item
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_design_checkbox
@@ -2006,6 +2044,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout view_wheel_date_picker
 menu example_menu
 menu example_menu2
 mipmap ic_launcher
@@ -2031,6 +2070,9 @@ raw amu_poly_style_boolean_numeric
 raw amu_unknwown_folder
 raw amu_unsupported
 raw amu_visibility_ground_overlay
+string Day
+string Month
+string Year
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -2476,7 +2518,11 @@ style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
 style ShapeAppearanceOverlay_TopLeftCut
 style ShapeAppearanceOverlay_TopRightDifferentCornerSize
 style SpinnerDatePickerDialog
+style SpinnerDatePickerDialogBase
 style SpinnerDatePickerStyle
+style SpinnerTimePickerDialog
+style SpinnerTimePickerDialogBase
+style SpinnerTimePickerStyle
 style Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style Test_Theme_MaterialComponents_MaterialCalendar
 style Test_Widget_MaterialComponents_MaterialCalendar
@@ -2987,6 +3033,7 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+styleable WheelPicker wheel_atmospheric wheel_curtain wheel_curtain_color wheel_curved wheel_cyclic wheel_data wheel_font_path wheel_indicator wheel_indicator_color wheel_indicator_size wheel_item_align wheel_item_space wheel_item_text_color wheel_item_text_size wheel_maximum_width_text wheel_maximum_width_text_position wheel_same_width wheel_selected_item_position wheel_selected_item_text_color wheel_visible_item_count
 styleable scaleStyle scalableType
 xml provider_paths
 xml rn_dev_preferences

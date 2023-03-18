@@ -112,9 +112,23 @@ export const setWhoyou = (whoyou) => {
     }
   };
 };
+export const UDPATE_PROPERTYID = "UDPATE_PROPERTYID";
+export const propertyUpdating = (value) => {
+  console.log("property", value);
+  return {
+    type: UDPATE_PROPERTYID,
+    value: value,
+  };
+};
 export const UPDATE_PROPERTY_VALUE = "UPDATE_PROPERTY_VALUE";
 export const update_property_values = (value) => ({
   type: UPDATE_PROPERTY_VALUE,
+  value: value,
+});
+
+export const UPDATE_ALL = "UPDATE_ALL";
+export const updateAll = (value) => ({
+  type: UPDATE_ALL,
   value: value,
 });
 

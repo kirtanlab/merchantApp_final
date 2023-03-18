@@ -1,18 +1,42 @@
-import React from 'react';
-import {View, Text} from 'react-native';
-import {COLORS, SIZES} from '../../constants';
-import Property_Listing from './Property_Listings';
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import { View, Text } from "react-native";
+import { COLORS, SIZES, FONTS } from "../../constants";
+import Property_Listing from "./Property_Listings";
+import axios from "axios";
+import { connect } from "react-redux";
+import { REACT_APP_OWNER_API } from "@env";
 
-const MyProperty = ({navigation}) => {
+import EmptyScreen from "../EmptyScreen";
+const MyProperty = ({
+  navigation,
+  token,
+  nameasperaadhar,
+  propertytitle,
+  typeofpg,
+  image,
+  status,
+  address,
+}) => {
+  console.log("address", address);
+  let house_no = "";
+  let Landmark = "";
+  if (address) {
+    house_no = address.split("//")[0];
+    Landmark = address.split("//")[1];
+  }
+
   return (
-    <View style={{marginTop: 15}}>
-      <View style={{paddingHorizontal: 14}}>
+    <View style={{ marginTop: 15 }}>
+      <View style={{ paddingHorizontal: 14 }}>
         <Text
           style={{
             color: COLORS.mobile_theme_back,
-            fontWeight: 'bold',
-            fontSize: 21.5,
-          }}>
+            // fontWeight: "bold",
+            // lineHeight: 22,
+            fontFamily: FONTS.fontFamily_black,
+            fontSize: SIZES.homescreen_header_fontsize,
+          }}
+        >
           My Property
         </Text>
       </View>
@@ -20,27 +44,46 @@ const MyProperty = ({navigation}) => {
         style={{
           margin: 0,
           borderBottomColor: COLORS.lightGray7,
-          borderBottomWidth: 1,
+          // borderBottomWidth: 1,
           paddingBottom: 10,
-        }}>
-        <Property_Listing navigation={navigation} />
-      </View>
-      <View
-        style={{
-          borderBottomColor: COLORS.lightGray6,
-          borderBottomWidth: 15,
         }}
-      />
+      >
+        {status === "GOOD" ? (
+          <Property_Listing
+            adharname={nameasperaadhar}
+            property_title={propertytitle}
+            typeof_pg={typeofpg}
+            image_url={image}
+            address={address}
+            house_no={house_no}
+            Landmark={Landmark}
+            navigation={navigation}
+          />
+        ) : (
+          <EmptyScreen title={"Property"} />
+        )}
+      </View>
+
       <View
         style={{
-          top: -10,
-          borderBottomColor: COLORS.lightGray7,
-          borderBottomWidth: 1,
-          paddingBottom: 10,
+          height: 1,
+          backgroundColor: COLORS.lightGray7,
+          marginHorizontal: 20,
+          marginVertical: 15,
         }}
       />
     </View>
   );
 };
 
-export default MyProperty;
+function mapStateToProps(state) {
+  return {
+    token: state.authReducer.token,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyProperty);

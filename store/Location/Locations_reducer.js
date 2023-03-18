@@ -1,6 +1,9 @@
 import * as Location_actions from "./Location_actions";
 let initialState = {
-  Location: {},
+  Location: {
+    latitude: { $numberDecimal: 25.2138 },
+    longitude: { $numberDecimal: 75.8648 },
+  },
 
   checked_Location: false,
 };

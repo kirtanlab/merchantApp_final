@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text, TouchableOpacity, TextInput} from 'react-native';
-import {connect} from 'react-redux';
-import {COLORS, SIZES} from '../constants';
-import * as AuthActions from '../store/auth/authActions';
-import * as NewPropertyActions from '../store/Newproperty/newproperty_action';
-import * as NewRoomActions from '../store/NewRooms/Newrooms_actions';
+import React, { useEffect, useState } from "react";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import { connect } from "react-redux";
+import { COLORS, SIZES } from "../constants";
+import * as AuthActions from "../store/auth/authActions";
+import * as NewPropertyActions from "../store/Newproperty/newproperty_action";
+import * as NewRoomActions from "../store/NewRooms/Newrooms_actions";
 function InputField({
   label,
   value,
@@ -91,15 +91,15 @@ function InputField({
   price,
   about_room,
 }) {
-  let [sign_name_color, set_sign_name_color] = useState('#ccc');
+  let [sign_name_color, set_sign_name_color] = useState("#ccc");
   let err = false;
   let checked = true;
-  const [_pass, setPassword] = useState('');
+  const [_pass, setPassword] = useState("");
   useEffect(() => {
     if (err) {
-      set_sign_name_color('red');
+      set_sign_name_color("red");
     } else if (checked) {
-      set_sign_name_color('green');
+      set_sign_name_color("green");
     }
   }, [err, checked]);
 
@@ -122,16 +122,16 @@ function InputField({
       return regex.test(val);
     }
     function validate_conf_password(val, _pass) {
-      console.log('lolmlol', password);
+      console.log("lolmlol", password);
       if (val == password) {
         sign_conf_pass_checked(true);
       }
       return val == password;
     }
-    if (type == 'sign_password') {
+    if (type == "sign_password") {
       return (
         <TextInput
-          onFocus={e => {
+          onFocus={(e) => {
             sign_password_focused(true);
             gen_sign_err_method(false);
           }}
@@ -147,22 +147,22 @@ function InputField({
             left: 12,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
           secureTextEntry={true}
-          onChange={value => {
+          onChange={(value) => {
             value = value.nativeEvent.text;
             value = value.trimEnd();
             // sign_conf_pass_checked(false);
             validate_conf_password();
             setPassword(value);
-            console.log(_pass, 'clear');
+            console.log(_pass, "clear");
             updatesign_password(value);
             // console.log('handeled', value.nativeEvent.text);
             if (validate_password(value)) {
@@ -176,7 +176,7 @@ function InputField({
         />
       );
     }
-    if (type == 'new_password') {
+    if (type == "new_password") {
       return (
         <TextInput
           // pointerEvents="
@@ -189,13 +189,13 @@ function InputField({
             marginLeft: 4,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
           // editable={false}
           contextMenuHidden={true}
@@ -204,7 +204,7 @@ function InputField({
         />
       );
     }
-    if (type == 'new_conf_password') {
+    if (type == "new_conf_password") {
       return (
         <TextInput
           // pointerEvents="
@@ -217,13 +217,13 @@ function InputField({
             marginLeft: 4,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
           // editable={false}
           contextMenuHidden={true}
@@ -232,10 +232,10 @@ function InputField({
         />
       );
     }
-    if (type == 'sign_email') {
+    if (type == "sign_email") {
       return (
         <TextInput
-          onFocus={e => {
+          onFocus={(e) => {
             sign_email_focused(true);
             gen_sign_err_method(false);
             // sign_email_checked(false);
@@ -250,17 +250,17 @@ function InputField({
             left: 12,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
           value={value}
           defaultValue={defaultValue}
-          onChange={value => {
+          onChange={(value) => {
             value = value.nativeEvent.text;
             value = value.trimEnd();
             updatesign_email(value);
@@ -274,10 +274,10 @@ function InputField({
         />
       );
     }
-    if (type == 'sign_name') {
+    if (type == "sign_name") {
       return (
         <TextInput
-          onFocus={e => {
+          onFocus={(e) => {
             sign_name_focused(true);
             gen_sign_err_method(false);
           }}
@@ -294,15 +294,15 @@ function InputField({
             left: 12,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
-          onChange={value => {
+          onChange={(value) => {
             value = value.nativeEvent.text;
             value = value.trimEnd();
             updatesign_name(value);
@@ -316,12 +316,12 @@ function InputField({
         />
       );
     }
-    if (type === 'sign_conf_password') {
+    if (type === "sign_conf_password") {
       return (
         <TextInput
-          onFocus={e => {
+          onFocus={(e) => {
             sign_conf_pass_focused(true);
-            console.log('focused', _pass);
+            console.log("focused", _pass);
             gen_sign_err_method(false);
           }}
           onBlur={() => {
@@ -336,19 +336,19 @@ function InputField({
             left: 12,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
-          onChange={value => {
+          onChange={(value) => {
             value = value.nativeEvent.text;
             value = value.trimEnd();
             updatesign_conf_password(value);
-            console.log(_pass, 'maybe');
+            console.log(_pass, "maybe");
             if (validate_conf_password(value, _pass)) {
               sign_conf_pass_checked(true);
               // sign_conf_pass_focused(false);
@@ -359,7 +359,7 @@ function InputField({
         />
       );
     }
-    if (type == 'login_email') {
+    if (type == "login_email") {
       return (
         <TextInput
           placeholder={label}
@@ -369,23 +369,23 @@ function InputField({
             marginLeft: 4,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             // paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
           value={value}
           defaultValue={defaultValue}
-          onChange={value => {
+          onChange={(value) => {
             onChange,
               // coole.log('handeled', value.nativeEvent.text);
               // updatesign_email(value.nativeEvent.text);
               (value = value.nativeEvent.text);
             value = value.trimEnd();
-            console.log('cliekd');
+            console.log("cliekd");
             updatelogin_email(value);
             if (validate_email(value)) {
               login_email_checked(true);
@@ -396,7 +396,7 @@ function InputField({
         />
       );
     }
-    if (type == 'forget_email') {
+    if (type == "forget_email") {
       return (
         <TextInput
           placeholder={label}
@@ -406,20 +406,20 @@ function InputField({
             marginLeft: 4,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
           onChange={onChange}
         />
       );
     }
 
-    if (type == 'login_password') {
+    if (type == "login_password") {
       return (
         <TextInput
           value={value}
@@ -431,16 +431,16 @@ function InputField({
             marginLeft: 4,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
           secureTextEntry={true}
-          onChange={value => {
+          onChange={(value) => {
             onChange,
               // console.log('handeled', value.nativeEvent.text);
               (value = value.nativeEvent.text),
@@ -456,16 +456,16 @@ function InputField({
         />
       );
     }
-    if (type == 'Adhar_Name') {
+    if (type == "Adhar_Name") {
       return (
         <TextInput
           onFocus={() => {
-            console.log('Entering focued');
+            console.log("Entering focued");
             focused_adhar_name(true);
             // gen_sign_err_method(false);
           }}
           onBlur={() => {
-            console.log('!Entering focued');
+            console.log("!Entering focued");
             focused_adhar_name(false);
           }}
           placeholder={label}
@@ -473,18 +473,18 @@ function InputField({
           style={{
             flex: 1,
             paddingVertical: 0,
-            borderBottomColor: '#ccc',
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             paddingBottom: -10,
             fontSize: 19,
           }}
           value={adhar_name}
           // secureTextEntry={true}
-          onChange={value => {
-            console.log('handeled', value.nativeEvent.text);
+          onChange={(value) => {
+            console.log("handeled", value.nativeEvent.text);
             // updatesign_password(value.nativeEvent.text);
             value = value.nativeEvent.text;
-            if (value !== '') {
+            if (value !== "") {
               checked_adhar_name(true);
               update_adhar_name(value);
             } else {
@@ -494,16 +494,16 @@ function InputField({
         />
       );
     }
-    if (type == 'PropertyName') {
+    if (type == "PropertyName") {
       return (
         <TextInput
           onFocus={() => {
-            console.log('Entering focued');
+            console.log("Entering focued");
             focused_PropertyName(true);
             // gen_sign_err_method(false);
           }}
           onBlur={() => {
-            console.log('!Entering focued');
+            console.log("!Entering focued");
             focused_PropertyName(false);
           }}
           placeholder={label}
@@ -511,20 +511,20 @@ function InputField({
           style={{
             flex: 1,
             paddingVertical: 0,
-            borderBottomColor: '#ccc',
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             paddingBottom: -10,
             fontSize: 19,
           }}
           value={propertyName}
           // secureTextEntry={true}
-          onChange={value => {
-            console.log('handeled', value.nativeEvent.text);
+          onChange={(value) => {
+            console.log("handeled", value.nativeEvent.text);
 
             // updatesign_password(value.nativeEvent.text);
             value = value.nativeEvent.text;
             update_PropertyName(value);
-            if (value !== '') {
+            if (value !== "") {
               checked_PropertyName(true);
             } else {
               checked_PropertyName(false);
@@ -533,16 +533,16 @@ function InputField({
         />
       );
     }
-    if (type == 'totalRooms') {
+    if (type == "totalRooms") {
       return (
         <TextInput
           onFocus={() => {
-            console.log('Entering totalRooms');
+            console.log("Entering totalRooms");
             focusedTotalAvai(true);
             // gen_sign_err_method(false);
           }}
           onBlur={() => {
-            console.log('!Entering focued');
+            console.log("!Entering focued");
             focusedTotalAvai(false);
           }}
           value={totalRooms}
@@ -553,16 +553,16 @@ function InputField({
             marginLeft: 4,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
           // secureTextEntry={true}
-          onChange={value => {
+          onChange={(value) => {
             // console.log('handeled', value.nativeEvent.text);
             value = value.nativeEvent.text;
 
@@ -570,7 +570,7 @@ function InputField({
 
             updatetotalAval(value);
             if (Number(value) >= 1 && Number(value) % 1 == 0) {
-              console.log('etnereed green');
+              console.log("etnereed green");
               checkedAvailableRoom(true);
               // gen_sign_err_method(false);
               // sign_password_focused(false);
@@ -581,16 +581,16 @@ function InputField({
         />
       );
     }
-    if (type == 'occupancy') {
+    if (type == "occupancy") {
       return (
         <TextInput
           onFocus={() => {
-            console.log('Entering occupacny');
+            console.log("Entering occupacny");
             focusedOccupancy(true);
             // gen_sign_err_method(false);
           }}
           onBlur={() => {
-            console.log('!Entering focued');
+            console.log("!Entering focued");
             focusedOccupancy(false);
           }}
           value={occupancy}
@@ -601,22 +601,22 @@ function InputField({
             marginLeft: 4,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
           // secureTextEntry={true}
-          onChange={value => {
+          onChange={(value) => {
             // console.log('handeled', value.nativeEvent.text);
             value = value.nativeEvent.text;
 
             updateOccupancy(value);
             if (Number(value) >= 1 && Number(value) % 1 == 0) {
-              console.log('etnereed green');
+              console.log("etnereed green");
               checkedoccupancy(true);
               // gen_sign_err_method(false);
               // sign_password_focused(false);
@@ -627,16 +627,16 @@ function InputField({
         />
       );
     }
-    if (type == 'phone') {
+    if (type == "phone") {
       return (
         <TextInput
           onFocus={() => {
-            console.log('Entering focued');
+            console.log("Entering focued");
             phone_focused(true);
             // gen_sign_err_method(false);
           }}
           onBlur={() => {
-            console.log('!Entering focued');
+            console.log("!Entering focued");
             phone_focused(false);
           }}
           value={phone.toString()}
@@ -648,21 +648,21 @@ function InputField({
             left: 4,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
           // secureTextEntry={true}
-          onChange={value => {
+          onChange={(value) => {
             // console.log('handeled', value.nativeEvent.text);
             value = Number(value.nativeEvent.text);
             update_phone(value);
             if (validate_phone(value)) {
-              console.log('etnereed green');
+              console.log("etnereed green");
               phone_checked(true);
               // gen_sign_err_method(false);
               // sign_password_focused(false);
@@ -673,16 +673,16 @@ function InputField({
         />
       );
     }
-    if (type == 'prices') {
+    if (type == "prices") {
       return (
         <TextInput
           onFocus={() => {
-            console.log('Entering focued');
+            console.log("Entering focued");
             focusedPrices(true);
             // gen_sign_err_method(false);
           }}
           onBlur={() => {
-            console.log('!Entering focued');
+            console.log("!Entering focued");
             focusedPrices(false);
           }}
           placeholder={label}
@@ -690,21 +690,21 @@ function InputField({
           style={{
             flex: 1,
             paddingVertical: 0,
-            borderBottomColor: '#ccc',
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             paddingBottom: 4,
             fontSize: 19,
           }}
           value={price}
           // secureTextEntry={true}
-          onChange={value => {
+          onChange={(value) => {
             let value_string = value.nativeEvent.text;
             // console.log('handeled', value.nativeEvent.text.length);
             // value = Number(value_string);
             updatePrices(value_string);
-            console.log('value_prices', value_string);
+            console.log("value_prices", value_string);
             if (Number(value_string) >= 99 && Number(value_string) % 1 == 0) {
-              console.log('etnereed green');
+              console.log("etnereed green");
               checkedPrices(true);
               // gen_sign_err_method(false);
               // sign_password_focused(false);
@@ -715,16 +715,16 @@ function InputField({
         />
       );
     }
-    if (type == 'room_title') {
+    if (type == "room_title") {
       return (
         <TextInput
           onFocus={() => {
-            console.log('Entering focued House No');
+            console.log("Entering focued House No");
             focusedtitle(true);
             // gen_sign_err_method(false);
           }}
           onBlur={() => {
-            console.log('!Entering focued House No');
+            console.log("!Entering focued House No");
             focusedtitle(false);
           }}
           placeholder={label}
@@ -734,24 +734,24 @@ function InputField({
             marginLeft: 4,
             flex: 1,
             borderBottomWidth: 1,
-            borderColor: '#d1cfcf',
+            borderColor: "#d1cfcf",
             marginTop: 5,
             borderRadius: 8,
             paddingHorizontal: 10,
             paddingBottom: 9,
             fontSize: 18,
-            color: '#212121',
+            color: "#212121",
           }}
           value={title_no}
           // secureTextEntry={true}
-          onChange={value => {
+          onChange={(value) => {
             value = value.nativeEvent.text;
             // console.log('hande
             // console.log('handeled', value.nativeEvent.text);
             // value = Number(value.nativeEvent.text);
             updatetitle(value);
-            if (value !== '') {
-              console.log('etnereed house no');
+            if (value !== "") {
+              console.log("etnereed house no");
               checkedtitle(true);
               // gen_sign_err_method(false);
               // sign_password_focused(false);
@@ -762,16 +762,16 @@ function InputField({
         />
       );
     }
-    if (type == 'House_No') {
+    if (type == "House_No") {
       return (
         <TextInput
           onFocus={() => {
-            console.log('Entering focued House No');
+            console.log("Entering focued House No");
             focused_house_no(true);
             // gen_sign_err_method(false);
           }}
           onBlur={() => {
-            console.log('!Entering focued House No');
+            console.log("!Entering focued House No");
             focused_house_no(false);
           }}
           placeholder={label}
@@ -780,20 +780,20 @@ function InputField({
           style={{
             flex: 1,
             paddingVertical: 0,
-            borderBottomColor: '#ccc',
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             paddingBottom: 4,
             fontSize: 19,
           }}
           // secureTextEntry={true}
-          onChange={value => {
+          onChange={(value) => {
             value = value.nativeEvent.text;
             // console.log('hande
             // console.log('handeled', value.nativeEvent.text);
             // value = Number(value.nativeEvent.text);
             update_house_no(value);
-            if (value !== '') {
-              console.log('etnereed house no');
+            if (value !== "") {
+              console.log("etnereed house no");
               checked_house_no(true);
               // gen_sign_err_method(false);
               // sign_password_focused(false);
@@ -804,16 +804,16 @@ function InputField({
         />
       );
     }
-    if (type == 'Description_pg') {
+    if (type == "Description_pg") {
       return (
         <TextInput
           onFocus={() => {
-            console.log('Entering focued House No');
+            console.log("Entering focued House No");
             focused_description_pg(true);
             // gen_sign_err_method(false);
           }}
           onBlur={() => {
-            console.log('!Entering focued House No');
+            console.log("!Entering focued House No");
             focused_description_pg(false);
           }}
           placeholder={label}
@@ -821,18 +821,18 @@ function InputField({
           style={{
             flex: 1,
             paddingVertical: 0,
-            borderBottomColor: '#ccc',
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             paddingBottom: 4,
             fontSize: 19,
           }}
           // secureTextEntry={true}
-          onChange={value => {
+          onChange={(value) => {
             value = value.nativeEvent.text;
             // console.log('handeled', value.nativeEvent.text);
             // value = Number(value.nativeEvent.text);
-            if (value !== '') {
-              console.log('etnereed house no');
+            if (value !== "") {
+              console.log("etnereed house no");
               checked_description_pg(true);
               // gen_sign_err_method(false);
               // sign_password_focused(false);
@@ -844,16 +844,16 @@ function InputField({
         />
       );
     }
-    if (type == 'Landmark') {
+    if (type == "Landmark") {
       return (
         <TextInput
           onFocus={() => {
-            console.log('Entering focued landmark');
+            console.log("Entering focued landmark");
             focused_landmark(true);
             // gen_sign_err_method(false);
           }}
           onBlur={() => {
-            console.log('!Entering focued landmark');
+            console.log("!Entering focued landmark");
             focused_landmark(false);
           }}
           placeholder={label}
@@ -861,19 +861,19 @@ function InputField({
           style={{
             flex: 1,
             paddingVertical: 0,
-            borderBottomColor: '#ccc',
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             paddingBottom: 4,
             fontSize: 19,
           }}
           value={Landmark}
           // secureTextEntry={true}
-          onChange={value => {
+          onChange={(value) => {
             // console.log('handeled', value.nativeEvent.text);
             value = value.nativeEvent.text;
             update_landmark(value);
-            if (value !== '') {
-              console.log('etnereed landmark');
+            if (value !== "") {
+              console.log("etnereed landmark");
               checked_landmark(true);
               // gen_sign_err_method(false);
               // sign_password_focused(false);
@@ -884,7 +884,7 @@ function InputField({
         />
       );
     }
-    if (type == 'Terms_pg') {
+    if (type == "Terms_pg") {
       return (
         <TextInput
           placeholder={label}
@@ -901,7 +901,7 @@ function InputField({
             // paddingRight: 10,
             lineHeight: 23,
             flex: 2,
-            textAlignVertical: 'top',
+            textAlignVertical: "top",
             height: 200,
             borderRadius: SIZES.form_button_borderRadius,
             borderWidth: 1,
@@ -917,7 +917,7 @@ function InputField({
         />
       );
     }
-    if (type == 'About_pg') {
+    if (type == "About_pg") {
       return (
         <TextInput
           // onFocus={() => {
@@ -939,9 +939,9 @@ function InputField({
             fontSize: 19,
             lineHeight: 23,
             width: SIZES.width * 0.88,
-            textAlignVertical: 'top',
-            height: 100,
-            fontWeight: 'bold',
+            textAlignVertical: "top",
+            height: 200,
+            fontWeight: "bold",
             borderWidth: 1,
             borderColor: COLORS.lightGray4,
           }}
@@ -951,7 +951,7 @@ function InputField({
         />
       );
     }
-    if (type == 'About_room') {
+    if (type == "About_room") {
       return (
         <TextInput
           // onFocus={() => {
@@ -974,17 +974,17 @@ function InputField({
             fontSize: 19,
             lineHeight: 23,
             width: SIZES.width * 0.88,
-            textAlignVertical: 'top',
+            textAlignVertical: "top",
             // minHeight: 50,
             minHeight: 180,
-            fontWeight: 'bold',
+            fontWeight: "bold",
             borderWidth: 1,
             borderColor: COLORS.lightGray4,
           }}
           returnKeyType="done"
           returnKeyLabel="done"
           // secureTextEntry={true}
-          onChange={value => {
+          onChange={(value) => {
             value = value.nativeEvent.text;
             // console.log('handeled', value.nativeEvent.text);
             updateAboutRoom(value);
@@ -997,21 +997,23 @@ function InputField({
   return (
     <View
       style={{
-        flexDirection: 'row',
+        flexDirection: "row",
         paddingBottom: 8,
         marginBottom: 25,
-      }}>
+      }}
+    >
       {icon}
       {render_field()}
       <TouchableOpacity onPress={fieldButtonFunction}>
         <Text
           style={{
             color: COLORS.mobile_theme_back,
-            fontWeight: 'bold',
+            fontWeight: "bold",
             // left: 100,
             marginTop: 15,
             fontSize: 16,
-          }}>
+          }}
+        >
           {fieldButtonLabel}
         </Text>
       </TouchableOpacity>
@@ -1044,167 +1046,167 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    updateAboutRoom: value => {
+    updateAboutRoom: (value) => {
       dispatch(NewRoomActions.updateAboutRoom(value));
     },
     //NewRoom
-    updateExtraDescription: value => {
+    updateExtraDescription: (value) => {
       dispatch(NewRoomActions.updateExtraDescription(value));
     },
 
-    checkedtitle: value => {
+    checkedtitle: (value) => {
       return dispatch(NewRoomActions.checkedtitle(value));
     },
-    checkedPrices: value => {
+    checkedPrices: (value) => {
       return dispatch(NewRoomActions.checkedPrices(value));
     },
-    focusedtitle: value => {
+    focusedtitle: (value) => {
       return dispatch(NewRoomActions.focusedtitle(value));
     },
-    focusedPrices: value => {
+    focusedPrices: (value) => {
       return dispatch(NewRoomActions.focusedPrices(value));
     },
-    updatetitle: value => {
+    updatetitle: (value) => {
       return dispatch(NewRoomActions.updatetitle(value));
     },
-    updatetotalAval: value => {
+    updatetotalAval: (value) => {
       return dispatch(NewRoomActions.updatetotalAval(value));
     },
-    updateOccupancy: value => {
+    updateOccupancy: (value) => {
       return dispatch(NewRoomActions.updateOccupancy(value));
     },
-    focusedTotalAvai: value => {
+    focusedTotalAvai: (value) => {
       return dispatch(NewRoomActions.focusedTotalAvai(value));
     },
-    focusedOccupancy: value => {
+    focusedOccupancy: (value) => {
       return dispatch(NewRoomActions.focusedOccupancy(value));
     },
-    checkedAvailableRoom: value => {
+    checkedAvailableRoom: (value) => {
       return dispatch(NewRoomActions.checkedAvailableRoom(value));
     },
-    checkedoccupancy: value => {
+    checkedoccupancy: (value) => {
       return dispatch(NewRoomActions.checkedoccupancy(value));
     },
-    updatePrices: value => {
+    updatePrices: (value) => {
       return dispatch(NewRoomActions.updatePrices(value));
     },
     //Newproperty Name
-    checked_PropertyName: value => {
+    checked_PropertyName: (value) => {
       return dispatch(NewPropertyActions.checked_PropertyName(value));
     },
-    focused_PropertyName: value => {
+    focused_PropertyName: (value) => {
       return dispatch(NewPropertyActions.focused_PropertyName(value));
     },
-    update_PropertyName: value => {
+    update_PropertyName: (value) => {
       return dispatch(NewPropertyActions.update_PropertyName(value));
     },
     // location
-    checked_house_no: value => {
+    checked_house_no: (value) => {
       return dispatch(NewPropertyActions.checked_house_no(value));
     },
-    checked_description_pg: value => {
+    checked_description_pg: (value) => {
       return dispatch(NewPropertyActions.checked_description_pg(value));
     },
-    checked_location: value => {
+    checked_location: (value) => {
       return dispatch(NewPropertyActions.checked_location(value));
     },
-    checked_landmark: value => {
+    checked_landmark: (value) => {
       return dispatch(NewPropertyActions.checked_landmark(value));
     },
     //location focusd
-    focused_house_no: value => {
+    focused_house_no: (value) => {
       return dispatch(NewPropertyActions.focused_house_no(value));
     },
-    focused_description_pg: value => {
+    focused_description_pg: (value) => {
       return dispatch(NewPropertyActions.focused_description_pg(value));
     },
-    focused_landmark: value => {
+    focused_landmark: (value) => {
       return dispatch(NewPropertyActions.focused_landmark(value));
     },
-    focused_location: value => {
+    focused_location: (value) => {
       return dispatch(NewPropertyActions.focused_location(value));
     },
     //update loaction
-    update_house_no: value => {
+    update_house_no: (value) => {
       return dispatch(NewPropertyActions.update_house_no(value));
     },
-    update_description_pg: value => {
+    update_description_pg: (value) => {
       return dispatch(NewPropertyActions.update_description_pg(value));
     },
-    update_landmark: value => {
+    update_landmark: (value) => {
       return dispatch(NewPropertyActions.update_landmark(value));
     },
-    update_location: value => {
+    update_location: (value) => {
       return dispatch(NewPropertyActions.update_location(value));
     },
 
-    checked_adhar_name: value => {
+    checked_adhar_name: (value) => {
       return dispatch(AuthActions.adhar_name_checked(value));
     },
-    focused_adhar_name: value => {
+    focused_adhar_name: (value) => {
       return dispatch(AuthActions.adhar_name_focused(value));
     },
-    update_adhar_name: value => {
+    update_adhar_name: (value) => {
       return dispatch(AuthActions.update_adhar_name(value));
     },
-    update_phone: value => {
+    update_phone: (value) => {
       return dispatch(AuthActions.update_phone(value));
     },
-    updatelogin_email: value => {
+    updatelogin_email: (value) => {
       return dispatch(AuthActions.updatelogin_email(value));
     },
-    updatelogin_pass: value => {
+    updatelogin_pass: (value) => {
       return dispatch(AuthActions.updatelogin_pass(value));
     },
-    updatesign_name: value => {
+    updatesign_name: (value) => {
       return dispatch(AuthActions.updatesign_name(value));
     },
-    updatesign_password: value => {
+    updatesign_password: (value) => {
       return dispatch(AuthActions.updatesign_password(value));
     },
-    updatesign_conf_password: value => {
+    updatesign_conf_password: (value) => {
       return dispatch(AuthActions.updatesign_conf_password(value));
     },
-    updatesign_email: value => {
+    updatesign_email: (value) => {
       return dispatch(AuthActions.updatesign_email(value));
     },
-    sign_email_focused: value => {
+    sign_email_focused: (value) => {
       return dispatch(AuthActions.sign_email_focused(value));
     },
-    phone_focused: value => {
+    phone_focused: (value) => {
       return dispatch(AuthActions.phone_focused(value));
     },
-    sign_name_focused: value => {
+    sign_name_focused: (value) => {
       return dispatch(AuthActions.sign_name_focused(value));
     },
-    sign_password_focused: value => {
+    sign_password_focused: (value) => {
       return dispatch(AuthActions.sign_password_focused(value));
     },
-    sign_conf_pass_focused: value => {
+    sign_conf_pass_focused: (value) => {
       return dispatch(AuthActions.sign_conf_pass_focused(value));
     },
-    sign_email_checked: value => {
+    sign_email_checked: (value) => {
       return dispatch(AuthActions.sign_email_checked(value));
     },
-    sign_name_checked: value => {
+    sign_name_checked: (value) => {
       return dispatch(AuthActions.sign_name_checked(value));
     },
-    phone_checked: value => {
+    phone_checked: (value) => {
       return dispatch(AuthActions.phone_checked(value));
     },
-    sign_pass_checked: value => {
+    sign_pass_checked: (value) => {
       return dispatch(AuthActions.sign_pass_checked(value));
     },
-    sign_conf_pass_checked: value => {
+    sign_conf_pass_checked: (value) => {
       return dispatch(AuthActions.sign_conf_pass_checked(value));
     },
-    gen_sign_err_method: value => {
+    gen_sign_err_method: (value) => {
       return dispatch(AuthActions.gen_sign_err(value));
     },
-    login_pass_checked: value => {
+    login_pass_checked: (value) => {
       return dispatch(AuthActions.login_pass_checked(value));
     },
-    login_email_checked: value => {
+    login_email_checked: (value) => {
       return dispatch(AuthActions.login_email_checked(value));
     },
   };

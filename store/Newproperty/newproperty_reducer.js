@@ -27,7 +27,10 @@ let initialState = {
   about_pg: "",
   terms_pg: [],
   propertyName: "",
-
+  property_updating: {
+    updating: false,
+    property_id: "",
+  },
   //Location Form
   house_no: "",
 
@@ -48,6 +51,16 @@ let initialState = {
 
 const newproperty_reducer = (state = initialState, action) => {
   switch (action.type) {
+    case newproperty_actions.UDPATE_PROPERTYID:
+      return {
+        ...state,
+        property_updating: action.value,
+      };
+    case newproperty_actions.UPDATE_ALL:
+      return {
+        ...state,
+      };
+
     case newproperty_actions.UPDATE_ADHAR_CARD:
       return {
         ...state,
@@ -74,23 +87,67 @@ const newproperty_reducer = (state = initialState, action) => {
     //Property vaue   bijlikabil, adhar name,location, outer vid,img
     case newproperty_actions.UPDATE_PROPERTY_VALUE:
       console.log("called all set fun");
+      // PG, FAMILYROOMS, HOSTEL;
+      let typeof_pg = action.value.typeofpg;
+      let obj = {};
+      let gender_obj = {};
+      if (typeof_pg == "HOSTEL") {
+        obj = {
+          pg: false,
+          // mess: false,
+          rent: false,
+          Hostel: true,
+        };
+      } else if (typeof_pg == "FAMILYROOMS") {
+        obj = {
+          pg: false,
+          // mess: false,
+          rent: true,
+          Hostel: false,
+        };
+      } else {
+        obj = {
+          pg: true,
+          // mess: false,
+          rent: false,
+          Hostel: false,
+        };
+      }
+      let male = action.value.isMale;
+      let female = action.value.isFemale;
+      gender_obj = {
+        male: male || (!male && !female),
+        female: female,
+        both: male && female ? true : false,
+      };
+      let isAc = action.value.isAC;
+      let isCooler = action.value.isCooler;
+      let isWIFI = action.value.isWIFI;
+      let HotWater = action.value.HotWater;
+      let amneties = {
+        wifi: isWIFI,
+        AC: isAc,
+        hotwater: HotWater,
+        cooler: isCooler,
+      };
+      let house_no = action.value.address.split("//")[0];
+      let Landmark = action.value.address.split("//")[1];
+      console.log("Landmark", Landmark, house_no);
       return {
         ...state,
-        gender: action.value.gender,
-        amneties: action.value.amneties,
-        who: action.value.who,
-        looking_form: action.value.looking_form,
-        about_pg: action.value.about_pg,
-        terms_pg: action.value.terms_pg,
+        gender: gender_obj,
+        amneties: amneties,
+        looking_form: obj,
+        about_pg: action.value.About,
+        terms_pg: action.value.Rules,
         // about_pg: action.value.about_pg,
-        propertyName: action.value.propertyName,
-        house_no: action.value.house_no,
-        Landmark: action.value.Landmark,
-        adharcard: action.value.adharcard,
+        propertyName: action.value.propertytitle,
+        house_no: house_no,
+        Landmark: Landmark,
+        // adharcard: action.value.adharcard,
         checked_propertyName: true,
-        house_no: true,
-        Landmark: true,
-        adharcard: true,
+        checked_house_no: true,
+        checked_Landmark: true,
 
         // adharcard: action.value.adharcard,
       };

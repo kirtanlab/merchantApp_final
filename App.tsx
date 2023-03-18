@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStore, applyMiddleware} from 'redux';
@@ -36,6 +36,7 @@ import mobile_otp from './screens/AuthScreens/mobile_otp';
 import mobile_input from './screens/AuthScreens/mobile_input';
 import Basic25 from './screens/NewRooms/Basic25';
 import vidImage from './screens/Newproperty/vidImage';
+
 
 const Loading = () => {
   return <Text>Loading New</Text>;
@@ -117,11 +118,11 @@ const App = () => {
   const Root = () => {
     return (
       <Stack.Navigator>
-        {/* <Stack.Screen
+        <Stack.Screen
           options={{headerShown: false}}
           name="SplashScreen"
           component={SplashScreen}
-        /> */}
+        />
 
         <Stack.Screen
           options={{headerShown: false}}
@@ -157,9 +158,10 @@ const App = () => {
       </Stack.Navigator>
     );
   };
-
+  
   return (
     <Provider store={store}>
+      
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
@@ -199,6 +201,7 @@ const App = () => {
           {/* <Stack.Screen name="TestScreen" component={TestScreen} /> */}
         </Stack.Navigator>
       </NavigationContainer>
+      
     </Provider>
   );
 };

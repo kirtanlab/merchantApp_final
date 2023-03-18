@@ -52,6 +52,14 @@ const LoginScreen = ({
   const [posted, setPosted] = useState(true);
 
   const phone_number = 7016700396;
+
+  const setUser = async (token) => {
+    return new Promise(function (resolve, reject) {
+      AsyncStorage.setItem("token", JSON.stringify(token))
+        .then(() => resolve(JSON.stringify(token)))
+        .catch((err) => reject("Logged in User data not persisted : ", err));
+    });
+  };
   const handleLogin = async () => {
     if (email && password) {
       try {
@@ -67,7 +75,10 @@ const LoginScreen = ({
           { headers: { "Content-Type": "application/json" } }
         );
         console.log("data", data.data);
+
         updateToken(data.data.token);
+        let token = data.data.token;
+        await setUser(token);
         setPosted(data.data.user.detailsEntered);
         setVerified(data.data.user.phoneVerified);
         let phoneVerified = data.data.user.phoneVerified;
@@ -79,9 +90,10 @@ const LoginScreen = ({
           //   index: 0,
           //   routes: [{name: 'Newproperty'}],
           // });
-          navigation.replace("Newproperty");
+          navigation.replace("NewRooms");
         } else if (phoneVerified && detailsEntered) {
           // navigation.replace('MainScreens');
+
           navigation.replace("MainScreens");
           // navigation.reset({
           //   index: 0,
@@ -131,8 +143,8 @@ const LoginScreen = ({
             <Image
               source={icons.logo_rent}
               style={{
-                height: 232,
-                width: 232,
+                height: 350,
+                width: 350,
                 borderRadius: 20,
                 marginTop: 30,
                 alignSelf: "center",

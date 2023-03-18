@@ -19,4 +19,7 @@ propertytitle
 6)images,videos -> room id
 
 
-1)
+1)Room availablerooms
+2)Url -> Uri
+
+140 --> 2000/Month, 20GB stored(7person /GB), 60GB Transferred

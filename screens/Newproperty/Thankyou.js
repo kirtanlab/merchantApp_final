@@ -22,9 +22,13 @@ import CustomButton_form from "../../components/NewProperty/CustomButton_form";
 
 import NumericInput from "../../components/NewProperty/NumericInput";
 import Custom_Animation from "../../components/NewProperty/Custom_Animation";
-const Thankyou = ({ navigation }) => {
+const Thankyou = ({ navigation, property_updating }) => {
   function next_page() {
-    navigation.replace("NewRooms");
+    if (property_updating.updating) {
+      navigation.replace("MainScreens");
+    } else {
+      navigation.replace("NewRooms");
+    }
     console.log("next pagee");
   }
   // const upload_images = () => {
@@ -62,9 +66,12 @@ const Thankyou = ({ navigation }) => {
               fontSize: 34,
               fontWeight: "bold",
               color: COLORS.mobile_theme_back,
+              marginLeft: property_updating.updating ? 70 : 0,
             }}
           >
-            Thank you for Registering Property
+            {property_updating.updating
+              ? "Property Modified"
+              : "Thank you for Registering Property"}
           </Text>
         </View>
         <View>
@@ -75,7 +82,7 @@ const Thankyou = ({ navigation }) => {
         <CustomButton_form
           fontColor={COLORS.font_color}
           backgroundColor={COLORS.mobile_theme_back}
-          label={"Add Rooms Now "}
+          label={property_updating ? "Go to Homescreen" : "Add Rooms Now "}
           _borderColor={COLORS.mobile_theme}
           borderRadius
           onPress={() => {
@@ -86,4 +93,13 @@ const Thankyou = ({ navigation }) => {
     </ScrollView>
   );
 };
-export default Thankyou;
+
+function mapStateToProps(state) {
+  return {
+    property_updating: state.newproperty_reducer.property_updating,
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return {};
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Thankyou);

@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <string-array name="WheelArrayDefault">
+        <item>AigeStudio</item>
+        <item>Aige</item>
+        <item>爱哥</item>
+        <item>الحب  اخي</item>
+        <item>jeg elsker</item>
+        <item>사랑해요 형</item>
+        <item>Amor de irmão</item>
+        <item>armastan</item>
+        <item>愛の兄</item>
+        <item>обичам те</item>
+        <item>любовь - братa</item>
+        <item>miłość bracie</item>
+        <item>Liebe</item>
+        <item>Lamour</item>
+        <item>rakastan sinua</item>
+        <item>láska..</item>
+        <item>dragostea.</item>
+        <item>jag älskar</item>
+        <item>ljubezen, brat.</item>
+        <item>愛哥</item>
+        <item>ชอบพี่</item>
+        <item>αγάπη μου</item>
+        <item>a szerelem.</item>
+        <item>Amore, fratello.</item>
+    </string-array>
+    <string-array name="WheelArrayWeek">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
     <attr name="appBarLayoutStyle"/>
     <attr format="reference" name="badgeStyle"/>
     <attr format="reference" name="bottomAppBarStyle"/>
@@ -214,6 +249,10 @@
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6FFFFFF</color>
+    <dimen name="WheelIndicatorSize">2dp</dimen>
+    <dimen name="WheelItemSpace">12dp</dimen>
+    <dimen name="WheelItemTextSize">24sp</dimen>
+    <dimen name="WheelMargins">8dp</dimen>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">72dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -678,6 +717,9 @@
     <item quantity="one"><ns1:g id="count">%d</ns1:g> new notification</item>
     <item quantity="other"><ns1:g id="count">%d</ns1:g> new notifications</item>
   </plurals>
+    <string name="Day">D</string>
+    <string name="Month">M</string>
+    <string name="Year">Y</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_up_description">Navigate up</string>
     <string name="abc_action_menu_overflow_description">More options</string>
@@ -3054,11 +3096,19 @@
     <style name="ShapeAppearanceOverlay.TopRightDifferentCornerSize">
     <item name="cornerSizeTopRight">20px</item>
   </style>
-    <style name="SpinnerDatePickerDialog" ns2:targetApi="lollipop" parent="Theme.AppCompat.Light.Dialog">
+    <style name="SpinnerDatePickerDialog" parent="SpinnerDatePickerDialogBase"/>
+    <style name="SpinnerDatePickerDialogBase" ns2:targetApi="lollipop" parent="Theme.AppCompat.DayNight.Dialog">
         <item name="android:datePickerStyle">@style/SpinnerDatePickerStyle</item>
     </style>
-    <style name="SpinnerDatePickerStyle" ns2:targetApi="lollipop" parent="android:Widget.Material.Light.DatePicker">
+    <style name="SpinnerDatePickerStyle" ns2:targetApi="lollipop" parent="android:Widget.Material.DatePicker">
         <item name="android:datePickerMode">spinner</item>
+    </style>
+    <style name="SpinnerTimePickerDialog" parent="SpinnerTimePickerDialogBase"/>
+    <style name="SpinnerTimePickerDialogBase" ns2:targetApi="lollipop" parent="Theme.AppCompat.DayNight.Dialog">
+        <item name="android:timePickerStyle">@style/SpinnerTimePickerStyle</item>
+    </style>
+    <style name="SpinnerTimePickerStyle" ns2:targetApi="lollipop" parent="android:Widget.Material.TimePicker">
+        <item name="android:timePickerMode">spinner</item>
     </style>
     <style name="Test.ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Day" parent="">
     <item name="cornerFamily">rounded</item>
@@ -7288,6 +7338,32 @@
         
         <attr name="android:inflatedId"/>
         <attr name="android:id"/>
+    </declare-styleable>
+    <declare-styleable name="WheelPicker">
+        <attr format="reference" name="wheel_data"/>
+        <attr format="integer" name="wheel_selected_item_position"/>
+        <attr format="dimension" name="wheel_item_text_size"/>
+        <attr format="color" name="wheel_item_text_color"/>
+        <attr format="color" name="wheel_selected_item_text_color"/>
+        <attr format="boolean" name="wheel_same_width"/>
+        <attr format="string" name="wheel_maximum_width_text"/>
+        <attr format="integer" name="wheel_maximum_width_text_position"/>
+        <attr format="integer" name="wheel_visible_item_count"/>
+        <attr format="dimension" name="wheel_item_space"/>
+        <attr format="boolean" name="wheel_cyclic"/>
+        <attr format="boolean" name="wheel_indicator"/>
+        <attr format="color" name="wheel_indicator_color"/>
+        <attr format="dimension" name="wheel_indicator_size"/>
+        <attr format="boolean" name="wheel_curtain"/>
+        <attr format="color" name="wheel_curtain_color"/>
+        <attr format="boolean" name="wheel_atmospheric"/>
+        <attr format="boolean" name="wheel_curved"/>
+        <attr format="enum" name="wheel_item_align">
+            <enum name="center" value="0"/>
+            <enum name="left" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <attr format="string" name="wheel_font_path"/>
     </declare-styleable>
     <declare-styleable name="scaleStyle">
         <attr name="scalableType">

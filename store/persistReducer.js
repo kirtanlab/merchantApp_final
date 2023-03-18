@@ -12,6 +12,7 @@ import vidImage_reducer from "./vidImage/vidImage_reducer";
 import AdharCard_reducer from "./AdharCard/AdharCard_reducer";
 import room_vidImage_reducer from "./room_vidImage/room_vidImage_reducer";
 import Location_reducer from "./Location/Locations_reducer";
+import { reducer as network } from "react-native-offline";
 // import storage from 'redux-persist/lib/storage';
 // const persistConfig = {
 //   key: 'persist-store',
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
   room_vidImage_reducer,
   AdharCard_reducer,
   Location_reducer,
+  network,
 });
 // const _persistedReducer = persistReducer(persistConfig, rootReducer);
 export default rootReducer;

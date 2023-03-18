@@ -12,6 +12,8 @@ import {
   Image,
   Alert,
 } from "react-native";
+import { REACT_APP_OWNER_API } from "@env";
+import axios from "axios";
 import * as AdharCard_actions from "../../store/AdharCard/AdharCard_actions";
 import * as Newproperty_ext_actions from "../../store/Newproperty_ext/Newproperty_ext_actions";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -47,14 +49,17 @@ const BasicDetails = ({
   adhar_name,
   gender,
   propertyName,
+  token,
 }) => {
   const [imgUri, setimgUri] = React.useState([{}]);
-  const [_img_url, _setimg_url] = React.useState(adharcard.uri);
+  const [_img_url, _setimg_url] = React.useState(
+    adharcard ? adharcard?.uri : ""
+  );
   // console.log(imgUri.length);
   //    change_state();s
   //   // console.log('test',test)
   // }, []);useEffect(() => {
-
+  console.log("adharcarduri", adharcard?.uri);
   function next_page() {
     navigation.navigate("Location");
     console.log("next pagee");
@@ -126,6 +131,7 @@ const BasicDetails = ({
       <View>
         <Progress.Bar
           progress={0.25}
+          token
           color={COLORS.progress_bar}
           width={SIZES.width}
           height={SIZES.height * 0.01}
@@ -205,20 +211,39 @@ const BasicDetails = ({
                 alignItems: "center",
                 paddingTop: 5,
                 // left: 20,
-                backgroundColor: COLORS.mobile_theme_back,
+                // backgroundColor: COLORS.mobile_theme_back,
                 borderRadius: 10,
                 color: COLORS.white,
                 fontSize: SIZES.h2,
                 // marginTop: 25,
               }}
-              onPress={() => {
+              onPress={async () => {
+                // _setimg_url("");
+                var pattern = /^((https):\/\/)/;
+
+                if (pattern.test(_img_url)) {
+                  try {
+                    const data = await axios.delete(
+                      `${REACT_APP_OWNER_API}/api/v1/deleteaadharproof`,
+                      {
+                        headers: {
+                          Authorization: `Bearer ${token}`,
+                        },
+                        data: { name: adharcard.name },
+                      }
+                    );
+                    console.log("data", data);
+                  } catch (err) {
+                    console.log("deleteroom video", err);
+                  }
+                }
                 _setimg_url("");
               }}
             >
               <Ionicons
                 name="close-circle-outline"
-                size={25}
-                color={true ? COLORS.white : "lightgray"}
+                size={30}
+                color={true ? COLORS.mobile_theme_back : "lightgray"}
                 style={{ flex: 1 }}
               />
             </TouchableOpacity>
@@ -313,6 +338,7 @@ function mapStateToProps(state) {
     looking_for: state.newproperty_reducer.looking_form,
     adhar_name: state.authReducer.adhar_name,
     gender: state.newproperty_reducer.gender,
+    token: state.authReducer.token,
   };
 }
 

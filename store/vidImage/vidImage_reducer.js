@@ -1,4 +1,4 @@
-import * as vidImage_actions from './vidImage_actions';
+import * as vidImage_actions from "./vidImage_actions";
 const initialState = {
   checked_outer_image: false,
   outerImages: [],
@@ -7,6 +7,14 @@ const initialState = {
 };
 const vidImage_reducer = (state = initialState, action) => {
   switch (action.type) {
+    case vidImage_actions.UPDATE_ALL:
+      return {
+        ...state,
+        outerImages: action.value.photos,
+        checked_outer_image: true,
+        checked_outer_video: true,
+        outerVideos: action.value.videos,
+      };
     //NewRooms Form
     case vidImage_actions.CHECKED_OUTER_IMAGES:
       return {

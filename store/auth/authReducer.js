@@ -1,23 +1,25 @@
-import {Home} from '../../screens';
-import * as authActions from './authActions';
+import { Home } from "../../screens";
+import * as authActions from "./authActions";
 
 const initialState = {
   auth_states: {
     user: null,
     //Defaults are stored in userData
     userData: null,
-    status: 'loading',
-    error: 'error',
+    status: "loading",
+    error: "error",
   },
-  token: '',
-  login_email: '',
-  login_password: '',
-  sign_name: '',
-  sign_email: '',
-  sign_password: '',
-  sign_conf_password: '',
-  phone: '',
-  adhar_name: '',
+  updating_mobile: false,
+  Room_token: "",
+  token: "",
+  login_email: "",
+  login_password: "",
+  sign_name: "",
+  sign_email: "",
+  sign_password: "",
+  sign_conf_password: "",
+  phone: "",
+  adhar_name: "",
   focused_adhar_name: false,
   focused_sign_email: false,
   focused_sign_name: false,
@@ -39,11 +41,24 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
+    case authActions.UPDATING_MOBILE:
+      return {
+        ...state,
+        updating_mobile: action.value,
+      };
+
     // case
     case authActions.UPDATE_TOKEN: {
       return {
         ...state,
         token: action.value,
+      };
+    }
+    // case
+    case authActions.UPDATE_ROOOM_TOKEN: {
+      return {
+        ...state,
+        Room_token: action.value,
       };
     }
 

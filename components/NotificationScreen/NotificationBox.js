@@ -1,10 +1,10 @@
-import React from 'react';
-import {View, Text} from 'react-native';
-import {COLORS, SIZES} from '../../constants';
-import EStyleSheet from 'react-native-extended-stylesheet';
+import React from "react";
+import { View, Text } from "react-native";
+import { COLORS, FONTS, SIZES } from "../../constants";
+import EStyleSheet from "react-native-extended-stylesheet";
 
-const NotificationBox = ({name, room_type, email, phone_number, time}) => {
-  let relative_time = '';
+const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
+  let relative_time = "";
   let time_obj = new Date(time);
   let year = time_obj.getFullYear();
   let month = time_obj.getMonth() + 1;
@@ -30,7 +30,7 @@ const NotificationBox = ({name, room_type, email, phone_number, time}) => {
     cur_Hours,
     cur_Minutes,
     cur_Seconds,
-    cur_ms,
+    cur_ms
   );
   var test_time_obj = new Date(year, month, date, Hours, Minutes, Seconds, ms);
 
@@ -44,17 +44,17 @@ const NotificationBox = ({name, room_type, email, phone_number, time}) => {
     var elapsed = current - previous;
 
     if (elapsed < msPerMinute) {
-      return Math.round(elapsed / 1000) + ' seconds ago';
+      return Math.round(elapsed / 1000) + " seconds ago";
     } else if (elapsed < msPerHour) {
-      return Math.round(elapsed / msPerMinute) + ' minutes ago';
+      return Math.round(elapsed / msPerMinute) + " minutes ago";
     } else if (elapsed < msPerDay) {
-      return Math.round(elapsed / msPerHour) + ' hours ago';
+      return Math.round(elapsed / msPerHour) + " hours ago";
     } else if (elapsed < msPerMonth) {
-      return Math.round(elapsed / msPerDay) + ' days ago';
+      return Math.round(elapsed / msPerDay) + " days ago";
     } else if (elapsed < msPerYear) {
-      return Math.round(elapsed / msPerMonth) + ' months ago';
+      return Math.round(elapsed / msPerMonth) + " months ago";
     } else {
-      return Math.round(elapsed / msPerYear) + ' years ago';
+      return Math.round(elapsed / msPerYear) + " years ago";
     }
   }
 
@@ -63,41 +63,61 @@ const NotificationBox = ({name, room_type, email, phone_number, time}) => {
   return (
     <View
       style={{
-        flexDirection: 'column',
+        flexDirection: "column",
         borderColor: COLORS.lightGray6,
         borderWidth: 1,
         marginTop: 6,
         paddingHorizontal: 6,
         paddingVertical: 2,
         borderRadius: 10,
-      }}>
+      }}
+    >
       <View>
-        <Text style={{color: COLORS.black, fontSize: 20}}>
-          <Text style={{color: COLORS.mobile_theme_back, fontWeight: 'bold'}}>
+        <Text style={{ color: COLORS.black, fontSize: 20 }}>
+          <Text
+            style={{
+              color: COLORS.mobile_theme_back,
+              fontFamily: FONTS.fontFamily_regular,
+            }}
+          >
             {name}
-          </Text>{' '}
+          </Text>{" "}
           has shown intrest in your
-          <Text style={{color: COLORS.mobile_theme_back, fontWeight: 'bold'}}>
-            {' '}
+          <Text
+            style={{
+              color: COLORS.mobile_theme_back,
+              fontFamily: FONTS.fontFamily_regular,
+            }}
+          >
+            {" "}
             {room_type}
           </Text>
         </Text>
       </View>
       <View>
         <View>
-          <Text style={{color: COLORS.black, fontSize: 20}}>
-            Email:{' '}
-            <Text style={{color: COLORS.mobile_theme_back, fontWeight: 'bold'}}>
+          <Text style={{ color: COLORS.black, fontSize: 20 }}>
+            Email:{" "}
+            <Text
+              style={{
+                color: COLORS.mobile_theme_back,
+                fontFamily: FONTS.fontFamily_regular,
+              }}
+            >
               {email}
             </Text>
           </Text>
         </View>
-        <View style={{flexDirection: 'row'}}>
-          <View style={{flex: 1}}>
-            <Text style={{color: COLORS.black, fontSize: 20}}>
-              Number:{' '}
+        <View style={{ flexDirection: "row" }}>
+          <View style={{ flex: 1 }}>
+            <Text style={{ color: COLORS.black, fontSize: 20 }}>
+              Number:{" "}
               <Text
-                style={{color: COLORS.mobile_theme_back, fontWeight: 'bold'}}>
+                style={{
+                  color: COLORS.mobile_theme_back,
+                  fontFamily: FONTS.fontFamily_regular,
+                }}
+              >
                 +91{phone_number}
               </Text>
             </Text>
@@ -105,14 +125,16 @@ const NotificationBox = ({name, room_type, email, phone_number, time}) => {
           <View
             style={{
               top: 5,
-            }}>
+            }}
+          >
             <Text
               style={{
                 flex: 1,
                 fontSize: 15,
                 color: COLORS.mobile_theme_back,
-                fontWeight: 'bold',
-              }}>
+                fontFamily: FONTS.fontFamily_regular,
+              }}
+            >
               {relative_time}
             </Text>
           </View>

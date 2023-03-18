@@ -1,81 +1,116 @@
-import React, {useEffect} from 'react';
-import {View, Text, ScrollView, FlatList, LogBox} from 'react-native';
-import NotificationBox from '../components/NotificationScreen/NotificationBox';
-import {COLORS, SIZES} from '../constants';
-const dummy_data = [
-  //username,userphoneno,useremail,roomtitle,createAt
-  {
-    name: 'kirtan',
-    room_type: 'Delux Room',
-    email: 'kirtanprajapati242gmail.com',
-    phone_number: '7016700396',
-    time: '2023-03-04T12:42:45.208+00:00',
-  },
-  {
-    name: 'Het',
-    room_type: 'Standard Room',
-    email: 'hetpatel4902.com',
-    phone_number: '9076200396',
-    time: '2023-03-04T12:22:45.208+00:00',
-  },
-  {
-    name: 'Pratham',
-    room_type: 'Double bed Room',
-    email: 'prathamshah019.com',
-    phone_number: '9723100211',
-    time: '2023-03-04T1:10:45.208+00:00',
-  },
-  {
-    name: 'kandarp',
-    room_type: 'Executive bed Room',
-    email: 'kandarp24@gmail.com',
-    phone_number: '9723128382',
-    time: '2023-02-04T12:42:45.208+00:00',
-  },
-];
-const NotificationScreen = () => {
+import React, { useEffect, useLayoutEffect } from "react";
+import {
+  View,
+  Text,
+  ScrollView,
+  FlatList,
+  LogBox,
+  RefreshControl,
+} from "react-native";
+import EmptyScreen from "../components/EmptyScreen";
+import NotificationBox from "../components/NotificationScreen/NotificationBox";
+import No_notification from "../components/No_notification";
+import { connect } from "react-redux";
+import { COLORS, FONTS, SIZES } from "../constants";
+import axios from "axios";
+import { REACT_APP_OWNER_API } from "@env";
+
+const NotificationScreen = ({ token }) => {
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const [notifications, setNotifications] = React.useState([]);
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+
+    setTimeout(() => {
+      async function call_all() {
+        await room_fetch_details();
+      }
+      call_all();
+      setRefreshing(false);
+    }, 2000);
+  }, []);
   useEffect(() => {
-    LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
+    LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
+  }, []); ///api/v1/showinterests
+  const room_fetch_details = async () => {
+    // console.log("token", token);
+    const data = await axios.get(
+      `${REACT_APP_OWNER_API}/api/v1/owner/showinterests`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    // console.log("result room", data.data.data);
+    console.log("notification", data.data.data);
+    setNotifications(data.data.data);
+  };
+  useLayoutEffect(() => {
+    room_fetch_details();
   }, []);
   return (
     <ScrollView
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }
       showsVerticalScrollIndicator={false}
       style={{
-        backgroundColor: 'white',
-
+        backgroundColor: "white",
+        // paddingBottom: 100,
         paddingVertical: 17,
-      }}>
+      }}
+    >
       <View>
         <Text
           style={{
             color: COLORS.mobile_theme_back,
             paddingHorizontal: 15,
             fontSize: SIZES.h1,
-            fontWeight: 'bold',
+            // fontWeight: "bold",
             borderBottomColor: COLORS.lightGray4,
             borderBottomWidth: 1,
             paddingBottom: 10,
-          }}>
+            fontFamily: FONTS.fontFamily_regular,
+          }}
+        >
           Notifications
         </Text>
       </View>
-      <View style={{paddingHorizontal: 7}}>
-        <FlatList
-          data={dummy_data}
-          renderItem={({item}) => {
-            return (
-              <NotificationBox
-                name={item.name}
-                room_type={item.room_type}
-                email={item.email}
-                phone_number={item.phone_number}
-                time={item.time}
-              />
-            );
-          }}
-        />
+      <View style={{ paddingHorizontal: 7 }}>
+        {notifications.length > 0 ? (
+          <FlatList
+            data={notifications}
+            renderItem={({ item }) => {
+              return (
+                <NotificationBox
+                  name={item.username}
+                  room_type={item.roomtitle}
+                  email={item.useremail}
+                  phone_number={item.userphoneno}
+                  time={item.createdAt}
+                />
+              );
+            }}
+          />
+        ) : (
+          <No_notification />
+        )}
       </View>
+      <View style={{ paddingBottom: 50 }}></View>
     </ScrollView>
   );
 };
-export default NotificationScreen;
+
+function mapStateToProps(state) {
+  return {
+    token: state.authReducer.token,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NotificationScreen);

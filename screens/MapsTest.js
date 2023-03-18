@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   StatusBar,
   KeyboardAvoidingView,
+  PermissionsAndroid,
 } from "react-native";
 import * as newproperty_actions from "../store/Newproperty/newproperty_action";
 import * as Newproperty_ext_actions from "../store/Newproperty_ext/Newproperty_ext_actions";
@@ -21,16 +22,55 @@ import NAVHeader_BLOB from "../components/NavHeader_BLOB";
 import NavHeader_Maps from "../components/NavHeader_Maps";
 import { connect } from "react-redux";
 import * as Location_actions from "../store/Location/Location_actions";
+
 const MapTest = ({
   updateLocationAddress,
   checked_location,
   update_location,
   navigation,
+  Location,
 }) => {
+  const [granted, setgranted] = React.useState(false);
   const [origin, setOrigin] = React.useState({
-    latitude: 25.2138,
-    longitude: 75.8648,
+    latitude: Number(Location.latitude.$numberDecimal),
+    longitude: Number(Location.longitude.$numberDecimal),
   });
+  console.log("origin", origin);
+  const checkPermission = async () => {
+    // Function to check the platform
+    // If iOS then start downloading
+    // If Android then ask for permission
+
+    if (Platform.OS === "ios") {
+      //  downloadVideo();
+    } else {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+          {
+            title: "Location Permission Required",
+            message:
+              "App needs access to your Location to fetch current location",
+          }
+        );
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          // Once user grant the permission start downloading
+          console.log(" Permission Granted.");
+          setgranted("granted");
+          //  downloadVideo();
+        } else {
+          // If permission denied then show alert
+          alert("Location Permission Required");
+        }
+      } catch (err) {
+        // To handle permission related exception
+        console.warn(err);
+      }
+    }
+  };
+  useEffect(() => {
+    checkPermission();
+  }, []);
   const [value, setValue] = React.useState(null);
   const [location, setLoaction] = React.useState({});
   const [current, setCurrent] = React.useState({});
@@ -83,18 +123,19 @@ const MapTest = ({
   const LATITUDE_DELTA = 0.02;
   const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
   const INTIAL_POSITION = {
-    latitude: 25.2138,
-    longitude: 75.8648,
+    latitude: Number(Location.latitude.$numberDecimal),
+    longitude: Number(Location.longitude.$numberDecimal),
     latitudeDelta: LATITUDE_DELTA,
     longitudeDelta: LONGITUDE_DELTA,
   };
+  console.log("INTIAL_POSITION", INTIAL_POSITION);
   function region() {
     const ASPECT_RATIO = width / height;
     const LATITUDE_DELTA = 0.02;
     const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
     const INTIAL_POSITION = {
-      latitude: 22.554029,
-      longitude: 72.948936,
+      latitude: Number(Location.latitude.$numberDecimal),
+      longitude: Number(Location.longitude.$numberDecimal),
       latitudeDelta: LATITUDE_DELTA,
       longitudeDelta: LONGITUDE_DELTA,
     };
@@ -129,18 +170,23 @@ const MapTest = ({
             // });
           }}
           onPress_forward={async () => {
+            console.log("location", location);
             if (location) {
               checked_location(true);
-              update_location(location);
-              console.log("Location", location);
+              //
+              // console.log("Location", location);
               await getAddressFromCoordinates({
                 latitude: location.latitude,
                 longitude: location.longitude,
               });
+              let latitude = { $numberDecimal: location.latitude };
+              let longitude = { $numberDecimal: location.longitude };
+
+              await update_location({ latitude, longitude });
             } else {
               checked_location(true);
               update_location(origin);
-              console.log("origin", origin);
+              // console.log("origin", origin);
               await getAddressFromCoordinates({
                 latitude: origin.latitude,
                 longitude: origin.longitude,
@@ -248,67 +294,109 @@ const MapTest = ({
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity
-          onPress={() => {
-            Geolocation.getCurrentPosition((info) => {
-              const ASPECT_RATIO = width / height;
-              const LATITUDE_DELTA = 0.02;
-              const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
-              const CURRENT_POSITION = {
-                latitude: info.coords.latitude,
-                longitude: info.coords.longitude,
-                latitudeDelta: LATITUDE_DELTA,
-                longitudeDelta: LONGITUDE_DELTA,
-              };
-              position = {
-                latitude: info.coords.latitude,
-                longitude: info.coords.longitude,
-              };
-              setCurrent(CURRENT_POSITION);
-              moveTo(position);
-              setOrigin(position);
+        {granted == "granted" && (
+          <TouchableOpacity
+            onPress={async () => {
+              if (Platform.OS == "android") {
+                // console.log("clicked");
+                const permissionAndroid = await PermissionsAndroid.check(
+                  "android.permission.ACCESS_FINE_LOCATION"
+                );
+                if (permissionAndroid != PermissionsAndroid.RESULTS.granted) {
+                  const granted = await PermissionsAndroid.request(
+                    PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+                    {
+                      title: "Location Permission Required",
+                      message:
+                        "App needs access to your Location to fetch current location",
+                    }
+                  );
+                  console.log(granted);
+                  setgranted(granted);
+                  if (granted == "granted") {
+                    Geolocation.getCurrentPosition((info) => {
+                      const ASPECT_RATIO = width / height;
+                      const LATITUDE_DELTA = 0.02;
+                      const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
+                      const CURRENT_POSITION = {
+                        latitude: info.coords.latitude,
+                        longitude: info.coords.longitude,
+                        latitudeDelta: LATITUDE_DELTA,
+                        longitudeDelta: LONGITUDE_DELTA,
+                      };
+                      position = {
+                        latitude: info.coords.latitude,
+                        longitude: info.coords.longitude,
+                      };
+                      setCurrent(CURRENT_POSITION);
+                      moveTo(position);
+                      setOrigin(position);
+                    });
+                  }
+                }
+              } else {
+                Geolocation.getCurrentPosition((info) => {
+                  const ASPECT_RATIO = width / height;
+                  const LATITUDE_DELTA = 0.02;
+                  const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
+                  const CURRENT_POSITION = {
+                    latitude: info.coords.latitude,
+                    longitude: info.coords.longitude,
+                    latitudeDelta: LATITUDE_DELTA,
+                    longitudeDelta: LONGITUDE_DELTA,
+                  };
+                  position = {
+                    latitude: info.coords.latitude,
+                    longitude: info.coords.longitude,
+                  };
+                  setCurrent(CURRENT_POSITION);
+                  moveTo(position);
+                  setOrigin(position);
+                });
+              }
+
               // console.log(
               //   typeof info.coords.latitude,
               //   typeof info.coords.longitude,
               // );
-            });
-          }}
-          style={{
-            position: "absolute",
-            top: "80%",
-            left: "25%",
-            minWidth: "45%",
-            maxWidth: 200,
-            paddingLeft: 12,
-
-            // width: 180,
-            // maxWidth: 200,
-            // paddingHorizontal: 12,
-            height: 40,
-            backgroundColor: COLORS.mobile_theme_back,
-            // justifyContent: 'center',
-            alignItems: "center",
-            //   padding: 10,
-            borderRadius: 10,
-            flexDirection: "row",
-          }}
-        >
-          <Ionicons
-            name="compass-outline"
-            size={25}
-            style={{ flex: 1, color: COLORS.white, top: 2 }}
-          />
-          <Text
+            }}
             style={{
-              fontSize: SIZES.form_button_text_fontSize,
-              color: COLORS.white,
-              fontWeight: "bold",
-              flex: 4,
+              position: "absolute",
+              top: "80%",
+              left: "25%",
+              minWidth: "45%",
+              maxWidth: 200,
+              paddingLeft: 12,
+
+              // width: 180,
+              // maxWidth: 200,
+              // paddingHorizontal: 12,
+              height: 40,
+              backgroundColor: COLORS.mobile_theme_back,
+              // justifyContent: 'center',
+              alignItems: "center",
+              //   padding: 10,
+              borderRadius: 10,
+              flexDirection: "row",
             }}
           >
-            current location
-          </Text>
-        </TouchableOpacity>
+            <Ionicons
+              name="compass-outline"
+              size={25}
+              style={{ flex: 1, color: COLORS.white, top: 2 }}
+            />
+            <Text
+              style={{
+                fontSize: SIZES.form_button_text_fontSize,
+                color: COLORS.white,
+                fontWeight: "bold",
+                flex: 4,
+              }}
+            >
+              current location
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
     </KeyboardAvoidingView>
   );

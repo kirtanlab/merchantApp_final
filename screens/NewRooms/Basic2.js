@@ -24,21 +24,29 @@ import Floor_prices from "../../components/NewRooms.js/Floor_prices";
 import Ac_attached from "../../components/NewRooms.js/Ac_attached";
 import InputField from "../../components/InputField";
 // import {Checkbox} from 'react-native-paper';
+import * as Newrooms_actions from "../../store/NewRooms/Newrooms_actions";
 import CheckBox from "../../components/CheckBox";
 import Nav_Header from "../../components/NewProperty/Nav_Header";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import * as AuthActions from "../../store/auth/authActions";
 import Terms from "../../components/Terms";
 import Toast from "react-native-toast-message";
 import {
   toastConfig,
   showErrorToast,
 } from "../../components/NewProperty/ToastConfig";
+import AppLoader from "../../components/AppLoader";
+import axios from "axios";
+import { REACT_APP_OWNER_API } from "@env";
+import { value } from "react-native-extended-stylesheet";
 const Basic2 = ({
   navigation,
   extra_description,
+  roomUpdating,
   baseTerms,
   checked_base_terms,
   focused_price,
+  updateRoomToken,
   checked_price,
   about_room,
   price,
@@ -46,8 +54,11 @@ const Basic2 = ({
   AC,
   occupancy,
   totalRooms,
+  token,
   title_no,
+  room_updating,
 }) => {
+  const [loading, setLoading] = React.useState(false);
   useEffect(() => {
     console.log(
       attached,
@@ -64,10 +75,11 @@ const Basic2 = ({
   function next_page() {
     navigation.navigate("Basic25");
   }
-  function onPress_for() {
+  async function onPress_for() {
     if (checked_price && checked_base_terms) {
       console.log("Done");
-      next_page();
+      await upload_details();
+      await upload_owner_details();
     } else {
       showErrorToast((title = "Fill Required Fields"));
       console.log("ckicked");
@@ -76,6 +88,85 @@ const Basic2 = ({
   function back_page() {
     navigation.navigate("Basic1");
   }
+  const upload_owner_details = async () => {
+    try {
+      const obj = {
+        roomFilled: true,
+      };
+      const data = await axios.post(
+        `${REACT_APP_OWNER_API}/api/v1/owner/updateowner`,
+        obj,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(data.data);
+      setLoading(false);
+    } catch (e) {
+      console.log("upload_details", e);
+      setLoading(false);
+    }
+  };
+  const upload_details = async () => {
+    try {
+      setLoading(true);
+      const obj = {
+        title: title_no.trimEnd(),
+        availablerooms: totalRooms,
+        occupancy: occupancy,
+        isAC: AC,
+        isAttached: attached,
+        price: price,
+        About: about_room.trimEnd(),
+      };
+      console.log("valid", token);
+      let bool = room_updating?.updating;
+      let room_id = room_updating?.room_id;
+      if (bool) {
+        console.log("roomid", room_id);
+        const data = await axios.post(
+          `${REACT_APP_OWNER_API}/api/v1/owner/updateroom/${room_id}`,
+          obj,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        console.log("updateRoom", data.data.data._id);
+      } else {
+        const data = await axios.post(
+          `${REACT_APP_OWNER_API}/api/v1/owner/createroom`,
+          obj,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        console.log("createRoom", data.data.data._id);
+        updateRoomToken(data.data.data._id);
+        let room_id = data.data.data._id;
+        let new_temp = {
+          updating: true,
+          room_id: room_id,
+        };
+        await roomUpdating(new_temp);
+      }
+      setLoading(false);
+
+      next_page();
+    } catch (err) {
+      setLoading(false);
+      console.log("lol", err);
+    }
+  };
 
   const selectDoc_multiple = async () => {
     try {
@@ -96,183 +187,190 @@ const Basic2 = ({
     }
   };
   return (
-    <ScrollView
-      keyboardShouldPersistTaps="handled"
-      style={{ backgroundColor: "white" }}
-    >
-      {/* <KeyboardAvoidingView */}
-      {/* // behavior="position" */}
-      {/* <ScrollView style={{backgroundColor: 'white'}}> */}
-      <View style={{ left: 1 }}>
-        <Toast config={toastConfig} ref={(ref) => Toast.setRef(ref)} />
-      </View>
-      <StatusBar
-        animated={true}
-        backgroundColor={COLORS.mobile_theme_back}
-        barStyle={"light-content"}
-      />
+    <>
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        style={{ backgroundColor: "white" }}
+      >
+        {/* <KeyboardAvoidingView */}
+        {/* // behavior="position" */}
+        {/* <ScrollView style={{backgroundColor: 'white'}}> */}
+        <View style={{ left: 1 }}>
+          <Toast config={toastConfig} ref={(ref) => Toast.setRef(ref)} />
+        </View>
+        <StatusBar
+          animated={true}
+          backgroundColor={COLORS.mobile_theme_back}
+          barStyle={"light-content"}
+        />
 
-      <SafeAreaView
-        style={{
-          height: SIZES.height * 0.03,
-          backgroundColor: COLORS.mobile_theme_back,
-          elevation: 1,
-        }}
-      />
-      <View>
-        <Progress.Bar
-          progress={0.5}
-          color={COLORS.progress_bar}
-          width={SIZES.width}
-          height={SIZES.height * 0.006}
-          style={{ position: "absolute", top: -1 }}
-        />
-        <Nav_Header
-          onPress_forward={onPress_for}
-          onPress_back={back_page}
-          color={
-            checked_price && checked_base_terms
-              ? COLORS.mobile_theme_back
-              : COLORS.lightGray3
-          }
-          icon_color={
-            checked_price && checked_base_terms
-              ? COLORS.mobile_theme_back
-              : COLORS.lightGray3
-          }
-          back={true}
-        />
-      </View>
-      <View style={{ flexDirection: "column", height: SIZES.height }}>
-        <View
+        <SafeAreaView
           style={{
-            padding: 15,
-            marginTop: "10%",
-            // flexShrink: 2,
-            // flex: 1,
-            // position: 'relative',
+            height: SIZES.height * 0.03,
+            backgroundColor: COLORS.mobile_theme_back,
+            elevation: 1,
           }}
-        >
-          <View>
-            <Header
-              step={2}
-              total={4}
-              subtitle={"Price,Description of Room,T&Cs"}
-              title={"More About Room"}
-            />
-          </View>
-          {/* Prices */}
-          <View>
-            <View style={{ marginTop: 30 }}>
-              <Text
-                style={{
-                  color: COLORS.black,
-                  fontSize: SIZES.custom1,
-                  fontWeight: "bold",
-                }}
-              >
-                Enter Room Price
-              </Text>
+        />
+        <View>
+          <Progress.Bar
+            progress={0.5}
+            color={COLORS.progress_bar}
+            width={SIZES.width}
+            height={SIZES.height * 0.006}
+            style={{ position: "absolute", top: -1 }}
+          />
+          <Nav_Header
+            onPress_forward={onPress_for}
+            onPress_back={back_page}
+            color={
+              checked_price && checked_base_terms
+                ? COLORS.mobile_theme_back
+                : COLORS.lightGray3
+            }
+            icon_color={
+              checked_price && checked_base_terms
+                ? COLORS.mobile_theme_back
+                : COLORS.lightGray3
+            }
+            back={true}
+          />
+        </View>
+        <View style={{ flexDirection: "column", height: SIZES.height }}>
+          <View
+            style={{
+              padding: 15,
+              marginTop: "10%",
+              // flexShrink: 2,
+              // flex: 1,
+              // position: 'relative',
+            }}
+          >
+            <View>
+              <Header
+                step={2}
+                total={4}
+                subtitle={"Price,Description of Room,T&Cs"}
+                title={"More About Room"}
+              />
             </View>
-            <View style={{ marginTop: 8, flexDirection: "row" }}>
-              <View
-                style={{
-                  borderColor: COLORS.mobile_theme_back,
-                  // borderWidth: 2,
-                  borderTopEndRadius: 5,
-                  borderTopStartRadius: 5,
-                  borderBottomStartRadius: 5,
-                  borderBottomEndRadius: 5,
-                  backgroundColor: COLORS.mobile_theme_back,
-                  height: 35,
-                  width: 40,
-                  marginTop: 2,
-                  // paddingTop: 5,
-                  // padding: 1s,
-                  // justifyContent: 'center',
-                  // alignItems:',
-                  // justifyContent: 'center',
-                  alignItems: "center",
-                }}
-              >
-                <Text style={{ color: COLORS.font_color, fontSize: SIZES.h1 }}>
-                  ₹
+            {/* Prices */}
+            <View>
+              <View style={{ marginTop: 30 }}>
+                <Text
+                  style={{
+                    color: COLORS.black,
+                    fontSize: SIZES.custom1,
+                    fontWeight: "bold",
+                  }}
+                >
+                  Enter Room Price
                 </Text>
               </View>
-              <View style={{ flexDirection: "row" }}>
-                <View style={{ width: SIZES.width * 0.7, marginLeft: 7 }}>
-                  <InputField
-                    label={"Enter Prices"}
-                    type={"prices"}
-                    keyboardType={"phone-pad"}
-                    value={price}
-                  />
+              <View style={{ marginTop: 8, flexDirection: "row" }}>
+                <View
+                  style={{
+                    borderColor: COLORS.mobile_theme_back,
+                    // borderWidth: 2,
+                    borderTopEndRadius: 5,
+                    borderTopStartRadius: 5,
+                    borderBottomStartRadius: 5,
+                    borderBottomEndRadius: 5,
+                    backgroundColor: COLORS.mobile_theme_back,
+                    height: 35,
+                    width: 40,
+                    marginTop: 2,
+                    // paddingTop: 5,
+                    // padding: 1s,
+                    // justifyContent: 'center',
+                    // alignItems:',
+                    // justifyContent: 'center',
+                    alignItems: "center",
+                  }}
+                >
+                  <Text
+                    style={{ color: COLORS.font_color, fontSize: SIZES.h1 }}
+                  >
+                    ₹
+                  </Text>
                 </View>
-                <TouchableOpacity>
-                  <Ionicons
-                    name="checkmark-done-outline"
-                    size={25}
-                    color={
-                      checked_price ? COLORS.mobile_theme_back : "lightgray"
-                    }
-                    style={{ marginRight: 5, marginTop: 2 }}
-                  />
-                </TouchableOpacity>
+                <View style={{ flexDirection: "row" }}>
+                  <View style={{ width: SIZES.width * 0.7, marginLeft: 7 }}>
+                    <InputField
+                      label={"Enter Prices"}
+                      type={"prices"}
+                      keyboardType={"phone-pad"}
+                      value={price}
+                    />
+                  </View>
+                  <TouchableOpacity>
+                    <Ionicons
+                      name="checkmark-done-outline"
+                      size={25}
+                      color={
+                        checked_price ? COLORS.mobile_theme_back : "lightgray"
+                      }
+                      style={{ marginRight: 5, marginTop: 2 }}
+                    />
+                  </TouchableOpacity>
+                </View>
               </View>
+              {focused_price && !checked_price && (
+                <View style={{ marginTop: -30, left: 50, marginBottom: 20 }}>
+                  <Text style={{ color: COLORS.lightGray3 }}>
+                    Enter Valid Prices
+                  </Text>
+                </View>
+              )}
             </View>
-            {focused_price && !checked_price && (
-              <View style={{ marginTop: -30, left: 50, marginBottom: 20 }}>
-                <Text style={{ color: COLORS.lightGray3 }}>
-                  Enter Valid Prices
+            {/* Add ABout */}
+            <View style={{ marginTop: 30 }}>
+              <View style={{ marginTop: 0 }}>
+                <Text
+                  style={{
+                    color: COLORS.black,
+                    fontSize: SIZES.custom1,
+                    fontWeight: "bold",
+                  }}
+                >
+                  About Room
                 </Text>
               </View>
-            )}
-          </View>
-          {/* Add ABout */}
-          <View style={{ marginTop: 30 }}>
-            <View style={{ marginTop: 0 }}>
-              <Text
-                style={{
-                  color: COLORS.black,
-                  fontSize: SIZES.custom1,
-                  fontWeight: "bold",
-                }}
-              >
-                About Room
-              </Text>
-            </View>
-            <View style={{ marginTop: 15 }}>
-              <KeyboardAvoidingView>
-                <InputField
-                  label={"Add About Room Here"}
-                  type={"About_room"}
-                  keyboardType={"default"}
-                  // value={aboutpg}
-                  defaultValue={about_room}
-                  multiline
-                />
-              </KeyboardAvoidingView>
+              <View style={{ marginTop: 15 }}>
+                <KeyboardAvoidingView>
+                  <InputField
+                    label={"Add About Room Here"}
+                    type={"About_room"}
+                    keyboardType={"default"}
+                    // value={aboutpg}
+                    defaultValue={about_room}
+                    multiline
+                  />
+                </KeyboardAvoidingView>
+              </View>
             </View>
           </View>
+          <View
+            style={{
+              marginLeft: 9,
+              marginTop: SIZES.height * 0.76,
+              position: "absolute",
+            }}
+          >
+            <Terms />
+          </View>
         </View>
-        <View
-          style={{
-            marginLeft: 9,
-            marginTop: SIZES.height * 0.76,
-            position: "absolute",
-          }}
-        >
-          <Terms />
-        </View>
-      </View>
-      {/* </ScrollView> */}
-    </ScrollView>
+        {/* </ScrollView> */}
+      </ScrollView>
+      {loading && <AppLoader />}
+    </>
   );
 };
 
 function mapStateToProps(state) {
   return {
+    token: state.authReducer.token,
     price: state.Newrooms_reducer.price,
+    room_updating: state.Newrooms_reducer.room_updating,
     about_room: state.Newrooms_reducer.about_room,
     focused_price: state.Newrooms_reducer.focused_price,
     checked_price: state.Newrooms_reducer.checked_price,
@@ -288,7 +386,14 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    updateRoomToken: (value) => {
+      dispatch(AuthActions.updateRoomToken(value));
+    },
+    roomUpdating: (value) => {
+      dispatch(Newrooms_actions.roomUpdating(value));
+    },
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Basic2);

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 
 import {
   ActivityIndicator,
@@ -12,27 +12,27 @@ import {
   KeyboardAvoidingView,
   View,
   ScrollView,
-} from 'react-native';
-import {useDispatch} from 'react-redux';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {connect} from 'react-redux';
-import {updateUser} from '../../store/auth/authActions';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import icons from '../../constants/icons';
-import LoginSVG from '../../assets/icons/login.svg';
-import GoogleSVG from '../../assets/icons/google.svg';
-import * as AuthActions from '../../store/auth/authActions';
-import CustomButton from '../../components/CustomeButton';
-import InputField from '../../components/InputField';
-import {COLORS, SIZES} from '../../constants';
-import {StatusBar} from 'react-native';
-import AppLoader from '../../components/AppLoader';
-import {REACT_APP_OWNER_API} from '@env';
-import axios from 'axios';
-const ForgetPass = ({navigation}) => {
+} from "react-native";
+import { useDispatch } from "react-redux";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { connect } from "react-redux";
+import { updateUser } from "../../store/auth/authActions";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import icons from "../../constants/icons";
+import LoginSVG from "../../assets/icons/login.svg";
+import GoogleSVG from "../../assets/icons/google.svg";
+import * as AuthActions from "../../store/auth/authActions";
+import CustomButton from "../../components/CustomeButton";
+import InputField from "../../components/InputField";
+import { COLORS, SIZES } from "../../constants";
+import { StatusBar } from "react-native";
+import AppLoader from "../../components/AppLoader";
+import { REACT_APP_OWNER_API } from "@env";
+import axios from "axios";
+const ForgetPass = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
   const [err, setError] = useState(false);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
   const handleLogin = async () => {
     if (done) {
@@ -45,26 +45,26 @@ const ForgetPass = ({navigation}) => {
         const data = await axios.patch(
           `${REACT_APP_OWNER_API}/api/v1/owner/forgotpassword`,
           obj,
-          {headers: {'Content-Type': 'application/json'}},
+          { headers: { "Content-Type": "application/json" } }
         );
-        console.log('data', data.data);
+        console.log("data", data.data);
 
         setLoading(false);
-        navigation.navigate('OTPScreen', {
+        navigation.navigate("OTPScreen", {
           email: email,
         });
       } catch (err) {
         setLoading(false);
-        console.log('lol', err.response.data.msg);
+        console.log("lol", err.response.data.msg);
         // gen_login_err_method(true);
         setError(err.response.data.msg);
       }
     } else {
-      alert('Email or Password is empty.');
+      alert("Email or Password is empty.");
     }
   };
 
-  const handle_email = e => {
+  const handle_email = (e) => {
     function validate_email(e) {
       var regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
       return regex.test(e);
@@ -75,21 +75,22 @@ const ForgetPass = ({navigation}) => {
       setDone(false);
     }
     setEmail(e);
-    console.log('Email', e);
+    console.log("Email", e);
   };
   useEffect(() => {
     // reset_checked();
   }, []);
   return (
     <>
-      <ScrollView style={{backgroundColor: 'white'}}>
+      <ScrollView style={{ backgroundColor: "white" }}>
         <KeyboardAvoidingView
           behavior="position"
-          style={{backgroundColor: 'white'}}>
+          style={{ backgroundColor: "white" }}
+        >
           <StatusBar
             animated={true}
             backgroundColor={COLORS.mobile_theme_back}
-            barStyle={'light-content'}
+            barStyle={"light-content"}
           />
 
           <SafeAreaView
@@ -102,13 +103,14 @@ const ForgetPass = ({navigation}) => {
           <SafeAreaView
             style={{
               flex: 1,
-              backgroundColor: 'white',
-              justifyContent: 'center',
-              paddingTop: '20%',
+              backgroundColor: "white",
+              justifyContent: "center",
+              // paddingTop: "20%",
               //   paddingHorizontal: 2
-            }}>
-            <View style={{paddingHorizontal: 25}}>
-              <View style={{alignItems: 'center'}}>
+            }}
+          >
+            <View style={{ paddingHorizontal: 25 }}>
+              <View style={{ alignItems: "center" }}>
                 {/* <SvgUri
             height={300}
             width={300}
@@ -118,39 +120,40 @@ const ForgetPass = ({navigation}) => {
                 <Image
                   source={icons.logo_rent}
                   style={{
-                    height: 232,
-                    width: 232,
+                    height: 350,
+                    width: 350,
                     borderRadius: 20,
-                    marginTop: '1%',
-                    alignSelf: 'center',
+                    marginTop: "1%",
+                    alignSelf: "center",
                   }}
                 />
               </View>
 
               <Text
                 style={{
-                  fontFamily: 'Roboto-Medium',
+                  fontFamily: "Roboto-Medium",
                   fontSize: 35,
-                  fontWeight: 'bold',
+                  fontWeight: "bold",
                   color: COLORS.mobile_theme_back,
-                  marginTop: '20%',
+                  marginTop: "20%",
                   marginBottom: 30,
-                }}>
+                }}
+              >
                 Forgot Password?
               </Text>
 
               <InputField
-                label={'Email ID'}
-                type={'forget_email'}
+                label={"Email ID"}
+                type={"forget_email"}
                 icon={
                   <MaterialIcons
                     name="alternate-email"
                     size={20}
                     color={COLORS.mobile_theme_back}
-                    style={{marginTop: 18}}
+                    style={{ marginTop: 18 }}
                   />
                 }
-                onChange={value => {
+                onChange={(value) => {
                   value = value.nativeEvent.text;
                   value = value.trimEnd();
                   handle_email(value);
@@ -159,16 +162,18 @@ const ForgetPass = ({navigation}) => {
               />
 
               {err && (
-                <View style={{marginTop: -30, left: 34, marginBottom: 20}}>
-                  <Text style={{color: 'red', fontWeight: 'bold'}}>{err}</Text>
+                <View style={{ marginTop: -30, left: 34, marginBottom: 20 }}>
+                  <Text style={{ color: "red", fontWeight: "bold" }}>
+                    {err}
+                  </Text>
                 </View>
               )}
               <CustomButton
-                label={'Submit'}
-                color={done ? COLORS.mobile_theme_back : 'gray'}
+                label={"Submit"}
+                color={done ? COLORS.mobile_theme_back : "gray"}
                 onPress={() => {
                   if (done && email) {
-                    console.log('Done');
+                    console.log("Done");
                     handleLogin();
                   } else {
                     setError(true);
@@ -178,19 +183,22 @@ const ForgetPass = ({navigation}) => {
 
               <View
                 style={{
-                  flexDirection: 'row',
-                  justifyContent: 'center',
+                  flexDirection: "row",
+                  justifyContent: "center",
                   marginBottom: 30,
-                }}>
+                }}
+              >
                 <Text>Already have account?</Text>
                 <TouchableOpacity
-                  onPress={() => navigation.navigate('LoginScreen')}>
+                  onPress={() => navigation.navigate("LoginScreen")}
+                >
                   <Text
                     style={{
                       color: COLORS.mobile_theme_back,
-                      fontWeight: '700',
-                    }}>
-                    {' '}
+                      fontWeight: "700",
+                    }}
+                  >
+                    {" "}
                     Back to Sign in
                   </Text>
                 </TouchableOpacity>

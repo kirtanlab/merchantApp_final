@@ -11,28 +11,34 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+
+            <data android:mimeType="*/*" />
+        </intent>
+        <!-- Needs to be explicitly declared on Android R+ -->
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
+
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!--
          Required to keep CPU alive while downloading files
         (NOT to keep screen awake)
     -->
-    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required to read and write the expansion files on shared storage -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Required to read and write the expansion files on shared storage for Android 11 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required to read and write the expansion files on shared storage for Android 11 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Required to to download files without a notification -->
-    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" /> <!-- Required to access Google Play Licensing -->
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
-
-    <queries>
-
-        <!-- Needs to be explicitly declared on Android R+ -->
-        <package android:name="com.google.android.apps.maps" />
-    </queries>
 
     <application
         android:name="com.merchantapp.MainApplication"
@@ -67,6 +73,15 @@
 
         <provider
             android:name="com.ReactNativeBlobUtil.Utils.FileProvider"
+            android:authorities="com.merchantapp.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        <provider
+            android:name="com.RNFetchBlob.Utils.FileProvider"
             android:authorities="com.merchantapp.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
