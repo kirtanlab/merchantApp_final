@@ -3,19 +3,14 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import {persistStore, persistReducer} from 'redux-persist';
-import {PersistGate} from 'redux-persist/integration/react';
 import thunk from 'redux-thunk';
 import rootReducer from './store/persistReducer';
 import Tabs from './navigation/tabs';
 import SplashScreen from './screens/AuthScreens/SplashScreen';
 import LoginScreen from './screens/AuthScreens/LoginScreen';
 import SignupScreen from './screens/AuthScreens/SignupScreen';
-import dummy from './screens/dummy';
-import {View, Text, SafeAreaView} from 'react-native';
 import BasicDetails from './screens/Newproperty/BasicDetails';
 import Location from './screens/Newproperty/Location';
-import Details2 from './screens/Newproperty/Thankyou';
 import Thankyou from './screens/Newproperty/Thankyou';
 import Basic1 from './screens/NewRooms/Basic1';
 import Basic2 from './screens/NewRooms/Basic2';
@@ -24,10 +19,6 @@ import ForgetPass from './screens/AuthScreens/ForgetPass';
 import OTPScreen from './screens/AuthScreens/OTPScreen';
 import NewPassword from './screens/AuthScreens/NewPassword';
 import more_property from './screens/Newproperty/more_property';
-import HomeScreen from './screens/HomeScreen';
-import NotificationScreen from './screens/NotificationScreen';
-import ProfileScreen from './screens/ProfileScreen';
-import ShowPDF from './screens/AppTerms';
 import ChangeProfile from './screens/ChangeProfile';
 import AppTerms from './screens/AppTerms';
 import GovtTerms from './screens/GovtTerms';
@@ -38,9 +29,7 @@ import Basic25 from './screens/NewRooms/Basic25';
 import vidImage from './screens/Newproperty/vidImage';
 
 
-const Loading = () => {
-  return <Text>Loading New</Text>;
-};
+
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
@@ -49,8 +38,6 @@ const Stack = createStackNavigator();
 const App = () => {
   const Newproperty = () => {
     return (
-      // <SafeAreaView style={{flex: 1, backgroundColor: '#FF5236'}}>
-
       <Stack.Navigator>
         <Stack.Screen
           options={{headerShown: false}}
@@ -189,16 +176,10 @@ const App = () => {
             name="NewRooms"
             component={NewRooms}
           />
-          {/* <Stack.Screen
-            // options={{headerShown: false}}
-            name="MainScreens"
-            component={MainScreens}
-          /> */}
           <Stack.Screen name="MainScreens" component={Tabs} />
           <Stack.Screen name="Appterms" component={AppTerms} />
           <Stack.Screen name="GovtTerms" component={GovtTerms} />
           <Stack.Screen name="ChangeProfile" component={ChangeProfile} />
-          {/* <Stack.Screen name="TestScreen" component={TestScreen} /> */}
         </Stack.Navigator>
       </NavigationContainer>
       

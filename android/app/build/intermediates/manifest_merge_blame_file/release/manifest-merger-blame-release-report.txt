@@ -19,28 +19,28 @@
 13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 13-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:7:2-9:3
 13-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:8:3-59
-14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-14-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:10:2-76
-14-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:10:19-73
-15
-16    <queries>
-16-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:34:5-39:11
-17        <intent>
-17-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:35:5-38:14
-18            <action android:name="android.intent.action.VIEW" />
-18-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:36:9-61
-18-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:36:17-58
-19
-20            <data android:mimeType="*/*" />
-20-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:37:9-40
-20-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:37:15-37
-21        </intent>
-22        <!-- Needs to be explicitly declared on Android R+ -->
-23        <package android:name="com.google.android.apps.maps" />
-23-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:33:9-64
-23-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:33:18-61
-24    </queries>
-25
+14
+15    <queries>
+15-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:34:5-39:11
+16        <intent>
+16-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:35:5-38:14
+17            <action android:name="android.intent.action.VIEW" />
+17-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:36:9-61
+17-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:36:17-58
+18
+19            <data android:mimeType="*/*" />
+19-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:37:9-40
+19-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:37:15-37
+20        </intent>
+21        <!-- Needs to be explicitly declared on Android R+ -->
+22        <package android:name="com.google.android.apps.maps" />
+22-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:33:9-64
+22-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:33:18-61
+23    </queries>
+24
+25    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+25-->[:react-native-community_netinfo] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-79
+25-->[:react-native-community_netinfo] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-76
 26    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 26-->[:react-native-community_netinfo] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-76
 26-->[:react-native-community_netinfo] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/@react-native-community/netinfo/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:22-73
@@ -60,343 +60,346 @@
 34    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
 34-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-73
 34-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:10:22-70
-35
-36    <uses-feature
-36-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:26:5-28:35
-37        android:glEsVersion="0x00020000"
-37-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:27:9-41
-38        android:required="true" />
-38-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:28:9-32
-39
-40    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-40-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:27:5-81
-40-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:27:22-78
-41    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-41-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:28:5-77
-41-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:28:22-74
-42
-43    <application
-43-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:11:5-33:19
-44        android:name="com.merchantapp.MainApplication"
-44-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:12:7-38
-45        android:allowBackup="false"
-45-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:16:7-34
-46        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-46-->[androidx.core:core:1.7.0] /home/kirtan/.gradle/caches/transforms-3/a74319f16e76beadbf53eb2669b709f5/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
-47        android:icon="@mipmap/ic_launcher"
-47-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:14:7-41
-48        android:label="@string/app_name"
-48-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:13:7-39
-49        android:roundIcon="@mipmap/ic_launcher_round"
-49-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:15:7-52
-50        android:theme="@style/AppTheme" >
-50-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:17:7-38
-51        <activity
-51-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:18:7-29:18
-52            android:name="com.merchantapp.MainActivity"
-52-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:19:9-37
-53            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-53-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:21:9-118
-54            android:exported="true"
-54-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:24:9-32
-55            android:label="@string/app_name"
-55-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:20:9-41
-56            android:launchMode="singleTask"
-56-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:22:9-40
-57            android:windowSoftInputMode="adjustResize" >
-57-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:23:9-51
-58            <intent-filter>
-58-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:25:9-28:25
-59                <action android:name="android.intent.action.MAIN" />
-59-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:26:13-65
-59-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:26:21-62
-60
-61                <category android:name="android.intent.category.LAUNCHER" />
-61-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:27:13-73
-61-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:27:23-70
-62            </intent-filter>
-63        </activity>
-64
-65        <meta-data
-65-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:30:7-32:63
-66            android:name="com.google.android.geo.API_KEY"
-66-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:31:6-51
-67            android:value="AIzaSyB4YIgptnJXoOkYHIwOFqLoche_OjufQbU" />
-67-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:32:6-61
-68
-69        <provider
-69-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:37:9-45:20
-70            android:name="com.ReactNativeBlobUtil.Utils.FileProvider"
-70-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:38:13-70
-71            android:authorities="com.merchantapp.provider"
-71-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:39:13-60
-72            android:exported="false"
-72-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:40:13-37
-73            android:grantUriPermissions="true" >
-73-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:41:13-47
-74            <meta-data
-74-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:42:13-44:58
-75                android:name="android.support.FILE_PROVIDER_PATHS"
-75-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:43:17-67
-76                android:resource="@xml/provider_paths" />
-76-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:44:17-55
-77        </provider>
-78        <provider
-78-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:34:9-42:20
-79            android:name="com.RNFetchBlob.Utils.FileProvider"
-79-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:35:13-62
-80            android:authorities="com.merchantapp.provider"
-80-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:36:13-60
-81            android:exported="false"
-81-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:37:13-37
-82            android:grantUriPermissions="true" >
-82-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:38:13-47
-83            <meta-data
-83-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:42:13-44:58
-84                android:name="android.support.FILE_PROVIDER_PATHS"
-84-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:43:17-67
-85                android:resource="@xml/provider_paths" />
-85-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:44:17-55
-86        </provider> <!-- Needs to be explicitly declared on P+ -->
-87        <uses-library
-87-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:39:9-41:40
-88            android:name="org.apache.http.legacy"
-88-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:40:13-50
-89            android:required="false" />
-89-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:41:13-37
-90
-91        <activity
-91-->[com.google.android.gms:play-services-base:18.1.0] /home/kirtan/.gradle/caches/transforms-3/a7fff41c67214678d9281d200b6a6b25/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
-92            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-92-->[com.google.android.gms:play-services-base:18.1.0] /home/kirtan/.gradle/caches/transforms-3/a7fff41c67214678d9281d200b6a6b25/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:19-85
-93            android:exported="false"
-93-->[com.google.android.gms:play-services-base:18.1.0] /home/kirtan/.gradle/caches/transforms-3/a7fff41c67214678d9281d200b6a6b25/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:22:19-43
-94            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-94-->[com.google.android.gms:play-services-base:18.1.0] /home/kirtan/.gradle/caches/transforms-3/a7fff41c67214678d9281d200b6a6b25/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:21:19-78
-95
-96        <meta-data
-96-->[com.google.android.gms:play-services-basement:18.1.0] /home/kirtan/.gradle/caches/transforms-3/9236ad2f2f8717584bf56cf373bbcbf6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
-97            android:name="com.google.android.gms.version"
-97-->[com.google.android.gms:play-services-basement:18.1.0] /home/kirtan/.gradle/caches/transforms-3/9236ad2f2f8717584bf56cf373bbcbf6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
-98            android:value="@integer/google_play_services_version" />
-98-->[com.google.android.gms:play-services-basement:18.1.0] /home/kirtan/.gradle/caches/transforms-3/9236ad2f2f8717584bf56cf373bbcbf6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
-99
-100        <provider
-100-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:31:9-39:20
-101            android:name="androidx.startup.InitializationProvider"
-101-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:32:13-67
-102            android:authorities="com.merchantapp.androidx-startup"
-102-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:33:13-68
-103            android:exported="false" >
-103-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:34:13-37
-104            <meta-data
-104-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:36:13-38:52
-105                android:name="androidx.work.WorkManagerInitializer"
-105-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:37:17-68
-106                android:value="androidx.startup" />
-106-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:38:17-49
-107            <meta-data
-107-->[androidx.emoji2:emoji2:1.0.0] /home/kirtan/.gradle/caches/transforms-3/1f6b54f5cbdc781497e11a050562adc3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-108                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-108-->[androidx.emoji2:emoji2:1.0.0] /home/kirtan/.gradle/caches/transforms-3/1f6b54f5cbdc781497e11a050562adc3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-109                android:value="androidx.startup" />
-109-->[androidx.emoji2:emoji2:1.0.0] /home/kirtan/.gradle/caches/transforms-3/1f6b54f5cbdc781497e11a050562adc3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
-110            <meta-data
-110-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/kirtan/.gradle/caches/transforms-3/00e31c29ff8f041470feab912fa976cf/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-111                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-111-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/kirtan/.gradle/caches/transforms-3/00e31c29ff8f041470feab912fa976cf/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-112                android:value="androidx.startup" />
-112-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/kirtan/.gradle/caches/transforms-3/00e31c29ff8f041470feab912fa976cf/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-113        </provider>
-114
-115        <service
-115-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:41:9-46:35
-116            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
-116-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:42:13-88
-117            android:directBootAware="false"
-117-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:43:13-44
-118            android:enabled="@bool/enable_system_alarm_service_default"
-118-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:44:13-72
-119            android:exported="false" />
-119-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:45:13-37
-120        <service
-120-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:47:9-53:35
-121            android:name="androidx.work.impl.background.systemjob.SystemJobService"
-121-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:48:13-84
-122            android:directBootAware="false"
-122-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:49:13-44
-123            android:enabled="@bool/enable_system_job_service_default"
-123-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:50:13-70
-124            android:exported="true"
-124-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:51:13-36
-125            android:permission="android.permission.BIND_JOB_SERVICE" />
-125-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:52:13-69
-126        <service
-126-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:54:9-59:35
-127            android:name="androidx.work.impl.foreground.SystemForegroundService"
-127-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:55:13-81
-128            android:directBootAware="false"
-128-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:56:13-44
-129            android:enabled="@bool/enable_system_foreground_service_default"
-129-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:57:13-77
-130            android:exported="false" />
-130-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:58:13-37
-131
-132        <receiver
-132-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:61:9-66:35
-133            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
-133-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:62:13-88
-134            android:directBootAware="false"
-134-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:63:13-44
-135            android:enabled="true"
-135-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:64:13-35
-136            android:exported="false" />
-136-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:65:13-37
-137        <receiver
-137-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:67:9-77:20
-138            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
-138-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:68:13-106
-139            android:directBootAware="false"
-139-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:69:13-44
-140            android:enabled="false"
-140-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:70:13-36
-141            android:exported="false" >
-141-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:71:13-37
-142            <intent-filter>
-142-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:73:13-76:29
-143                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-143-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:17-87
-143-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:25-84
-144                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-144-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:17-90
-144-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:25-87
-145            </intent-filter>
-146        </receiver>
-147        <receiver
-147-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:78:9-88:20
-148            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
-148-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:79:13-104
-149            android:directBootAware="false"
-149-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:80:13-44
-150            android:enabled="false"
-150-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:81:13-36
-151            android:exported="false" >
-151-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:82:13-37
-152            <intent-filter>
-152-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:84:13-87:29
-153                <action android:name="android.intent.action.BATTERY_OKAY" />
-153-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:17-77
-153-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:25-74
-154                <action android:name="android.intent.action.BATTERY_LOW" />
-154-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:17-76
-154-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:25-73
-155            </intent-filter>
-156        </receiver>
-157        <receiver
-157-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:89:9-99:20
-158            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
-158-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:90:13-104
-159            android:directBootAware="false"
-159-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:91:13-44
-160            android:enabled="false"
-160-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:92:13-36
-161            android:exported="false" >
-161-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:93:13-37
-162            <intent-filter>
-162-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:95:13-98:29
-163                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
-163-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:17-83
-163-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:25-80
-164                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
-164-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:17-82
-164-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:25-79
-165            </intent-filter>
-166        </receiver>
-167        <receiver
-167-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:100:9-109:20
-168            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
-168-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:101:13-103
-169            android:directBootAware="false"
-169-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:102:13-44
-170            android:enabled="false"
-170-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:103:13-36
-171            android:exported="false" >
-171-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:104:13-37
-172            <intent-filter>
-172-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:106:13-108:29
-173                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-173-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:17-79
-173-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:25-76
-174            </intent-filter>
-175        </receiver>
-176        <receiver
-176-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:110:9-121:20
-177            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
-177-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:111:13-88
-178            android:directBootAware="false"
-178-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:112:13-44
-179            android:enabled="false"
-179-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:113:13-36
-180            android:exported="false" >
-180-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:114:13-37
-181            <intent-filter>
-181-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:116:13-120:29
-182                <action android:name="android.intent.action.BOOT_COMPLETED" />
-182-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:117:17-79
-182-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:117:25-76
-183                <action android:name="android.intent.action.TIME_SET" />
-183-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:17-73
-183-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:25-70
-184                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-184-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:17-81
-184-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:25-78
-185            </intent-filter>
-186        </receiver>
-187        <receiver
-187-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:122:9-131:20
-188            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
-188-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:123:13-99
-189            android:directBootAware="false"
-189-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:124:13-44
-190            android:enabled="@bool/enable_system_alarm_service_default"
-190-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:125:13-72
-191            android:exported="false" >
-191-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:126:13-37
-192            <intent-filter>
-192-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:128:13-130:29
-193                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
-193-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:17-98
-193-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:25-95
-194            </intent-filter>
-195        </receiver>
-196        <receiver
-196-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:132:9-142:20
-197            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
-197-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:133:13-78
-198            android:directBootAware="false"
-198-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:134:13-44
-199            android:enabled="true"
-199-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:135:13-35
-200            android:exported="true"
-200-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:136:13-36
-201            android:permission="android.permission.DUMP" >
-201-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:137:13-57
-202            <intent-filter>
-202-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:139:13-141:29
-203                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
-203-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:17-88
-203-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:25-85
-204            </intent-filter>
-205        </receiver>
-206
-207        <service
-207-->[androidx.room:room-runtime:2.2.5] /home/kirtan/.gradle/caches/transforms-3/391d44f2231f0eee13987bb9929423c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
-208            android:name="androidx.room.MultiInstanceInvalidationService"
-208-->[androidx.room:room-runtime:2.2.5] /home/kirtan/.gradle/caches/transforms-3/391d44f2231f0eee13987bb9929423c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
-209            android:directBootAware="true"
-209-->[androidx.room:room-runtime:2.2.5] /home/kirtan/.gradle/caches/transforms-3/391d44f2231f0eee13987bb9929423c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
-210            android:exported="false" />
-210-->[androidx.room:room-runtime:2.2.5] /home/kirtan/.gradle/caches/transforms-3/391d44f2231f0eee13987bb9929423c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
-211    </application>
-212
-213</manifest>
+35    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+35-->[:react-native-android-location-services-dialog-box] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-android-location-services-dialog-box/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-81
+35-->[:react-native-android-location-services-dialog-box] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-android-location-services-dialog-box/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-78
+36
+37    <uses-feature
+37-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:26:5-28:35
+38        android:glEsVersion="0x00020000"
+38-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:27:9-41
+39        android:required="true" />
+39-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:28:9-32
+40
+41    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+41-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:27:5-81
+41-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:27:22-78
+42    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+42-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:28:5-77
+42-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:28:22-74
+43
+44    <application
+44-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:11:5-33:19
+45        android:name="com.merchantapp.MainApplication"
+45-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:12:7-38
+46        android:allowBackup="false"
+46-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:16:7-34
+47        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+47-->[androidx.core:core:1.7.0] /home/kirtan/.gradle/caches/transforms-3/a74319f16e76beadbf53eb2669b709f5/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+48        android:icon="@mipmap/ic_launcher"
+48-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:14:7-41
+49        android:label="@string/app_name"
+49-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:13:7-39
+50        android:roundIcon="@mipmap/ic_launcher_round"
+50-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:15:7-52
+51        android:theme="@style/AppTheme" >
+51-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:17:7-38
+52        <activity
+52-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:18:7-29:18
+53            android:name="com.merchantapp.MainActivity"
+53-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:19:9-37
+54            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+54-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:21:9-118
+55            android:exported="true"
+55-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:24:9-32
+56            android:label="@string/app_name"
+56-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:20:9-41
+57            android:launchMode="singleTask"
+57-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:22:9-40
+58            android:windowSoftInputMode="adjustResize" >
+58-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:23:9-51
+59            <intent-filter>
+59-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:25:9-28:25
+60                <action android:name="android.intent.action.MAIN" />
+60-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:26:13-65
+60-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:26:21-62
+61
+62                <category android:name="android.intent.category.LAUNCHER" />
+62-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:27:13-73
+62-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:27:23-70
+63            </intent-filter>
+64        </activity>
+65
+66        <meta-data
+66-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:30:7-32:63
+67            android:name="com.google.android.geo.API_KEY"
+67-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:31:6-51
+68            android:value="AIzaSyB4YIgptnJXoOkYHIwOFqLoche_OjufQbU" />
+68-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:32:6-61
+69
+70        <provider
+70-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:37:9-45:20
+71            android:name="com.ReactNativeBlobUtil.Utils.FileProvider"
+71-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:38:13-70
+72            android:authorities="com.merchantapp.provider"
+72-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:39:13-60
+73            android:exported="false"
+73-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:40:13-37
+74            android:grantUriPermissions="true" >
+74-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:41:13-47
+75            <meta-data
+75-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:42:13-44:58
+76                android:name="android.support.FILE_PROVIDER_PATHS"
+76-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:43:17-67
+77                android:resource="@xml/provider_paths" />
+77-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:44:17-55
+78        </provider>
+79        <provider
+79-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:34:9-42:20
+80            android:name="com.RNFetchBlob.Utils.FileProvider"
+80-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:35:13-62
+81            android:authorities="com.merchantapp.provider"
+81-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:36:13-60
+82            android:exported="false"
+82-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:37:13-37
+83            android:grantUriPermissions="true" >
+83-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:38:13-47
+84            <meta-data
+84-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:42:13-44:58
+85                android:name="android.support.FILE_PROVIDER_PATHS"
+85-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:43:17-67
+86                android:resource="@xml/provider_paths" />
+86-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:44:17-55
+87        </provider> <!-- Needs to be explicitly declared on P+ -->
+88        <uses-library
+88-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:39:9-41:40
+89            android:name="org.apache.http.legacy"
+89-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:40:13-50
+90            android:required="false" />
+90-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:41:13-37
+91
+92        <activity
+92-->[com.google.android.gms:play-services-base:18.1.0] /home/kirtan/.gradle/caches/transforms-3/a7fff41c67214678d9281d200b6a6b25/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+93            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+93-->[com.google.android.gms:play-services-base:18.1.0] /home/kirtan/.gradle/caches/transforms-3/a7fff41c67214678d9281d200b6a6b25/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+94            android:exported="false"
+94-->[com.google.android.gms:play-services-base:18.1.0] /home/kirtan/.gradle/caches/transforms-3/a7fff41c67214678d9281d200b6a6b25/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+95            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+95-->[com.google.android.gms:play-services-base:18.1.0] /home/kirtan/.gradle/caches/transforms-3/a7fff41c67214678d9281d200b6a6b25/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+96
+97        <meta-data
+97-->[com.google.android.gms:play-services-basement:18.1.0] /home/kirtan/.gradle/caches/transforms-3/9236ad2f2f8717584bf56cf373bbcbf6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+98            android:name="com.google.android.gms.version"
+98-->[com.google.android.gms:play-services-basement:18.1.0] /home/kirtan/.gradle/caches/transforms-3/9236ad2f2f8717584bf56cf373bbcbf6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+99            android:value="@integer/google_play_services_version" />
+99-->[com.google.android.gms:play-services-basement:18.1.0] /home/kirtan/.gradle/caches/transforms-3/9236ad2f2f8717584bf56cf373bbcbf6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+100
+101        <provider
+101-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:31:9-39:20
+102            android:name="androidx.startup.InitializationProvider"
+102-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:32:13-67
+103            android:authorities="com.merchantapp.androidx-startup"
+103-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:33:13-68
+104            android:exported="false" >
+104-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:34:13-37
+105            <meta-data
+105-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:36:13-38:52
+106                android:name="androidx.work.WorkManagerInitializer"
+106-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:37:17-68
+107                android:value="androidx.startup" />
+107-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:38:17-49
+108            <meta-data
+108-->[androidx.emoji2:emoji2:1.0.0] /home/kirtan/.gradle/caches/transforms-3/1f6b54f5cbdc781497e11a050562adc3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+109                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+109-->[androidx.emoji2:emoji2:1.0.0] /home/kirtan/.gradle/caches/transforms-3/1f6b54f5cbdc781497e11a050562adc3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+110                android:value="androidx.startup" />
+110-->[androidx.emoji2:emoji2:1.0.0] /home/kirtan/.gradle/caches/transforms-3/1f6b54f5cbdc781497e11a050562adc3/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+111            <meta-data
+111-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/kirtan/.gradle/caches/transforms-3/00e31c29ff8f041470feab912fa976cf/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+112                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+112-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/kirtan/.gradle/caches/transforms-3/00e31c29ff8f041470feab912fa976cf/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+113                android:value="androidx.startup" />
+113-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/kirtan/.gradle/caches/transforms-3/00e31c29ff8f041470feab912fa976cf/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+114        </provider>
+115
+116        <service
+116-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:41:9-46:35
+117            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+117-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:42:13-88
+118            android:directBootAware="false"
+118-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:43:13-44
+119            android:enabled="@bool/enable_system_alarm_service_default"
+119-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:44:13-72
+120            android:exported="false" />
+120-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:45:13-37
+121        <service
+121-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:47:9-53:35
+122            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+122-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:48:13-84
+123            android:directBootAware="false"
+123-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:49:13-44
+124            android:enabled="@bool/enable_system_job_service_default"
+124-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:50:13-70
+125            android:exported="true"
+125-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:51:13-36
+126            android:permission="android.permission.BIND_JOB_SERVICE" />
+126-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:52:13-69
+127        <service
+127-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:54:9-59:35
+128            android:name="androidx.work.impl.foreground.SystemForegroundService"
+128-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:55:13-81
+129            android:directBootAware="false"
+129-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:56:13-44
+130            android:enabled="@bool/enable_system_foreground_service_default"
+130-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:57:13-77
+131            android:exported="false" />
+131-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:58:13-37
+132
+133        <receiver
+133-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:61:9-66:35
+134            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+134-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:62:13-88
+135            android:directBootAware="false"
+135-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:63:13-44
+136            android:enabled="true"
+136-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:64:13-35
+137            android:exported="false" />
+137-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:65:13-37
+138        <receiver
+138-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:67:9-77:20
+139            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+139-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:68:13-106
+140            android:directBootAware="false"
+140-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:69:13-44
+141            android:enabled="false"
+141-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:70:13-36
+142            android:exported="false" >
+142-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:71:13-37
+143            <intent-filter>
+143-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:73:13-76:29
+144                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+144-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:17-87
+144-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:25-84
+145                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+145-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:17-90
+145-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:25-87
+146            </intent-filter>
+147        </receiver>
+148        <receiver
+148-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:78:9-88:20
+149            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+149-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:79:13-104
+150            android:directBootAware="false"
+150-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:80:13-44
+151            android:enabled="false"
+151-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:81:13-36
+152            android:exported="false" >
+152-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:82:13-37
+153            <intent-filter>
+153-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:84:13-87:29
+154                <action android:name="android.intent.action.BATTERY_OKAY" />
+154-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:17-77
+154-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:25-74
+155                <action android:name="android.intent.action.BATTERY_LOW" />
+155-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:17-76
+155-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:25-73
+156            </intent-filter>
+157        </receiver>
+158        <receiver
+158-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:89:9-99:20
+159            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+159-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:90:13-104
+160            android:directBootAware="false"
+160-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:91:13-44
+161            android:enabled="false"
+161-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:92:13-36
+162            android:exported="false" >
+162-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:93:13-37
+163            <intent-filter>
+163-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:95:13-98:29
+164                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+164-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:17-83
+164-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:25-80
+165                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+165-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:17-82
+165-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:25-79
+166            </intent-filter>
+167        </receiver>
+168        <receiver
+168-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:100:9-109:20
+169            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+169-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:101:13-103
+170            android:directBootAware="false"
+170-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:102:13-44
+171            android:enabled="false"
+171-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:103:13-36
+172            android:exported="false" >
+172-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:104:13-37
+173            <intent-filter>
+173-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:106:13-108:29
+174                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+174-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:17-79
+174-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:25-76
+175            </intent-filter>
+176        </receiver>
+177        <receiver
+177-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:110:9-121:20
+178            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+178-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:111:13-88
+179            android:directBootAware="false"
+179-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:112:13-44
+180            android:enabled="false"
+180-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:113:13-36
+181            android:exported="false" >
+181-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:114:13-37
+182            <intent-filter>
+182-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:116:13-120:29
+183                <action android:name="android.intent.action.BOOT_COMPLETED" />
+183-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:117:17-79
+183-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:117:25-76
+184                <action android:name="android.intent.action.TIME_SET" />
+184-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:17-73
+184-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:25-70
+185                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+185-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:17-81
+185-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:25-78
+186            </intent-filter>
+187        </receiver>
+188        <receiver
+188-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:122:9-131:20
+189            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+189-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:123:13-99
+190            android:directBootAware="false"
+190-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:124:13-44
+191            android:enabled="@bool/enable_system_alarm_service_default"
+191-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:125:13-72
+192            android:exported="false" >
+192-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:126:13-37
+193            <intent-filter>
+193-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:128:13-130:29
+194                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+194-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:17-98
+194-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:25-95
+195            </intent-filter>
+196        </receiver>
+197        <receiver
+197-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:132:9-142:20
+198            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+198-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:133:13-78
+199            android:directBootAware="false"
+199-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:134:13-44
+200            android:enabled="true"
+200-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:135:13-35
+201            android:exported="true"
+201-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:136:13-36
+202            android:permission="android.permission.DUMP" >
+202-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:137:13-57
+203            <intent-filter>
+203-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:139:13-141:29
+204                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+204-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:17-88
+204-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:25-85
+205            </intent-filter>
+206        </receiver>
+207
+208        <service
+208-->[androidx.room:room-runtime:2.2.5] /home/kirtan/.gradle/caches/transforms-3/391d44f2231f0eee13987bb9929423c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+209            android:name="androidx.room.MultiInstanceInvalidationService"
+209-->[androidx.room:room-runtime:2.2.5] /home/kirtan/.gradle/caches/transforms-3/391d44f2231f0eee13987bb9929423c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+210            android:directBootAware="true"
+210-->[androidx.room:room-runtime:2.2.5] /home/kirtan/.gradle/caches/transforms-3/391d44f2231f0eee13987bb9929423c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+211            android:exported="false" />
+211-->[androidx.room:room-runtime:2.2.5] /home/kirtan/.gradle/caches/transforms-3/391d44f2231f0eee13987bb9929423c2/transformed/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+212    </application>
+213
+214</manifest>

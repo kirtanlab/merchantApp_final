@@ -20,6 +20,10 @@
         "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_bottomvignette.png"
     },
     {
+        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_newpass.jpeg.flat",
+        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_newpass.jpeg"
+    },
+    {
         "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_pause.png.flat",
         "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_pause.png"
     },
@@ -132,8 +136,16 @@
         "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_market.png"
     },
     {
+        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_signup.jpeg.flat",
+        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_signup.jpeg"
+    },
+    {
         "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_expand.png.flat",
         "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_expand.png"
+    },
+    {
+        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_mobile_input_.png.flat",
+        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_mobile_input_.png"
     },
     {
         "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_play.png.flat",
@@ -180,10 +192,6 @@
         "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_hotel.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_logo_rent.jpeg.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_logo_rent.jpeg"
-    },
-    {
         "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_bottomvignette.png.flat",
         "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_bottomvignette.png"
     },
@@ -204,8 +212,24 @@
         "source": "com.merchantapp-main-39:/drawable/autofill_highlight.xml"
     },
     {
+        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_login.jpeg.flat",
+        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_login.jpeg"
+    },
+    {
+        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_otp_email.jpeg.flat",
+        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_otp_email.jpeg"
+    },
+    {
+        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_logo_rent.png.flat",
+        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_logo_rent.png"
+    },
+    {
         "merged": "com.merchantapp-merged_res-38:/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "com.merchantapp-main-39:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_forgetpass.jpeg.flat",
+        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_forgetpass.jpeg"
     },
     {
         "merged": "com.merchantapp-merged_res-38:/mipmap-mdpi_ic_launcher.png.flat",
@@ -216,8 +240,16 @@
         "source": "com.merchantapp-react-33:/raw/assets_icons_facebook.svg"
     },
     {
+        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_mobile_input.png.flat",
+        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_mobile_input.png"
+    },
+    {
         "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_expand.png.flat",
         "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_expand.png"
+    },
+    {
+        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_otp_mobile.jpeg.flat",
+        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_otp_mobile.jpeg"
     },
     {
         "merged": "com.merchantapp-merged_res-38:/mipmap-hdpi_ic_launcher_round.png.flat",

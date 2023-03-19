@@ -215,100 +215,100 @@ export const updatesign_email = (value) => ({
   value: value,
 });
 
-// export const updateUser = ({user, userData, status, error}) => ({
-//   type: UPDATE_USER,
-//   payload: {user, userData, status, error},
-// });
-async function persistUserData(auth_states) {
-  try {
-    console.log("var_name", Object.keys({ auth_states })[0]);
-    let name = Object.keys({ auth_states })[0];
-    AsyncStorage.setItem(name, JSON.stringify(auth_states), (err) => {
-      if (err) {
-        console.log("an error");
-        throw err;
-      }
-      console.log("success");
-    }).catch((err) => {
-      console.log("error is: " + err);
-    });
-    // if (res) {
-    //   console.log(`${data} saved`, JSON.stringify(data));
-    // } else {
-    //   console.log(`${data} can not be persisted : `, res);
-    // }
-  } catch (e) {
-    console.log("persistUserData", e);
-  }
-}
+// // export const updateUser = ({user, userData, status, error}) => ({
+// //   type: UPDATE_USER,
+// //   payload: {user, userData, status, error},
+// // });
+// async function persistUserData(auth_states) {
+//   try {
+//     console.log("var_name", Object.keys({ auth_states })[0]);
+//     let name = Object.keys({ auth_states })[0];
+//     AsyncStorage.setItem(name, JSON.stringify(auth_states), (err) => {
+//       if (err) {
+//         console.log("an error");
+//         throw err;
+//       }
+//       console.log("success");
+//     }).catch((err) => {
+//       console.log("error is: " + err);
+//     });
+//     // if (res) {
+//     //   console.log(`${data} saved`, JSON.stringify(data));
+//     // } else {
+//     //   console.log(`${data} can not be persisted : `, res);
+//     // }
+//   } catch (e) {
+//     console.log("persistUserData", e);
+//   }
+// }
 
 // const getDataFromStorage = async () => {
 //   let user = await AsyncStorage.getItem('user', JSON.stringify(user));
 //   console.log('User', user);
 //   navigation.navigate('LoginScreen');
+// // };
+// const getpersistedData = async (data) => {
+//   try {
+//     let res = await AsyncStorage.getItem(data);
+//     if (res) {
+//       console.log(`${data} got from storage`, res);
+//       return res;
+//     } else {
+//       console.log(`${data} is not in storage : `, res);
+//     }
+//   } catch (e) {
+//     console.log("getPersisted", e);
+//   }
 // };
-const getpersistedData = async (data) => {
-  try {
-    let res = await AsyncStorage.getItem(data);
-    if (res) {
-      console.log(`${data} got from storage`, res);
-      return res;
-    } else {
-      console.log(`${data} is not in storage : `, res);
-    }
-  } catch (e) {
-    console.log("getPersisted", e);
-  }
-};
 
-export const getUserFromStorage = (_auth_states) => {
-  return async (dispatch, getState) => {
-    try {
-      let auth_states = await getpersistedData(_auth_states);
-      dispatch({
-        type: GET_FROM_STORAGE,
-        payload: auth_states,
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
-};
+// export const getUserFromStorage = (_auth_states) => {
+//   return async (dispatch, getState) => {
+//     try {
+//       let auth_states = await getpersistedData(_auth_states);
+//       dispatch({
+//         type: GET_FROM_STORAGE,
+//         payload: auth_states,
+//       });
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   };
+// };
 
-export const updateUser = (auth_states) => {
-  return async (dispatch, getState) => {
-    try {
-      console.log("updateUser Entered");
-      await persistUserData(auth_states);
-      dispatch({
-        type: UPDATE_USER,
-        payload: auth_states,
-      });
-    } catch (err) {
-      console.log("updateUser Error", err);
-    }
-  };
-};
+// export const updateUser = (auth_states) => {
+//   return async (dispatch, getState) => {
+//     try {
+//       console.log("updateUser Entered");
+//       await persistUserData(auth_states);
+//       dispatch({
+//         type: UPDATE_USER,
+//         payload: auth_states,
+//       });
+//     } catch (err) {
+//       console.log("updateUser Error", err);
+//     }
+//   };
+// };
 
-export const updateLaunchScreen = ({ Launch_Screen }) => ({
-  type: UPDATE_LAUNCH_SCREEN,
-  payload: { Launch_Screen },
-});
+// export const updateLaunchScreen = ({ Launch_Screen }) => ({
+//   type: UPDATE_LAUNCH_SCREEN,
+//   payload: { Launch_Screen },
+// });
 
-export const updateAppearance = ({ Appearance }) => ({
-  type: UPDATE_APPEARANCE,
-  payload: { Appearance },
-});
-export const updatePaymentCurrency = ({ Payment_Currency }) => ({
-  type: UPDATE_PAYMENT_CURRENCY,
-  payload: { Payment_Currency },
-});
-export const updateLanguage = ({ Language }) => ({
-  type: UPDATE_LANGUAGE,
-  payload: { Language },
-});
+// export const updateAppearance = ({ Appearance }) => ({
+//   type: UPDATE_APPEARANCE,
+//   payload: { Appearance },
+// });
+// export const updatePaymentCurrency = ({ Payment_Currency }) => ({
+//   type: UPDATE_PAYMENT_CURRENCY,
+//   payload: { Payment_Currency },
+// });
+// export const updateLanguage = ({ Language }) => ({
+//   type: UPDATE_LANGUAGE,
+//   payload: { Language },
+// });
 
-export const updateFaceId = ({ FaceID }) => ({
-  type: UPDATE_FACE_ID,
-  payload: { FaceID },
-});
+// export const updateFaceId = ({ FaceID }) => ({
+//   type: UPDATE_FACE_ID,
+//   payload: { FaceID },
+// });

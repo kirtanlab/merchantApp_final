@@ -1,8 +1,9 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState, useEffect } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, StatusBar, Text, View } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
+import { COLORS } from "../../constants";
 
 import AppLoader from "../../components/AppLoader";
 import { REACT_APP_OWNER_API } from "@env";
@@ -57,6 +58,11 @@ const SplashScreen = ({ navigation, updateToken }) => {
   console.log(icons.logo_rent);
   return (
     <>
+      <StatusBar
+        animated={true}
+        backgroundColor={COLORS.mobile_theme_back}
+        barStyle={"light-content"}
+      />
       <View style={styles.splashScreenCont}>
         <Image
           source={icons.logo_rent}

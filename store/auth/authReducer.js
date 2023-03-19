@@ -2,13 +2,13 @@ import { Home } from "../../screens";
 import * as authActions from "./authActions";
 
 const initialState = {
-  auth_states: {
-    user: null,
-    //Defaults are stored in userData
-    userData: null,
-    status: "loading",
-    error: "error",
-  },
+  // auth_states: {
+  //   user: null,
+  //   //Defaults are stored in userData
+  //   userData: null,
+  //   status: "loading",
+  //   error: "error",
+  // },
   updating_mobile: false,
   Room_token: "",
   token: "",
@@ -241,17 +241,17 @@ const authReducer = (state = initialState, action) => {
       };
 
     //OTHER
-    case authActions.UPDATE_USER:
-      return {
-        ...state,
-        auth_states: action.payload.auth_states,
-      };
+    // case authActions.UPDATE_USER:
+    //   return {
+    //     ...state,
+    //     auth_states: action.payload.auth_states,
+    //   };
 
-    case authActions.UPDATE_APPEARANCE:
-      return {
-        ...state.auth_states.userData,
-        Appearance: action.payload.Appearance,
-      };
+    // case authActions.UPDATE_APPEARANCE:
+    //   return {
+    //     ...state.auth_states.userData,
+    //     Appearance: action.payload.Appearance,
+    //   };
 
     // case authActions.UPDATE_PAYMENT_CURRENCY:
     //   return {
