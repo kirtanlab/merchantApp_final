@@ -13,7 +13,7 @@ const Tabs = () => {
         showLabel: false,
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          height: 50,
+          height: 40,
           position: "absolute",
           bottom: 7,
           right: 7,

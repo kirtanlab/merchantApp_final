@@ -12,13 +12,14 @@ const SplashScreen = ({ navigation, updateToken }) => {
   useEffect(() => {
     setTimeout(() => {
       const _getUserFromStorage = async () => {
-        setLoading(true);
+        // setLoading(true);
         let token = await AsyncStorage.getItem("token");
         token = JSON.parse(token);
         console.log("from splashscreen", token);
-        if (token == "") {
+        if (token == "" || token == null) {
           navigation.replace("LoginScreen");
         } else {
+          // console.log("from splashscreen", token);
           updateToken(token);
           const data = await axios.get(
             `${REACT_APP_OWNER_API}/api/v1/owner/getstatus`,
@@ -32,6 +33,14 @@ const SplashScreen = ({ navigation, updateToken }) => {
           let phone_status = data.data.data.phoneVerified;
           let details_status = data.data.data.detailsEntered;
           let roomFilled = data.data.data.roomFilled;
+          console.log(
+            "roomFilled",
+            roomFilled,
+            "phone_status",
+            phone_status,
+            "details_status",
+            details_status
+          );
           if (!phone_status) {
             navigation.replace("MobileOTP");
           } else if (!details_status) {
@@ -82,11 +91,6 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state) {
   return {
-    // user: state.authReducer.user,
-    // user: state.authReducer.user,
-    // userData: state.authReducer.userData,
-    // status: state.authReducer.status,
-    // user: state.authReducer.user,
     auth_states: state.authReducer.auth_states,
   };
 }

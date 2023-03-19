@@ -325,7 +325,6 @@ const Property_Listing = ({
 function mapStateToProps(state) {
   return {
     token: state.authReducer.token,
-    network: state.network.isConnected,
   };
 }
 

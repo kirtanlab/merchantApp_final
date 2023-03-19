@@ -44,6 +44,7 @@ const ForgetPass = ({ route, navigation }) => {
       try {
         setLoading(true);
         const obj = {
+          email: email,
           otp: Number(value),
         };
         console.log(obj);
@@ -54,11 +55,11 @@ const ForgetPass = ({ route, navigation }) => {
         console.log("data", data.data);
 
         setLoading(false);
-        navigation.replace("NewPassword");
+        navigation.replace("NewPassword", { email: email });
       } catch (err) {
         setLoading(false);
         console.log("lol", err.response.data);
-        navigation.replace("NewPassword");
+        // navigation.replace("NewPassword");
         // gen_login_err_method(true);
         // setErr(err.response.data.msg);
         setErr(true);

@@ -20,3 +20,10 @@ l 1)Change Password -> forget password -> clicked on back button -> navigate to 
 
 -->Bugs 3.0s
 1)in vidimage , select image is not workng
+2)in vidimage , Flatlist for video, insert  empty component
+3)Reduce fonts in terms
+4)Thankyou for updating property
+5)room is modified
+
+
+

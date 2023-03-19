@@ -6,25 +6,18 @@ import {
   ScrollView,
   TouchableOpacity,
   Image,
-  KeyboardAvoidingView,
   FlatList,
-  Pressable,
 } from "react-native";
 
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/NewProperty/Header";
 import * as Progress from "react-native-progress";
-import { Button, Dialog, Portal, Provider } from "react-native-paper";
 import { COLORS, SIZES, FONTS, icons } from "../../constants";
 import { connect } from "react-redux";
 import DocumentPicker from "react-native-document-picker";
-import CustomButton_form from "../../components/NewProperty/CustomButton_form";
-import Amneties from "../../components/NewProperty/Amneties";
 import Nav_Header from "../../components/NewProperty/Nav_Header";
-import AddText from "../../components/NewProperty/AddText";
 import Toast from "react-native-toast-message";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import * as vidImage_actions from "../../store/vidImage/vidImage_actions";
 import AppLoader from "../../components/AppLoader";
 import axios from "axios";
@@ -201,7 +194,7 @@ const vidImage = ({
   };
   const upload_details = async () => {
     try {
-      console.log("upload", token);
+      console.log("upload", Location.latitude);
       const obj = {
         nameasperaadhar: adhar_name,
         typeofpg: return_looking(looking_form),
@@ -209,8 +202,8 @@ const vidImage = ({
         isMale: gender?.male || gender?.both ? true : false,
         isFemale: gender?.female || gender?.both ? true : false,
         address: house_no + "//" + Landmark,
-        lat: Location.latitude,
-        lng: Location.longitude,
+        lat: Location.latitude.$numberDecimal,
+        lng: Location.longitude.$numberDecimal,
         isWIFI: amneties.wifi,
         isAC: amneties.AC,
         detailsEntered: true,
@@ -411,59 +404,7 @@ const vidImage = ({
       </View>
     );
   };
-  // const render_video = ({ _vidUri, video }) => {
-  //   // console.log('render_video', vidUri);
-  //   return (
-  //     <View
-  //       style={{
-  //         flexDirection: "row",
 
-  //         marginTop: 15,
-  //         marginRight: 15,
-  //       }}
-  //     >
-  //       <View
-  //         style={{
-  //           borderColor: COLORS.lightGray3,
-  //         }}
-  //       >
-  //         <Image
-  //           source={{ uri: _vidUri }} // Can be a URL or a local file.
-  //           style={{ height: 200, borderRadius: 10, width: 230 }}
-  //         />
-  //       </View>
-
-  //       <TouchableOpacity
-  //         style={{
-  //           position: "absolute",
-  //           left: "82%",
-  //           borderRadius: 10,
-
-  //           fontSize: SIZES.h2,
-  //           backgroundColor: COLORS.mobile_theme_back,
-  //         }}
-  //         onPress={async () => {
-  //           let copy_vidUri = vidUri;
-  //           console.log("copy", video);
-  //           console.log("copy1", copy_vidUri);
-  //           copy_vidUri = copy_vidUri.filter(
-  //             (obj) => obj.name !== video.item.name
-  //           );
-  //           setvidUri(copy_vidUri);
-  //           console.log("copy", copy_vidUri);
-  //           await updateOuterVideos(copy_vidUri);
-  //         }}
-  //       >
-  //         <Ionicons
-  //           name="close-circle-outline"
-  //           size={35}
-  //           color={true ? COLORS.white : "lightgray"}
-  //           style={{}}
-  //         />
-  //       </TouchableOpacity>
-  //     </View>
-  //   );
-  // };
   const redner_images = ({ _imgUri, image }) => {
     // console.log('render_iamges', imgUri);
     return (

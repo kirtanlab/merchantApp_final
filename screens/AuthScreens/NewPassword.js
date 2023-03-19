@@ -18,7 +18,8 @@ import { StatusBar } from "react-native";
 import AppLoader from "../../components/AppLoader";
 import { REACT_APP_OWNER_API } from "@env";
 import axios from "axios";
-const ForgetPass = ({ navigation }) => {
+const ForgetPass = ({ navigation, route }) => {
+  const { email } = route.params;
   const [loading, setLoading] = useState(false);
   const [err, setError] = useState(false);
   const [pass, setPass] = useState("");
@@ -34,6 +35,7 @@ const ForgetPass = ({ navigation }) => {
       try {
         setLoading(true);
         const obj = {
+          email: email,
           password: pass,
         };
         const data = await axios.post(
@@ -160,10 +162,10 @@ const ForgetPass = ({ navigation }) => {
                   label={"New Password"}
                   type={"new_password"}
                   onFocus={() => {
-                    setBlured_new(false), setFocused_new(true);
+                    setFocused_new(true);
                   }}
                   onBlur={() => {
-                    setFocused_new(false), setBlured_new(true);
+                    setFocused_new(false);
                   }}
                   onChange={(e) => {
                     handle_pass(e.nativeEvent.text);
@@ -206,10 +208,10 @@ const ForgetPass = ({ navigation }) => {
                   label={"New Password"}
                   type={"new_conf_password"}
                   onFocus={() => {
-                    setBlured_conf(false), setFocused_conf(true);
+                    setFocused_conf(true);
                   }}
                   onBlur={() => {
-                    setFocused_conf(false), setBlured_conf(true);
+                    setFocused_conf(false);
                   }}
                   onChange={(e) => {
                     handle_conf_pass(e.nativeEvent.text);

@@ -35,13 +35,7 @@ const ChangeProfile = ({ navigation, token }) => {
   const [name, setName] = React.useState(data.name);
   const [nameChecked, setNameChecked] = React.useState(true);
   const [emailChecked, setEmailChecked] = React.useState(true);
-  const [number, setNumber] = React.useState(data.number);
   const [email, setEmail] = React.useState(data.email);
-  const [adhar, setAdhar] = React.useState(data.adhar);
-  const [_default, setDefault] = React.useState("kirta");
-  const [imgUri, setimgUri] = React.useState(data.adhar.uri);
-  const [img_uri, setIMGURI] = React.useState(data.adhar.uri);
-
   const fetch_details = async () => {
     console.log("token", token);
     const data = await axios.get(
@@ -256,19 +250,25 @@ const ChangeProfile = ({ navigation, token }) => {
           }
           borderRadius
           onPress={async () => {
-            const data = await axios.post(
-              `${REACT_APP_OWNER_API}/api/v1/owner/updateowner`,
-              { name: name, email: email },
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                  "Content-Type": "application/json",
-                },
-              }
-            );
-            console.log("done", data.data.data.name);
-            Alert.alert("profile updated");
-            // navigation.navigate.goBack();
+            try {
+              const data = await axios.post(
+                `${REACT_APP_OWNER_API}/api/v1/owner/updateowner`,
+                { name: name, email: email },
+                {
+                  headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                  },
+                }
+              );
+              console.log("done", data.data.data.name);
+              Alert.alert("profile updated");
+              // navigation.navigate.goBack();
+            } catch (err) {
+              console.log("error", err.response.data);
+
+              Alert.alert("Email is already in use");
+            }
           }}
         />
       </View>

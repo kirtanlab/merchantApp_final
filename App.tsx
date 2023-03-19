@@ -59,11 +59,7 @@ const App = () => {
           name="vidImage"
           component={vidImage}
         />
-        <Stack.Screen
-          options={{headerShown: false}}
-          name="Thankyou"
-          component={Thankyou}
-        />
+        
         <Stack.Screen
           options={{headerShown: false}}
           name="MapsTest"
@@ -176,6 +172,11 @@ const App = () => {
             name="NewRooms"
             component={NewRooms}
           />
+          <Stack.Screen
+          options={{headerShown: false}}
+          name="Thankyou"
+          component={Thankyou}
+        />
           <Stack.Screen name="MainScreens" component={Tabs} />
           <Stack.Screen name="Appterms" component={AppTerms} />
           <Stack.Screen name="GovtTerms" component={GovtTerms} />

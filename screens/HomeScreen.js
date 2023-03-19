@@ -22,7 +22,7 @@ import axios from "axios";
 import { Button, Dialog, Portal, Provider } from "react-native-paper";
 import { REACT_APP_OWNER_API } from "@env";
 import AppLoader from "../components/AppLoader";
-const HomeScreen = ({ navigation, token, network }) => {
+const HomeScreen = ({ navigation, token }) => {
   const [key, setKey] = React.useState(0);
   const [prop_data, prop_setData] = useState([]);
   const [refreshing, setRefreshing] = React.useState(false);
@@ -48,15 +48,7 @@ const HomeScreen = ({ navigation, token, network }) => {
     }, 2000);
   }, []);
   const owner_fetch_details = async () => {
-    // console.log("token", token);
-    // const data = await axios.get(
-    //   `${REACT_APP_OWNER_API}/api/v1/owner/displayowner`,
-    //   {
-    //     headers: {
-    //       Authorization: `Bearer ${token}`,
-    //     },
-    //   }
-    // );
+   
     const instance = axios.create({
       baseURL: `${REACT_APP_OWNER_API}/api/v1/owner/displayowner`,
       // timeout: 1000,
@@ -76,7 +68,7 @@ const HomeScreen = ({ navigation, token, network }) => {
   };
 
   const room_fetch_details = async () => {
-    // console.log("token", token);
+  
     const data = await axios.get(
       `${REACT_APP_OWNER_API}/api/v1/owner/displayallrooms`,
       {
@@ -119,9 +111,6 @@ const HomeScreen = ({ navigation, token, network }) => {
     call_all();
   }, []);
 
-  // useEffect(() => {
-  //   console.log("netowrk", network);
-  // }, []);
 
   return (
     <>
@@ -190,7 +179,7 @@ const HomeScreen = ({ navigation, token, network }) => {
 function mapStateToProps(state) {
   return {
     token: state.authReducer.token,
-    network: state.network.isConnected,
+
   };
 }
 

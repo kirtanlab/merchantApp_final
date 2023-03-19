@@ -1,26 +1,20 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   View,
   Text,
   TouchableOpacity,
   ScrollView,
-  Modal,
   Image,
-  StyleSheet,
   Switch,
   Share,
   Linking,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import { HeaderBar } from "../components";
-import { FONTS, COLORS, SIZES, dummyData, icons } from "../constants";
+import { FONTS, COLORS, SIZES, icons } from "../constants";
 import { connect } from "react-redux";
 import * as AuthActions from "../store/auth/authActions";
-import { RadioButton } from "react-native-paper";
-import MainLayout from "./MainLayout";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { color } from "@rneui/themed/dist/config";
 const SectionTitle = ({ title }) => {
   return (
     <View

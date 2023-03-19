@@ -12,29 +12,15 @@ import {
   FlatList,
   RefreshControl,
   PermissionsAndroid,
-  Touchable,
-  Pressable,
 } from "react-native";
 import Header from "../../components/NewProperty/Header";
 import * as Progress from "react-native-progress";
 import { COLORS, icons, SIZES, FONTS } from "../../constants";
-import Looking_Selection_Button from "../../components/NewProperty/Looking_Selection_Button";
 import { connect } from "react-redux";
-import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
-import Who_you from "../../components/NewProperty/Who_you";
-import Text_Input from "../../components/NewProperty/Text_Input";
 import DocumentPicker from "react-native-document-picker";
-import CustomButton_form from "../../components/NewProperty/CustomButton_form";
-import NumericInput from "../../components/NewProperty/NumericInput";
-import Floor_prices from "../../components/NewRooms.js/Floor_prices";
-import Ac_attached from "../../components/NewRooms.js/Ac_attached";
-import InputField from "../../components/InputField";
-import RNFetchBlob from "rn-fetch-blob";
-// import {Checkbox} from 'react-native-paper';
-import CheckBox from "../../components/CheckBox";
+
 import Nav_Header from "../../components/NewProperty/Nav_Header";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import Terms from "../../components/Terms";
 import * as room_vidImage_actions from "../../store/room_vidImage/room_vidImage_actions";
 import Toast from "react-native-toast-message";
 import {
@@ -42,7 +28,6 @@ import {
   showErrorToast,
 } from "../../components/NewProperty/ToastConfig";
 import axios from "axios";
-// import {video} from react-native-video
 import VideoPlayer from "react-native-video-controls";
 import AppLoader from "../../components/AppLoader";
 import { REACT_APP_OWNER_API } from "@env";

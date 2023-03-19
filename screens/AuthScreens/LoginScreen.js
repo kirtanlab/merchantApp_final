@@ -61,8 +61,7 @@ const LoginScreen = ({
         updateToken(data.data.token);
         let token = data.data.token;
         await setUser(token);
-        setPosted(data.data.user.detailsEntered);
-        setVerified(data.data.user.phoneVerified);
+
         let phoneVerified = data.data.user.phoneVerified;
         let detailsEntered = data.data.user.detailsEntered;
         setLoading(false);
@@ -86,7 +85,7 @@ const LoginScreen = ({
         }
       } catch (err) {
         setLoading(false);
-        console.log("lol", err.response.data.msg);
+        console.log("lol", err);
         gen_login_err_method(true);
         setError(err.response.data.msg);
       }

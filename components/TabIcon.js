@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, Appearance } from "react-native";
 import { useSelector } from "react-redux";
-import { FONTS, COLORS } from "../constants";
+import { FONTS, COLORS, SIZES } from "../constants";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { lightBlue100 } from "react-native-paper/lib/typescript/styles/themes/v2/colors";
 const TabIcon = ({ focused, icon_name, iconStyle, subtitle, isTrade }) => {
@@ -30,7 +30,7 @@ const TabIcon = ({ focused, icon_name, iconStyle, subtitle, isTrade }) => {
     >
       <MaterialIcons
         name={icon_name}
-        size={30}
+        size={24}
         color={focused ? COLORS.mobile_theme_back : "#e0e9ff"}
         style={{ top: 4 }}
         // label="notifications"
@@ -38,9 +38,9 @@ const TabIcon = ({ focused, icon_name, iconStyle, subtitle, isTrade }) => {
       <Text
         style={{
           color: focused ? COLORS.mobile_theme_back : "#e0e9ff",
-          ...FONTS.h4,
+          fontSize: 13,
 
-          fontWeight: "bold",
+          // fontWeight: "bold",
         }}
       >
         {subtitle}

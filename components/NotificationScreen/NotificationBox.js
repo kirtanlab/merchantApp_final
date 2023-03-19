@@ -1,8 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { COLORS, FONTS, SIZES } from "../../constants";
-import EStyleSheet from "react-native-extended-stylesheet";
-
 const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
   let relative_time = "";
   let time_obj = new Date(time);
@@ -159,7 +157,3 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
   );
 };
 export default NotificationBox;
-
-const styles = EStyleSheet.create({
-  ago_time: {},
-});
