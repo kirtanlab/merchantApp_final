@@ -14,6 +14,7 @@ import * as AdharActions from "../../store/AdharCard/AdharCard_actions";
 import { REACT_APP_OWNER_API } from "@env";
 import { REACT_APP_MAPS_API_KEY } from "@env";
 import RNFetchBlob from "rn-fetch-blob";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 const Property_Listing = ({
   property_title,
   adharname,
@@ -36,7 +37,10 @@ const Property_Listing = ({
   checkedElebill,
   house_no,
   Landmark,
+  ratings,
 }) => {
+  const stars = (ratings - Math.floor(ratings)).toFixed(1);
+  // console.log(stars);
   return (
     <View>
       <View style={{ paddingHorizontal: 14 }}>
@@ -108,12 +112,44 @@ const Property_Listing = ({
           >
             {property_title}
           </Text>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginHorizontal: 12,
+              marginTop: 3,
+            }}
+          >
+            <FontAwesome name="star" size={13} color={"#fabe1b"} />
+            <Text
+              style={{
+                fontFamily: "Poppins-Regular",
+                color: "grey",
+                fontSize: 14,
+                // marginTop: 2,
+              }}
+            >
+              {"  "}
+              {ratings}
+            </Text>
+            {/* <Text
+              style={{
+                fontFamily: "Poppins-Regular",
+                color: "grey",
+                fontSize: 11,
+                marginTop: 2,
+              }}
+            >
+              {" "}
+              {"\u25CF"} {data?.noofraters} ratings
+            </Text> */}
+          </View>
         </View>
         {/* Property Location */}
         <View style={{ flexDirection: "row" }}>
           <Text
             style={{
-              color: COLORS.lightGray3,
+              color: COLORS.black,
 
               fontFamily: FONTS.fontFamily_black,
               // fontWeight: 'bold',
@@ -121,7 +157,9 @@ const Property_Listing = ({
             }}
           >
             {/* Karamsad,Anand */}
-            {house_no + " " + Landmark}
+            {house_no.trimEnd()}
+            {","}
+            {Landmark}
           </Text>
         </View>
         {/* Edit Buttons */}

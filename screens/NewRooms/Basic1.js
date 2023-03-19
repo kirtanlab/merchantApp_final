@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect} from 'react';
+import React, { Fragment, useEffect } from "react";
 import {
   Text,
   View,
@@ -6,27 +6,27 @@ import {
   ScrollView,
   TouchableOpacity,
   KeyboardAvoidingView,
-} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import Header from '../../components/NewProperty/Header';
-import * as Progress from 'react-native-progress';
-import {COLORS, SIZES} from '../../constants';
-import Looking_Selection_Button from '../../components/NewProperty/Looking_Selection_Button';
-import {connect} from 'react-redux';
-import * as newproperty_actions from '../../store/Newproperty/newproperty_action';
-import Who_you from '../../components/NewProperty/Who_you';
-import Text_Input from '../../components/NewProperty/Text_Input';
-import DocumentPicker from 'react-native-document-picker';
-import CustomButton_form from '../../components/NewProperty/CustomButton_form';
-import NumericInput from '../../components/NewProperty/NumericInput';
-import Floor_prices from '../../components/NewRooms.js/Floor_prices';
-import Ac_attached from '../../components/NewRooms.js/Ac_attached';
-import Nav_Header from '../../components/NewProperty/Nav_Header';
-import Toast from 'react-native-toast-message';
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import Header from "../../components/NewProperty/Header";
+import * as Progress from "react-native-progress";
+import { COLORS, SIZES } from "../../constants";
+import Looking_Selection_Button from "../../components/NewProperty/Looking_Selection_Button";
+import { connect } from "react-redux";
+import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
+import Who_you from "../../components/NewProperty/Who_you";
+import Text_Input from "../../components/NewProperty/Text_Input";
+import DocumentPicker from "react-native-document-picker";
+import CustomButton_form from "../../components/NewProperty/CustomButton_form";
+import NumericInput from "../../components/NewProperty/NumericInput";
+import Floor_prices from "../../components/NewRooms.js/Floor_prices";
+import Ac_attached from "../../components/NewRooms.js/Ac_attached";
+import Nav_Header from "../../components/NewProperty/Nav_Header";
+import Toast from "react-native-toast-message";
 import {
   toastConfig,
   showErrorToast,
-} from '../../components/NewProperty/ToastConfig';
+} from "../../components/NewProperty/ToastConfig";
 const Basic1 = ({
   checked_totalRooms,
   checked_title,
@@ -36,16 +36,16 @@ const Basic1 = ({
   navigation,
 }) => {
   function next_page() {
-    navigation.navigate('Basic2');
-    console.log('next pagee');
+    navigation.navigate("Basic2");
+    console.log("next pagee");
   }
   function onPress_for() {
     if (checked_occpancy && checked_title && checked_totalRooms) {
-      console.log('Done');
+      console.log("Done");
       next_page();
     } else {
-      showErrorToast((title = 'Fill Required Fields'));
-      console.log('ckicked');
+      showErrorToast((title = "Fill Required Fields"));
+      console.log("ckicked");
     }
   }
   // function back_page() {
@@ -64,7 +64,7 @@ const Basic1 = ({
       console.log(res);
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
-        console.log('User cancelled', err);
+        console.log("User cancelled", err);
       } else {
         console.log(err);
       }
@@ -73,17 +73,18 @@ const Basic1 = ({
   return (
     <ScrollView
       keyboardShouldPersistTaps="handled"
-      style={{backgroundColor: 'white', padding: 0}}>
+      style={{ backgroundColor: "white", padding: 0 }}
+    >
       {/* <KeyboardAvoidingView
         behavior="position"
         style={{backgroundColor: 'white'}}> */}
-      <View style={{right: 12}}>
-        <Toast config={toastConfig} ref={ref => Toast.setRef(ref)} />
+      <View style={{ right: 12 }}>
+        <Toast config={toastConfig} ref={(ref) => Toast.setRef(ref)} />
       </View>
       <StatusBar
         animated={true}
         backgroundColor={COLORS.mobile_theme_back}
-        barStyle={'light-content'}
+        barStyle={"light-content"}
       />
 
       <SafeAreaView
@@ -95,11 +96,11 @@ const Basic1 = ({
       />
       <View>
         <Progress.Bar
-          progress={0.25}
+          progress={0.33}
           color={COLORS.progress_bar}
           width={SIZES.width}
           height={SIZES.height * 0.01}
-          style={{position: 'absolute', top: -1}}
+          style={{ position: "absolute", top: -1 }}
         />
         <Nav_Header
           onPress_forward={onPress_for}
@@ -117,19 +118,19 @@ const Basic1 = ({
           back={false}
         />
       </View>
-      <View style={{padding: 18, marginTop: 25}}>
+      <View style={{ padding: 18, marginTop: 25 }}>
         <View>
           <Header
             step={1}
-            total={4}
-            subtitle={'Room Title, Ac/Non AC, occupancy,Available rooms'}
-            title={'Add Room Details'}
+            total={3}
+            subtitle={"Room Title, Ac/Non AC, occupancy,Available rooms"}
+            title={"Add Room Details"}
           />
         </View>
-        <View style={{marginTop: 30}}>
+        <View style={{ marginTop: 30 }}>
           <Floor_prices />
         </View>
-        <View style={{marginTop: 8}}>
+        <View style={{ marginTop: 8 }}>
           <Ac_attached />
         </View>
         {/* Videos of Images

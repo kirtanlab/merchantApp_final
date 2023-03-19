@@ -62,24 +62,25 @@ const ForgetPass = ({ route, navigation }) => {
       try {
         setLoading(true);
         const obj = {
-          otp: value,
+          otp: Number(value),
         };
+        console.log(obj);
         const data = await axios.post(
           `${REACT_APP_OWNER_API}/api/v1/owner/verifyotp`,
-          obj,
-          { headers: { "Content-Type": "application/json" } }
+          obj
         );
         console.log("data", data.data);
 
         setLoading(false);
+        navigation.replace("NewPassword");
       } catch (err) {
         setLoading(false);
         console.log("lol", err.response.data);
+        navigation.replace("NewPassword");
         // gen_login_err_method(true);
         // setErr(err.response.data.msg);
         setErr(true);
       }
-      navigation.replace("NewPassword");
     } else {
       setError_num(true);
       //   setErr(true)
@@ -147,25 +148,26 @@ const ForgetPass = ({ route, navigation }) => {
             source={icons.logo_rent}
           /> */}
                 <Image
-                  source={icons.logo_rent}
+                  source={icons.OTP_email}
                   style={{
-                    height: 350,
-                    width: 350,
+                    height: 250,
+                    width: 250,
                     borderRadius: 20,
-                    marginTop: "1%",
+                    // marginTop: 10,
+                    top: -50,
                     alignSelf: "center",
                   }}
                 />
               </View>
-              <View style={{ flexDirection: "column" }}>
+              <View style={{ top: -10, flexDirection: "column" }}>
                 <Text
                   style={{
                     fontFamily: "Roboto-Medium",
-                    fontSize: 35,
-                    fontWeight: "bold",
+                    fontSize: 30,
+                    // fontWeight: "bold",
                     color: COLORS.mobile_theme_back,
-                    marginTop: "20%",
-                    marginBottom: 5,
+                    // marginTop: 10,
+                    marginBottom: 10,
                   }}
                 >
                   Enter OTP
@@ -173,7 +175,7 @@ const ForgetPass = ({ route, navigation }) => {
                 <Text
                   style={{
                     fontFamily: "Roboto-Medium",
-                    fontSize: 16,
+                    fontSize: 13,
                     fontWeight: "bold",
                     color: COLORS.mobile_theme_back,
                     // marginTop: '',
@@ -221,16 +223,16 @@ const ForgetPass = ({ route, navigation }) => {
                 }
                 <TouchableOpacity
                   onPress={() => handle_resend()}
-                  style={{ marginLeft: "75%", marginTop: 20 }}
+                  style={{ height: 20, marginLeft: "75%", marginTop: 20 }}
                 >
                   <Text
                     style={{
                       color: COLORS.mobile_theme_back,
-                      fontSize: SIZES.h3 + 3,
+                      fontSize: 13,
                       fontWeight: "bold",
                     }}
                   >
-                    Resend otp
+                    Resend OTP
                   </Text>
                 </TouchableOpacity>
                 {err_num && (
@@ -245,8 +247,8 @@ const ForgetPass = ({ route, navigation }) => {
                     <Text
                       style={{
                         color: "red",
-                        fontWeight: "bold",
-                        fontSize: SIZES.h3,
+                        // fontWeight: "bold",
+                        fontSize: 13,
                       }}
                     >
                       Enter Four Digit OTP
@@ -265,8 +267,8 @@ const ForgetPass = ({ route, navigation }) => {
                     <Text
                       style={{
                         color: "red",
-                        fontWeight: "bold",
-                        fontSize: SIZES.h3,
+                        // fontWeight: "bold",
+                        fontSize: 13,
                       }}
                     >
                       Enter Correct OTP
@@ -291,7 +293,7 @@ const ForgetPass = ({ route, navigation }) => {
           />
         */}
 
-              <View style={{ marginTop: "25%" }}>
+              <View style={{ marginTop: "5%" }}>
                 <CustomButton
                   label={"submit"}
                   color={done ? COLORS.mobile_theme_back : "gray"}
@@ -341,17 +343,17 @@ const ForgetPass = ({ route, navigation }) => {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 15,
     // paddingVertical: 15,
     // marginTop: 20,
   },
   title: { textAlign: "center", fontSize: 30 },
   //   codeFieldRoot: {marginTop: 20},
   cell: {
-    width: 40,
-    height: 40,
+    width: 33,
+    height: 33,
     // lineHeight: 45,
-    fontSize: 30,
+    fontSize: 20,
     borderWidth: 2,
     color: COLORS.black,
     borderColor: COLORS.mobile_theme_back,

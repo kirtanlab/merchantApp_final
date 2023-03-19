@@ -138,28 +138,22 @@ const ForgetPass = ({ navigation }) => {
           />
           <SafeAreaView
             style={{
-              flex: 1,
+              // flex: 1,
               backgroundColor: "white",
               justifyContent: "center",
-              paddingTop: "20%",
+              paddingTop: "10%",
               //   paddingHorizontal: 2
             }}
           >
             <View style={{ paddingHorizontal: 25 }}>
               <View style={{ alignItems: "center" }}>
-                {/* <SvgUri
-            height={300}
-            width={300}
-            style={{transform: [{rotate: '-5deg'}]}}
-            source={icons.logo_rent}
-          /> */}
                 <Image
-                  source={icons.logo_rent}
+                  source={icons.Newpass}
                   style={{
-                    height: 350,
-                    width: 350,
+                    height: 250,
+                    width: 250,
                     borderRadius: 20,
-                    marginTop: "1%",
+                    // marginTop: 30,
                     alignSelf: "center",
                   }}
                 />
@@ -169,11 +163,11 @@ const ForgetPass = ({ navigation }) => {
                 <Text
                   style={{
                     fontFamily: "Roboto-Medium",
-                    fontSize: 28,
-                    fontWeight: "bold",
+                    fontSize: 20,
+                    // fontWeight: "bold",
                     color: COLORS.mobile_theme_back,
-                    marginTop: "20%",
-                    marginBottom: 7,
+                    marginTop: 50,
+                    marginBottom: 10,
                   }}
                 >
                   New Password
@@ -196,7 +190,7 @@ const ForgetPass = ({ navigation }) => {
                       name="lock"
                       size={25}
                       color={COLORS.mobile_theme_back}
-                      style={{ marginTop: 14 }}
+                      style={{ marginTop: 5 }}
                     />
                   }
                   // onChange={value => handle_email(value.nativeEvent.text)}
@@ -215,11 +209,11 @@ const ForgetPass = ({ navigation }) => {
                 <Text
                   style={{
                     fontFamily: "Roboto-Medium",
-                    fontSize: 25,
-                    fontWeight: "bold",
+                    fontSize: 20,
+                    // fontWeight: "bold",
                     color: COLORS.mobile_theme_back,
-                    //   marginTop: '20%',
-                    marginBottom: 7,
+                    // marginTop: 40,
+                    marginBottom: 10,
                   }}
                 >
                   Confirm New Password
@@ -242,14 +236,14 @@ const ForgetPass = ({ navigation }) => {
                       name="lock"
                       size={25}
                       color={COLORS.mobile_theme_back}
-                      style={{ marginTop: 14 }}
+                      style={{ marginTop: 5 }}
                     />
                   }
                   // onChange={value => handle_email(value.nativeEvent.text)}
                   keyboardType="email-address"
                 />
                 {focused_conf && !checked_conf && (
-                  <View style={{ marginTop: -30, left: 35, marginBottom: 20 }}>
+                  <View style={{ marginTop: -30, left: 25, marginBottom: 20 }}>
                     <Text style={{ color: COLORS.lightGray2 }}>
                       Both Field should matched
                     </Text>
@@ -259,8 +253,8 @@ const ForgetPass = ({ navigation }) => {
             </View>
 
             {err && (
-              <View style={{ marginTop: -30, left: 25, marginBottom: 20 }}>
-                <Text style={{ color: "red" }}>Match Both Password</Text>
+              <View style={{ marginTop: -20, left: 50 }}>
+                <Text style={{ color: "red" }}>Check both fields</Text>
               </View>
             )}
             <View

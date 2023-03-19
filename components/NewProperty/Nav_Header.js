@@ -1,7 +1,7 @@
-import React from 'react';
-import {COLORS, SIZES} from '../../constants';
-import {View, Text, TouchableOpacity} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import React from "react";
+import { COLORS, SIZES } from "../../constants";
+import { View, Text, TouchableOpacity } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
 const Nav_Header = ({
   color,
   onPress_forward,
@@ -16,28 +16,32 @@ const Nav_Header = ({
           // top: ,
           // alignItems: 'space-betwe',
         }
-      }>
+      }
+    >
       {back ? (
         <View
           style={{
-            flexDirection: 'row',
-            top: '6%',
-            // paddingBottom: 7,
+            flexDirection: "row",
+            top: "4%",
+            // paddingBottom: -,
+
             borderBottomColor: COLORS.lightGray4,
             borderBottomWidth: 1,
-            alignItems: 'center',
+            alignItems: "center",
             // justifyContent: 'space-evenly',
-          }}>
+          }}
+        >
           <View
             style={{
               left: SIZES.width * 0.05,
               width: SIZES.width * 0.22,
-              top: 2,
-              height: 45,
+              top: 4,
+              height: 38,
               // width: 100,
-            }}>
-            <TouchableOpacity onPress={onPress_back} style={{height: 100}}>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            }}
+          >
+            <TouchableOpacity onPress={onPress_back} style={{ height: 100 }}>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
                 <View style={{}}>
                   <Ionicons
                     name="arrow-back-outline"
@@ -50,8 +54,9 @@ const Nav_Header = ({
                   <Text
                     style={{
                       color: COLORS.mobile_theme_back,
-                      fontSize: 23,
-                    }}>
+                      fontSize: 18,
+                    }}
+                  >
                     Back
                   </Text>
                 </View>
@@ -63,25 +68,28 @@ const Nav_Header = ({
             style={{
               left: SIZES.width * 0.53,
               width: 80,
-              height: 45,
-            }}>
+              height: 38,
+            }}
+          >
             <TouchableOpacity onPress={onPress_forward}>
               <View
                 style={{
                   height: 37,
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}>
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
                 <View style={{}}>
                   <Text
                     style={{
                       color: color,
-                      fontSize: 23,
-                    }}>
+                      fontSize: 18,
+                    }}
+                  >
                     Next
                   </Text>
                 </View>
-                <View style={{leftL: 1, top: 1}}>
+                <View style={{ left: 1, top: 1 }}>
                   <Ionicons
                     name="arrow-forward-outline"
                     size={30}
@@ -96,30 +104,34 @@ const Nav_Header = ({
       ) : (
         <View
           style={{
-            flexDirection: 'row',
+            flexDirection: "row",
             // position: 'relative',
-            top: '6%',
+            top: "4%",
             // paddingBottom: 7,
             borderBottomColor: COLORS.lightGray4,
             borderBottomWidth: 1,
             // bottom: -20,
             // top: ,
-          }}>
+          }}
+        >
           <View
             style={{
               left: SIZES.width * 0.75,
               width: SIZES.width * 0.37,
-              height: 40,
+              height: 38,
+              top: 4,
               // backgroundColor: COLORS.mobile_theme_back,
-            }}>
+            }}
+          >
             <TouchableOpacity onPress={onPress_forward}>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <View style={{bottom: 2}}>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <View style={{ bottom: 2 }}>
                   <Text
                     style={{
                       color: color,
-                      fontSize: 23,
-                    }}>
+                      fontSize: 18,
+                    }}
+                  >
                     Next
                   </Text>
                 </View>

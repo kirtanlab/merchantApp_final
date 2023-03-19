@@ -189,7 +189,7 @@ const Basic2 = ({
   return (
     <>
       <ScrollView
-        keyboardShouldPersistTaps="handled"
+        // keyboardShouldPersistTaps="handled"
         style={{ backgroundColor: "white" }}
       >
         {/* <KeyboardAvoidingView */}
@@ -213,7 +213,7 @@ const Basic2 = ({
         />
         <View>
           <Progress.Bar
-            progress={0.5}
+            progress={0.66}
             color={COLORS.progress_bar}
             width={SIZES.width}
             height={SIZES.height * 0.006}
@@ -235,20 +235,17 @@ const Basic2 = ({
             back={true}
           />
         </View>
-        <View style={{ flexDirection: "column", height: SIZES.height }}>
+        <View style={{ flexDirection: "column", height: SIZES.height * 0.8 }}>
           <View
             style={{
               padding: 15,
               marginTop: "10%",
-              // flexShrink: 2,
-              // flex: 1,
-              // position: 'relative',
             }}
           >
             <View>
               <Header
                 step={2}
-                total={4}
+                total={3}
                 subtitle={"Price,Description of Room,T&Cs"}
                 title={"More About Room"}
               />
@@ -259,8 +256,7 @@ const Basic2 = ({
                 <Text
                   style={{
                     color: COLORS.black,
-                    fontSize: SIZES.custom1,
-                    fontWeight: "bold",
+                    fontSize: SIZES.form_section_title_fontsize,
                   }}
                 >
                   Enter Room Price
@@ -270,31 +266,25 @@ const Basic2 = ({
                 <View
                   style={{
                     borderColor: COLORS.mobile_theme_back,
-                    // borderWidth: 2,
-                    borderTopEndRadius: 5,
-                    borderTopStartRadius: 5,
-                    borderBottomStartRadius: 5,
-                    borderBottomEndRadius: 5,
+                    borderRadius: 5,
                     backgroundColor: COLORS.mobile_theme_back,
-                    height: 35,
-                    width: 40,
-                    marginTop: 2,
-                    // paddingTop: 5,
-                    // padding: 1s,
-                    // justifyContent: 'center',
-                    // alignItems:',
-                    // justifyContent: 'center',
+                    height: 25,
+                    width: 25,
+                    marginTop: 11,
                     alignItems: "center",
                   }}
                 >
                   <Text
-                    style={{ color: COLORS.font_color, fontSize: SIZES.h1 }}
+                    style={{
+                      color: COLORS.font_color,
+                      fontSize: SIZES.form_section_title_fontsize,
+                    }}
                   >
                     ₹
                   </Text>
                 </View>
                 <View style={{ flexDirection: "row" }}>
-                  <View style={{ width: SIZES.width * 0.7, marginLeft: 7 }}>
+                  <View style={{ width: SIZES.width * 0.7, marginLeft: 9 }}>
                     <InputField
                       label={"Enter Prices"}
                       type={"prices"}
@@ -323,13 +313,12 @@ const Basic2 = ({
               )}
             </View>
             {/* Add ABout */}
-            <View style={{ marginTop: 30 }}>
-              <View style={{ marginTop: 0 }}>
+            <View style={{}}>
+              <View style={{}}>
                 <Text
                   style={{
                     color: COLORS.black,
-                    fontSize: SIZES.custom1,
-                    fontWeight: "bold",
+                    fontSize: SIZES.form_section_title_fontsize,
                   }}
                 >
                   About Room
@@ -352,15 +341,17 @@ const Basic2 = ({
           <View
             style={{
               marginLeft: 9,
-              marginTop: SIZES.height * 0.76,
+              marginTop: SIZES.height * 0.7,
               position: "absolute",
             }}
           >
             <Terms />
           </View>
         </View>
+
         {/* </ScrollView> */}
       </ScrollView>
+
       {loading && <AppLoader />}
     </>
   );

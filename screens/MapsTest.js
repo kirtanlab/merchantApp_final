@@ -5,10 +5,13 @@ import {
   Dimensions,
   Text,
   TouchableOpacity,
+  ScrollView,
   StatusBar,
   KeyboardAvoidingView,
   PermissionsAndroid,
 } from "react-native";
+import LocationServicesDialogBox from "react-native-android-location-services-dialog-box";
+
 import * as newproperty_actions from "../store/Newproperty/newproperty_action";
 import * as Newproperty_ext_actions from "../store/Newproperty_ext/Newproperty_ext_actions";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
@@ -30,12 +33,33 @@ const MapTest = ({
   navigation,
   Location,
 }) => {
-  const [granted, setgranted] = React.useState(false);
+  const [granted, setgranted] = React.useState("");
   const [origin, setOrigin] = React.useState({
     latitude: Number(Location.latitude.$numberDecimal),
     longitude: Number(Location.longitude.$numberDecimal),
   });
-  console.log("origin", origin);
+  console.log("grantedVal", granted);
+  function locationservice() {
+    LocationServicesDialogBox.checkLocationServicesIsEnabled({
+      message:
+        "<h2 style='color: #0af13e'>Use Location ?</h2>This app wants to change your device settings:<br/><br/>Use GPS, Wi-Fi, and cell network for location<br/>",
+      ok: "YES",
+      cancel: "NO",
+      enableHighAccuracy: true, // true => GPS AND NETWORK PROVIDER, false => GPS OR NETWORK PROVIDER
+      showDialog: true, // false => Opens the Location access page directly
+      openLocationServices: true, // false => Directly catch method is called if location services are turned off
+      preventOutSideTouch: true, // true => To prevent the location services window from closing when it is clicked outside
+      preventBackClick: true, // true => To prevent the location services popup from closing when it is clicked back button
+      providerListener: false, // true ==> Trigger locationProviderStatusChange listener when the location state changes
+    })
+      .then(function (success) {
+        console.log(success); // success => {alreadyEnabled: false, enabled: true, status: "enabled"}
+      })
+      .catch((error) => {
+        console.log(error.message); // error.message => "disabled"
+        // setgranted("dinied");
+      });
+  }
   const checkPermission = async () => {
     // Function to check the platform
     // If iOS then start downloading
@@ -53,10 +77,22 @@ const MapTest = ({
               "App needs access to your Location to fetch current location",
           }
         );
-        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        const granted_ciors = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION,
+          {
+            title: "Location Permission Required",
+            message:
+              "App needs access to your Location to fetch current location",
+          }
+        );
+        if (
+          granted === PermissionsAndroid.RESULTS.GRANTED &&
+          granted_ciors === PermissionsAndroid.RESULTS.GRANTED
+        ) {
           // Once user grant the permission start downloading
           console.log(" Permission Granted.");
           setgranted("granted");
+          locationservice();
           //  downloadVideo();
         } else {
           // If permission denied then show alert
@@ -64,13 +100,11 @@ const MapTest = ({
         }
       } catch (err) {
         // To handle permission related exception
-        console.warn(err);
+        console.warn("god", err);
       }
     }
   };
-  useEffect(() => {
-    checkPermission();
-  }, []);
+
   const [value, setValue] = React.useState(null);
   const [location, setLoaction] = React.useState({});
   const [current, setCurrent] = React.useState({});
@@ -103,6 +137,7 @@ const MapTest = ({
     });
   }
   navigator.geolocation = require("@react-native-community/geolocation");
+
   const moveTo = async (position) => {
     const camera = await mapRef.current?.getCamera();
     if (camera) {
@@ -149,10 +184,12 @@ const MapTest = ({
     setValue(e.nativeEvent.text);
   };
   //   setInitialCordinates({latitude: INTIAL_POSITION.latitude,longitude : INTIAL_POSITION.longitude})
-
+  React.useEffect(() => {
+    checkPermission();
+  }, []);
   return (
     <KeyboardAvoidingView>
-      <View>
+      <ScrollView keyboardShouldPersistTaps="handled">
         {/* Header */}
 
         {/* <HeaderBar title="Change Profile" /> */}
@@ -249,11 +286,11 @@ const MapTest = ({
                 fetchDetails
                 styles={{
                   description: {
-                    fontWeight: "bold",
+                    // fontWeight: "bold",
                   },
                   textInput: {
-                    fontWeight: "bold",
-                    fontSize: SIZES.h2,
+                    // fontWeight: "bold",
+                    fontSize: 15,
                   },
 
                   row: {
@@ -262,7 +299,7 @@ const MapTest = ({
                     padding: 13,
                     height: 44,
                     flexDirection: "row",
-
+                    fontSize: 15,
                     // fontSize: 20,
                   },
 
@@ -288,8 +325,8 @@ const MapTest = ({
             >
               <Ionicons
                 name="close-circle-outline"
-                size={35}
-                style={{ flex: 1, color: COLORS.mobile_theme_back, top: 3 }}
+                size={33}
+                style={{ left: -5, color: COLORS.mobile_theme_back, top: 5 }}
               />
             </TouchableOpacity>
           </View>
@@ -297,8 +334,8 @@ const MapTest = ({
         {granted == "granted" && (
           <TouchableOpacity
             onPress={async () => {
+              locationservice();
               if (Platform.OS == "android") {
-                // console.log("clicked");
                 const permissionAndroid = await PermissionsAndroid.check(
                   "android.permission.ACCESS_FINE_LOCATION"
                 );
@@ -363,15 +400,13 @@ const MapTest = ({
             style={{
               position: "absolute",
               top: "80%",
-              left: "25%",
-              minWidth: "45%",
-              maxWidth: 200,
-              paddingLeft: 12,
-
-              // width: 180,
+              left: "34%",
+              paddingHorizontal: 7,
+              paddingVertical: 5,
+              width: 140,
               // maxWidth: 200,
               // paddingHorizontal: 12,
-              height: 40,
+              justifyContent: "space-between",
               backgroundColor: COLORS.mobile_theme_back,
               // justifyContent: 'center',
               alignItems: "center",
@@ -383,21 +418,22 @@ const MapTest = ({
             <Ionicons
               name="compass-outline"
               size={25}
-              style={{ flex: 1, color: COLORS.white, top: 2 }}
+              style={{ color: COLORS.white, top: 2 }}
             />
             <Text
               style={{
                 fontSize: SIZES.form_button_text_fontSize,
                 color: COLORS.white,
                 fontWeight: "bold",
-                flex: 4,
+
+                // marginHorizontal: 3,
               }}
             >
               current location
             </Text>
           </TouchableOpacity>
         )}
-      </View>
+      </ScrollView>
     </KeyboardAvoidingView>
   );
 };
@@ -440,7 +476,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 4,
     elevation: 4,
-    padding: 8,
+    padding: 0,
     borderRadius: 8,
     position: "absolute",
     width: "90%",

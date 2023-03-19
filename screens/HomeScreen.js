@@ -59,7 +59,7 @@ const HomeScreen = ({ navigation, token, network }) => {
     // );
     const instance = axios.create({
       baseURL: `${REACT_APP_OWNER_API}/api/v1/owner/displayowner`,
-      timeout: 1000,
+      // timeout: 1000,
       headers: {
         Authorization: `Bearer ${token}`,
         "Cache-Control": "no-cache",
@@ -67,9 +67,9 @@ const HomeScreen = ({ navigation, token, network }) => {
     });
     // axios.defaults.cache = false;
     const data = await instance.get();
-    // console.log("result", data.data.data?.photos[0]);
+    // console.log("result_property", data.data.data);
     prop_setData(data.data.data);
-    console.log("result", data.data.data.address);
+    // console.log("result", data.data.data.address);
     setViews(data.data.data.views);
     setInterestedusers(data.data.data.interestedusers);
     prop_setImage(data.data.data?.photos[0]?.uri);
@@ -113,7 +113,7 @@ const HomeScreen = ({ navigation, token, network }) => {
       setLoading(true);
       await owner_fetch_details();
       await room_fetch_details();
-      checkPermission();
+
       setLoading(false);
     }
     call_all();
@@ -152,10 +152,8 @@ const HomeScreen = ({ navigation, token, network }) => {
             address={prop_data.address}
             navigation={navigation}
             status={prop_data ? "GOOD" : "BAD"}
+            ratings={prop_data?.ratings?.$numberDecimal}
           />
-          {/* <View>
-        <Text> Kirtan here</Text>
-      </View> */}
           <MyRooms
             data={room_data}
             key={key}
@@ -164,6 +162,7 @@ const HomeScreen = ({ navigation, token, network }) => {
             agreed={agreed}
             onDelete={async (room_id) => {
               setLoading(true);
+              console.log("token", token);
               const data = await axios.delete(
                 `${REACT_APP_OWNER_API}/api/v1/owner/deleteroom/${room_id}`,
                 {

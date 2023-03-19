@@ -34,18 +34,22 @@ const NotificationScreen = ({ token }) => {
     LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
   }, []); ///api/v1/showinterests
   const room_fetch_details = async () => {
-    // console.log("token", token);
-    const data = await axios.get(
-      `${REACT_APP_OWNER_API}/api/v1/owner/showinterests`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    // console.log("result room", data.data.data);
-    console.log("notification", data.data.data);
-    setNotifications(data.data.data);
+    // console.log("token", REACT_APP_OWNER_API);
+    try {
+      const data = await axios.get(
+        `${REACT_APP_OWNER_API}/api/v1/owner/showinterests`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      // console.log("result room", data.data.data);
+      console.log("notification", data.data.data);
+      setNotifications(data.data.data);
+    } catch (e) {
+      console.log("error", e.response.data);
+    }
   };
   useLayoutEffect(() => {
     room_fetch_details();
@@ -60,6 +64,7 @@ const NotificationScreen = ({ token }) => {
         backgroundColor: "white",
         // paddingBottom: 100,
         paddingVertical: 17,
+        paddingBottom: 1000,
       }}
     >
       <View>
@@ -67,11 +72,12 @@ const NotificationScreen = ({ token }) => {
           style={{
             color: COLORS.mobile_theme_back,
             paddingHorizontal: 15,
-            fontSize: SIZES.h1,
+            fontSize: SIZES.form_section_title_fontsize + 10,
             // fontWeight: "bold",
             borderBottomColor: COLORS.lightGray4,
-            borderBottomWidth: 1,
+            // borderBottomWidth: 1,
             paddingBottom: 10,
+            paddingLeft: 27,
             fontFamily: FONTS.fontFamily_regular,
           }}
         >
@@ -98,7 +104,6 @@ const NotificationScreen = ({ token }) => {
           <No_notification />
         )}
       </View>
-      <View style={{ paddingBottom: 50 }}></View>
     </ScrollView>
   );
 };

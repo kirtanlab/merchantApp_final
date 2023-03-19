@@ -12,7 +12,7 @@ const No_notification = ({ title }) => {
         // borderColor: COLORS.lightGray6,
         minHeight: 200,
         maxHeight: 250,
-        marginTop: "65%",
+        marginTop: "50%",
 
         paddingBottom: 10,
       }}
@@ -26,7 +26,7 @@ const No_notification = ({ title }) => {
           fontSize: SIZES.h2,
           color: COLORS.lightGray3,
           fontWeight: "bold",
-          left: "20%",
+          left: "12%",
           top: 10,
         }}
       >

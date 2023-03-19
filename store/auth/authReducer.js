@@ -37,6 +37,7 @@ const initialState = {
   checked_login_email: false,
   checked_login_pass: false,
   checked_first_form: false,
+  mobile_updating: false,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -119,7 +120,6 @@ const authReducer = (state = initialState, action) => {
     case authActions.RESET_TOKEN:
       return {
         ...state,
-        auth_states: action.auth_states,
       };
 
     //Reset Checked all

@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 import Toast, {
   ErrorToast,
   SuccessToast,
   InfoToast,
-} from 'react-native-toast-message';
+} from "react-native-toast-message";
 
 export const toastConfig = {
-  success: props => (
+  success: (props) => (
     <SuccessToast
       {...props}
       text1Style={{
         fontSize: 16,
-        fontWeight: '700',
+        fontWeight: "700",
       }}
       text2Style={{
         fontSize: 16,
@@ -19,18 +19,18 @@ export const toastConfig = {
     />
   ),
 
-  error: props => (
+  error: (props) => (
     <ErrorToast
       {...props}
       text1Style={{
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: 'red',
+        fontSize: 13,
+        fontWeight: "bold",
+        color: "red",
       }}
       text2Style={{
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: 'red',
+        fontSize: 13,
+        fontWeight: "bold",
+        color: "red",
       }}
       // contentContainerStyle={{padding: 1}}
       style={{
@@ -42,12 +42,12 @@ export const toastConfig = {
     />
   ),
 
-  info: props => (
+  info: (props) => (
     <InfoToast
       {...props}
       text1Style={{
         fontSize: 13,
-        fontWeight: '700',
+        fontWeight: "700",
       }}
       text2Style={{
         fontSize: 13,
@@ -58,10 +58,10 @@ export const toastConfig = {
 
 export const showSuccessToast = (title, text) => {
   Toast.show({
-    type: 'success',
+    type: "success",
     text1: title,
     text2: text,
-    position: 'bottom',
+    position: "bottom",
     visibilityTime: 3000,
     autoHide: true,
   });
@@ -69,10 +69,10 @@ export const showSuccessToast = (title, text) => {
 
 export const showErrorToast = (title, text) => {
   Toast.show({
-    type: 'error',
+    type: "error",
     text1: title,
     text2: text,
-    position: 'top',
+    position: "top",
     visibilityTime: 2000,
     autoHide: true,
   });
@@ -80,10 +80,10 @@ export const showErrorToast = (title, text) => {
 
 export const showInfoToast = (title, text) => {
   Toast.show({
-    type: 'info',
+    type: "info",
     text1: title,
     text2: text,
-    position: 'bottom',
+    position: "bottom",
     visibilityTime: 3000,
     autoHide: true,
   });

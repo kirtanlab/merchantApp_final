@@ -24,7 +24,7 @@ const Basic3 = ({ navigation, room_updating }) => {
         backgroundColor={COLORS.mobile_theme_back}
         barStyle={"light-content"}
       />
-      <SafeAreaView
+      {/* <SafeAreaView
         style={{
           height: SIZES.height * 0.03,
           backgroundColor: COLORS.mobile_theme_back,
@@ -39,9 +39,9 @@ const Basic3 = ({ navigation, room_updating }) => {
           height={SIZES.height * 0.01}
           style={{ position: "absolute", top: -1 }}
         />
-      </View>
-      <View style={{ padding: 15, marginTop: 45, flexDirection: "column" }}>
-        <View style={{ margin: 24 }}>
+      </View> */}
+      <View style={{ marginTop: "30%", flexDirection: "column" }}>
+        <View style={{}}>
           <Text
             style={{
               fontSize: 34,
@@ -50,16 +50,14 @@ const Basic3 = ({ navigation, room_updating }) => {
               marginLeft: room_updating ? 70 : 0,
             }}
           >
-            {room_updating
-              ? "Rooms Modified"
-              : "Thank you for Registering Room"}
+            {room_updating ? "Room Modified" : "Thank you for Registering Room"}
           </Text>
         </View>
         <View>
           <Custom_Animation />
         </View>
       </View>
-      <View style={{ marginTop: 90 }}>
+      <View style={{}}>
         <CustomButton_form
           fontColor={COLORS.font_color}
           backgroundColor={COLORS.mobile_theme_back}

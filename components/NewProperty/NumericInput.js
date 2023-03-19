@@ -11,7 +11,7 @@ import * as Newproperty_ext_actions from "../../store/Newproperty_ext/Newpropert
 import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
 import { REACT_APP_MAPS_API_KEY } from "@env";
 import InputField from "../../components/InputField";
-import { COLORS, SIZES } from "../../constants/theme";
+import { COLORS, SIZES, FONTS } from "../../constants/theme";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import * as Location_actions from "../../store/Location/Location_actions";
 import { phone_checked } from "../../store/auth/authActions";
@@ -51,7 +51,7 @@ const NumericInput = ({
           <Text
             style={{
               color: COLORS.black,
-              fontSize: SIZES.h2,
+              fontSize: SIZES.form_section_title_fontsize,
               // fontWeight: 'bold',
             }}
           >
@@ -76,11 +76,18 @@ const NumericInput = ({
                 // }
               />
             </View>
-            {focused_house_no && !checked_house_no && (
+            {/* {focused_house_no && !checked_house_no && (
               <View style={{ marginTop: -30, left: 3, marginBottom: 20 }}>
-                <Text style={{ color: COLORS.lightGray3 }}>Fill this</Text>
+                <Text
+                  style={{
+                    fontSize: SIZES.form_section_input_helper,
+                    color: COLORS.lightGray3,
+                  }}
+                >
+                  Fill this
+                </Text>
               </View>
-            )}
+            )} */}
           </View>
         </View>
         {/* Google Map */}
@@ -88,7 +95,7 @@ const NumericInput = ({
           <Text
             style={{
               color: COLORS.black,
-              fontSize: SIZES.h2,
+              fontSize: SIZES.form_section_title_fontsize,
               // fontWeight: 'bold',
             }}
           >
@@ -101,10 +108,7 @@ const NumericInput = ({
                 borderColor: COLORS.mobile_theme,
                 borderWidth: SIZES.form_button_borderWidth,
                 borderRadius: SIZES.form_button_borderRadius,
-                minWidth: SIZES.form_button_minWidth,
-                maxWidth: SIZES.form_button_maxWidth,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
+                maxWidth: SIZES.form_button_maxWidth + 30,
                 // paddingLeft: 7,
                 alignItems: SIZES.form_button_alignItems,
                 justifyContent: SIZES.form_button_justifyContent,
@@ -116,7 +120,11 @@ const NumericInput = ({
             >
               <Text
                 style={{
+                  lineHeight: SIZES.form_button_text_lineHeight,
+                  fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
+                  marginVertical: SIZES.form_button_text_marginVertical,
+                  marginHorizontal: SIZES.form_button_text_marginHorizontal,
                   // fontWeight: SIZES.form_button_text_fontWeight,
                   color: COLORS.font_color,
                 }}
@@ -144,7 +152,7 @@ const NumericInput = ({
                 style={{
                   flex: 5,
                   color: COLORS.mobile_theme_back,
-                  fontSize: SIZES.h2,
+                  fontSize: SIZES.form_section_input_fontsize,
                 }}
               >
                 {Location_address}
@@ -179,7 +187,7 @@ const NumericInput = ({
           <Text
             style={{
               color: COLORS.black,
-              fontSize: SIZES.h2,
+              fontSize: SIZES.form_section_title_fontsize,
               // fontWeight: 'bold',
             }}
           >
@@ -205,11 +213,18 @@ const NumericInput = ({
               />
             </View>
 
-            {focused_Landmark && !checked_Landmark && (
+            {/* {focused_Landmark && !checked_Landmark && (
               <View style={{ marginTop: -30, left: 3, marginBottom: 20 }}>
-                <Text style={{ color: COLORS.lightGray3 }}>Fill it</Text>
+                <Text
+                  style={{
+                    fontSize: SIZES.form_section_input_helper,
+                    color: COLORS.lightGray3,
+                  }}
+                >
+                  Fill it
+                </Text>
               </View>
-            )}
+            )} */}
           </View>
         </View>
       </SafeAreaView>

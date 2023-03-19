@@ -15,7 +15,7 @@ import {
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import ShowDialog from "../ShowDialog";
-import { COLORS, SIZES } from "../../constants/theme";
+import { COLORS, SIZES, FONTS } from "../../constants/theme";
 import InputField from "../InputField";
 import { connect } from "react-redux";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -228,8 +228,8 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
             >
               <Text
                 style={{
-                  fontSize: SIZES.custom1,
-                  fontWeight: SIZES.form_button_text_fontWeight,
+                  fontSize: SIZES.form_section_title_fontsize,
+                  // fontWeight: SIZES.form_button_text_fontWeight,
                   color: COLORS.black,
                   left: 4,
                 }}
@@ -287,8 +287,15 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
     </View>
   );
   const emptyComponent = () => (
-    <View style={{ left: 150 }}>
-      <Text style={{ fontSize: SIZES.custom1, fontWeight: "bold" }}>Empty</Text>
+    <View style={{ paddingLeft: "40%", paddingTop: "15%" }}>
+      <Text
+        style={{
+          fontSize: SIZES.form_section_title_fontsize,
+          fontWeight: "bold",
+        }}
+      >
+        Empty
+      </Text>
     </View>
   );
 
@@ -298,30 +305,24 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
     <ScrollView keyboardShouldPersistTaps="handled" style={{ marginTop: 30 }}>
       {/* <Portal> */}
       <View style={{ flexDirection: "row" }}>
-        <View style={{ flex: 1, marginTop: 8 }}>
+        <View style={{ flex: 1 }}>
           <Text
             style={{
               color: COLORS.black,
-              fontSize: SIZES.h2,
-              fontWeight: "bold",
+              fontSize: SIZES.form_section_title_fontsize,
             }}
           >
             Terms
           </Text>
         </View>
-        <View style={{ flex: 0.35 }}>
+        <View style={{ flex: 0.25 }}>
           <TouchableOpacity
             style={{
+              maxWidth: SIZES.form_button_maxWidth,
               borderColor: COLORS.mobile_theme_back,
               borderWidth: SIZES.form_button_borderWidth,
               borderRadius: SIZES.form_button_borderRadius,
-              minWidth: 24,
-              //   marginBottom: 2,
-              maxWidth: SIZES.form_button_maxWidth,
-              width: 80,
               maxHeight: SIZES.form_button_maxHeight,
-              paddingVertical: 4,
-              padding: SIZES.form_button_padding,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
               backgroundColor: true ? COLORS.mobile_theme_back : "white",
@@ -336,8 +337,12 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
           >
             <Text
               style={{
-                fontSize: SIZES.h3,
-                fontWeight: SIZES.form_button_text_fontWeight,
+                lineHeight: SIZES.form_button_text_lineHeight,
+                fontFamily: FONTS.fontFamily_black,
+                fontSize: SIZES.form_button_text_fontSize,
+                // fontWeight: SIZES.form_button_text_fontWeight,
+                marginVertical: SIZES.form_button_text_marginVertical,
+                marginHorizontal: SIZES.form_button_text_marginHorizontal,
                 color: COLORS.font_color,
               }}
             >
@@ -360,7 +365,7 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
       >
         <ScrollView
           style={{
-            minHeight: 10,
+            minHeight: 150,
             maxHeight: 200,
           }}
         >
@@ -389,7 +394,8 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
         term={term}
         _showDialog={() => setVisible(true)}
         _hideDialog={async () => {
-          if (term !== " ") {
+          console.log("hideDialog", term);
+          if (term) {
             console.log("selected_term_id", selected_term_id);
             const id = generateID();
             terms_pg_copy.push({ id: id, text: term });
@@ -409,8 +415,7 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
           <Text
             style={{
               color: COLORS.black,
-              fontSize: SIZES.h2,
-              fontWeight: "bold",
+              fontSize: SIZES.form_section_title_fontsize,
             }}
           >
             About PG

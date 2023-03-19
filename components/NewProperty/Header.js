@@ -1,7 +1,7 @@
-import React from 'react';
-import {View, Text} from 'react-native';
-import {COLORS, SIZES} from '../../constants';
-const Header = ({step, title, subtitle, total}) => {
+import React from "react";
+import { View, Text } from "react-native";
+import { COLORS, SIZES } from "../../constants";
+const Header = ({ step, title, subtitle, total }) => {
   return (
     <View>
       <Text
@@ -9,28 +9,31 @@ const Header = ({step, title, subtitle, total}) => {
           color: COLORS.lightGray,
           //   fontWeight: 'bold',
           //   fontFamily: 'Roboto-Bold',
-          fontSize: SIZES.h4,
-        }}>
+          fontSize: SIZES.h5,
+        }}
+      >
         STEP {step} OF {total ? total : 4}
       </Text>
       <Text
         style={{
           marginTop: 8,
           color: COLORS.lightGray,
-          fontWeight: 'bold',
-          fontFamily: 'Roboto-Bold',
-          fontSize: SIZES.h1,
-        }}>
+          fontWeight: "bold",
+          fontFamily: "Roboto-Bold",
+          fontSize: SIZES.h2,
+        }}
+      >
         {title}
       </Text>
       <Text
         style={{
           color: COLORS.lightGray3,
-          fontWeight: 'bold',
+          fontWeight: "bold",
           //   fontFamily: 'Roboto-Bold',
-          fontSize: SIZES.subtitle,
+          fontSize: SIZES.h3,
           marginTop: 6,
-        }}>
+        }}
+      >
         {subtitle}
       </Text>
     </View>

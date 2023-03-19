@@ -45,9 +45,13 @@ const Rooms_Listing = ({
           visible={visible_confirm}
           onDismiss={hideDialog}
         >
-          <Dialog.Title>Confirm</Dialog.Title>
+          <Dialog.Title
+            style={{ fontSize: SIZES.form_section_title_fontsize + 5 }}
+          >
+            Confirm
+          </Dialog.Title>
           <Dialog.Content>
-            <Text style={{ fontSize: SIZES.h2 }}>
+            <Text style={{ fontSize: SIZES.form_section_title_fontsize }}>
               Are you sure you want to delete {room_name}?
             </Text>
           </Dialog.Content>
@@ -99,17 +103,21 @@ const Rooms_Listing = ({
   };
   return (
     <View
-      style={
-        {
-          // borderWidth: 2,
-          // borderRadius: 15,
-          // // padding: 10,
-          // // paddingHorizontal: 10,
-          // borderColor: COLORS.lightGray6,
-          // height: 600,
-          // paddingHorizontal: 18,
-        }
-      }
+      style={{
+        borderWidth: 0.5,
+        marginTop: 15,
+
+        // borderRadius: 15,
+        // padding: 10,
+        // paddingLeft: 0,
+
+        // // paddingHorizontal: 10,
+        borderColor: COLORS.lightGray7,
+        borderRadius: 10,
+        marginRight: 10,
+        // height: 600,
+        // paddingHorizontal: 18,
+      }}
     >
       <View style={{}}>
         {image_source ? (
@@ -117,12 +125,9 @@ const Rooms_Listing = ({
             source={{ uri: image_source }}
             style={{
               height: 170,
-              width: SIZES.width * 0.9,
+              width: SIZES.width * 0.8,
               borderRadius: 10,
-              marginTop: 17,
-              borderWidth: 1,
-              // borderRadius: 15,
-              borderColor: COLORS.lightGray4,
+
               // alignSelf: 'center',
             }}
           />
@@ -131,15 +136,14 @@ const Rooms_Listing = ({
             source={icons.no_image}
             style={{
               height: 170,
-              width: SIZES.width * 0.9,
+              width: SIZES.width * 0.8,
               borderRadius: 10,
-              marginTop: 17,
               // right: 10,
               // alignSelf: 'center',
             }}
           />
         )}
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={{
             position: "absolute",
             left: "85%",
@@ -159,7 +163,7 @@ const Rooms_Listing = ({
             color={COLORS.mobile_theme_back}
             style={{}}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       {/* <Modal> */}
       <ShowNumberDialog
@@ -180,7 +184,7 @@ const Rooms_Listing = ({
       />
       {/* </Modal> */}
       <ConfirmBox />
-      <View style={{}}>
+      <View style={{ paddingHorizontal: 10 }}>
         {/* property id */}
         {/* <View style={{marginTop: 5}}>
           <Text
@@ -218,7 +222,7 @@ const Rooms_Listing = ({
               }}
             >
               Type : {type.AC ? "AC" : "Non AC"}
-              {" , "}
+              {" ,  "}
               {type.ATTACHED ? "Attached" : "Non Attached"}
             </Text>
           </View>
@@ -256,13 +260,14 @@ const Rooms_Listing = ({
           </Text>
         </View> */}
         {/* Edit Buttons */}
-        <View style={{ marginTop: 10, flexDirection: "row" }}>
+        <View style={{ marginTop: 10, marginBottom: 5, flexDirection: "row" }}>
           <TouchableOpacity
             style={{
               borderColor: COLORS.mobile_theme_back,
               borderWidth: SIZES.form_button_borderWidth,
               borderRadius: SIZES.form_button_borderRadius,
-
+              // minHeight: 10,
+              // maxHeight: 38,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
               backgroundColor: true ? COLORS.mobile_theme_back : "white",
@@ -310,6 +315,35 @@ const Rooms_Listing = ({
               }}
             >
               Avaibility of Rooms
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              // flex: 9,
+
+              borderColor: COLORS.mobile_theme_back,
+              borderWidth: SIZES.form_button_borderWidth,
+              borderRadius: SIZES.form_button_borderRadius,
+
+              alignItems: SIZES.form_button_alignItems,
+              marginLeft: 10,
+              justifyContent: SIZES.form_button_justifyContent,
+              backgroundColor: true ? COLORS.mobile_theme_back : "white",
+            }}
+            onPress={() => setVisible_confirm(true)}
+          >
+            <Text
+              style={{
+                lineHeight: 22,
+                fontFamily: FONTS.fontFamily_black,
+                fontSize: SIZES.form_button_text_fontSize,
+                marginVertical: SIZES.form_button_text_marginVertical,
+                marginHorizontal: SIZES.form_button_text_marginHorizontal,
+                // fontWeight: SIZES.form_button_text_fontWeight,
+                color: true ? COLORS.font_color : COLORS.lightGray3,
+              }}
+            >
+              Delete
             </Text>
           </TouchableOpacity>
         </View>

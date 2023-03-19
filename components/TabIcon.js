@@ -24,23 +24,20 @@ const TabIcon = ({ focused, icon_name, iconStyle, subtitle, isTrade }) => {
       style={{
         borderColor: COLORS.mobile_theme_back,
         borderTopWidth: focused ? 2 : 0,
-        minWidth: 50,
-        maxWidth: 70,
         alignItems: "center",
         justifyContent: "center",
-        // paddingBottom: 10,
       }}
     >
       <MaterialIcons
         name={icon_name}
         size={30}
-        color={focused ? COLORS.mobile_theme_back : "#A4BFE7"}
+        color={focused ? COLORS.mobile_theme_back : "#e0e9ff"}
         style={{ top: 4 }}
         // label="notifications"
       />
       <Text
         style={{
-          color: focused ? COLORS.mobile_theme_back : "#A4BFE7",
+          color: focused ? COLORS.mobile_theme_back : "#e0e9ff",
           ...FONTS.h4,
 
           fontWeight: "bold",

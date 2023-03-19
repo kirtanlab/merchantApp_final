@@ -33,7 +33,12 @@ const ShowNumberDialog = ({
         onDismiss={_hideDialog}
       >
         <Dialog.Content>
-          <Text style={{ color: COLORS.mobile_theme_back, fontSize: SIZES.h2 }}>
+          <Text
+            style={{
+              color: COLORS.mobile_theme_back,
+              fontSize: SIZES.form_section_title_fontsize + 3,
+            }}
+          >
             Available Number of Rooms
           </Text>
           {/*<InputField
@@ -66,12 +71,12 @@ const ShowNumberDialog = ({
             }}
           />
         </Dialog.Content>
-        <Dialog.Actions style={{ top: -5 }}>
+        <Dialog.Actions style={{ top: -10 }}>
           <Button style={{}} onPress={_hideDialog}>
             <Text
               style={{
                 color: COLORS.mobile_theme_back,
-                fontSize: SIZES.h2 - 2,
+                fontSize: SIZES.form_section_title_fontsize,
                 // top: -50,
               }}
             >

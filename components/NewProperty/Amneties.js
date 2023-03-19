@@ -1,17 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
-} from 'react-native';
-import {Button} from 'react-native';
+} from "react-native";
+import { Button } from "react-native";
 // import {Button} from 'react-native-paper';
-import {COLORS, FONTS, SIZES} from '../../constants';
-import {connect, useSelector} from 'react-redux';
-import * as newproperty_actions from '../../store/Newproperty/newproperty_action';
-const Amneties = ({amneties, setAmneties}) => {
+import { COLORS, FONTS, SIZES } from "../../constants";
+import { connect, useSelector } from "react-redux";
+import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
+const Amneties = ({ amneties, setAmneties }) => {
   let [amneties_copy, setamneties_copy] = useState(amneties);
   let [wifi, setwifi] = useState(amneties_copy.wifi);
   let [AC, setAC] = useState(amneties_copy.AC);
@@ -24,14 +24,14 @@ const Amneties = ({amneties, setAmneties}) => {
         <Text
           style={{
             color: COLORS.black,
-            fontSize: SIZES.h2,
-            fontWeight: 'bold',
-          }}>
+            fontSize: SIZES.form_section_title_fontsize,
+          }}
+        >
           Select Amneties
         </Text>
       </View>
       {/* Wifi */}
-      <View style={{flexDirection: 'row', gap: 14, marginTop: 12}}>
+      <View style={{ flexDirection: "row", gap: 14, marginTop: 12 }}>
         <View>
           <TouchableOpacity
             style={{
@@ -39,12 +39,9 @@ const Amneties = ({amneties, setAmneties}) => {
               borderWidth: SIZES.form_button_borderWidth,
               borderRadius: SIZES.form_button_borderRadius,
               minWidth: SIZES.form_button_minWidth,
-              maxWidth: SIZES.form_button_maxWidth,
-              maxHeight: SIZES.form_button_maxHeight,
-              padding: SIZES.form_button_padding,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
-              backgroundColor: wifi ? COLORS.mobile_theme_back : 'white',
+              backgroundColor: wifi ? COLORS.mobile_theme_back : "white",
             }}
             onPress={async () => {
               if (!wifi) {
@@ -64,14 +61,20 @@ const Amneties = ({amneties, setAmneties}) => {
                 setamneties_copy(amneties_copy);
                 setAmneties(amneties_copy);
               }
-              console.log('Pressed0');
-            }}>
+              console.log("Pressed0");
+            }}
+          >
             <Text
               style={{
-                fontSize: SIZES.form_button_text_fontSize,
                 fontWeight: SIZES.form_button_text_fontWeight,
+                lineHeight: SIZES.form_button_text_lineHeight,
+                fontFamily: FONTS.fontFamily_black,
+                fontSize: SIZES.form_button_text_fontSize,
+                marginVertical: SIZES.form_button_text_marginVertical,
+                marginHorizontal: SIZES.form_button_text_marginHorizontal,
                 color: wifi ? COLORS.font_color : COLORS.lightGray3,
-              }}>
+              }}
+            >
               Wifi
             </Text>
           </TouchableOpacity>
@@ -84,12 +87,9 @@ const Amneties = ({amneties, setAmneties}) => {
               borderWidth: SIZES.form_button_borderWidth,
               borderRadius: SIZES.form_button_borderRadius,
               minWidth: SIZES.form_button_minWidth,
-              maxWidth: SIZES.form_button_maxWidth,
-              maxHeight: SIZES.form_button_maxHeight,
-              padding: SIZES.form_button_padding,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
-              backgroundColor: AC ? COLORS.mobile_theme_back : 'white',
+              backgroundColor: AC ? COLORS.mobile_theme_back : "white",
             }}
             onPress={async () => {
               if (!AC) {
@@ -109,14 +109,20 @@ const Amneties = ({amneties, setAmneties}) => {
                 setamneties_copy(amneties_copy);
                 setAmneties(amneties_copy);
               }
-              console.log('Pressed0');
-            }}>
+              console.log("Pressed0");
+            }}
+          >
             <Text
               style={{
+                lineHeight: SIZES.form_button_text_lineHeight,
+                fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
+                marginVertical: SIZES.form_button_text_marginVertical,
+                marginHorizontal: SIZES.form_button_text_marginHorizontal,
                 fontWeight: SIZES.form_button_text_fontWeight,
                 color: AC ? COLORS.font_color : COLORS.lightGray3,
-              }}>
+              }}
+            >
               AC
             </Text>
           </TouchableOpacity>
@@ -129,12 +135,9 @@ const Amneties = ({amneties, setAmneties}) => {
               borderWidth: SIZES.form_button_borderWidth,
               borderRadius: SIZES.form_button_borderRadius,
               minWidth: SIZES.form_button_minWidth,
-              maxWidth: SIZES.form_button_maxWidth,
-              maxHeight: SIZES.form_button_maxHeight,
-              padding: SIZES.form_button_padding,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
-              backgroundColor: hotwater ? COLORS.mobile_theme_back : 'white',
+              backgroundColor: hotwater ? COLORS.mobile_theme_back : "white",
             }}
             onPress={async () => {
               if (!hotwater) {
@@ -154,14 +157,20 @@ const Amneties = ({amneties, setAmneties}) => {
                 setamneties_copy(amneties_copy);
                 setAmneties(amneties_copy);
               }
-              console.log('Pressed2');
-            }}>
+              console.log("Pressed2");
+            }}
+          >
             <Text
               style={{
-                fontSize: SIZES.form_button_text_fontSize,
+                lineHeight: SIZES.form_button_text_lineHeight,
+                fontFamily: FONTS.fontFamily_black,
                 fontWeight: SIZES.form_button_text_fontWeight,
+                fontSize: SIZES.form_button_text_fontSize,
+                marginVertical: SIZES.form_button_text_marginVertical,
+                marginHorizontal: SIZES.form_button_text_marginHorizontal,
                 color: hotwater ? COLORS.font_color : COLORS.lightGray3,
-              }}>
+              }}
+            >
               Hot Water
             </Text>
           </TouchableOpacity>
@@ -174,12 +183,11 @@ const Amneties = ({amneties, setAmneties}) => {
               borderWidth: SIZES.form_button_borderWidth,
               borderRadius: SIZES.form_button_borderRadius,
               minWidth: SIZES.form_button_minWidth,
-              maxWidth: SIZES.form_button_maxWidth,
-              maxHeight: SIZES.form_button_maxHeight,
-              padding: SIZES.form_button_padding,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
-              backgroundColor: cooler ? COLORS.mobile_theme_back : 'white',
+              alignItems: SIZES.form_button_alignItems,
+              justifyContent: SIZES.form_button_justifyContent,
+              backgroundColor: cooler ? COLORS.mobile_theme_back : "white",
             }}
             onPress={async () => {
               if (!cooler) {
@@ -199,14 +207,20 @@ const Amneties = ({amneties, setAmneties}) => {
                 setamneties_copy(amneties_copy);
                 setAmneties(amneties_copy);
               }
-              console.log('Pressed0');
-            }}>
+              console.log("Pressed0");
+            }}
+          >
             <Text
               style={{
-                fontSize: SIZES.form_button_text_fontSize,
+                lineHeight: SIZES.form_button_text_lineHeight,
+                fontFamily: FONTS.fontFamily_black,
                 fontWeight: SIZES.form_button_text_fontWeight,
+                fontSize: SIZES.form_button_text_fontSize,
+                marginVertical: SIZES.form_button_text_marginVertical,
+                marginHorizontal: SIZES.form_button_text_marginHorizontal,
                 color: cooler ? COLORS.font_color : COLORS.lightGray3,
-              }}>
+              }}
+            >
               Cooler
             </Text>
           </TouchableOpacity>
@@ -226,7 +240,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    setAmneties: value => {
+    setAmneties: (value) => {
       dispatch(newproperty_actions.setAmneties(value));
     },
   };

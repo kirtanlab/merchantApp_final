@@ -92,7 +92,7 @@ const newRoom_reducer = (state = initialState, action) => {
         },
         totalRooms: action.value.availablerooms.toString(),
         occupancy: action.value.occupancy.toString(),
-
+        checked_base_terms: false,
         checked_ac: true,
         checked_title_no: true,
         checked_attached: true,

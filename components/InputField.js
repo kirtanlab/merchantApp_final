@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import { connect } from "react-redux";
-import { COLORS, SIZES } from "../constants";
+import { COLORS, FONTS, SIZES } from "../constants";
 import * as AuthActions from "../store/auth/authActions";
 import * as NewPropertyActions from "../store/Newproperty/newproperty_action";
 import * as NewRoomActions from "../store/NewRooms/Newrooms_actions";
@@ -143,17 +143,12 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            left: 12,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            // paddingBottom: 0,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           secureTextEntry={true}
           onChange={(value) => {
@@ -185,17 +180,12 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            marginLeft: 4,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            // paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           // editable={false}
           contextMenuHidden={true}
@@ -213,17 +203,12 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            marginLeft: 4,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            // paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           // editable={false}
           contextMenuHidden={true}
@@ -246,17 +231,12 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            left: 12,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            // paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           value={value}
           defaultValue={defaultValue}
@@ -289,18 +269,12 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            // marginLeft: 20,
-            left: 12,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            // paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           onChange={(value) => {
             value = value.nativeEvent.text;
@@ -332,17 +306,12 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            left: 12,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            // paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           onChange={(value) => {
             value = value.nativeEvent.text;
@@ -365,17 +334,12 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            marginLeft: 4,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            // paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           value={value}
           defaultValue={defaultValue}
@@ -402,17 +366,12 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            marginLeft: 4,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           onChange={onChange}
         />
@@ -427,17 +386,12 @@ function InputField({
           keyboardType={keyboardType}
           defaultValue={defaultValue}
           style={{
-            height: 40,
-            marginLeft: 4,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           secureTextEntry={true}
           onChange={(value) => {
@@ -476,9 +430,11 @@ function InputField({
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             paddingBottom: -10,
-            fontSize: 19,
+            marginTop: 6,
+            left: -5,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
-          value={adhar_name}
+          defaultValue={adhar_name}
           // secureTextEntry={true}
           onChange={(value) => {
             console.log("handeled", value.nativeEvent.text);
@@ -513,23 +469,37 @@ function InputField({
             paddingVertical: 0,
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
+            marginTop: 6,
             paddingBottom: -10,
-            fontSize: 19,
+            left: -5,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
-          value={propertyName}
+          // value={propertyName}
+          defaultValue={propertyName}
           // secureTextEntry={true}
-          onChange={(value) => {
-            console.log("handeled", value.nativeEvent.text);
 
-            // updatesign_password(value.nativeEvent.text);
-            value = value.nativeEvent.text;
-            update_PropertyName(value);
+          onChangeText={(value) => {
+            // console.log("valueonchagnetext", value);
+            // update_PropertyName(value);
             if (value !== "") {
+              update_PropertyName(value);
               checked_PropertyName(true);
             } else {
               checked_PropertyName(false);
             }
           }}
+          // onChange={(value) => {
+          //   console.log("handeled", value.nativeEvent.text);
+
+          //   // updatesign_password(value.nativeEvent.text);
+          //   value = value.nativeEvent.text;
+          //   update_PropertyName(value);
+          // if (value !== "") {
+          //   checked_PropertyName(true);
+          // } else {
+          //   checked_PropertyName(false);
+          // }
+          // }}
         />
       );
     }
@@ -549,17 +519,13 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            marginLeft: 4,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            marginTop: 6,
+            paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           // secureTextEntry={true}
           onChange={(value) => {
@@ -597,17 +563,13 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            marginLeft: 4,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            marginTop: 6,
+            paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           // secureTextEntry={true}
           onChange={(value) => {
@@ -640,26 +602,26 @@ function InputField({
             phone_focused(false);
           }}
           value={phone.toString()}
-          defaultValue={defaultValue}
+          // defaultValue={defaultValue}
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            left: 4,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           // secureTextEntry={true}
           onChange={(value) => {
+            if (value.nativeEvent.text === "") {
+              value = "";
+            } else {
+              value = Number(value.nativeEvent.text.trimEnd());
+            }
+
             // console.log('handeled', value.nativeEvent.text);
-            value = Number(value.nativeEvent.text);
             update_phone(value);
             if (validate_phone(value)) {
               console.log("etnereed green");
@@ -691,9 +653,10 @@ function InputField({
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            marginTop: 6,
             borderBottomWidth: 1,
             paddingBottom: 4,
-            fontSize: 19,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           value={price}
           // secureTextEntry={true}
@@ -730,17 +693,13 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           style={{
-            height: 40,
-            marginLeft: 4,
             flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
+            marginTop: 6,
             borderBottomWidth: 1,
-            borderColor: "#d1cfcf",
-            marginTop: 5,
-            borderRadius: 8,
-            paddingHorizontal: 10,
-            paddingBottom: 9,
-            fontSize: 18,
-            color: "#212121",
+            paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           value={title_no}
           // secureTextEntry={true}
@@ -776,14 +735,15 @@ function InputField({
           }}
           placeholder={label}
           keyboardType={keyboardType}
-          value={house_no}
+          defaultValue={house_no}
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             paddingBottom: 4,
-            fontSize: 19,
+            marginTop: 6,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
           // secureTextEntry={true}
           onChange={(value) => {
@@ -791,10 +751,11 @@ function InputField({
             // console.log('hande
             // console.log('handeled', value.nativeEvent.text);
             // value = Number(value.nativeEvent.text);
-            update_house_no(value);
+
             if (value !== "") {
               console.log("etnereed house no");
               checked_house_no(true);
+              update_house_no(value);
               // gen_sign_err_method(false);
               // sign_password_focused(false);
             } else {
@@ -863,17 +824,19 @@ function InputField({
             paddingVertical: 0,
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
+            marginTop: 6,
             paddingBottom: 4,
-            fontSize: 19,
+            fontSize: SIZES.form_section_input_fontsize,
           }}
-          value={Landmark}
+          defaultValue={Landmark}
           // secureTextEntry={true}
           onChange={(value) => {
             // console.log('handeled', value.nativeEvent.text);
             value = value.nativeEvent.text;
-            update_landmark(value);
+
             if (value !== "") {
               console.log("etnereed landmark");
+              update_landmark(value);
               checked_landmark(true);
               // gen_sign_err_method(false);
               // sign_password_focused(false);
@@ -936,12 +899,14 @@ function InputField({
             paddingVertical: -2,
             borderBottomColor: COLORS.lightGray4,
             borderBottomWidth: 1,
-            fontSize: 19,
-            lineHeight: 23,
-            width: SIZES.width * 0.88,
+            fontSize: FONTS.form_section_input_fontsize,
+            // lineHeight: 25,
+            width: "95%",
             textAlignVertical: "top",
             height: 200,
-            fontWeight: "bold",
+            // alignContent: "center",
+            // justifyContent: "center",
+            // fontWeight: "bold",
             borderWidth: 1,
             borderColor: COLORS.lightGray4,
           }}
@@ -971,13 +936,13 @@ function InputField({
             paddingVertical: -2,
             borderBottomColor: COLORS.lighupdate_house_notGray4,
             borderBottomWidth: 1,
-            fontSize: 19,
+            fontSize: SIZES.form_section_input_fontsize,
             lineHeight: 23,
             width: SIZES.width * 0.88,
             textAlignVertical: "top",
             // minHeight: 50,
             minHeight: 180,
-            fontWeight: "bold",
+            // fontWeight: "bold",
             borderWidth: 1,
             borderColor: COLORS.lightGray4,
           }}
@@ -1008,10 +973,10 @@ function InputField({
         <Text
           style={{
             color: COLORS.mobile_theme_back,
-            fontWeight: "bold",
+            // fontWeight: "bold",
             // left: 100,
             marginTop: 15,
-            fontSize: 16,
+            fontSize: 14,
           }}
         >
           {fieldButtonLabel}

@@ -15,6 +15,7 @@ const MyProperty = ({
   typeofpg,
   image,
   status,
+  ratings,
   address,
 }) => {
   console.log("address", address);
@@ -58,6 +59,7 @@ const MyProperty = ({
             house_no={house_no}
             Landmark={Landmark}
             navigation={navigation}
+            ratings={ratings}
           />
         ) : (
           <EmptyScreen title={"Property"} />

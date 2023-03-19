@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -6,11 +6,11 @@ import {
   TouchableOpacity,
   SafeAreaView,
   KeyboardAvoidingView,
-} from 'react-native';
-import InputField from '../../components/InputField';
-import {COLORS, SIZES} from '../../constants/theme';
-import {phone_checked} from '../../store/auth/authActions';
-import {connect} from 'react-redux';
+} from "react-native";
+import InputField from "../../components/InputField";
+import { COLORS, SIZES, FONTS } from "../../constants/theme";
+import { phone_checked } from "../../store/auth/authActions";
+import { connect } from "react-redux";
 const Floor_price = ({
   focused_price,
   focused_title,
@@ -31,25 +31,26 @@ const Floor_price = ({
   //   console.log(focused_adhar_name);
   return (
     <KeyboardAvoidingView>
-      <SafeAreaView style={{padding: 0}}>
+      <SafeAreaView style={{ padding: 0 }}>
         <View>
           <Text
             style={{
               color: COLORS.black,
-              fontSize: SIZES.custom1,
+              fontSize: SIZES.form_section_title_fontsize,
               // fontWeight: 'bold',
-            }}>
+            }}
+          >
             Enter title for room
           </Text>
         </View>
         <View>
           {/* Floor Number */}
-          <View style={{marginTop: 6}}>
-            <View style={{width: SIZES.width * 0.8}}>
+          <View style={{ marginTop: 6 }}>
+            <View style={{ width: SIZES.width * 0.8 }}>
               <InputField
-                label={'Title'}
-                type={'room_title'}
-                keyboardType={'default'}
+                label={"Title"}
+                type={"room_title"}
+                keyboardType={"default"}
                 value={title}
                 // icon={
                 //   <Ionicons
@@ -61,11 +62,11 @@ const Floor_price = ({
                 // }
               />
             </View>
-            {focused_title && !checked_title && (
-              <View style={{marginTop: -30, marginBottom: 20, left: 15}}>
-                <Text style={{color: COLORS.lightGray3}}>Fill this</Text>
+            {/* {focused_title && !checked_title && (
+              <View style={{ marginTop: -30, marginBottom: 20, left: 15 }}>
+                <Text style={{ color: COLORS.lightGray3 }}>Fill this</Text>
               </View>
-            )}
+            )} */}
           </View>
         </View>
         {/* Total Available Rooms Number */}
@@ -73,18 +74,19 @@ const Floor_price = ({
           <Text
             style={{
               color: COLORS.black,
-              fontSize: SIZES.custom1,
+              fontSize: SIZES.form_section_title_fontsize,
               // fontWeight: 'bold',
-            }}>
+            }}
+          >
             Enter Total Number of this type of Rooms
           </Text>
         </View>
-        <View style={{marginTop: 6}}>
-          <View style={{width: SIZES.width * 0.8}}>
+        <View style={{ marginTop: 6 }}>
+          <View style={{ width: SIZES.width * 0.8 }}>
             <InputField
-              label={'Total Rooms'}
-              type={'totalRooms'}
-              keyboardType={'numeric'}
+              label={"Total Rooms"}
+              type={"totalRooms"}
+              keyboardType={"numeric"}
               value={totalRooms}
               // icon={
               //   <Ionicons
@@ -96,29 +98,32 @@ const Floor_price = ({
               // }
             />
           </View>
-          {focused_totalRooms && !checked_totalRooms && (
-            <View style={{marginTop: -30, marginBottom: 20, left: 15}}>
-              <Text style={{color: COLORS.lightGray3}}>Enter Valid Number</Text>
+          {/* {focused_totalRooms && !checked_totalRooms && (
+            <View style={{ marginTop: -30, marginBottom: 20, left: 15 }}>
+              <Text style={{ color: COLORS.lightGray3 }}>
+                Enter Valid Number
+              </Text>
             </View>
-          )}
+          )} */}
         </View>
         {/* Total Occupancy of Rooms Number */}
         <View>
           <Text
             style={{
               color: COLORS.black,
-              fontSize: SIZES.custom1,
+              fontSize: SIZES.form_section_title_fontsize,
               // fontWeight: 'bold',
-            }}>
+            }}
+          >
             Enter Occupancy of Rooms
           </Text>
         </View>
-        <View style={{marginTop: 6}}>
-          <View style={{width: SIZES.width * 0.8}}>
+        <View style={{ marginTop: 6 }}>
+          <View style={{ width: SIZES.width * 0.8 }}>
             <InputField
-              label={'Total Occupancy'}
-              type={'occupancy'}
-              keyboardType={'number-pad'}
+              label={"Total Occupancy"}
+              type={"occupancy"}
+              keyboardType={"number-pad"}
               value={occupancy}
               // icon={
               //   <Ionicons
@@ -130,11 +135,13 @@ const Floor_price = ({
               // }
             />
           </View>
-          {focused_occpancy && !checked_occpancy && (
-            <View style={{marginTop: -30, marginBottom: 20, left: 15}}>
-              <Text style={{color: COLORS.lightGray3}}>Enter Valid Number</Text>
+          {/* {focused_occpancy && !checked_occpancy && (
+            <View style={{ marginTop: -30, marginBottom: 20, left: 15 }}>
+              <Text style={{ color: COLORS.lightGray3 }}>
+                Enter Valid Number
+              </Text>
             </View>
-          )}
+          )} */}
         </View>
 
         {/* Prices

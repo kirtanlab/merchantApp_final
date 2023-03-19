@@ -9,10 +9,14 @@
 
 
 --> Bugs 2.0s
- 1)Change Password -> forget password -> clicked on back button -> navigate to login screen
+l 1)Change Password -> forget password -> clicked on back button -> navigate to login screen
 🤩️2)Mobile Number after Login
 🤩️3)Room Photos 
 🤩️4)propert title
 🤩️5)room id/propery,id in profile -remove
 🤩️6)Total Intrested Users  
  --> 1!kirtan
+
+
+-->Bugs 3.0s
+1)in vidimage , select image is not workng

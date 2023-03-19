@@ -67,13 +67,18 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
         borderColor: COLORS.lightGray6,
         borderWidth: 1,
         marginTop: 6,
-        paddingHorizontal: 6,
+        paddingHorizontal: 15,
         paddingVertical: 2,
         borderRadius: 10,
       }}
     >
       <View>
-        <Text style={{ color: COLORS.black, fontSize: 20 }}>
+        <Text
+          style={{
+            color: COLORS.black,
+            fontSize: SIZES.form_section_title_fontsize - 1,
+          }}
+        >
           <Text
             style={{
               color: COLORS.mobile_theme_back,
@@ -96,7 +101,12 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
       </View>
       <View>
         <View>
-          <Text style={{ color: COLORS.black, fontSize: 20 }}>
+          <Text
+            style={{
+              color: COLORS.black,
+              fontSize: SIZES.form_section_title_fontsize - 1,
+            }}
+          >
             Email:{" "}
             <Text
               style={{
@@ -110,7 +120,12 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
         </View>
         <View style={{ flexDirection: "row" }}>
           <View style={{ flex: 1 }}>
-            <Text style={{ color: COLORS.black, fontSize: 20 }}>
+            <Text
+              style={{
+                color: COLORS.black,
+                fontSize: SIZES.form_section_title_fontsize - 1,
+              }}
+            >
               Number:{" "}
               <Text
                 style={{
@@ -130,8 +145,8 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
             <Text
               style={{
                 flex: 1,
-                fontSize: 15,
-                color: COLORS.mobile_theme_back,
+                fontSize: SIZES.form_section_input_fontsize - 3,
+                color: COLORS.lightGray3,
                 fontFamily: FONTS.fontFamily_regular,
               }}
             >

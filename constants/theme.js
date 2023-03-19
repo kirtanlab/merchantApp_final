@@ -38,20 +38,24 @@ export const SIZES = {
   //Form Button Sizes
   form_button_borderWidth: 1,
   form_button_borderRadius: 12,
-  form_button_minWidth: 0,
-  form_button_maxWidth: 0,
-  form_button_maxHeight: 0,
+  form_button_minWidth: 50,
+  form_button_maxWidth: 100,
+  form_button_maxHeight: 30,
   form_button_padding: 0,
   form_button_alignItems: "center",
   form_button_justifyContent: "center",
   form_button_text_marginVertical: 6,
   form_button_text_marginHorizontal: 6,
+  form_button_text_lineHeight: 16,
 
   homescreen_header_fontsize: 15,
+  form_section_input_fontsize: 15,
+  form_section_input_helper: 13,
 
+  form_section_title_fontsize: 16,
   //Form Button Text
   form_button_text_fontSize: 12,
-  form_button_text_fontWeight: "bold",
+  form_button_text_fontWeight: "400",
 
   // font sizes
   largeTitle: 40,

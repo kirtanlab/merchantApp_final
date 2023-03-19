@@ -110,6 +110,7 @@ const MyRooms = ({
                     };
                     await roomUpdating(new_temp);
                     await updateAll(data.data.data);
+                    await updateAll_vidimage(data.data.data);
                     // downloadVideo();
                     console.log("downloade", data.data.data);
                     let new_array = [];
@@ -121,7 +122,8 @@ const MyRooms = ({
                       await videos_array.forEach(async function (arrayItem) {
                         let uri = arrayItem.uri;
                         let title = arrayItem.name.split(".")[0];
-                        await updateAll_vidimage(data.data.data);
+
+                        await updateRoomOuterVideos(new_array);
                         // await updateRoomOuterVideos(new_array);
                         await RNFetchBlob.config({
                           fileCache: true,
@@ -146,24 +148,23 @@ const MyRooms = ({
                               new_array = [];
                             }
                           })
-                          .then(() => {
-                            updateRoomOuterVideos(new_array);
+                          .then(async () => {
+                            await updateRoomOuterVideos(new_array);
                           })
                           .catch((error) => {
                             console.log("catched", error);
                           });
                       });
                     }
-
+                    navigation.navigate("NewRooms");
                     // await updateRoomOuterVideos(new_array);
                     //
-                    navigation.navigate("NewRooms");
                   }
                 }}
                 total_avl={item?.availablerooms}
                 image_source={item?.photos[0]?.uri}
                 room_name={item?.title}
-                type={{ AC: item.isAC, ATTACHED: item.isAttatched }}
+                type={{ AC: item.isAC, ATTACHED: item.isAttached }}
                 price={item.price.$numberDecimal}
                 onDelete={onDelete}
                 agreed={agreed}

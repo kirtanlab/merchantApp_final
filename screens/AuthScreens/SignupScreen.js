@@ -92,8 +92,10 @@ const SignupScreen = ({
       } catch (err) {
         setLoading(false);
         console.log(err);
+
         setError("Already Registered");
-        Alert.alert("Already Registered");
+        gen_sign_err_method(true);
+        Alert.alert("Email is already registered");
       }
     } else {
       setLoading(false);
@@ -127,10 +129,10 @@ const SignupScreen = ({
         >
           <View style={{ marginTop: 0, alignItems: "center" }}>
             <Image
-              source={icons.logo_rent}
+              source={icons.Signup}
               style={{
-                height: 350,
-                width: 350,
+                height: 250,
+                width: 250,
                 borderRadius: 20,
                 marginTop: 30,
                 alignSelf: "center",
@@ -141,10 +143,11 @@ const SignupScreen = ({
           <Text
             style={{
               fontFamily: "Roboto-Medium",
-              fontSize: 35,
-              fontWeight: "bold",
+              fontSize: 25,
+              paddingHorizontal: 15,
+              // fontWeight: "bold",
               color: COLORS.mobile_theme_back,
-              marginTop: 40,
+              marginTop: 25,
               marginBottom: 30,
             }}
           >
@@ -163,7 +166,7 @@ const SignupScreen = ({
                     name="person-outline"
                     size={26}
                     color={err ? COLORS.mobile_theme_back : "red"}
-                    style={{ marginTop: 18, marginLeft: 7 }}
+                    style={{ marginTop: 3, marginLeft: 7 }}
                   />
                 }
               />
@@ -180,7 +183,7 @@ const SignupScreen = ({
             </TouchableOpacity>
           </View>
           {focused_sign_name === true && checked_sign_name == false && (
-            <View style={{ marginTop: -30, left: 55, marginBottom: 20 }}>
+            <View style={{ marginTop: -30, left: 40, marginBottom: 20 }}>
               <Text style={{ color: COLORS.lightGray3 }}>
                 Enter Minimum 5 Letter{"\n"}Include at least one alphabet
               </Text>
@@ -199,7 +202,7 @@ const SignupScreen = ({
                     name="alternate-email"
                     size={26}
                     color={err ? COLORS.mobile_theme_back : "red"}
-                    style={{ marginTop: 18 }}
+                    style={{ marginTop: 3 }}
                   />
                 }
                 keyboardType="email-address"
@@ -217,7 +220,7 @@ const SignupScreen = ({
             </TouchableOpacity>
           </View>
           {focused_sign_email && !checked_sign_email && (
-            <View style={{ marginTop: -30, left: 55, marginBottom: 20 }}>
+            <View style={{ marginTop: -30, left: 40, marginBottom: 20 }}>
               <Text style={{ color: COLORS.lightGray3 }}>
                 Enter Your Valid Email ID
               </Text>
@@ -236,7 +239,7 @@ const SignupScreen = ({
                     name="ios-lock-closed-outline"
                     size={26}
                     color={true ? COLORS.mobile_theme_back : "red"}
-                    style={{ marginTop: 18 }}
+                    style={{ marginTop: 3 }}
                   />
                 }
                 inputType="password"
@@ -255,7 +258,7 @@ const SignupScreen = ({
             </TouchableOpacity>
           </View>
           {focused_sign_pass && !checked_sign_pass && (
-            <View style={{ marginTop: -30, left: 55, marginBottom: 20 }}>
+            <View style={{ marginTop: -30, left: 40, marginBottom: 20 }}>
               <Text style={{ color: COLORS.lightGray3 }}>
                 Enter Atleast one number{"\n"}Enter Atleast One Symbol(!@#$%^&*)
                 {"\n"}Enter atleast 6 letters
@@ -275,7 +278,7 @@ const SignupScreen = ({
                     name="ios-lock-closed-outline"
                     size={26}
                     color={err ? COLORS.mobile_theme_back : "red"}
-                    style={{ marginTop: 18 }}
+                    style={{ marginTop: 3 }}
                   />
                 }
                 inputType="password"
@@ -308,7 +311,7 @@ const SignupScreen = ({
               </View>
             )}
           {gen_sign_err && (
-            <View style={{ marginTop: -30, left: 55, marginBottom: 20 }}>
+            <View style={{ marginTop: -30, left: 35, marginBottom: 20 }}>
               <Text style={{ color: "red" }}>{_err}</Text>
             </View>
           )}
@@ -337,6 +340,7 @@ const SignupScreen = ({
                 handleSignUp();
               } else {
                 gen_sign_err_method(true);
+                setError("Fill all fields");
               }
             }}
           />

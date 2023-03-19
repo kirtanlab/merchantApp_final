@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import CheckBox from './CheckBox';
-import {View, Text} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {COLORS, FONTS, SIZES} from '../constants';
-import {connect} from 'react-redux';
-import * as Newrooms_actions from '../store/NewRooms/Newrooms_actions';
+import React, { useState } from "react";
+import CheckBox from "./CheckBox";
+import { View, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { COLORS, FONTS, SIZES } from "../constants";
+import { connect } from "react-redux";
+import * as Newrooms_actions from "../store/NewRooms/Newrooms_actions";
 const Terms = ({
   updateBaseTerms,
   checked_base_terms,
@@ -24,7 +24,7 @@ const Terms = ({
       setgovt(true);
       _baseTerms.govt = true;
       _baseTerms.myApp = myApp;
-      console.log('_baseTerms', _baseTerms);
+      console.log("_baseTerms", _baseTerms);
 
       if (myApp) {
         checkedBaseTerms(true);
@@ -43,7 +43,7 @@ const Terms = ({
       setmyApp(true);
       _baseTerms.myApp = true;
       _baseTerms.govt = govt;
-      console.log('_baseTerms', _baseTerms);
+      console.log("_baseTerms", _baseTerms);
       if (govt) {
         checkedBaseTerms(true);
       }
@@ -58,40 +58,44 @@ const Terms = ({
   };
   return (
     <SafeAreaView>
-      <View style={{flexDirection: 'row', width: 200, alignContent: 'center'}}>
+      <View style={{ flexDirection: "row", alignContent: "center" }}>
         <CheckBox
-          status={baseTerms.govt ? 'checked' : 'unchacked'}
+          status={baseTerms.govt ? "checked" : "unchacked"}
           onPress={checkBox1}
         />
-        <View style={{marginVertical: 6, width: SIZES.width}}>
+        <View style={{}}>
           <Text
             style={{
-              fontSize: SIZES.body2,
+              top: 3,
+              fontSize: SIZES.form_section_title_fontsize + 2,
               color: COLORS.mobile_theme_back,
-              fontWeight: 'bold',
-            }}>
-            Goverments Terms & Conditions
+              // fontWeight: "bold",
+            }}
+          >
+            I accept goverments T&C
           </Text>
         </View>
       </View>
       <View
         style={{
-          flexDirection: 'row',
+          flexDirection: "row",
           width: SIZES.width,
           // alignContent: 'center',v
-        }}>
+        }}
+      >
         <CheckBox
-          status={baseTerms.myApp ? 'checked' : 'unchacked'}
+          status={baseTerms.myApp ? "checked" : "unchacked"}
           onPress={checkBox2}
         />
-        <View style={{marginVertical: 6, width: SIZES.width}}>
+        <View style={{ width: SIZES.width }}>
           <Text
             style={{
-              fontSize: SIZES.body2,
+              top: 3,
+              fontSize: SIZES.form_section_title_fontsize + 2,
               color: COLORS.mobile_theme_back,
-              fontWeight: 'bold',
-            }}>
-            Myapp Terms & Conditions
+            }}
+          >
+            I accept myapp T&C
           </Text>
         </View>
       </View>
@@ -107,10 +111,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    checkedBaseTerms: value => {
+    checkedBaseTerms: (value) => {
       dispatch(Newrooms_actions.checkedBaseTerms(value));
     },
-    updateBaseTerms: value => {
+    updateBaseTerms: (value) => {
       dispatch(Newrooms_actions.updateBaseTerms(value));
     },
   };

@@ -1,17 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
-} from 'react-native';
-import {Button} from 'react-native';
+} from "react-native";
+import { Button } from "react-native";
 // import {Button} from 'react-native-paper';
-import {COLORS, FONTS, SIZES} from '../../constants';
-import {connect, useSelector} from 'react-redux';
-import * as newproperty_actions from '../../store/Newproperty/newproperty_action';
-const Gender = ({gender, udpate_gender}) => {
+import { COLORS, FONTS, SIZES } from "../../constants";
+import { connect, useSelector } from "react-redux";
+import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
+const Gender = ({ gender, udpate_gender }) => {
   let [gender_form_copy, setLooking] = useState(gender);
   let [male, setmale] = useState(gender_form_copy?.male);
   let [female, setfemale] = useState(gender_form_copy?.female);
@@ -23,17 +23,18 @@ const Gender = ({gender, udpate_gender}) => {
         <Text
           style={{
             color: COLORS.black,
-            fontSize: SIZES.h2,
+            fontSize: SIZES.form_section_title_fontsize,
             // fontWeight: 'bold',
-          }}>
+          }}
+        >
           Select The reserved gender for your property
         </Text>
       </View>
-      <View style={{flexDirection: 'column'}}>
+      <View style={{ flexDirection: "column" }}>
         <View
           style={{
-            display: 'flex',
-            flexDirection: 'row',
+            display: "flex",
+            flexDirection: "row",
             gap: 14,
             marginTop: 12,
             // flex: 3,
@@ -43,9 +44,10 @@ const Gender = ({gender, udpate_gender}) => {
             // justifyConte,
             // alignContent: 'center',
             // justifyContent: 'space-between',
-            position: 'relative',
+            position: "relative",
             // paddingHorizontal: 10,
-          }}>
+          }}
+        >
           {/* rent */}
           <View>
             <TouchableOpacity
@@ -53,13 +55,10 @@ const Gender = ({gender, udpate_gender}) => {
                 borderColor: COLORS.mobile_theme_back,
                 borderWidth: SIZES.form_button_borderWidth,
                 borderRadius: SIZES.form_button_borderRadius,
-                minWidth: SIZES.form_button_minWidth,
-                maxWidth: SIZES.form_button_maxWidth,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
+
                 alignItems: SIZES.form_button_alignItems,
                 justifyContent: SIZES.form_button_justifyContent,
-                backgroundColor: male ? COLORS.mobile_theme_back : 'white',
+                backgroundColor: male ? COLORS.mobile_theme_back : "white",
               }}
               onPress={async () => {
                 if (!male) {
@@ -72,14 +71,22 @@ const Gender = ({gender, udpate_gender}) => {
                   await udpate_gender(gender_form_copy);
                 }
 
-                console.log('Pressed0');
-              }}>
+                console.log("Pressed0");
+              }}
+            >
               <Text
                 style={{
+                  fontWeight: SIZES.form_button_text_fontWeight,
+                  lineHeight: SIZES.form_button_text_lineHeight,
+                  fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
+                  marginVertical: SIZES.form_button_text_marginVertical,
+                  marginHorizontal: SIZES.form_button_text_marginHorizontal,
                   // fontWeight: SIZES.form_button_text_fontWeight,
+
                   color: male ? COLORS.font_color : COLORS.lightGray3,
-                }}>
+                }}
+              >
                 Male
               </Text>
             </TouchableOpacity>
@@ -91,13 +98,10 @@ const Gender = ({gender, udpate_gender}) => {
                 borderColor: COLORS.mobile_theme_back,
                 borderWidth: SIZES.form_button_borderWidth,
                 borderRadius: SIZES.form_button_borderRadius,
-                minWidth: SIZES.form_button_minWidth,
-                maxWidth: SIZES.form_button_maxWidth,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
+
                 alignItems: SIZES.form_button_alignItems,
                 justifyContent: SIZES.form_button_justifyContent,
-                backgroundColor: female ? COLORS.mobile_theme_back : 'white',
+                backgroundColor: female ? COLORS.mobile_theme_back : "white",
               }}
               onPress={async () => {
                 if (!female) {
@@ -109,14 +113,22 @@ const Gender = ({gender, udpate_gender}) => {
                   setboth(false);
                   await udpate_gender(gender_form_copy);
                 }
-                console.log('Pressed1');
-              }}>
+                console.log("Pressed1");
+              }}
+            >
               <Text
                 style={{
+                  fontWeight: SIZES.form_button_text_fontWeight,
+                  lineHeight: SIZES.form_button_text_lineHeight,
+                  fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
+                  marginVertical: SIZES.form_button_text_marginVertical,
+                  marginHorizontal: SIZES.form_button_text_marginHorizontal,
                   // fontWeight: SIZES.form_button_text_fontWeight,
+
                   color: female ? COLORS.font_color : COLORS.lightGray3,
-                }}>
+                }}
+              >
                 Female
               </Text>
             </TouchableOpacity>
@@ -129,12 +141,9 @@ const Gender = ({gender, udpate_gender}) => {
                 borderWidth: SIZES.form_button_borderWidth,
                 borderRadius: SIZES.form_button_borderRadius,
                 minWidth: SIZES.form_button_minWidth,
-                maxWidth: SIZES.form_button_maxWidth,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
                 alignItems: SIZES.form_button_alignItems,
                 justifyContent: SIZES.form_button_justifyContent,
-                backgroundColor: both ? COLORS.mobile_theme_back : 'white',
+                backgroundColor: both ? COLORS.mobile_theme_back : "white",
               }}
               onPress={async () => {
                 if (!both) {
@@ -146,14 +155,22 @@ const Gender = ({gender, udpate_gender}) => {
                   setboth(true);
                   await udpate_gender(gender_form_copy);
                 }
-                console.log('Pressed2');
-              }}>
+                console.log("Pressed2");
+              }}
+            >
               <Text
                 style={{
+                  fontWeight: SIZES.form_button_text_fontWeight,
+                  lineHeight: SIZES.form_button_text_lineHeight,
+                  fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
+                  marginVertical: SIZES.form_button_text_marginVertical,
+                  marginHorizontal: SIZES.form_button_text_marginHorizontal,
                   // fontWeight: SIZES.form_button_text_fontWeight,
+
                   color: both ? COLORS.font_color : COLORS.lightGray3,
-                }}>
+                }}
+              >
                 Both
               </Text>
             </TouchableOpacity>
@@ -173,7 +190,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    udpate_gender: value => {
+    udpate_gender: (value) => {
       dispatch(newproperty_actions.setGender(value));
     },
     update_test: () => {

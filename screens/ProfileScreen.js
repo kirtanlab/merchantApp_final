@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   View,
   Text,
@@ -8,6 +9,7 @@ import {
   Image,
   StyleSheet,
   Switch,
+  Share,
   Linking,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -29,8 +31,10 @@ const SectionTitle = ({ title }) => {
       <Text
         style={{
           color: COLORS.mobile_theme_back,
-          ...FONTS.h2,
-          fontWeight: "bold",
+          // ...FONTS.h2,
+          fontWeight: SIZES.form_button_text_fontWeight,
+          fontSize: SIZES.form_section_title_fontsize + 2,
+          // fontWeight: "bold",
         }}
       >
         {title}
@@ -52,15 +56,16 @@ const Setting = ({ title, value, type, onPress, icon_name }) => {
       >
         <Ionicons
           name={icon_name}
-          size={30}
-          color={true ? COLORS.mobile_theme_back : "lightgray"}
+          size={25}
+          color={true ? COLORS.black : "lightgray"}
           style={{ flex: 1 }}
         />
         <Text
           style={{
             flex: 9,
             color: COLORS.black,
-            fontSize: 20,
+            fontSize: SIZES.form_section_title_fontsize,
+            fontWeight: SIZES.form_button_text_fontWeight,
             // fontWeight: 'bold',
           }}
         >
@@ -86,9 +91,9 @@ const Setting = ({ title, value, type, onPress, icon_name }) => {
           <Image
             source={icons.rightArrow}
             style={{
-              height: 15,
-              width: 15,
-              tintColor: COLORS.mobile_theme_back,
+              height: 12,
+              width: 12,
+              tintColor: COLORS.black,
             }}
           />
         </View>
@@ -121,25 +126,106 @@ const Setting = ({ title, value, type, onPress, icon_name }) => {
   }
 };
 
-const ProfileScreen = ({ auth_states, logout, navigation, updatingMobile }) => {
+const ProfileScreen = ({
+  updateToken,
+  auth_states,
+  logout,
+  navigation,
+  updatingMobile,
+}) => {
   const [faceId, setFaceId] = React.useState(true);
   const [isDarkMode, setisDarkMode] = React.useState(false);
   const [value, setValue] = React.useState("first");
-
+  const onShare = async () => {
+    try {
+      const result = await Share.share({
+        message: `Hey there! I found this Niwas App really very helpful. You may solve your PG/Hostel renting problem with this amazing app.${"\n"}${"\n"} Download now:${"\n"}https://play.google.com/store/apps/details?id=com.ssip.governmentsachivalay`,
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      Alert.alert(error.message);
+    }
+  };
   const Profile_Comp = () => {
     return (
       <View
         style={{
-          flexDirection: "row",
-          borderBottomColor: COLORS.lightGray4,
-          borderBottomWidth: 1,
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          top: -10,
         }}
       >
         <Ionicons
           name="person-circle-outline"
           size={90}
-          style={{ color: COLORS.mobile_theme_back, top: -10, flex: 1 }}
+          style={{ color: COLORS.mobile_theme_back, top: 5, right: 9 }}
         />
+        <View style={{ flexDirection: "column", top: -5 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              left: 10,
+              // flex: 1,
+            }}
+          >
+            <Image
+              source={icons.verified}
+              style={{
+                // color: COLORS.mobile_theme_back,
+                height: 35,
+                width: 35,
+              }}
+            />
+            <Text
+              style={{
+                // marginLeft: SIZES.base,
+                // flex: 1,
+                color: COLORS.mobile_theme_back,
+                fontSize: SIZES.form_section_title_fontsize + 5,
+                fontWeight: SIZES.form_button_text_fontWeight,
+                // fontWeight: 'bold',
+              }}
+            >
+              Verified
+            </Text>
+          </View>
+          <Text
+            style={{
+              fontSize: SIZES.form_section_title_fontsize + 5,
+              // top: -5,
+              color: COLORS.mobile_theme_back,
+              fontWeight: SIZES.form_button_text_fontWeight,
+            }}
+          >
+            Kirtan Prajapati
+          </Text>
+          <View style={{ flexDirection: "column", left: 25 }}>
+            <Text
+              style={{
+                // flex: 1,
+                fontSize: SIZES.form_section_title_fontsize,
+                color: COLORS.mobile_theme_back,
+                fontWeight: SIZES.form_button_text_fontWeight,
+                // top: -5,
+              }}
+            >
+              7016700396
+            </Text>
+          </View>
+        </View>
+        {/* <View>
+          
+        </View>
         <View style={{ flexDirection: "column", flex: 2.7, top: 9 }}>
           <Text style={{ fontSize: SIZES.h2, color: COLORS.mobile_theme_back }}>
             Kirtan Prajapati
@@ -184,45 +270,45 @@ const ProfileScreen = ({ auth_states, logout, navigation, updatingMobile }) => {
               </Text>
             </View>
           </View>
-        </View>
+        </View> */}
       </View>
     );
   };
-  const Profile_About = () => {
-    return (
-      <View
-        style={{
-          width: "100%",
-          borderBottomColor: COLORS.lightGray4,
-          borderBottomWidth: 1,
-          paddingBottom: 5,
-        }}
-      >
-        <Text
-          style={{
-            color: COLORS.mobile_theme_back,
-            ...FONTS.h2,
-            // fontWeight: 'bold',
-          }}
-        >
-          kirtanprajapati234@gmail.com
-        </Text>
-        <View style={{ flexDirection: "row" }}>
-          <Text
-            style={{
-              color: COLORS.mobile_theme_back,
-              ...FONTS.h2,
-              alignItems: "center",
-              // fontWeight: 'bold',
-              flex: 1,
-            }}
-          >
-            ID: 12312312
-          </Text>
-        </View>
-      </View>
-    );
-  };
+  // const Profile_About = () => {
+  //   return (
+  //     <View
+  //       style={{
+  //         width: "100%",
+  //         borderBottomColor: COLORS.lightGray4,
+  //         borderBottomWidth: 1,
+  //         paddingBottom: 5,
+  //       }}
+  //     >
+  //       <Text
+  //         style={{
+  //           color: COLORS.mobile_theme_back,
+  //           ...FONTS.h2,
+  //           // fontWeight: 'bold',
+  //         }}
+  //       >
+  //         kirtanprajapati234@gmail.com
+  //       </Text>
+  //       <View style={{ flexDirection: "row" }}>
+  //         <Text
+  //           style={{
+  //             color: COLORS.mobile_theme_back,
+  //             ...FONTS.h2,
+  //             alignItems: "center",
+  //             // fontWeight: 'bold',
+  //             flex: 1,
+  //           }}
+  //         >
+  //           ID: 12312312
+  //         </Text>
+  //       </View>
+  //     </View>
+  //   );
+  // };
 
   return (
     <View
@@ -230,6 +316,7 @@ const ProfileScreen = ({ auth_states, logout, navigation, updatingMobile }) => {
         // flex: 1,
         paddingHorizontal: 15,
         backgroundColor: COLORS.white,
+        paddingBottom: 1000,
       }}
     >
       {/* Header */}
@@ -240,17 +327,23 @@ const ProfileScreen = ({ auth_states, logout, navigation, updatingMobile }) => {
 
       <Profile_Comp />
 
-      <ScrollView style={{ height: SIZES.height, padding: 6 }}>
+      <ScrollView
+        style={{
+          height: SIZES.height,
+          paddingVertical: 0,
+          paddingHorizontal: 8,
+        }}
+      >
         {/* Email & User ID */}
-        <View
+        {/* <View
           style={{
             flexDirection: "row",
             marginTop: SIZES.radius - 7,
           }}
-        >
-          {/* Email & User ID*/}
+        > */}
+        {/* Email & User ID*/}
 
-          {/* <View
+        {/* <View
             style={{
               flexDirection: 'row',
               flex: 1,
@@ -259,9 +352,9 @@ const ProfileScreen = ({ auth_states, logout, navigation, updatingMobile }) => {
 
           </View> */}
 
-          {/* Status : Verified*/}
-          {/* <Profile_About /> */}
-        </View>
+        {/* Status : Verified*/}
+        {/* <Profile_About /> */}
+        {/* </View> */}
 
         {/* APP */}
 
@@ -300,11 +393,11 @@ const ProfileScreen = ({ auth_states, logout, navigation, updatingMobile }) => {
           title="Change Mobile Number"
           type="button"
           icon_name={"call-outline"}
-          onPress={() => {
+          onPress={async () => {
             // setModalVisible(true);
             // render_modal();
             // navigation.navigate("ChangeProfile");
-            updatingMobile(true);
+            await updatingMobile(true);
             navigation.navigate("Root", { screen: "mobile_input" });
           }}
         />
@@ -329,7 +422,7 @@ const ProfileScreen = ({ auth_states, logout, navigation, updatingMobile }) => {
           }}
         />
         <Setting
-          title="Goverment Terms"
+          title="About us"
           type="button"
           icon_name={"documents-outline"}
           onPress={() => {
@@ -337,15 +430,7 @@ const ProfileScreen = ({ auth_states, logout, navigation, updatingMobile }) => {
             console.log("OnPressed");
           }}
         />
-        <Setting
-          title="Logout"
-          type="button"
-          icon_name={"log-out-outline"}
-          onPress={() => {
-            // logout();
-            navigation.navigate("Root", { screen: "LoginScreen" });
-          }}
-        />
+
         <Setting
           title="Rate us on Playstore"
           type="button"
@@ -356,6 +441,32 @@ const ProfileScreen = ({ auth_states, logout, navigation, updatingMobile }) => {
             );
           }}
         />
+        <Setting
+          title="Share/Refer App to your firends"
+          type="button"
+          icon_name={"share-outline"}
+          onPress={onShare}
+        />
+        <Setting
+          title="Logout"
+          type="button"
+          icon_name={"log-out-outline"}
+          onPress={async () => {
+            // logout();
+            const setUser = async (token) => {
+              return new Promise(function (resolve, reject) {
+                AsyncStorage.setItem("token", JSON.stringify(token))
+                  .then(() => resolve(JSON.stringify(token)))
+                  .catch((err) =>
+                    reject("Logged in User data not persisted : ", err)
+                  );
+              });
+            };
+            setUser("");
+            navigation.replace("Root", { screen: "LoginScreen" });
+          }}
+        />
+        {/* <View style={{ paddingBottom: 200 }} /> */}
       </ScrollView>
     </View>
   );
@@ -371,6 +482,9 @@ function mapDispatchToProps(dispatch) {
   return {
     updatingMobile: (value) => {
       dispatch(AuthActions.updatingMobile(value));
+    },
+    updateToken: (value) => {
+      dispatch(AuthActions.updateToken(value));
     },
     // logout: () => {
     //   dispatch(AuthActions.logout());

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, LogBox, TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { COLORS } from "../../constants";
+import { COLORS, SIZES } from "../../constants";
 {
   /* <ion-icon name="notifications-outline"></ion-icon> */
 }
@@ -11,23 +11,15 @@ const Intrests = ({ navigation, interestedusers }) => {
       style={{
         paddingHorizontal: 17,
         // paddingVertical: 10,
-        paddingBottom: 50,
-        // bottom: 10,
-        minHeight: 110,
-        maxHeight: 200,
+        paddingBottom: 100,
         flexDirection: "column",
       }}
     >
       <View style={{ flexDirection: "row" }}>
-        <View
-          style={{
-            //   width: 100,
-            height: 100,
-          }}
-        >
+        <View>
           <Ionicons
             name="heart"
-            size={65}
+            size={40}
             color={true ? COLORS.mobile_theme_back : "red"}
             style={{
               alignItems: "center",
@@ -39,21 +31,31 @@ const Intrests = ({ navigation, interestedusers }) => {
             style={{
               color: COLORS.lightGray2,
               fontWeight: "bold",
-              fontSize: 40,
+              fontSize: SIZES.form_section_title_fontsize,
             }}
           >
             {interestedusers}{" "}
           </Text>
-          <Text style={{ color: COLORS.lightGray2, fontSize: 30, top: "7%" }}>
+          <Text
+            style={{
+              color: COLORS.lightGray2,
+              fontSize: SIZES.form_section_title_fontsize,
+            }}
+          >
             Interests
           </Text>
         </View>
       </View>
-      <View style={{ flexDirection: "row", left: 10, top: -10 }}>
+      <View style={{ flexDirection: "row", left: 10, top: 10 }}>
         <TouchableOpacity
           onPress={() => navigation.navigate("NotificationsScreen")}
         >
-          <Text style={{ color: COLORS.lightGray2, fontSize: 20 }}>
+          <Text
+            style={{
+              color: COLORS.lightGray2,
+              fontSize: SIZES.form_section_title_fontsize,
+            }}
+          >
             View Interested Users{" "}
           </Text>
         </TouchableOpacity>
@@ -61,7 +63,7 @@ const Intrests = ({ navigation, interestedusers }) => {
           <Ionicons
             name="arrow-forward-outline"
             size={25}
-            style={{ color: COLORS.lightGray2, top: -2 }}
+            style={{ color: COLORS.lightGray2 }}
           />
         </View>
       </View>

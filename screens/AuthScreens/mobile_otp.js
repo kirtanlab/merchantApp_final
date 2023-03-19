@@ -166,25 +166,26 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
             source={icons.logo_rent}
           /> */}
                 <Image
-                  source={icons.logo_rent}
+                  source={icons.OTP_mobile}
                   style={{
-                    height: 350,
-                    width: 350,
+                    height: 250,
+                    width: 250,
                     borderRadius: 20,
-                    marginTop: "1%",
+                    // marginTop: 10,
+                    top: -50,
                     alignSelf: "center",
                   }}
                 />
               </View>
-              <View style={{ flexDirection: "column" }}>
+              <View style={{ top: -10, flexDirection: "column" }}>
                 <Text
                   style={{
                     fontFamily: "Roboto-Medium",
-                    fontSize: 35,
-                    fontWeight: "bold",
+                    fontSize: 30,
+                    // fontWeight: "bold",
                     color: COLORS.mobile_theme_back,
-                    marginTop: "20%",
-                    marginBottom: 5,
+                    // marginTop: 10,
+                    marginBottom: 10,
                   }}
                 >
                   Enter OTP
@@ -192,7 +193,7 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
                 <Text
                   style={{
                     fontFamily: "Roboto-Medium",
-                    fontSize: 16,
+                    fontSize: 13,
                     fontWeight: "bold",
                     color: COLORS.mobile_theme_back,
                     // marginTop: '',
@@ -240,12 +241,12 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
                 }
                 <TouchableOpacity
                   onPress={() => handlereset()}
-                  style={{ marginLeft: "75%", marginTop: 20 }}
+                  style={{ height: 20, marginLeft: "75%", marginTop: 20 }}
                 >
                   <Text
                     style={{
                       color: COLORS.mobile_theme_back,
-                      fontSize: SIZES.h3 + 3,
+                      fontSize: 13,
                       fontWeight: "bold",
                     }}
                   >
@@ -253,12 +254,19 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
                   </Text>
                 </TouchableOpacity>
                 {err_num && (
-                  <View style={{ marginTop: 0, left: 23, marginBottom: 0 }}>
+                  <View
+                    style={{
+                      marginTop: 0,
+                      top: -15,
+                      left: 23,
+                      marginBottom: 0,
+                    }}
+                  >
                     <Text
                       style={{
                         color: "red",
-                        fontWeight: "bold",
-                        fontSize: SIZES.h3,
+                        // fontWeight: "bold",
+                        fontSize: 13,
                       }}
                     >
                       Enter Four Digit OTP
@@ -266,12 +274,19 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
                   </View>
                 )}
                 {err && (
-                  <View style={{ marginTop: 0, left: 23, marginBottom: 0 }}>
+                  <View
+                    style={{
+                      marginTop: 0,
+                      top: -15,
+                      left: 23,
+                      marginBottom: 0,
+                    }}
+                  >
                     <Text
                       style={{
                         color: "red",
-                        fontWeight: "bold",
-                        fontSize: SIZES.h3,
+                        // fontWeight: "bold",
+                        fontSize: 13,
                       }}
                     >
                       Enter Correct OTP
@@ -296,7 +311,7 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
           />
         */}
 
-              <View style={{ marginTop: "10%" }}>
+              <View style={{ marginTop: "5%" }}>
                 <CustomButton
                   label={"submit"}
                   color={done ? COLORS.mobile_theme_back : "gray"}
@@ -346,17 +361,17 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 15,
     // paddingVertical: 15,
     // marginTop: 20,
   },
   title: { textAlign: "center", fontSize: 30 },
   //   codeFieldRoot: {marginTop: 20},
   cell: {
-    width: 40,
-    height: 40,
+    width: 33,
+    height: 33,
     // lineHeight: 45,
-    fontSize: 30,
+    fontSize: 20,
     borderWidth: 2,
     color: COLORS.black,
     borderColor: COLORS.mobile_theme_back,

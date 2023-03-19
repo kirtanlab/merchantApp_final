@@ -141,10 +141,10 @@ const LoginScreen = ({
             source={icons.logo_rent}
           /> */}
             <Image
-              source={icons.logo_rent}
+              source={icons.login_img}
               style={{
-                height: 350,
-                width: 350,
+                height: 250,
+                width: 250,
                 borderRadius: 20,
                 marginTop: 30,
                 alignSelf: "center",
@@ -155,8 +155,8 @@ const LoginScreen = ({
           <Text
             style={{
               fontFamily: "Roboto-Medium",
-              fontSize: 35,
-              fontWeight: "bold",
+              fontSize: 30,
+              // fontWeight: "bold",
               color: COLORS.mobile_theme_back,
               marginTop: 40,
               marginBottom: 30,
@@ -179,7 +179,7 @@ const LoginScreen = ({
                 name="alternate-email"
                 size={20}
                 color={COLORS.mobile_theme_back}
-                style={{ marginTop: 18 }}
+                style={{ marginTop: 10 }}
               />
             }
             keyboardType="email-address"
@@ -199,7 +199,7 @@ const LoginScreen = ({
                 name="lock-outline"
                 size={20}
                 color={COLORS.mobile_theme_back}
-                style={{ marginTop: 18 }}
+                style={{ marginTop: 10 }}
               />
             }
             onChange={(value) => {
@@ -221,7 +221,7 @@ const LoginScreen = ({
             </View>
           )}
           <CustomButton
-            label={"Login"}
+            label={"Submit"}
             color={
               checked_login_email && checked_login_pass
                 ? COLORS.mobile_theme_back

@@ -25,6 +25,10 @@ import org.reactnative.maskedview.RNCMaskedViewPackage;
 import com.reactnativecommunity.picker.RNCPickerPackage;
 // lottie-react-native
 import com.airbnb.android.react.lottie.LottiePackage;
+// react-native-android-location-enabler
+import com.heanoria.library.reactnative.locationenabler.RNAndroidLocationEnablerPackage;
+// react-native-android-location-services-dialog-box
+import com.showlocationservicesdialogbox.LocationServicesDialogBoxPackage;
 // react-native-blob-util
 import com.ReactNativeBlobUtil.ReactNativeBlobUtilPackage;
 // react-native-document-picker
@@ -101,6 +105,8 @@ public class PackageList {
       new RNCMaskedViewPackage(),
       new RNCPickerPackage(),
       new LottiePackage(),
+      new RNAndroidLocationEnablerPackage(),
+      new LocationServicesDialogBoxPackage(),
       new ReactNativeBlobUtilPackage(),
       new DocumentPickerPackage(),
       new RNGestureHandlerPackage(),

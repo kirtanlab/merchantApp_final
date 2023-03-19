@@ -8,12 +8,15 @@ import {
   Image,
   KeyboardAvoidingView,
   FlatList,
+  Pressable,
 } from "react-native";
+
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/NewProperty/Header";
 import * as Progress from "react-native-progress";
 import { Button, Dialog, Portal, Provider } from "react-native-paper";
-import { COLORS, SIZES } from "../../constants";
+import { COLORS, SIZES, FONTS, icons } from "../../constants";
 import { connect } from "react-redux";
 import DocumentPicker from "react-native-document-picker";
 import CustomButton_form from "../../components/NewProperty/CustomButton_form";
@@ -298,10 +301,10 @@ const vidImage = ({
         type: [DocumentPicker.types.video],
       });
 
-      if (res?.length > 10) {
-        showErrorToast((title = "Maximum 10 Images"));
-      } else if (res?.length + vidUri?.length > 10) {
-        showErrorToast((title = "Maximum 10 Videos"));
+      if (res?.length > 2) {
+        showErrorToast((title = "Maximum 2 Videos"));
+      } else if (res?.length + vidUri?.length > 2) {
+        showErrorToast((title = "Maximum 2 Videos"));
       } else {
         let temp = outerVideos;
         temp = temp.concat(res);
@@ -355,8 +358,8 @@ const vidImage = ({
         <TouchableOpacity
           style={{
             position: "absolute",
-            left: "82%",
-            borderRadius: 10,
+            left: "88.5%",
+            // borderRadius: 10,
 
             fontSize: SIZES.h2,
             backgroundColor: COLORS.mobile_theme_back,
@@ -398,10 +401,10 @@ const vidImage = ({
             await updateOuterImages(copy_vidUri);
           }}
         >
-          <Ionicons
-            name="close-circle-outline"
-            size={35}
-            color={true ? COLORS.white : "lightgray"}
+          <MaterialIcons
+            name="delete"
+            size={26}
+            color={true ? COLORS.white : "red"}
             style={{}}
           />
         </TouchableOpacity>
@@ -486,8 +489,8 @@ const vidImage = ({
         <TouchableOpacity
           style={{
             position: "absolute",
-            left: "82%",
-            borderRadius: 10,
+            left: "88.5%",
+            // borderRadius: 10,
 
             fontSize: SIZES.h2,
             backgroundColor: COLORS.mobile_theme_back,
@@ -528,12 +531,18 @@ const vidImage = ({
             await updateOuterImages(copy_imgUri);
           }}
         >
-          <Ionicons
-            name="close-circle-outline"
+          <MaterialIcons
+            name="delete"
+            size={26}
+            color={true ? COLORS.white : "red"}
+            style={{}}
+          />
+          {/* <Ionicons
+            name="trash-bin-outline"
             size={35}
             color={true ? COLORS.white : "lightgray"}
             style={{}}
-          />
+          /> */}
         </TouchableOpacity>
       </View>
     );
@@ -591,8 +600,8 @@ const vidImage = ({
             <Text
               style={{
                 color: COLORS.black,
-                fontSize: SIZES.h2,
-                fontWeight: "bold",
+                fontSize: SIZES.form_section_title_fontsize,
+                // fontWeight: "bold",
                 marginTop: 25,
                 flex: 1,
               }}
@@ -602,17 +611,14 @@ const vidImage = ({
 
             {imgUri === undefined ||
               (imgUri?.length <= 10 && (
-                <View style={{ marginTop: 11, flex: 0.6 }}>
+                <View style={{ marginTop: 11, flex: 0.4 }}>
                   <TouchableOpacity
                     style={{
                       marginTop: 15,
                       borderColor: COLORS.mobile_theme,
                       borderWidth: SIZES.form_button_borderWidth,
                       borderRadius: SIZES.form_button_borderRadius,
-                      minWidth: SIZES.form_button_minWidth - 10,
-                      maxWidth: SIZES.form_button_maxWidth - 20,
-                      maxHeight: SIZES.form_button_maxHeight - 5,
-                      padding: SIZES.form_button_padding - 2,
+                      maxWidth: SIZES.form_button_maxWidth,
                       alignItems: SIZES.form_button_alignItems,
                       justifyContent: SIZES.form_button_justifyContent,
                       backgroundColor: COLORS.mobile_theme_back,
@@ -624,9 +630,13 @@ const vidImage = ({
                   >
                     <Text
                       style={{
-                        fontSize: SIZES.h2 - 3,
-                        fontWeight: SIZES.form_button_text_fontWeight,
+                        lineHeight: SIZES.form_button_text_lineHeight,
+                        fontFamily: FONTS.fontFamily_black,
                         color: COLORS.font_color,
+                        fontSize: SIZES.form_button_text_fontSize,
+                        marginVertical: SIZES.form_button_text_marginVertical,
+                        marginHorizontal:
+                          SIZES.form_button_text_marginHorizontal,
                       }}
                     >
                       Select Image
@@ -635,44 +645,49 @@ const vidImage = ({
                 </View>
               ))}
           </View>
-          {imgUri.length > 0 && (
-            <FlatList
-              data={imgUri}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              keyExtractor={(image) => image.index}
-              renderItem={(image) =>
-                redner_images({ _imgUri: image.item.uri, image: image })
-              }
-            />
-          )}
+
+          <FlatList
+            data={imgUri}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            ListEmptyComponent={
+              <View style={{ top: -40, left: -40 }}>
+                <Image
+                  style={{ height: 200, borderRadius: 10, width: 250 }}
+                  source={icons.no_image}
+                />
+              </View>
+            }
+            keyExtractor={(image) => image.index}
+            renderItem={(image) =>
+              redner_images({ _imgUri: image.item.uri, image: image })
+            }
+          />
+
           {/* Outer Videso */}
           <View style={{ flexDirection: "row" }}>
             <Text
               style={{
                 color: COLORS.black,
-                fontSize: SIZES.h2,
-                fontWeight: "bold",
+                fontSize: SIZES.form_section_title_fontsize,
+                // fontWeight: "bold",
                 marginTop: 25,
                 flex: 1,
               }}
             >
-              Outer Videos{"  "}({vidUri.length} out of 10)
+              Outer Videos{"  "}({vidUri.length} out of 2)
             </Text>
 
             {vidUri === undefined ||
               (vidUri?.length <= 10 && (
-                <View style={{ marginTop: 11, flex: 0.6 }}>
+                <View style={{ marginTop: 11, flex: 0.4 }}>
                   <TouchableOpacity
                     style={{
                       marginTop: 15,
                       borderColor: COLORS.mobile_theme,
                       borderWidth: SIZES.form_button_borderWidth,
                       borderRadius: SIZES.form_button_borderRadius,
-                      minWidth: SIZES.form_button_minWidth - 10,
-                      maxWidth: SIZES.form_button_maxWidth - 20,
-                      maxHeight: SIZES.form_button_maxHeight - 5,
-                      padding: SIZES.form_button_padding - 2,
+                      maxWidth: SIZES.form_button_maxWidth,
                       alignItems: SIZES.form_button_alignItems,
                       justifyContent: SIZES.form_button_justifyContent,
                       backgroundColor: COLORS.mobile_theme_back,
@@ -684,9 +699,13 @@ const vidImage = ({
                   >
                     <Text
                       style={{
-                        fontSize: SIZES.h2 - 3,
-                        fontWeight: SIZES.form_button_text_fontWeight,
+                        lineHeight: SIZES.form_button_text_lineHeight,
+                        fontFamily: FONTS.fontFamily_black,
                         color: COLORS.font_color,
+                        fontSize: SIZES.form_button_text_fontSize,
+                        marginVertical: SIZES.form_button_text_marginVertical,
+                        marginHorizontal:
+                          SIZES.form_button_text_marginHorizontal,
                       }}
                     >
                       Select Video
@@ -695,11 +714,20 @@ const vidImage = ({
                 </View>
               ))}
           </View>
+
           {vidUri.length > 0 && (
             <FlatList
               data={vidUri}
               horizontal
               showsHorizontalScrollIndicator={false}
+              ListEmptyComponent={
+                <View style={{ top: -40, left: -40 }}>
+                  <Image
+                    style={{ height: 200, borderRadius: 10, width: 250 }}
+                    source={icons.no_image}
+                  />
+                </View>
+              }
               keyExtractor={(video) => video.index}
               renderItem={(video) =>
                 render_video({ _vidUri: video.item.uri, video: video })

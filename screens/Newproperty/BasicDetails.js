@@ -19,7 +19,7 @@ import * as Newproperty_ext_actions from "../../store/Newproperty_ext/Newpropert
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/NewProperty/Header";
 import * as Progress from "react-native-progress";
-import { COLORS, SIZES } from "../../constants";
+import { COLORS, SIZES, FONTS } from "../../constants";
 import Looking_Selection_Button from "../../components/NewProperty/Looking_Selection_Button";
 import { connect } from "react-redux";
 import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
@@ -53,7 +53,7 @@ const BasicDetails = ({
 }) => {
   const [imgUri, setimgUri] = React.useState([{}]);
   const [_img_url, _setimg_url] = React.useState(
-    adharcard ? adharcard?.uri : ""
+    adharcard ? adharcard[0]?.uri : ""
   );
   // console.log(imgUri.length);
   //    change_state();s
@@ -191,8 +191,8 @@ const BasicDetails = ({
         >
           <Text
             style={{
-              fontSize: SIZES.h2,
-              color: COLORS.mobile_theme_back,
+              fontSize: SIZES.form_section_title_fontsize,
+              color: COLORS.black,
               //   bottom: 8,
               // marginTop: 25,
               flex: 1,
@@ -200,6 +200,7 @@ const BasicDetails = ({
           >
             Addhar card
           </Text>
+
           {_img_url !== "" && (
             <TouchableOpacity
               style={{
@@ -250,7 +251,7 @@ const BasicDetails = ({
           )}
         </View>
         {_img_url === "" && (
-          <View style={{ top: -10 }}>
+          <View style={{}}>
             {/* <Text
               style={{
                 fontSize: SIZES.h2,
@@ -265,10 +266,7 @@ const BasicDetails = ({
                 borderColor: COLORS.mobile_theme,
                 borderWidth: SIZES.form_button_borderWidth,
                 borderRadius: SIZES.form_button_borderRadius,
-                minWidth: SIZES.form_button_minWidth,
                 maxWidth: SIZES.form_button_maxWidth,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
                 alignItems: SIZES.form_button_alignItems,
                 justifyContent: SIZES.form_button_justifyContent,
                 backgroundColor: COLORS.mobile_theme_back,
@@ -280,17 +278,19 @@ const BasicDetails = ({
             >
               <Text
                 style={{
-                  fontSize: SIZES.form_button_text_fontSize,
-                  fontWeight: SIZES.form_button_text_fontWeight,
+                  lineHeight: SIZES.form_button_text_lineHeight,
+                  fontFamily: FONTS.fontFamily_black,
                   color: COLORS.font_color,
+                  fontSize: SIZES.form_button_text_fontSize,
+                  marginVertical: SIZES.form_button_text_marginVertical,
+                  marginHorizontal: SIZES.form_button_text_marginHorizontal,
                 }}
               >
-                Select fles
+                Select File
               </Text>
             </TouchableOpacity>
           </View>
         )}
-
         {/* Show Uploaded */}
         {/* <Image
           source={{uri: imgUri}}

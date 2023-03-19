@@ -103,19 +103,19 @@ const mobile_input = ({
               flex: 1,
               backgroundColor: "white",
               justifyContent: "center",
-              paddingTop: "20%",
+              paddingTop: "18%",
               //   paddingHorizontal: 2
             }}
           >
             <View style={{ paddingHorizontal: 25 }}>
               <View style={{ alignItems: "center" }}>
                 <Image
-                  source={icons.logo_rent}
+                  source={icons.mobile_input}
                   style={{
-                    height: 350,
-                    width: 350,
+                    height: 250,
+                    width: 250,
                     borderRadius: 20,
-                    marginTop: "1%",
+                    // marginTop: "1%",
                     alignSelf: "center",
                   }}
                 />
@@ -124,11 +124,12 @@ const mobile_input = ({
                 <Text
                   style={{
                     fontFamily: "Roboto-Medium",
-                    fontSize: 28,
-                    fontWeight: "bold",
+                    fontSize: 21,
+                    // paddingHorizontal: 15,
+                    // fontWeight: "bold",
                     color: COLORS.mobile_theme_back,
-                    marginTop: "20%",
-                    marginBottom: 7,
+                    marginTop: 25,
+                    marginBottom: 30,
                   }}
                 >
                   Enter Mobile Number to Continue
@@ -138,11 +139,11 @@ const mobile_input = ({
                   style={{
                     flexDirection: "row",
                     width: SIZES.width,
-                    marginTop: 10,
+                    // marginTop: 10,
                     marginLeft: 7,
                   }}
                 >
-                  <View style={{ marginTop: 8, flexDirection: "row" }}>
+                  <View style={{ marginTop: 4, flexDirection: "row" }}>
                     <View
                       style={{
                         borderColor: COLORS.mobile_theme_back,
@@ -154,7 +155,7 @@ const mobile_input = ({
                         backgroundColor: COLORS.white,
                         height: 30,
                         width: 40,
-                        marginTop: 4,
+                        // marginTop: 4,
                         justifyContent: "center",
                         alignItems: "center",
                         marginLeft: -6,
@@ -163,8 +164,8 @@ const mobile_input = ({
                       <Text
                         style={{
                           color: COLORS.mobile_theme_back,
-                          fontSize: 17,
-                          fontWeight: "bold",
+                          fontSize: 14,
+                          // fontWeight: "bold",
                         }}
                       >
                         +91
@@ -176,7 +177,7 @@ const mobile_input = ({
                       label={"Enter Phone Number"}
                       type={"phone"}
                       keyboardType={"phone-pad"}
-                      value={phone.toString()}
+
                       //   icon={
                       //     <Ionicons
                       //       name="call-outline"
@@ -187,37 +188,43 @@ const mobile_input = ({
                       //   }
                     />
                   </View>
-                  <TouchableOpacity>
-                    <Ionicons
-                      name="checkmark-done-outline"
-                      size={20}
-                      color={
-                        checked_phone ? COLORS.mobile_theme_back : "lightgray"
-                      }
-                      style={{ marginTop: 18, right: 9 }}
-                    />
-                  </TouchableOpacity>
                 </View>
 
-                {focused_phone && !checked_phone && (
-                  <View style={{ marginTop: -30, left: 55, marginBottom: 20 }}>
+                {/* {focused_phone && !checked_phone && (
+                  <View style={{ marginTop: -30, left: 45, marginBottom: 20 }}>
                     <Text style={{ color: COLORS.lightGray3 }}>
                       Enter 10 Digit Phone Number
                     </Text>
                   </View>
+                )} */}
+                {err && (
+                  <View style={{ marginTop: -30, left: 45, marginBottom: 20 }}>
+                    <Text style={{ color: "red" }}>
+                      Enter 10 Digit Phone Number
+                    </Text>
+                  </View>
                 )}
+                {/* {err && !checked_phone && (
+                  <View style={{ marginTop: -30, left: 45, marginBottom: 20 }}>
+                    <Text style={{ color: "red" }}>
+                      Enter 10 Digit Phone Number
+                    </Text>
+                  </View>
+                )} */}
               </View>
             </View>
             {/* RegisterButton */}
             <View style={{ marginTop: "10%", width: "85%", marginLeft: "6%" }}>
               <CustomButton
                 label={"Send OTP"}
-                color={checked_phone ? COLORS.mobile_theme_back : "gray"}
+                color={true ? COLORS.mobile_theme_back : "gray"}
                 onPress={() => {
                   if (checked_phone) {
                     console.log("Done");
+                    setError(false);
                     handleLogin();
                   } else {
+                    setError(true);
                     // gen_sign_err_method(true);
                   }
                 }}

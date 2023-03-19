@@ -118,12 +118,12 @@ const ForgetPass = ({ navigation }) => {
             source={icons.logo_rent}
           /> */}
                 <Image
-                  source={icons.logo_rent}
+                  source={icons.ForgetPass}
                   style={{
-                    height: 350,
-                    width: 350,
+                    height: 250,
+                    width: 250,
                     borderRadius: 20,
-                    marginTop: "1%",
+                    marginTop: 30,
                     alignSelf: "center",
                   }}
                 />
@@ -132,10 +132,10 @@ const ForgetPass = ({ navigation }) => {
               <Text
                 style={{
                   fontFamily: "Roboto-Medium",
-                  fontSize: 35,
-                  fontWeight: "bold",
+                  fontSize: 25,
+                  // fontWeight: "bold",
                   color: COLORS.mobile_theme_back,
-                  marginTop: "20%",
+                  marginTop: 40,
                   marginBottom: 30,
                 }}
               >
@@ -150,7 +150,7 @@ const ForgetPass = ({ navigation }) => {
                     name="alternate-email"
                     size={20}
                     color={COLORS.mobile_theme_back}
-                    style={{ marginTop: 18 }}
+                    style={{ marginTop: 10 }}
                   />
                 }
                 onChange={(value) => {

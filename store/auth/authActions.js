@@ -113,18 +113,19 @@ export const adhar_name_focused = (value) => {
     value: value,
   };
 };
+export const MOBILE_UPDATING = "MOBILE_UPDATING";
 
+export const mobileUpdating = (value) => {
+  return {
+    type: FOCUSED_ADHAR_NAME,
+    value: value,
+  };
+};
 export const logout = () => {
   console.log("LOGOUT");
-  let auth_states = {
-    user: null,
-    status: "logged out",
-    error: null,
-    userData: null,
-  };
+
   return {
     type: RESET_TOKEN,
-    auth_states: auth_states,
   };
 };
 export const updatelogin_email = (value) => ({

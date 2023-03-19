@@ -33,8 +33,8 @@ const ChangeProfile = ({ navigation, token }) => {
     },
   };
   const [name, setName] = React.useState(data.name);
-  const [nameChecked, setNameChecked] = React.useState(false);
-  const [emailChecked, setEmailChecked] = React.useState(false);
+  const [nameChecked, setNameChecked] = React.useState(true);
+  const [emailChecked, setEmailChecked] = React.useState(true);
   const [number, setNumber] = React.useState(data.number);
   const [email, setEmail] = React.useState(data.email);
   const [adhar, setAdhar] = React.useState(data.adhar);
@@ -91,19 +91,12 @@ const ChangeProfile = ({ navigation, token }) => {
     }
   };
   return (
-    // <View>
-    //   <Text>Name</Text>
-    //   <TextInput
-    //     value={name}
-    //     defaultValue={_default}
-    //     onChange={e => console.log(e.nativeEvent.text)}
-    //   />
-    // </View>
     <ScrollView
       keyboardShouldPersistTaps="handled"
       style={{
-        height: SIZES.height,
         backgroundColor: "white",
+        // flex: 1,
+        padding: 12,
       }}
     >
       <NAVHeader_BLOB
@@ -114,22 +107,15 @@ const ChangeProfile = ({ navigation, token }) => {
       />
       <View
         style={{
-          // flex: 1,
-          paddingHorizontal: 15,
           backgroundColor: COLORS.white,
         }}
-      >
-        {/* Header */}
-
-        {/* <HeaderBar title="Change Profile" /> */}
-        {/* <Nav_Header /> */}
-      </View>
-      <View style={{ paddingHorizontal: 18, marginTop: 10 }}>
+      ></View>
+      <View style={{ paddingHorizontal: 10, marginTop: 20 }}>
         {/* New Name */}
         <View style={{}}>
           <Text
             style={{
-              fontSize: SIZES.h2,
+              fontSize: SIZES.form_section_title_fontsize,
               color: COLORS.mobile_theme_back,
               //   bottom: 8,
             }}
@@ -141,17 +127,17 @@ const ChangeProfile = ({ navigation, token }) => {
               flexDirection: "row",
               width: SIZES.width,
               marginTop: 0,
-              marginLeft: 7,
+              // marginLeft: 7,
             }}
           >
             <View style={{ flexDirection: "row" }}>
               <Ionicons
                 name="person-outline"
-                size={27}
+                size={20}
                 color={true ? COLORS.mobile_theme_back : "lightgray"}
-                style={{ marginTop: 18 }}
+                style={{ marginTop: 10 }}
               />
-              <View style={{ width: SIZES.width * 0.73, marginLeft: 10 }}>
+              <View style={{ width: SIZES.width * 0.73 }}>
                 <TextInput
                   onFocus={(e) => {
                     // sign_name_focused(true);
@@ -164,17 +150,13 @@ const ChangeProfile = ({ navigation, token }) => {
                   placeholder="Enter Name"
                   keyboardType="default"
                   style={{
-                    height: 40,
-                    marginLeft: 4,
                     flex: 1,
-                    borderBottomWidth: 1,
-                    borderColor: "#d1cfcf",
+                    paddingVertical: 0,
+                    borderBottomColor: "#ccc",
                     marginTop: 5,
-                    borderRadius: 8,
-                    paddingHorizontal: 10,
-                    paddingBottom: 0,
-                    fontSize: 22,
-                    color: "#212121",
+                    borderBottomWidth: 1,
+                    // paddingBottom: 4,
+                    fontSize: SIZES.form_section_input_fontsize,
                   }}
                   onChange={(value) => {
                     setName(value.nativeEvent.text);
@@ -190,119 +172,14 @@ const ChangeProfile = ({ navigation, token }) => {
                   }}
                 />
               </View>
-              <TouchableOpacity>
-                {/* <Ionicons
-                  name="checkmark-done-outline"
-                  size={20}
-                  color={true ? COLORS.mobile_theme_back : 'lightgray'}
-                  style={{marginTop: 18}}
-                /> */}
-              </TouchableOpacity>
             </View>
           </View>
         </View>
-        {/* New Phone Number
-        <View style={{marginTop: 10}}>
-          <Text
-            style={{
-              fontSize: SIZES.h2,
-              color: COLORS.mobile_theme_back,
-              //   bottom: 8,
-            }}>
-            Enter Number
-          </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              width: SIZES.width,
-              //   marginTop: -10,
-              marginLeft: 7,
-            }}>
-            <View style={{marginTop: 8, flexDirection: 'row'}}>
-              <View
-                style={{
-                  borderColor: COLORS.mobile_theme_back,
-                  borderWidth: 1,
-                  borderTopEndRadius: 5,
-                  borderTopStartRadius: 5,
-                  borderBottomStartRadius: 5,
-                  borderBottomEndRadius: 5,
-                  backgroundColor: COLORS.white,
-                  height: 30,
-                  width: 40,
-                  marginTop: 4,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  marginLeft: -6,
-                }}>
-                <Text
-                  style={{
-                    color: COLORS.mobile_theme_back,
-                    fontSize: 22,
-                    fontWeight: 'bold',
-                  }}>
-                  +91
-                </Text>
-              </View>
-            </View>
-            <View style={{width: SIZES.width * 0.75, left: 2}}>
-              <TextInput
-                onFocus={() => {
-                  console.log('Entering focued');
-                  // phone_focused(true);
-                  // gen_sign_err_method(false);
-                }}
-                onBlur={() => {
-                  console.log('!Entering focued');
-                  // phone_focused(false);
-                }}
-                value={number.toString()}
-                placeholder="Enter Phone Number"
-                keyboardType="phone-pad"
-                style={{
-                  height: 40,
-                  marginLeft: 4,
-                  // flex: 1,
-                  borderBottomWidth: 1,
-                  borderColor: '#d1cfcf',
-                  marginTop: 5,
-                  borderRadius: 8,
-                  paddingHorizontal: 10,
-                  paddingBottom: 0,
-                  fontSize: 22,
-                  color: '#212121',
-                }}
-                // secureTextEntry={true}
-                onChange={value => {
-                  // console.log('handeled', value.nativeEvent.text);
-                  value = Number(value.nativeEvent.text);
-                  if (validate_phone(value)) {
-                    console.log('etnereed green');
-                    //   phone_checked(true);
-                    // gen_sign_err_method(false);
-                    // sign_password_focused(false);
-                    //   update_phone(value);
-                  } else {
-                    //   phone_checked(false);
-                  }
-                }}
-              />
-            </View>
-            <TouchableOpacity>
-              {/* <Ionicons
-                name="checkmark-done-outline"
-                size={20}
-                color={true ? COLORS.mobile_theme_back : 'lightgray'}
-                style={{marginTop: 18}}
-              /> */}
-        {/* </TouchableOpacity>
-          </View>
-        </View> */}
-        {/* New Email */}
+
         <View style={{ marginTop: 15 }}>
           <Text
             style={{
-              fontSize: SIZES.h2,
+              fontSize: SIZES.form_section_title_fontsize,
               color: COLORS.mobile_theme_back,
               //   bottom: 8,
             }}
@@ -314,17 +191,17 @@ const ChangeProfile = ({ navigation, token }) => {
               flexDirection: "row",
               width: SIZES.width,
               marginTop: 0,
-              marginLeft: 7,
+              // marginLeft: 7,
             }}
           >
             <View style={{ flexDirection: "row" }}>
               <Ionicons
                 name="mail-outline"
-                size={27}
+                size={20}
                 color={true ? COLORS.mobile_theme_back : "lightgray"}
-                style={{ marginTop: 18 }}
+                style={{ marginTop: 10 }}
               />
-              <View style={{ width: SIZES.width * 0.73, marginLeft: 10 }}>
+              <View style={{ width: SIZES.width * 0.73 }}>
                 <TextInput
                   onFocus={(e) => {
                     // sign_name_focused(true);
@@ -337,17 +214,13 @@ const ChangeProfile = ({ navigation, token }) => {
                   placeholder="Enter Email"
                   keyboardType="email-address"
                   style={{
-                    height: 40,
-                    marginLeft: 4,
                     flex: 1,
-                    borderBottomWidth: 1,
-                    borderColor: "#d1cfcf",
+                    paddingVertical: 0,
+                    borderBottomColor: "#ccc",
                     marginTop: 5,
-                    borderRadius: 8,
-                    paddingHorizontal: 10,
-                    paddingBottom: 0,
-                    fontSize: 22,
-                    color: "#212121",
+                    borderBottomWidth: 1,
+                    // paddingBottom: 4,
+                    fontSize: SIZES.form_section_input_fontsize,
                   }}
                   onChange={(value) => {
                     setEmail(value.nativeEvent.text);
@@ -363,19 +236,11 @@ const ChangeProfile = ({ navigation, token }) => {
                   }}
                 />
               </View>
-              <TouchableOpacity>
-                {/* <Ionicons
-                  name="checkmark-done-outline"
-                  size={20}
-                  color={true ? COLORS.mobile_theme_back : 'lightgray'}
-                  style={{marginTop: 18}}
-                /> */}
-              </TouchableOpacity>
             </View>
           </View>
         </View>
       </View>
-      <View style={{ marginTop: 90 }}>
+      <View style={{}}>
         <CustomButton_form
           fontColor={COLORS.font_color}
           backgroundColor={

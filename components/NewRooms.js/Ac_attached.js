@@ -21,8 +21,7 @@ const AC_attached = ({ updateAttached, attached, updateAC, AC }) => {
         <Text
           style={{
             color: COLORS.black,
-            fontSize: SIZES.custom1,
-            fontWeight: "bold",
+            fontSize: SIZES.form_section_title_fontsize,
           }}
         >
           Select AC Type
@@ -36,9 +35,6 @@ const AC_attached = ({ updateAttached, attached, updateAC, AC }) => {
               borderWidth: SIZES.form_button_borderWidth,
               borderRadius: SIZES.form_button_borderRadius,
               minWidth: SIZES.form_button_minWidth,
-              maxWidth: SIZES.form_button_maxWidth,
-              maxHeight: SIZES.form_button_maxHeight,
-              padding: SIZES.form_button_padding,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
               backgroundColor: _AC ? COLORS.mobile_theme_back : "white",
@@ -54,8 +50,12 @@ const AC_attached = ({ updateAttached, attached, updateAC, AC }) => {
           >
             <Text
               style={{
+                lineHeight: SIZES.form_button_text_lineHeight,
+                fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 fontWeight: SIZES.form_button_text_fontWeight,
+                marginVertical: SIZES.form_button_text_marginVertical,
+                marginHorizontal: SIZES.form_button_text_marginHorizontal,
                 color: _AC ? COLORS.font_color : COLORS.lightGray3,
               }}
             >
@@ -69,10 +69,7 @@ const AC_attached = ({ updateAttached, attached, updateAC, AC }) => {
               borderColor: COLORS.mobile_theme_back,
               borderWidth: SIZES.form_button_borderWidth,
               borderRadius: SIZES.form_button_borderRadius,
-              minWidth: SIZES.form_button_minWidth,
-              maxWidth: SIZES.form_button_maxWidth,
-              maxHeight: SIZES.form_button_maxHeight,
-              padding: SIZES.form_button_padding,
+
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
               backgroundColor: !_AC ? COLORS.mobile_theme_back : "white",
@@ -87,8 +84,13 @@ const AC_attached = ({ updateAttached, attached, updateAC, AC }) => {
           >
             <Text
               style={{
+                lineHeight: SIZES.form_button_text_lineHeight,
+                fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 fontWeight: SIZES.form_button_text_fontWeight,
+                marginVertical: SIZES.form_button_text_marginVertical,
+                marginHorizontal: SIZES.form_button_text_marginHorizontal,
+
                 color: !_AC ? COLORS.font_color : COLORS.lightGray3,
               }}
             >
@@ -102,8 +104,7 @@ const AC_attached = ({ updateAttached, attached, updateAC, AC }) => {
         <Text
           style={{
             color: COLORS.black,
-            fontSize: SIZES.custom1,
-            fontWeight: "bold",
+            fontSize: SIZES.form_section_title_fontsize,
           }}
         >
           Select Room Type
@@ -116,10 +117,7 @@ const AC_attached = ({ updateAttached, attached, updateAC, AC }) => {
               borderColor: COLORS.mobile_theme_back,
               borderWidth: SIZES.form_button_borderWidth,
               borderRadius: SIZES.form_button_borderRadius,
-              minWidth: SIZES.form_button_minWidth,
-              maxWidth: SIZES.form_button_maxWidth,
-              maxHeight: SIZES.form_button_maxHeight,
-              padding: SIZES.form_button_padding,
+
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
               backgroundColor: _attched ? COLORS.mobile_theme_back : "white",
@@ -135,8 +133,12 @@ const AC_attached = ({ updateAttached, attached, updateAC, AC }) => {
           >
             <Text
               style={{
-                fontSize: SIZES.form_button_text_fontSize,
                 fontWeight: SIZES.form_button_text_fontWeight,
+                lineHeight: SIZES.form_button_text_lineHeight,
+                fontFamily: FONTS.fontFamily_black,
+                fontSize: SIZES.form_button_text_fontSize,
+                marginVertical: SIZES.form_button_text_marginVertical,
+                marginHorizontal: SIZES.form_button_text_marginHorizontal,
                 color: _attched ? COLORS.font_color : COLORS.lightGray3,
               }}
             >
@@ -150,10 +152,7 @@ const AC_attached = ({ updateAttached, attached, updateAC, AC }) => {
               borderColor: COLORS.mobile_theme_back,
               borderWidth: SIZES.form_button_borderWidth,
               borderRadius: SIZES.form_button_borderRadius,
-              minWidth: SIZES.form_button_minWidth,
-              maxWidth: SIZES.form_button_maxWidth,
-              maxHeight: SIZES.form_button_maxHeight,
-              padding: SIZES.form_button_padding,
+
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
               backgroundColor: !_attched ? COLORS.mobile_theme_back : "white",
@@ -168,8 +167,12 @@ const AC_attached = ({ updateAttached, attached, updateAC, AC }) => {
           >
             <Text
               style={{
-                fontSize: SIZES.form_button_text_fontSize,
                 fontWeight: SIZES.form_button_text_fontWeight,
+                lineHeight: SIZES.form_button_text_lineHeight,
+                fontFamily: FONTS.fontFamily_black,
+                fontSize: SIZES.form_button_text_fontSize,
+                marginVertical: SIZES.form_button_text_marginVertical,
+                marginHorizontal: SIZES.form_button_text_marginHorizontal,
                 color: !_attched ? COLORS.font_color : COLORS.lightGray3,
               }}
             >

@@ -17,7 +17,7 @@ import * as Newpropert_ext_actions from "../../store/Newproperty_ext/Newproperty
 import Header from "../../components/NewProperty/Header";
 import * as Progress from "react-native-progress";
 // import * as newproperty_actions from '../../store/Newproperty/newproperty_action';
-import { COLORS, SIZES } from "../../constants";
+import { COLORS, SIZES, FONTS } from "../../constants";
 import Looking_Selection_Button from "../../components/NewProperty/Looking_Selection_Button";
 import { connect } from "react-redux";
 import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
@@ -81,8 +81,8 @@ const Location = ({
   }, [Location, Landmark, house_no, elebill]);
 
   // const [imgUri, setimgUri] = React.useState(undefined);
-  const [img_url, setimg_url] = React.useState(elebill ? elebill.uri : "");
-  // console.log(img_url);
+  const [img_url, setimg_url] = React.useState(elebill ? elebill[0]?.uri : "");
+  console.log("elebill", elebill);
   function next_page() {
     navigation.navigate("MoreProperty");
     console.log("next pagee");
@@ -109,7 +109,7 @@ const Location = ({
       console.log(res);
       setimg_url(res[0].uri);
       checkedElebill(true);
-      updateElebill(res);
+      await updateElebill(res);
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
         console.log("User cancelled", err);
@@ -202,15 +202,16 @@ const Location = ({
             maxHeight: 200,
             // alignItems: 'center',
             padding: 5,
+
             marginBottom: 10,
           }}
         >
           <Text
             style={{
-              fontSize: SIZES.h2,
+              fontSize: SIZES.form_section_title_fontsize,
               color: COLORS.black,
               //   bottom: 8,
-              marginTop: 5,
+              // marginTop: 5,
               flex: 1,
             }}
           >
@@ -282,10 +283,7 @@ const Location = ({
                 borderColor: COLORS.mobile_theme,
                 borderWidth: SIZES.form_button_borderWidth,
                 borderRadius: SIZES.form_button_borderRadius,
-                minWidth: SIZES.form_button_minWidth,
                 maxWidth: SIZES.form_button_maxWidth,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
                 alignItems: SIZES.form_button_alignItems,
                 justifyContent: SIZES.form_button_justifyContent,
                 backgroundColor: COLORS.mobile_theme_back,
@@ -297,12 +295,15 @@ const Location = ({
             >
               <Text
                 style={{
-                  fontSize: SIZES.form_button_text_fontSize,
-                  fontWeight: SIZES.form_button_text_fontWeight,
+                  lineHeight: SIZES.form_button_text_lineHeight,
+                  fontFamily: FONTS.fontFamily_black,
                   color: COLORS.font_color,
+                  fontSize: SIZES.form_button_text_fontSize,
+                  marginVertical: SIZES.form_button_text_marginVertical,
+                  marginHorizontal: SIZES.form_button_text_marginHorizontal,
                 }}
               >
-                Select fles
+                Select File
               </Text>
             </TouchableOpacity>
           </View>

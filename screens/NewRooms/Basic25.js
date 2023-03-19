@@ -10,11 +10,14 @@ import {
   Platform,
   Image,
   FlatList,
+  RefreshControl,
   PermissionsAndroid,
+  Touchable,
+  Pressable,
 } from "react-native";
 import Header from "../../components/NewProperty/Header";
 import * as Progress from "react-native-progress";
-import { COLORS, icons, SIZES } from "../../constants";
+import { COLORS, icons, SIZES, FONTS } from "../../constants";
 import Looking_Selection_Button from "../../components/NewProperty/Looking_Selection_Button";
 import { connect } from "react-redux";
 import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
@@ -89,6 +92,7 @@ const Basic25 = ({
   const videoref = React.useRef(null);
   const [videoPath, setVideoPath] = useState("");
   const [Bool, setBool] = useState(false);
+  const [refreshing, setRefreshing] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   // console.log("roomOutervideos", room_outerVideos);
   // useEffect(() => {
@@ -206,6 +210,15 @@ const Basic25 = ({
     }
   };
 
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+
+    setTimeout(() => {
+      async function call_all() {}
+      call_all();
+      setRefreshing(false);
+    }, 2000);
+  }, []);
   const upload_outer_images = async () => {
     if (intImg.length > 0) {
       try {
@@ -350,7 +363,7 @@ const Basic25 = ({
     console.log("render_video", _vidUri);
 
     return (
-      <View
+      <ScrollView
         style={{
           flexDirection: "row",
 
@@ -465,7 +478,7 @@ const Basic25 = ({
             style={{}}
           />
         </TouchableOpacity>
-      </View>
+      </ScrollView>
     );
   };
   const redner_images = ({ _imgUri, image }) => {
@@ -549,6 +562,9 @@ const Basic25 = ({
     <>
       <ScrollView
         keyboardShouldPersistTaps="handled"
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
         style={{ backgroundColor: "white" }}
       >
         {/* <KeyboardAvoidingView */}
@@ -572,7 +588,7 @@ const Basic25 = ({
         />
         <View>
           <Progress.Bar
-            progress={0.75}
+            progress={1}
             color={COLORS.progress_bar}
             width={SIZES.width}
             height={SIZES.height * 0.006}
@@ -597,7 +613,8 @@ const Basic25 = ({
         <View style={{ padding: 15, marginTop: 25 }}>
           <View>
             <Header
-              step={4}
+              step={3}
+              total={3}
               subtitle={"Room's outer image,video"}
               title={"Videos and Images of Rooms"}
             />
@@ -607,8 +624,8 @@ const Basic25 = ({
             <Text
               style={{
                 color: COLORS.black,
-                fontSize: SIZES.h2,
-                fontWeight: "bold",
+                fontSize: SIZES.form_section_title_fontsize,
+                // fontWeight: "bold",
                 marginTop: 25,
                 flex: 1,
               }}
@@ -618,17 +635,14 @@ const Basic25 = ({
 
             {imgUri === undefined ||
               (imgUri?.length <= 10 && (
-                <View style={{ marginTop: 11, flex: 0.6 }}>
+                <View style={{ marginTop: 11, flex: 0.4 }}>
                   <TouchableOpacity
                     style={{
                       marginTop: 15,
                       borderColor: COLORS.mobile_theme,
                       borderWidth: SIZES.form_button_borderWidth,
                       borderRadius: SIZES.form_button_borderRadius,
-                      minWidth: SIZES.form_button_minWidth - 10,
-                      maxWidth: SIZES.form_button_maxWidth - 20,
-                      maxHeight: SIZES.form_button_maxHeight - 5,
-                      padding: SIZES.form_button_padding - 2,
+                      maxWidth: SIZES.form_button_maxWidth,
                       alignItems: SIZES.form_button_alignItems,
                       justifyContent: SIZES.form_button_justifyContent,
                       backgroundColor: COLORS.mobile_theme_back,
@@ -640,9 +654,13 @@ const Basic25 = ({
                   >
                     <Text
                       style={{
-                        fontSize: SIZES.h2 - 3,
-                        fontWeight: SIZES.form_button_text_fontWeight,
+                        lineHeight: SIZES.form_button_text_lineHeight,
+                        fontFamily: FONTS.fontFamily_black,
                         color: COLORS.font_color,
+                        fontSize: SIZES.form_button_text_fontSize,
+                        marginVertical: SIZES.form_button_text_marginVertical,
+                        marginHorizontal:
+                          SIZES.form_button_text_marginHorizontal,
                       }}
                     >
                       Select Image
@@ -651,45 +669,50 @@ const Basic25 = ({
                 </View>
               ))}
           </View>
+
           {/* Show Uploaded */}
-          {imgUri.length > 0 && (
-            <FlatList
-              data={imgUri}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              ListEmptyComponent={redner_images({ _imgUri: icons.no_image })}
-              renderItem={(image) =>
-                redner_images({ _imgUri: image.item.uri, image: image })
-              }
-            />
-          )}
+
+          <FlatList
+            data={imgUri}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            ListEmptyComponent={
+              <View style={{ top: -40, left: -40 }}>
+                <Image
+                  style={{ height: 200, borderRadius: 10, width: 250 }}
+                  source={icons.no_image}
+                />
+              </View>
+            }
+            renderItem={(image) =>
+              redner_images({ _imgUri: image.item.uri, image: image })
+            }
+          />
+
           {/* Outer Videso */}
           <View style={{ flexDirection: "row" }}>
             <Text
               style={{
                 color: COLORS.black,
-                fontSize: SIZES.h2,
-                fontWeight: "bold",
+                fontSize: SIZES.form_section_title_fontsize,
+                // fontWeight: "bold",
                 marginTop: 25,
                 flex: 1,
               }}
             >
-              Outer Videos{"  "}({vidUri.length} out of 10)
+              Outer Videos{"  "}({vidUri.length} out of 2)
             </Text>
 
             {vidUri === undefined ||
               (vidUri?.length <= 10 && (
-                <View style={{ marginTop: 11, flex: 0.6 }}>
+                <View style={{ marginTop: 11, flex: 0.4 }}>
                   <TouchableOpacity
                     style={{
                       marginTop: 15,
                       borderColor: COLORS.mobile_theme,
                       borderWidth: SIZES.form_button_borderWidth,
                       borderRadius: SIZES.form_button_borderRadius,
-                      minWidth: SIZES.form_button_minWidth - 10,
-                      maxWidth: SIZES.form_button_maxWidth - 20,
-                      maxHeight: SIZES.form_button_maxHeight - 5,
-                      padding: SIZES.form_button_padding - 2,
+                      maxWidth: SIZES.form_button_maxWidth,
                       alignItems: SIZES.form_button_alignItems,
                       justifyContent: SIZES.form_button_justifyContent,
                       backgroundColor: COLORS.mobile_theme_back,
@@ -701,9 +724,13 @@ const Basic25 = ({
                   >
                     <Text
                       style={{
-                        fontSize: SIZES.h2 - 3,
-                        fontWeight: SIZES.form_button_text_fontWeight,
+                        lineHeight: SIZES.form_button_text_lineHeight,
+                        fontFamily: FONTS.fontFamily_black,
                         color: COLORS.font_color,
+                        fontSize: SIZES.form_button_text_fontSize,
+                        marginVertical: SIZES.form_button_text_marginVertical,
+                        marginHorizontal:
+                          SIZES.form_button_text_marginHorizontal,
                       }}
                     >
                       Select Video
@@ -712,18 +739,23 @@ const Basic25 = ({
                 </View>
               ))}
           </View>
-          {vidUri.length > 0 && (
-            <View style={{ borderWidth: 1, borderColor: COLORS.lightGray4 }}>
-              <FlatList
-                data={vidUri}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                renderItem={(video) =>
-                  render_video({ _vidUri: video.item.uri, video: video })
-                }
-              />
-            </View>
-          )}
+
+          <FlatList
+            data={vidUri}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            ListEmptyComponent={
+              <View style={{ top: -40, left: -40 }}>
+                <Image
+                  style={{ height: 200, borderRadius: 10, width: 250 }}
+                  source={icons.no_image}
+                />
+              </View>
+            }
+            renderItem={(video) =>
+              render_video({ _vidUri: video.item.uri, video: video })
+            }
+          />
         </View>
       </ScrollView>
       {loading && <AppLoader />}

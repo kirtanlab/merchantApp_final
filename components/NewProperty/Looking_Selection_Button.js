@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
-} from 'react-native';
-import {Button} from 'react-native';
-import {COLORS, FONTS, SIZES} from '../../constants';
-import {connect} from 'react-redux';
-import * as newproperty_actions from '../../store/Newproperty/newproperty_action';
-const Looking_Selection_Button = ({looking_form, update_looking}) => {
+} from "react-native";
+import { Button } from "react-native";
+import { COLORS, FONTS, SIZES } from "../../constants";
+import { connect } from "react-redux";
+import * as newproperty_actions from "../../store/Newproperty/newproperty_action";
+const Looking_Selection_Button = ({ looking_form, update_looking }) => {
   let [looking_form_copy, setLooking] = useState(looking_form);
   let [pg, setpg] = useState(looking_form_copy?.pg);
   let [mess, setmess] = useState(looking_form_copy?.mess);
@@ -22,17 +22,18 @@ const Looking_Selection_Button = ({looking_form, update_looking}) => {
         <Text
           style={{
             color: COLORS.black,
-            fontSize: SIZES.h2,
+            fontSize: SIZES.form_section_title_fontsize,
             // fontWeight: 'bold',
-          }}>
+          }}
+        >
           What You're upto?
         </Text>
       </View>
-      <View style={{flexDirection: 'column'}}>
+      <View style={{ flexDirection: "column" }}>
         <View
           style={{
-            display: 'flex',
-            flexDirection: 'row',
+            display: "flex",
+            flexDirection: "row",
             gap: 14,
             marginTop: 12,
             // flex: 3,
@@ -42,9 +43,10 @@ const Looking_Selection_Button = ({looking_form, update_looking}) => {
             // justifyConte,
             // alignContent: 'center',
             // justifyContent: 'space-between',
-            position: 'relative',
+            position: "relative",
             // paddingHorizontal: 10,
-          }}>
+          }}
+        >
           {/* rent */}
           <View>
             <TouchableOpacity
@@ -52,13 +54,10 @@ const Looking_Selection_Button = ({looking_form, update_looking}) => {
                 borderColor: COLORS.mobile_theme_back,
                 borderWidth: SIZES.form_button_borderWidth,
                 borderRadius: SIZES.form_button_borderRadius,
-                minWidth: SIZES.form_button_minWidth,
-                maxWidth: SIZES.form_button_maxWidth,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
+
                 alignItems: SIZES.form_button_alignItems,
                 justifyContent: SIZES.form_button_justifyContent,
-                backgroundColor: rent ? COLORS.mobile_theme_back : 'white',
+                backgroundColor: rent ? COLORS.mobile_theme_back : "white",
               }}
               onPress={async () => {
                 if (!rent) {
@@ -73,14 +72,21 @@ const Looking_Selection_Button = ({looking_form, update_looking}) => {
                   await update_looking(looking_form_copy);
                 }
 
-                console.log('Pressed0');
-              }}>
+                console.log("Pressed0");
+              }}
+            >
               <Text
                 style={{
+                  lineHeight: SIZES.form_button_text_lineHeight,
+                  fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
-                  //
+                  fontWeight: SIZES.form_button_text_fontWeight,
+                  marginVertical: SIZES.form_button_text_marginVertical,
+                  marginHorizontal: SIZES.form_button_text_marginHorizontal,
+                  // fontWeight: SIZES.form_button_text_fontWeight,
                   color: rent ? COLORS.font_color : COLORS.lightGray3,
-                }}>
+                }}
+              >
                 Rent
               </Text>
             </TouchableOpacity>
@@ -131,13 +137,10 @@ const Looking_Selection_Button = ({looking_form, update_looking}) => {
                 borderColor: COLORS.mobile_theme_back,
                 borderWidth: SIZES.form_button_borderWidth,
                 borderRadius: SIZES.form_button_borderRadius,
-                minWidth: SIZES.form_button_minWidth,
-                maxWidth: SIZES.form_button_maxWidth,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
+
                 alignItems: SIZES.form_button_alignItems,
                 justifyContent: SIZES.form_button_justifyContent,
-                backgroundColor: Hostel ? COLORS.mobile_theme_back : 'white',
+                backgroundColor: Hostel ? COLORS.mobile_theme_back : "white",
               }}
               onPress={async () => {
                 if (!Hostel) {
@@ -152,14 +155,21 @@ const Looking_Selection_Button = ({looking_form, update_looking}) => {
                   await update_looking(looking_form_copy);
                 }
 
-                console.log('Pressed0');
-              }}>
+                console.log("Pressed0");
+              }}
+            >
               <Text
                 style={{
+                  lineHeight: SIZES.form_button_text_lineHeight,
+                  fontFamily: FONTS.fontFamily_black,
+                  fontWeight: SIZES.form_button_text_fontWeight,
                   fontSize: SIZES.form_button_text_fontSize,
-                  //
+                  marginVertical: SIZES.form_button_text_marginVertical,
+                  marginHorizontal: SIZES.form_button_text_marginHorizontal,
+                  // fontWeight: SIZES.form_button_text_fontWeight,
                   color: Hostel ? COLORS.font_color : COLORS.lightGray3,
-                }}>
+                }}
+              >
                 Hostel
               </Text>
             </TouchableOpacity>
@@ -171,13 +181,10 @@ const Looking_Selection_Button = ({looking_form, update_looking}) => {
                 borderColor: COLORS.mobile_theme_back,
                 borderWidth: SIZES.form_button_borderWidth,
                 borderRadius: SIZES.form_button_borderRadius,
-                minWidth: SIZES.form_button_minWidth,
-                maxWidth: SIZES.form_button_maxWidth + 50,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
+
                 alignItems: SIZES.form_button_alignItems,
                 justifyContent: SIZES.form_button_justifyContent,
-                backgroundColor: pg ? COLORS.mobile_theme_back : 'white',
+                backgroundColor: pg ? COLORS.mobile_theme_back : "white",
               }}
               onPress={async () => {
                 if (!pg) {
@@ -191,14 +198,22 @@ const Looking_Selection_Button = ({looking_form, update_looking}) => {
                   setHostel(false);
                   await update_looking(looking_form_copy);
                 }
-                console.log('Pressed2');
-              }}>
+                console.log("Pressed2");
+              }}
+            >
               <Text
                 style={{
+                  lineHeight: SIZES.form_button_text_lineHeight,
+                  fontFamily: FONTS.fontFamily_black,
+                  fontWeight: SIZES.form_button_text_fontWeight,
                   fontSize: SIZES.form_button_text_fontSize,
-                  //
+                  marginVertical: SIZES.form_button_text_marginVertical,
+                  marginHorizontal: SIZES.form_button_text_marginHorizontal,
+                  // fontWeight: SIZES.form_button_text_fontWeight,
+
                   color: pg ? COLORS.font_color : COLORS.lightGray3,
-                }}>
+                }}
+              >
                 Paying Guest(PG)
               </Text>
             </TouchableOpacity>
@@ -218,7 +233,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    update_looking: looking_form => {
+    update_looking: (looking_form) => {
       dispatch(newproperty_actions.setLooking(looking_form));
     },
     update_test: () => {
@@ -228,5 +243,5 @@ function mapDispatchToProps(dispatch) {
 }
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Looking_Selection_Button);

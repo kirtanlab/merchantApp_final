@@ -15,9 +15,9 @@ const HomeScreen_Header = ({
     <View
       style={{
         flexDirection: "row",
-        borderBottomColor: COLORS.lightGray4,
-        borderBottomWidth: 2,
-        paddingBottom: 8,
+        // borderBottomColor: COLORS.lightGray4,
+        // borderBottomWidth: 2,
+        // paddingBottom: 8,
         paddingHorizontal: 15,
       }}
     >
@@ -34,7 +34,7 @@ const HomeScreen_Header = ({
           <Text
             style={{
               color: COLORS.mobile_theme_back,
-              fontSize: 16,
+              fontSize: 19,
               fontFamily: FONTS.fontFamily_poppins,
             }}
           >
@@ -93,7 +93,7 @@ const HomeScreen_Header = ({
               color: true ? COLORS.font_color : COLORS.lightGray3,
             }}
           >
-            + add new rooms
+            + Add new rooms
           </Text>
         </TouchableOpacity>
       </View>

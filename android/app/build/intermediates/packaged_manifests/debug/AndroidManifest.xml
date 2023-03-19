@@ -12,7 +12,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <queries>
         <intent>
@@ -25,6 +24,7 @@
     </queries>
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <!--
          Required to keep CPU alive while downloading files
         (NOT to keep screen awake)
@@ -33,6 +33,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Required to to download files without a notification -->
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" /> <!-- Required to access Google Play Licensing -->
     <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 

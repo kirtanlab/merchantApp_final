@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 
@@ -10,53 +10,65 @@ import { REACT_APP_OWNER_API } from "@env";
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 import { connect } from "react-redux";
 import * as AuthActions from "../../store/auth/authActions";
+import { icons } from "../../constants";
 // import { updateUser, getUserFromStorage } from "../../store/auth/authActions";
 
 const SplashScreen = ({ navigation, updateToken }) => {
   const [loading, setLoading] = React.useState(false);
   useEffect(() => {
-    const _getUserFromStorage = async () => {
-      setLoading(true);
-      let token = await AsyncStorage.getItem("token");
-      token = JSON.parse(token);
-      console.log("from splashscreen", token);
-      if (token == null) {
-        navigation.replace("LoginScreen");
-        setLoading(false);
-      } else {
-        updateToken(token);
-        const data = await axios.get(
-          `${REACT_APP_OWNER_API}/api/v1/owner/getstatus`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
-        let phone_status = data.data.data.phoneVerified;
-        let details_status = data.data.data.detailsEntered;
-        let roomFilled = data.data.data.roomFilled;
-        if (!phone_status) {
-          navigation.replace("MobileOTP");
-        } else if (!details_status) {
-          navigation.replace("Newproperty");
-        } else if (!roomFilled) {
-          navigation.replace("NewRooms");
+    setTimeout(() => {
+      const _getUserFromStorage = async () => {
+        setLoading(true);
+        let token = await AsyncStorage.getItem("token");
+        token = JSON.parse(token);
+        console.log("from splashscreen", token);
+        if (token == "") {
+          navigation.replace("LoginScreen");
+          setLoading(false);
         } else {
-          navigation.replace("MainScreens");
+          updateToken(token);
+          const data = await axios.get(
+            `${REACT_APP_OWNER_API}/api/v1/owner/getstatus`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "multipart/form-data",
+              },
+            }
+          );
+          let phone_status = data.data.data.phoneVerified;
+          let details_status = data.data.data.detailsEntered;
+          let roomFilled = data.data.data.roomFilled;
+          if (!phone_status) {
+            navigation.replace("MobileOTP");
+          } else if (!details_status) {
+            navigation.replace("Newproperty");
+          } else if (!roomFilled) {
+            navigation.replace("NewRooms");
+          } else {
+            navigation.replace("MainScreens");
+          }
+          setLoading(false);
         }
-        setLoading(false);
-      }
-    };
-    _getUserFromStorage();
+      };
+      _getUserFromStorage();
+    }, 2000);
   }, []);
+  console.log(icons.logo_rent);
   return (
     <>
       <View style={styles.splashScreenCont}>
-        <Text>Checking Authentication...</Text>
+        <Image
+          source={icons.logo_rent}
+          style={{
+            height: 350,
+            width: 350,
+            borderRadius: 20,
+            marginTop: 30,
+            alignSelf: "center",
+          }}
+        />
       </View>
-      {loading && <AppLoader />}
     </>
   );
 };
@@ -67,6 +79,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     justifyContent: "center",
+    backgroundColor: "white",
   },
 });
 

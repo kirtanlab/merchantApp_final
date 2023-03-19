@@ -1,7 +1,7 @@
-import React from 'react';
-import {COLORS, SIZES} from '../constants';
-import {View, Text, TouchableOpacity} from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import React from "react";
+import { COLORS, SIZES } from "../constants";
+import { View, Text, TouchableOpacity } from "react-native";
+import Ionicons from "react-native-vector-icons/Ionicons";
 const NAVHeader_BLOB = ({
   color,
   onPress_forward,
@@ -15,61 +15,41 @@ const NAVHeader_BLOB = ({
       style={{
         borderBottomColor: COLORS.lightGray3,
         borderBottomWidth: 1,
-        width: '100%',
-      }}>
-      <View
-        style={{
-          flexDirection: 'row',
-          marginTop: '3%',
-          // paddingBottom: 7,
+        width: "100%",
+        flexDirection: "row",
+      }}
+    >
+      <TouchableOpacity
+        onPress={onPress_back}
+        style={{ flex: 1, flexDirection: "row" }}
+      >
+        <Ionicons
+          name="arrow-back-outline"
+          size={30}
+          color={COLORS.mobile_theme_back}
+          style={{}}
+        />
 
-          // alignItems: 'center',
-          // left: 0,
-          backgroundColor: 'white',
-          // justifyContent: 'space-evenly',
-        }}>
-        <View
+        <Text
           style={{
-            left: SIZES.width * 0.05,
-            width: SIZES.width * 0.22,
-            top: 5,
-            height: 47,
-            flex: 1,
-            // width: 100,
-          }}>
-          <TouchableOpacity onPress={onPress_back} style={{height: 100}}>
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <View style={{}}>
-                <Ionicons
-                  name="arrow-back-outline"
-                  size={30}
-                  color={COLORS.mobile_theme_back}
-                  style={{}}
-                />
-              </View>
-              <View style={{}}>
-                <Text
-                  style={{
-                    color: COLORS.mobile_theme_back,
-                    fontSize: 23,
-                  }}>
-                  Back
-                </Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View style={{flex: 2, top: 7}}>
-          <Text
-            style={{
-              color: COLORS.mobile_theme_back,
-              fontSize: 23,
-              fontWeight: 'bold',
-            }}>
-            {screen_name}
-          </Text>
-        </View>
-      </View>
+            color: COLORS.mobile_theme_back,
+            fontSize: 18,
+          }}
+        >
+          Back
+        </Text>
+      </TouchableOpacity>
+
+      <Text
+        style={{
+          color: COLORS.mobile_theme_back,
+          fontSize: 18,
+          flex: 1.8,
+          // fontWeight: "bold",
+        }}
+      >
+        {screen_name}
+      </Text>
     </View>
   );
 };

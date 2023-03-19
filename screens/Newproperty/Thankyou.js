@@ -40,33 +40,32 @@ const Thankyou = ({ navigation, property_updating }) => {
     <ScrollView style={{ backgroundColor: "white" }}>
       <StatusBar
         animated={true}
-        backgroundColor={COLORS.progress_bar}
+        backgroundColor={COLORS.mobile_theme_back}
         barStyle={"light-content"}
       />
-      <SafeAreaView
+      {/* <SafeAreaView
         style={{
           height: SIZES.height * 0.03,
           backgroundColor: COLORS.mobile_theme_back,
           elevation: 1,
         }}
-      />
-      <View>
-        <Progress.Bar
+      /> */}
+      {/* <View> */}
+      {/* <Progress.Bar
           progress={1}
           color={COLORS.mobile_theme_back}
           width={SIZES.width}
-          height={SIZES.height * 0.01}
+         
           style={{ position: "absolute", top: -1 }}
-        />
-      </View>
-      <View style={{ padding: 15, marginTop: 45, flexDirection: "column" }}>
-        <View style={{ margin: 24 }}>
+        /> */}
+      {/* </View> */}
+      <View style={{ flexDirection: "column", marginTop: "20%" }}>
+        <View style={{ alignItems: "center" }}>
           <Text
             style={{
-              fontSize: 34,
+              fontSize: 30,
               fontWeight: "bold",
               color: COLORS.mobile_theme_back,
-              marginLeft: property_updating.updating ? 70 : 0,
             }}
           >
             {property_updating.updating
@@ -78,7 +77,7 @@ const Thankyou = ({ navigation, property_updating }) => {
           <Custom_Animation />
         </View>
       </View>
-      <View style={{ marginTop: 90 }}>
+      <View style={{}}>
         <CustomButton_form
           fontColor={COLORS.font_color}
           backgroundColor={COLORS.mobile_theme_back}
