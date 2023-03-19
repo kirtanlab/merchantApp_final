@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.merchantapp-mergeDebugResources-36:/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "com.merchantapp-mergeDebugResources-35:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
                     "source": "/home/kirtan/.gradle/caches/transforms-3/a7fff41c67214678d9281d200b6a6b25/transformed/jetified-play-services-base-18.1.0/res/values-fr-rCA/values.xml",

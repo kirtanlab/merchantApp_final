@@ -1,45 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
-  ActivityIndicator,
   Image,
-  Pressable,
-  StyleSheet,
   SafeAreaView,
   Text,
-  TextInput,
-  TouchableOpacity,
   KeyboardAvoidingView,
   View,
   ScrollView,
 } from "react-native";
 import axios from "axios";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import { useDispatch } from "react-redux";
 
-// import {auth} from '../../firebase';
-// import {signInWithEmailAndPassword} from 'firebase/auth';
-// import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { connect } from "react-redux";
-import { updateUser } from "../../store/auth/authActions";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import icons from "../../constants/icons";
-import LoginSVG from "../../assets/icons/login.svg";
-import GoogleSVG from "../../assets/icons/google.svg";
-import * as AuthActions from "../../store/auth/authActions";
 import CustomButton from "../../components/CustomeButton";
 import InputField from "../../components/InputField";
 import { COLORS, SIZES } from "../../constants";
 import { StatusBar } from "react-native";
 import AppLoader from "../../components/AppLoader";
 import { REACT_APP_OWNER_API } from "@env";
-const mobile_input = ({
-  token,
-  navigation,
-  phone,
-  focused_phone,
-  checked_phone,
-}) => {
+const mobile_input = ({ token, navigation, phone, checked_phone }) => {
   const [loading, setLoading] = useState(false);
   const [err, setError] = useState(false);
   const handleLogin = async () => {

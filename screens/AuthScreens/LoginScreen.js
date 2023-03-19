@@ -1,28 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
-  ActivityIndicator,
   Image,
-  Pressable,
-  StyleSheet,
   SafeAreaView,
   Text,
-  TextInput,
   TouchableOpacity,
-  KeyboardAvoidingView,
   View,
   ScrollView,
 } from "react-native";
-import { useDispatch } from "react-redux";
+
 import { StatusBar } from "react-native";
 import { SIZES } from "../../constants";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { connect } from "react-redux";
-import { updateUser } from "../../store/auth/authActions";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import icons from "../../constants/icons";
-import LoginSVG from "../../assets/icons/login.svg";
-import GoogleSVG from "../../assets/icons/google.svg";
+
 import * as AuthActions from "../../store/auth/authActions";
 import CustomButton from "../../components/CustomeButton";
 import InputField from "../../components/InputField";
@@ -35,24 +28,13 @@ const LoginScreen = ({
   checked_login_email,
   gen_login_err,
   gen_login_err_method,
-  reset_checked,
   email,
   password,
-  login_email_checked,
-  update_user,
-  route,
-  login_pass_checked,
   updateToken,
 }) => {
   const [loading, setLoading] = useState(false);
   const [err, setError] = useState(false);
-  const [_email, setEmail] = useState("");
   const [_password, setPass] = useState("");
-  const [verified, setVerified] = useState(false);
-  const [posted, setPosted] = useState(true);
-
-  const phone_number = 7016700396;
-
   const setUser = async (token) => {
     return new Promise(function (resolve, reject) {
       AsyncStorage.setItem("token", JSON.stringify(token))

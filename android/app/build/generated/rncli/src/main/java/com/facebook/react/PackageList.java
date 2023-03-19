@@ -37,14 +37,10 @@ import com.reactnativedocumentpicker.DocumentPickerPackage;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-maps
 import com.airbnb.android.react.maps.MapsPackage;
-// react-native-pdf
-import org.wonday.pdf.RCTPdfView;
 // react-native-safe-area-context
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
 import com.swmansion.rnscreens.RNScreensPackage;
-// react-native-svg
-import com.horcrux.svg.SvgPackage;
 // react-native-vector-icons
 import com.oblador.vectoricons.VectorIconsPackage;
 // react-native-video
@@ -111,10 +107,8 @@ public class PackageList {
       new DocumentPickerPackage(),
       new RNGestureHandlerPackage(),
       new MapsPackage(),
-      new RCTPdfView(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
-      new SvgPackage(),
       new VectorIconsPackage(),
       new ReactVideoPackage(),
       new ReactNativeWheelPickerPackage(),

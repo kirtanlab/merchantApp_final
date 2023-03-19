@@ -1,32 +1,18 @@
 import React, { useEffect, useState } from "react";
 import {
-  ActivityIndicator,
   Image,
-  Pressable,
   StyleSheet,
   SafeAreaView,
   Text,
-  TextInput,
   TouchableOpacity,
   KeyboardAvoidingView,
   View,
   ScrollView,
 } from "react-native";
 import { useDispatch } from "react-redux";
-
-// import {auth} from '../../firebase';
-// import {signInWithEmailAndPassword} from 'firebase/auth';
-// import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { connect } from "react-redux";
-import { updateUser } from "../../store/auth/authActions";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import icons from "../../constants/icons";
-import LoginSVG from "../../assets/icons/login.svg";
-import GoogleSVG from "../../assets/icons/google.svg";
-import * as AuthActions from "../../store/auth/authActions";
 import CustomButton from "../../components/CustomeButton";
-import InputField from "../../components/InputField";
 import { COLORS, SIZES } from "../../constants";
 import { StatusBar } from "react-native";
 import AppLoader from "../../components/AppLoader";

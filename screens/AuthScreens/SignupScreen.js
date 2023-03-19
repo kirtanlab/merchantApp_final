@@ -1,44 +1,28 @@
-import React, { useState, useEffect } from "react";
-var qs = require("qs");
+import React, { useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
   View,
   Text,
   TouchableOpacity,
-  ActivityIndicator,
   Alert,
 } from "react-native";
-// import SvgUri from 'react-native-svg-uri';
 import InputField from "../../components/InputField";
 import { COLORS, icons, SIZES } from "../../constants";
 import { Image } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import RegistrationSVG from "../../assets/icons/registration.svg";
 import CustomButton from "../../components/CustomeButton";
 import { StatusBar } from "react-native";
 import { connect } from "react-redux";
 import axios from "axios";
-// import {auth} from '../../firebase';
-// import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
-import { REACT_APP_OWNER_API } from "@env";
 import * as AuthActions from "../../store/auth/authActions";
 import AppLoader from "../../components/AppLoader";
 const SignupScreen = ({
   navigation,
-  updateUser,
   name,
-  phone,
-  focused_phone,
-  checked_phone,
   email,
   password,
-  login_email,
-  login_password,
-  checked_login_email,
-  checked_login_pass,
-  gen_login_err,
   confirmPassword,
   focused_sign_email,
   focused_sign_name,
@@ -50,24 +34,10 @@ const SignupScreen = ({
   checked_sign_conf_pass,
   gen_sign_err,
   gen_sign_err_method,
-  reset_checked,
 }) => {
   let err = true;
-  // let checked = false;
   const [loading, setLoading] = useState(false);
   const [_err, setError] = useState(false);
-  const [_email, setEmail] = useState("");
-  const [_password, setPass] = useState("");
-  const [verified, setVerified] = useState(false);
-  const [posted, setPosted] = useState(true);
-
-  // const persistUserData = user => {
-  //   return new Promise(function (resolve, reject) {
-  //     AsyncStorage.setItem('userData', JSON.stringify(user))
-  //       .then(() => resolve(JSON.stringify(user)))
-  //       .catch(err => reject('Logged in User data not persisted : ', err));
-  //   });
-  // };
   async function handleSignUp() {
     if (email && password && confirmPassword && name) {
       try {
@@ -104,8 +74,6 @@ const SignupScreen = ({
   }
   // console.log(phone);
   return (
-    // <SafeAreaView
-    //   style={{flex: 1, backgroundColor: 'white', justifyContent: 'center'}}>
     <>
       <SafeAreaView
         style={{ flex: 1, backgroundColor: "white", justifyContent: "center" }}
@@ -355,15 +323,7 @@ const SignupScreen = ({
           >
             <Text>Already registered?</Text>
             <TouchableOpacity
-              onPress={() =>
-                navigation.navigate("LoginScreen", {
-                  __email: login_email,
-                  __password: login_password,
-                  _checked_login_email: checked_login_email,
-                  _checked_login_pass: checked_login_pass,
-                  _gen_login_err: gen_login_err,
-                })
-              }
+              onPress={() => navigation.navigate("LoginScreen")}
             >
               <Text
                 style={{ color: COLORS.mobile_theme_back, fontWeight: "700" }}

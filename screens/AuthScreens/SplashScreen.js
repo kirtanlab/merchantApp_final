@@ -1,21 +1,14 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Image, StyleSheet, StatusBar, Text, View } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { COLORS } from "../../constants";
-
-import AppLoader from "../../components/AppLoader";
 import { REACT_APP_OWNER_API } from "@env";
-
-// import AsyncStorage from '@react-native-async-storage/async-storage';
 import { connect } from "react-redux";
 import * as AuthActions from "../../store/auth/authActions";
 import { icons } from "../../constants";
-// import { updateUser, getUserFromStorage } from "../../store/auth/authActions";
 
 const SplashScreen = ({ navigation, updateToken }) => {
-  const [loading, setLoading] = React.useState(false);
   useEffect(() => {
     setTimeout(() => {
       const _getUserFromStorage = async () => {
@@ -25,7 +18,6 @@ const SplashScreen = ({ navigation, updateToken }) => {
         console.log("from splashscreen", token);
         if (token == "") {
           navigation.replace("LoginScreen");
-          setLoading(false);
         } else {
           updateToken(token);
           const data = await axios.get(
@@ -49,7 +41,6 @@ const SplashScreen = ({ navigation, updateToken }) => {
           } else {
             navigation.replace("MainScreens");
           }
-          setLoading(false);
         }
       };
       _getUserFromStorage();
