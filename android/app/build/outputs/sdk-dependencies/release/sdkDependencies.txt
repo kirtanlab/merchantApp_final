@@ -1121,45 +1121,6 @@ library {
 }
 library {
   maven_library {
-    groupId: "com.github.TalbotGooday"
-    artifactId: "AndroidPdfViewer"
-    version: "3.1.0-beta.3"
-  }
-  digests {
-    sha256: "\273\217,\366\2374\362K&\366O\226B\031x1\215_6]\033\'\367\034e\021\245\260A\364\336\a"
-  }
-  repo_index {
-    value: 3
-  }
-}
-library {
-  maven_library {
-    groupId: "com.github.TalbotGooday"
-    artifactId: "PdfiumAndroid"
-    version: "1.0.1"
-  }
-  digests {
-    sha256: "\341V\272>\260\324*\260=\334\271\366\240^K\033\214\350x\373kSGWu\230`}|\272\346l"
-  }
-  repo_index {
-    value: 3
-  }
-}
-library {
-  maven_library {
-    groupId: "com.google.code.gson"
-    artifactId: "gson"
-    version: "2.8.5"
-  }
-  digests {
-    sha256: "#:\001I\3746\\\237n\333\326\203\317\342f\261\233\334w;\351\216\253\332\366\263\311$\264\216}\201"
-  }
-  repo_index {
-    value: 1
-  }
-}
-library {
-  maven_library {
     groupId: "androidx.coordinatorlayout"
     artifactId: "coordinatorlayout"
     version: "1.1.0"
@@ -1260,6 +1221,19 @@ library {
   }
   repo_index {
     value: 3
+  }
+}
+library {
+  maven_library {
+    groupId: "com.google.code.gson"
+    artifactId: "gson"
+    version: "2.8.2"
+  }
+  digests {
+    sha256: "\267\023I)\367\314|\004\002\036\301\314\'\357c\253\220~A\f\360X\2169{\210Q\030\036\271\020\222"
+  }
+  repo_index {
+    value: 1
   }
 }
 library_dependencies {
@@ -1727,12 +1701,28 @@ library_dependencies {
 }
 library_dependencies {
   library_index: 86
-  library_dep_index: 87
+  library_dep_index: 3
   library_dep_index: 4
+  library_dep_index: 26
+  library_dep_index: 2
 }
 library_dependencies {
   library_index: 87
+  library_dep_index: 3
+  library_dep_index: 16
+  library_dep_index: 88
+  library_dep_index: 86
   library_dep_index: 4
+  library_dep_index: 24
+  library_dep_index: 6
+  library_dep_index: 89
+  library_dep_index: 90
+  library_dep_index: 13
+  library_dep_index: 91
+}
+library_dependencies {
+  library_index: 88
+  library_dep_index: 3
 }
 library_dependencies {
   library_index: 89
@@ -1744,49 +1734,24 @@ library_dependencies {
 library_dependencies {
   library_index: 90
   library_dep_index: 3
-  library_dep_index: 16
-  library_dep_index: 91
-  library_dep_index: 89
   library_dep_index: 4
-  library_dep_index: 24
-  library_dep_index: 6
-  library_dep_index: 92
-  library_dep_index: 93
-  library_dep_index: 13
-  library_dep_index: 94
+  library_dep_index: 2
 }
 library_dependencies {
   library_index: 91
   library_dep_index: 3
+  library_dep_index: 24
+  library_dep_index: 89
+  library_dep_index: 4
+  library_dep_index: 2
 }
 library_dependencies {
   library_index: 92
-  library_dep_index: 3
-  library_dep_index: 4
-  library_dep_index: 26
-  library_dep_index: 2
-}
-library_dependencies {
-  library_index: 93
-  library_dep_index: 3
-  library_dep_index: 4
-  library_dep_index: 2
-}
-library_dependencies {
-  library_index: 94
-  library_dep_index: 3
-  library_dep_index: 24
-  library_dep_index: 92
-  library_dep_index: 4
-  library_dep_index: 2
-}
-library_dependencies {
-  library_index: 95
   library_dep_index: 16
 }
 library_dependencies {
-  library_index: 96
-  library_dep_index: 88
+  library_index: 93
+  library_dep_index: 94
 }
 module_dependencies {
   module_name: "base"
@@ -1803,14 +1768,12 @@ module_dependencies {
   dependency_index: 78
   dependency_index: 79
   dependency_index: 80
-  dependency_index: 86
-  dependency_index: 88
   dependency_index: 67
   dependency_index: 24
-  dependency_index: 89
-  dependency_index: 90
-  dependency_index: 95
-  dependency_index: 96
+  dependency_index: 86
+  dependency_index: 87
+  dependency_index: 92
+  dependency_index: 93
 }
 repositories {
   maven_repo {

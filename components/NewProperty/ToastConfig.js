@@ -34,7 +34,7 @@ export const toastConfig = {
       }}
       // contentContainerStyle={{padding: 1}}
       style={{
-        width: 180,
+        maxWidth: 180,
         top: 9,
         height: 30,
       }}

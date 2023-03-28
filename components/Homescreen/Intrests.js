@@ -53,7 +53,7 @@ const Intrests = ({ navigation, interestedusers }) => {
           <Text
             style={{
               color: COLORS.lightGray2,
-              fontSize: SIZES.form_section_title_fontsize,
+              fontSize: SIZES.form_section_input_fontsize,
             }}
           >
             View Interested Users{" "}

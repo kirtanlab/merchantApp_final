@@ -178,7 +178,21 @@ export const checked_PropertyName = (value) => ({
   type: CHECKED_PROPERTY_NAME,
   value: value,
 });
-
+export const UPDATE_MESS_PRICE = "UPDATE_MESS_PRICE";
+export const FOCUSED_MESS_PRICE = "FOCUSED_MESS_PRICE";
+export const CHECKED_MESS_PRICE = "CHECKED_MESS_PRICE";
+export const checkedMessPrice = (value) => ({
+  type: CHECKED_MESS_PRICE,
+  value: value,
+});
+export const focusedMessPrice = (value) => ({
+  type: FOCUSED_MESS_PRICE,
+  value: value,
+});
+export const updateMessPrice = (value) => ({
+  type: UPDATE_MESS_PRICE,
+  value: value,
+});
 export const update_landmark = (value) => {
   console.log("update_landmark");
   return {

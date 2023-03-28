@@ -11,6 +11,12 @@ export const UPDATE_LANGUAGE = "UPDATE_LANGUAGE";
 export const UPDATE_FACE_ID = "UPDATE_FACE_ID";
 export const UPDATING_MOBILE = "UPDATING_MOBILE";
 
+export const UPDATE_HOMELOADING = "SET_HOMELOADING";
+export const updateHomeLoading = (value) => ({
+  type: UPDATE_HOMELOADING,
+  value: value,
+});
+
 export const UPDATE_LOGIN_EMAIL = "UPDATE_LOGIN_EMAIL";
 export const UPDATE_LOGIN_PASS = "UPDATE_LOGIN_PASS";
 
@@ -46,7 +52,6 @@ export const CHECKED_FIRST_FORM = "CHECKED_FIRST_FORM";
 export const RESET_TOKEN = "RESET_TOKEN";
 export const UPDATE_TOKEN = "UPDATE_TOKEN";
 export const UPDATE_ROOOM_TOKEN = "UPDATE_ROOOM_TOKEN";
-UPDATING_MOBILE;
 export const updatingMobile = (value) => ({
   type: UPDATING_MOBILE,
   value: value,

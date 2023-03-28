@@ -4,16 +4,23 @@ const initialState = {
   outerImages: [],
   checked_outer_video: false,
   outerVideos: [],
+  vid_downloaded: 0,
 };
 const vidImage_reducer = (state = initialState, action) => {
   switch (action.type) {
+    case vidImage_actions.VID_DOWNLOADED:
+      console.log("vid_downloaded_reducer", action.value + vid_downloaded);
+      return {
+        ...state,
+        vid_downloaded: action.value + vid_downloaded,
+      };
     case vidImage_actions.UPDATE_ALL:
       return {
         ...state,
         outerImages: action.value.photos,
         checked_outer_image: true,
-        checked_outer_video: true,
-        outerVideos: action.value.videos,
+        // checked_outer_video: true,
+        // outerVideos: action.value.videos,
       };
     //NewRooms Form
     case vidImage_actions.CHECKED_OUTER_IMAGES:

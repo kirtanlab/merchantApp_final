@@ -23,23 +23,28 @@ const NavHeader_Maps = ({
         paddingHorizontal: 20,
         width: SIZES.width,
         justifyContent: "space-between",
-
         alignItems: "center",
         // justifyContent: 'space-evenly',
         // marginBottom: 2,
       }}
     >
-      <TouchableOpacity onPress={onPress_back} style={{}}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={{}}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: "80%",
+        }}
+      >
+        <TouchableOpacity onPress={onPress_back} style={{}}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Ionicons
               name="arrow-back-outline"
               size={30}
               color={COLORS.mobile_theme_back}
               style={{}}
             />
-          </View>
-          <View style={{}}>
+
             <Text
               style={{
                 color: COLORS.mobile_theme_back,
@@ -49,41 +54,35 @@ const NavHeader_Maps = ({
               Back
             </Text>
           </View>
+        </TouchableOpacity>
+        <View style={{ left: "40%", width: 170 }}>
+          <Text
+            style={{
+              color: COLORS.mobile_theme_back,
+              fontSize: 18,
+            }}
+          >
+            {screen_name}
+          </Text>
         </View>
-      </TouchableOpacity>
-      <View style={{ width: 150 }}>
-        <Text
-          style={{
-            color: COLORS.mobile_theme_back,
-            fontSize: 18,
-
-            // fontWeight: "bold",
-          }}
-        >
-          {screen_name}
-        </Text>
       </View>
-
       <TouchableOpacity onPress={onPress_forward} style={{}}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View style={{}}>
-            <Text
-              style={{
-                color: COLORS.mobile_theme_back,
-                fontSize: 18,
-              }}
-            >
-              Next
-            </Text>
-          </View>
-          <View style={{}}>
-            <Ionicons
-              name="arrow-forward-outline"
-              size={30}
-              color={COLORS.mobile_theme_back}
-              style={{}}
-            />
-          </View>
+          <Text
+            style={{
+              color: COLORS.mobile_theme_back,
+              fontSize: 18,
+            }}
+          >
+            Next
+          </Text>
+
+          <Ionicons
+            name="arrow-forward-outline"
+            size={30}
+            color={COLORS.mobile_theme_back}
+            style={{}}
+          />
         </View>
       </TouchableOpacity>
     </View>

@@ -173,7 +173,7 @@ const NumericInput = ({
               >
                 <Ionicons
                   name="close-circle-outline"
-                  size={35}
+                  size={25}
                   color={true ? COLORS.mobile_theme_back : "lightgray"}
                   style={{}}
                 />

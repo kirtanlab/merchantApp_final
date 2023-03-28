@@ -53,6 +53,8 @@ const Basic2 = ({
   attached,
   AC,
   occupancy,
+  singleordouble,
+  cooler,
   totalRooms,
   token,
   title_no,
@@ -121,6 +123,8 @@ const Basic2 = ({
         isAttached: attached,
         price: price,
         About: about_room.trimEnd(),
+        isCooler: cooler,
+        singleordouble: singleordouble ? "SINGLE" : "DOUBLE",
       };
       console.log("valid", token);
       let bool = room_updating?.updating;
@@ -215,25 +219,27 @@ const Basic2 = ({
           <Progress.Bar
             progress={0.66}
             color={COLORS.progress_bar}
-            width={SIZES.width}
+            width={SIZES.width + 10}
             height={SIZES.height * 0.006}
-            style={{ position: "absolute", top: -1 }}
+            style={{ position: "absolute", left: -5, top: -1 }}
           />
-          <Nav_Header
-            onPress_forward={onPress_for}
-            onPress_back={back_page}
-            color={
-              checked_price && checked_base_terms
-                ? COLORS.mobile_theme_back
-                : COLORS.lightGray3
-            }
-            icon_color={
-              checked_price && checked_base_terms
-                ? COLORS.mobile_theme_back
-                : COLORS.lightGray3
-            }
-            back={true}
-          />
+          <View style={{ top: 10 }}>
+            <Nav_Header
+              onPress_forward={onPress_for}
+              onPress_back={back_page}
+              color={
+                checked_price && checked_base_terms
+                  ? COLORS.mobile_theme_back
+                  : COLORS.lightGray3
+              }
+              icon_color={
+                checked_price && checked_base_terms
+                  ? COLORS.mobile_theme_back
+                  : COLORS.lightGray3
+              }
+              back={true}
+            />
+          </View>
         </View>
         <View style={{ flexDirection: "column", height: SIZES.height * 0.8 }}>
           <View
@@ -373,6 +379,8 @@ function mapStateToProps(state) {
     occupancy: state.Newrooms_reducer.occupancy,
     AC: state.Newrooms_reducer.AC,
     attached: state.Newrooms_reducer.attached,
+    singleordouble: state.Newrooms_reducer.singleordouble,
+    cooler: state.Newrooms_reducer.cooler,
   };
 }
 

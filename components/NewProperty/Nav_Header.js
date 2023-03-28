@@ -22,7 +22,7 @@ const Nav_Header = ({
         <View
           style={{
             flexDirection: "row",
-            top: "4%",
+            top: "2%",
             // paddingBottom: -,
 
             borderBottomColor: COLORS.lightGray4,
@@ -35,14 +35,14 @@ const Nav_Header = ({
             style={{
               left: SIZES.width * 0.05,
               width: SIZES.width * 0.22,
-              top: 4,
+              // top: 4,
               height: 38,
               // width: 100,
             }}
           >
             <TouchableOpacity onPress={onPress_back} style={{ height: 100 }}>
               <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <View style={{}}>
+                <View style={{ top: 1 }}>
                   <Ionicons
                     name="arrow-back-outline"
                     size={30}
@@ -106,7 +106,7 @@ const Nav_Header = ({
           style={{
             flexDirection: "row",
             // position: 'relative',
-            top: "4%",
+            top: "2%",
             // paddingBottom: 7,
             borderBottomColor: COLORS.lightGray4,
             borderBottomWidth: 1,
@@ -114,42 +114,31 @@ const Nav_Header = ({
             // top: ,
           }}
         >
-          <View
+          <TouchableOpacity
             style={{
               left: SIZES.width * 0.75,
               width: SIZES.width * 0.37,
               height: 38,
-              top: 4,
-              // backgroundColor: COLORS.mobile_theme_back,
+              flexDirection: "row",
+              alignItems: "center",
             }}
+            onPress={onPress_forward}
           >
-            <TouchableOpacity onPress={onPress_forward}>
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <View style={{ bottom: 2 }}>
-                  <Text
-                    style={{
-                      color: color,
-                      fontSize: 18,
-                    }}
-                  >
-                    Next
-                  </Text>
-                </View>
-                {/* <View style={{marginLeft: 10}}>
-
-              </View> */}
-
-                <View style={{}}>
-                  <Ionicons
-                    name="arrow-forward-outline"
-                    size={30}
-                    color={icon_color}
-                    style={{}}
-                  />
-                </View>
-              </View>
-            </TouchableOpacity>
-          </View>
+            <Text
+              style={{
+                color: color,
+                fontSize: 18,
+              }}
+            >
+              Next
+            </Text>
+            <Ionicons
+              name="arrow-forward-outline"
+              size={30}
+              color={icon_color}
+              style={{}}
+            />
+          </TouchableOpacity>
         </View>
       )}
     </View>

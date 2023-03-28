@@ -92,19 +92,16 @@ const Looking_Selection_Button = ({ looking_form, update_looking }) => {
             </TouchableOpacity>
           </View>
           {/* mess */}
-          {/* <View>
+          <View>
             <TouchableOpacity
               style={{
                 borderColor: COLORS.mobile_theme_back,
                 borderWidth: SIZES.form_button_borderWidth,
                 borderRadius: SIZES.form_button_borderRadius,
-                minWidth: SIZES.form_button_minWidth,
-                maxWidth: SIZES.form_button_maxWidth,
-                maxHeight: SIZES.form_button_maxHeight,
-                padding: SIZES.form_button_padding,
+
                 alignItems: SIZES.form_button_alignItems,
                 justifyContent: SIZES.form_button_justifyContent,
-                backgroundColor: mess ? COLORS.mobile_theme_back : 'white',
+                backgroundColor: mess ? COLORS.mobile_theme_back : "white",
               }}
               onPress={async () => {
                 if (!mess) {
@@ -118,18 +115,25 @@ const Looking_Selection_Button = ({ looking_form, update_looking }) => {
                   setHostel(false);
                   await update_looking(looking_form_copy);
                 }
-                console.log('Pressed1');
-              }}>
+                console.log("Pressed1");
+              }}
+            >
               <Text
                 style={{
+                  lineHeight: SIZES.form_button_text_lineHeight,
+                  fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
-                  //
+                  fontWeight: SIZES.form_button_text_fontWeight,
+                  marginVertical: SIZES.form_button_text_marginVertical,
+                  marginHorizontal: SIZES.form_button_text_marginHorizontal,
+                  // fontWeight: SIZES.form_button_text_fontWeight,
                   color: mess ? COLORS.font_color : COLORS.lightGray3,
-                }}>
+                }}
+              >
                 Mess
               </Text>
             </TouchableOpacity>
-          </View> */}
+          </View>
           {/* Hostel */}
           <View style={{}}>
             <TouchableOpacity

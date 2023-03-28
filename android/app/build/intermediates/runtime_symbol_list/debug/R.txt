@@ -3973,9 +3973,10 @@ int styleable WheelPicker_wheel_selected_item_text_color 18
 int styleable WheelPicker_wheel_visible_item_count 19
 int[] styleable scaleStyle { 0x7f040217 }
 int styleable scaleStyle_scalableType 0
-int xml provider_paths 0x7f140000
-int xml rn_dev_preferences 0x7f140001
-int xml standalone_badge 0x7f140002
-int xml standalone_badge_gravity_bottom_end 0x7f140003
-int xml standalone_badge_gravity_bottom_start 0x7f140004
-int xml standalone_badge_gravity_top_start 0x7f140005
+int xml network_security_config 0x7f140000
+int xml provider_paths 0x7f140001
+int xml rn_dev_preferences 0x7f140002
+int xml standalone_badge 0x7f140003
+int xml standalone_badge_gravity_bottom_end 0x7f140004
+int xml standalone_badge_gravity_bottom_start 0x7f140005
+int xml standalone_badge_gravity_top_start 0x7f140006

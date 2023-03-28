@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect} from 'react';
+import React, { Fragment, useEffect } from "react";
 import {
   Text,
   View,
@@ -6,43 +6,64 @@ import {
   ScrollView,
   TouchableOpacity,
   KeyboardAvoidingView,
-} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import Header from '../../components/NewProperty/Header';
-import * as Progress from 'react-native-progress';
-import {Button, Dialog, Portal, Provider} from 'react-native-paper';
-import {COLORS, SIZES} from '../../constants';
-import {connect} from 'react-redux';
-import DocumentPicker from 'react-native-document-picker';
-import CustomButton_form from '../../components/NewProperty/CustomButton_form';
-import Amneties from '../../components/NewProperty/Amneties';
-import Nav_Header from '../../components/NewProperty/Nav_Header';
-import AddText from '../../components/NewProperty/AddText';
-import Toast from 'react-native-toast-message';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import Header from "../../components/NewProperty/Header";
+import * as Progress from "react-native-progress";
+import { Button, Dialog, Portal, Provider } from "react-native-paper";
+import { COLORS, SIZES } from "../../constants";
+import { connect } from "react-redux";
+import DocumentPicker from "react-native-document-picker";
+import CustomButton_form from "../../components/NewProperty/CustomButton_form";
+import Amneties from "../../components/NewProperty/Amneties";
+import Nav_Header from "../../components/NewProperty/Nav_Header";
+import AddText from "../../components/NewProperty/AddText";
+import Toast from "react-native-toast-message";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import {
   toastConfig,
   showErrorToast,
-} from '../../components/NewProperty/ToastConfig';
-const more_property = ({navigation}) => {
+} from "../../components/NewProperty/ToastConfig";
+import AppLoader from "../../components/AppLoader";
+import InputField from "../../components/InputField";
+const more_property = ({
+  focused_mess_price,
+  checked_mess_price,
+  mess,
+  navigation,
+  vid_downloaded,
+}) => {
   const [imgUri, setimgUri] = React.useState(undefined);
+  const [loading, setLoading] = React.useState(false);
   const [vidUri, setvidUri] = React.useState(undefined);
+
   function next_page() {
-    navigation.navigate('vidImage');
-    console.log('next pagee');
+    console.log("vidDownloaded", vid_downloaded);
+    // if (vid_downloaded !== 2) {
+    //   setLoading(true);
+    // } else {
+    //   setLoading(false);
+
+    // }
+    navigation.navigate("vidImage");
+    console.log("next pagee");
   }
   function onPress_for() {
-    if (true) {
-      console.log('Done');
-      next_page();
+    if (mess) {
+      if (checked_mess_price) {
+        console.log("Done");
+        next_page();
+      } else {
+        showErrorToast((title = "Fill All Required Details"));
+        console.log("ckicked");
+      }
     } else {
-      showErrorToast((title = 'Fill All Required Details'));
-      console.log('ckicked');
+      next_page();
     }
   }
   function back_page() {
-    navigation.navigate('Location');
-    console.log('back pagee');
+    navigation.navigate("Location");
+    console.log("back pagee");
   }
   //   const selectDoc = async () => {
   //     try {
@@ -67,7 +88,7 @@ const more_property = ({navigation}) => {
       setimgUri(res);
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
-        console.log('User cancelled images', err);
+        console.log("User cancelled images", err);
       } else {
         console.log(err);
       }
@@ -82,69 +103,151 @@ const more_property = ({navigation}) => {
       setvidUri(res);
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
-        console.log('User cancelled videos', err);
+        console.log("User cancelled videos", err);
       } else {
         console.log(err);
       }
     }
   };
   return (
-    <Provider>
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        style={{backgroundColor: 'white'}}>
-        {/* <KeyboardAvoidingView
+    <>
+      <Provider>
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          style={{ backgroundColor: "white" }}
+        >
+          {/* <KeyboardAvoidingView
         behavior="position"
         style={{backgroundColor: 'white'}}> */}
-        <View style={{right: 12}}>
-          <Toast config={toastConfig} ref={ref => Toast.setRef(ref)} />
-        </View>
-        <StatusBar
-          animated={true}
-          backgroundColor={COLORS.mobile_theme_back}
-          barStyle={'light-content'}
-        />
+          <View style={{ right: 12 }}>
+            <Toast config={toastConfig} ref={(ref) => Toast.setRef(ref)} />
+          </View>
+          <StatusBar
+            animated={true}
+            backgroundColor={COLORS.mobile_theme_back}
+            barStyle={"light-content"}
+          />
 
-        <SafeAreaView
-          style={{
-            height: SIZES.height * 0.03,
-            backgroundColor: COLORS.mobile_theme_back,
-            elevation: 1,
-          }}
-        />
-        <View>
-          <Progress.Bar
-            progress={0.75}
-            color={COLORS.progress_bar}
-            width={SIZES.width}
-            height={SIZES.height * 0.01}
-            style={{position: 'absolute', top: -1}}
+          <SafeAreaView
+            style={{
+              height: SIZES.height * 0.03,
+              backgroundColor: COLORS.mobile_theme_back,
+              elevation: 1,
+            }}
           />
-          <Nav_Header
-            onPress_forward={onPress_for}
-            onPress_back={back_page}
-            color={COLORS.mobile_theme_back}
-            icon_color={COLORS.mobile_theme_back}
-            back={true}
-          />
-        </View>
-        <View style={{padding: 15, marginTop: 25}}>
           <View>
-            <Header
-              step={3}
-              subtitle={"Propertie's amneties, description"}
-              title={'More about Property'}
+            <Progress.Bar
+              progress={0.75}
+              color={COLORS.progress_bar}
+              width={SIZES.width + 10}
+              height={SIZES.height * 0.01}
+              style={{ position: "absolute", left: -5, top: -1 }}
             />
+            <View style={{ top: 12 }}>
+              {mess ? (
+                <Nav_Header
+                  onPress_forward={onPress_for}
+                  onPress_back={back_page}
+                  color={checked_mess_price && COLORS.mobile_theme_back}
+                  icon_color={checked_mess_price && COLORS.mobile_theme_back}
+                  back={true}
+                />
+              ) : (
+                <Nav_Header
+                  onPress_forward={onPress_for}
+                  onPress_back={back_page}
+                  color={COLORS.mobile_theme_back}
+                  icon_color={COLORS.mobile_theme_back}
+                  back={true}
+                />
+              )}
+            </View>
           </View>
-          <View style={{marginTop: 30}}>
-            <Amneties />
-          </View>
+          <View style={{ padding: 15, marginTop: 25 }}>
+            <View>
+              <Header
+                step={3}
+                subtitle={"Propertie's amneties, description"}
+                title={"More about Property"}
+              />
+            </View>
+            {!mess ? (
+              <View style={{ marginTop: 30, marginBottom: 20 }}>
+                <Amneties />
+              </View>
+            ) : (
+              <View style={{ marginTop: 30 }}>
+                <Text
+                  style={{
+                    color: COLORS.black,
+                    fontSize: SIZES.form_section_title_fontsize,
+                  }}
+                >
+                  Enter Mess Price (Total Monthly Price)
+                </Text>
+                <View style={{ marginTop: 8, flexDirection: "row" }}>
+                  <View
+                    style={{
+                      borderColor: COLORS.mobile_theme_back,
+                      borderRadius: 5,
+                      backgroundColor: COLORS.mobile_theme_back,
+                      height: 25,
+                      width: 25,
+                      marginTop: 11,
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text
+                      style={{
+                        color: COLORS.font_color,
+                        fontSize: SIZES.form_section_title_fontsize,
+                      }}
+                    >
+                      ₹
+                    </Text>
+                  </View>
+                  <View style={{ flexDirection: "row" }}>
+                    <View style={{ width: SIZES.width * 0.7, marginLeft: 9 }}>
+                      <InputField
+                        label={"Enter Prices"}
+                        type={"mess_prices"}
+                        keyboardType={"phone-pad"}
+                      />
+                    </View>
+                    <TouchableOpacity>
+                      <Ionicons
+                        name="checkmark-done-outline"
+                        size={20}
+                        color={
+                          checked_mess_price
+                            ? COLORS.mobile_theme_back
+                            : "lightgray"
+                        }
+                        style={{ marginRight: 5, top: 10 }}
+                      />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                {focused_mess_price && !checked_mess_price && (
+                  <View style={{ top: -30, left: 35 }}>
+                    <Text
+                      style={{
+                        color: COLORS.lightGray3,
+                        fontSize: SIZES.form_section_input_helper,
+                      }}
+                    >
+                      Enter Valid Prices
+                    </Text>
+                  </View>
+                )}
+              </View>
+            )}
 
-          <View>
-            <AddText />
-          </View>
+            <View>
+              <AddText />
+            </View>
 
-          {/* Videos of Images
+            {/* Videos of Images
         <View style={{marginTop: 25}}>
           <Text
             style={{
@@ -182,9 +285,9 @@ const more_property = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View> */}
-        </View>
+          </View>
 
-        {/* <View style={{marginTop: '15%'}}>
+          {/* <View style={{marginTop: '15%'}}>
         <CustomButton_form
           fontColor={true ? COLORS.font_color : COLORS.lightGray3}
           backgroundColor={true ? COLORS.mobile_theme_back : COLORS.lightGray4}
@@ -200,12 +303,19 @@ const more_property = ({navigation}) => {
           }}
         />
       </View> */}
-      </ScrollView>
-    </Provider>
+        </ScrollView>
+      </Provider>
+      {loading && <AppLoader />}
+    </>
   );
 };
 function mapStateToProps(state) {
-  return {};
+  return {
+    vid_downloaded: state.vidImage_reducer.vid_downloaded,
+    mess: state.newproperty_reducer.looking_form.mess,
+    checked_mess_price: state.newproperty_reducer.checked_mess_price,
+    focused_mess_price: state.newproperty_reducer.focused_mess_price,
+  };
 }
 
 function mapDispatchToProps(dispatch) {

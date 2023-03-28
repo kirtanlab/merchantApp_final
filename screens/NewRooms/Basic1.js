@@ -98,25 +98,27 @@ const Basic1 = ({
         <Progress.Bar
           progress={0.33}
           color={COLORS.progress_bar}
-          width={SIZES.width}
+          width={SIZES.width + 10}
           height={SIZES.height * 0.01}
-          style={{ position: "absolute", top: -1 }}
+          style={{ position: "absolute", left: -5, top: -1 }}
         />
-        <Nav_Header
-          onPress_forward={onPress_for}
-          // onPress_back={back_page}
-          color={
-            checked_occpancy && checked_title && checked_totalRooms
-              ? COLORS.mobile_theme_back
-              : COLORS.lightGray3
-          }
-          icon_color={
-            checked_occpancy && checked_title && checked_totalRooms
-              ? COLORS.mobile_theme_back
-              : COLORS.lightGray3
-          }
-          back={false}
-        />
+        <View style={{ top: 10 }}>
+          <Nav_Header
+            onPress_forward={onPress_for}
+            // onPress_back={back_page}
+            color={
+              checked_occpancy && checked_title && checked_totalRooms
+                ? COLORS.mobile_theme_back
+                : COLORS.lightGray3
+            }
+            icon_color={
+              checked_occpancy && checked_title && checked_totalRooms
+                ? COLORS.mobile_theme_back
+                : COLORS.lightGray3
+            }
+            back={false}
+          />
+        </View>
       </View>
       <View style={{ padding: 18, marginTop: 25 }}>
         <View>

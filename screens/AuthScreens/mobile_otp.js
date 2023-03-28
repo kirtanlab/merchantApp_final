@@ -24,7 +24,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from "react-native-confirmation-code-field";
-
+import SmsRetriever from "react-native-sms-retriever";
 const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
   const { phone_number } = route.params;
   const dispatch = useDispatch();
@@ -74,6 +74,24 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
       alert("Email or Password is empty.");
     }
   };
+  let _onReceiveSms = (event) => {
+    console.log("_onReceiveSms", event.message);
+    SmsRetriever.removeSmsListener();
+  };
+  let _onSmsListenerPressed = async () => {
+    try {
+      const registered = await SmsRetriever.startSmsRetriever();
+
+      if (registered) {
+        SmsRetriever.addSmsListener(_onReceiveSms());
+      }
+
+      console.log(`SMS Listener Registered: ${registered}`);
+    } catch (error) {
+      console.log(`SMS Listener Error: ${JSON.stringify(error)}`);
+    }
+  };
+
   const handleLogin = async () => {
     console.log("final", value);
     if (value.length == "4") {
@@ -225,6 +243,21 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
                     />
                   </SafeAreaView>
                 }
+
+                <TouchableOpacity
+                  onPress={() => _onSmsListenerPressed()}
+                  style={{ height: 20, marginLeft: "75%", marginTop: 20 }}
+                >
+                  <Text
+                    style={{
+                      color: COLORS.mobile_theme_back,
+                      fontSize: 13,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Get OTP
+                  </Text>
+                </TouchableOpacity>
                 <TouchableOpacity
                   onPress={() => handlereset()}
                   style={{ height: 20, marginLeft: "75%", marginTop: 20 }}
@@ -236,7 +269,7 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
                       fontWeight: "bold",
                     }}
                   >
-                    Resend otp
+                    Resend OTP
                   </Text>
                 </TouchableOpacity>
                 {err_num && (

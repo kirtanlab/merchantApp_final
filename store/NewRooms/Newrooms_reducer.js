@@ -2,6 +2,8 @@ import * as Newrooms_Actions from "./Newrooms_actions";
 let initialState = {
   AC: false,
   title_no: "",
+  singleordouble: true, //true => Single,else Double
+  cooler: false,
   attached: false,
   price: "",
   extra_description: "",
@@ -35,6 +37,16 @@ let initialState = {
 };
 const newRoom_reducer = (state = initialState, action) => {
   switch (action.type) {
+    case Newrooms_Actions.UPDATE_SINGLEORDOUBLE:
+      return {
+        ...state,
+        singleordouble: action.value,
+      };
+    case Newrooms_Actions.UPDATE_COOLER:
+      return {
+        ...state,
+        cooler: action.value,
+      };
     case Newrooms_Actions.UPDATE_ROOMID:
       return {
         ...state,
@@ -60,6 +72,8 @@ const newRoom_reducer = (state = initialState, action) => {
           updating: false,
           room_id: "",
         },
+        singleordouble: true,
+        cooler: false,
         totalRooms: "",
         occupancy: "",
         checked_base_terms: false,
@@ -81,6 +95,8 @@ const newRoom_reducer = (state = initialState, action) => {
       return {
         ...state,
         AC: action.value.isAC,
+        cooler: action.value.isCooler,
+        singleordouble: action.value.singleordouble === "SINGLE" ? true : false,
         title_no: action.value.title,
         attached: action.value.isAttached,
         room_id: action.value._id,

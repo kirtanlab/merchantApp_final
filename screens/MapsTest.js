@@ -11,7 +11,7 @@ import {
   PermissionsAndroid,
 } from "react-native";
 import LocationServicesDialogBox from "react-native-android-location-services-dialog-box";
-
+import { Linking } from "react-native";
 import * as newproperty_actions from "../store/Newproperty/newproperty_action";
 import * as Newproperty_ext_actions from "../store/Newproperty_ext/Newproperty_ext_actions";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
@@ -53,10 +53,10 @@ const MapTest = ({
       providerListener: false, // true ==> Trigger locationProviderStatusChange listener when the location state changes
     })
       .then(function (success) {
-        console.log(success); // success => {alreadyEnabled: false, enabled: true, status: "enabled"}
+        console.log("successed", success); // success => {alreadyEnabled: false, enabled: true, status: "enabled"}
       })
       .catch((error) => {
-        console.log(error.message); // error.message => "disabled"
+        console.log("denied", error.message); // error.message => "disabled"
         // setgranted("dinied");
       });
   }
@@ -97,6 +97,7 @@ const MapTest = ({
         } else {
           // If permission denied then show alert
           alert("Location Permission Required");
+          setgranted("denied");
         }
       } catch (err) {
         // To handle permission related exception
@@ -190,10 +191,6 @@ const MapTest = ({
   return (
     <KeyboardAvoidingView>
       <ScrollView keyboardShouldPersistTaps="handled">
-        {/* Header */}
-
-        {/* <HeaderBar title="Change Profile" /> */}
-        {/* <Nav_Header /> */}
         <StatusBar
           animated={true}
           backgroundColor={COLORS.mobile_theme_back}
@@ -205,6 +202,7 @@ const MapTest = ({
             // navigation.navigate('Newproperty', {
             //   screen: 'Location',
             // });
+            navigation.goBack();
           }}
           onPress_forward={async () => {
             console.log("location", location);
@@ -331,108 +329,69 @@ const MapTest = ({
             </TouchableOpacity>
           </View>
         </View>
-        {granted == "granted" && (
-          <TouchableOpacity
-            onPress={async () => {
-              locationservice();
-              if (Platform.OS == "android") {
-                const permissionAndroid = await PermissionsAndroid.check(
-                  "android.permission.ACCESS_FINE_LOCATION"
-                );
-                if (permissionAndroid != PermissionsAndroid.RESULTS.granted) {
-                  const granted = await PermissionsAndroid.request(
-                    PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-                    {
-                      title: "Location Permission Required",
-                      message:
-                        "App needs access to your Location to fetch current location",
-                    }
-                  );
-                  console.log(granted);
-                  setgranted(granted);
-                  if (granted == "granted") {
-                    Geolocation.getCurrentPosition((info) => {
-                      const ASPECT_RATIO = width / height;
-                      const LATITUDE_DELTA = 0.02;
-                      const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
-                      const CURRENT_POSITION = {
-                        latitude: info.coords.latitude,
-                        longitude: info.coords.longitude,
-                        latitudeDelta: LATITUDE_DELTA,
-                        longitudeDelta: LONGITUDE_DELTA,
-                      };
-                      position = {
-                        latitude: info.coords.latitude,
-                        longitude: info.coords.longitude,
-                      };
-                      setCurrent(CURRENT_POSITION);
-                      moveTo(position);
-                      setOrigin(position);
-                    });
-                  }
-                }
-              } else {
-                Geolocation.getCurrentPosition((info) => {
-                  const ASPECT_RATIO = width / height;
-                  const LATITUDE_DELTA = 0.02;
-                  const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
-                  const CURRENT_POSITION = {
-                    latitude: info.coords.latitude,
-                    longitude: info.coords.longitude,
-                    latitudeDelta: LATITUDE_DELTA,
-                    longitudeDelta: LONGITUDE_DELTA,
-                  };
-                  position = {
-                    latitude: info.coords.latitude,
-                    longitude: info.coords.longitude,
-                  };
-                  setCurrent(CURRENT_POSITION);
-                  moveTo(position);
-                  setOrigin(position);
-                });
-              }
 
-              // console.log(
-              //   typeof info.coords.latitude,
-              //   typeof info.coords.longitude,
-              // );
-            }}
+        <TouchableOpacity
+          onPress={async () => {
+            console.log("Pressed", granted);
+
+            if (granted === "granted") {
+              Geolocation.getCurrentPosition((info) => {
+                const ASPECT_RATIO = width / height;
+                const LATITUDE_DELTA = 0.02;
+                const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
+                const CURRENT_POSITION = {
+                  latitude: info.coords.latitude,
+                  longitude: info.coords.longitude,
+                  latitudeDelta: LATITUDE_DELTA,
+                  longitudeDelta: LONGITUDE_DELTA,
+                };
+                position = {
+                  latitude: info.coords.latitude,
+                  longitude: info.coords.longitude,
+                };
+                setCurrent(CURRENT_POSITION);
+                moveTo(position);
+                setOrigin(position);
+              });
+            }
+          }}
+          style={{
+            position: "absolute",
+            top: "80%",
+            left: "30%",
+            paddingHorizontal: 7,
+            paddingVertical: 5,
+            // width: 100,
+            maxWidth: 180,
+            // maxWidth: 200,
+            // paddingHorizontal: 12,
+            justifyContent: "space-between",
+            backgroundColor: COLORS.mobile_theme_back,
+            // justifyContent: 'center',
+            alignItems: "center",
+            //   padding: 10,
+            borderRadius: 10,
+            flexDirection: "row",
+          }}
+        >
+          <Ionicons
+            name="compass-outline"
+            size={22}
+            style={{ color: COLORS.white }}
+          />
+          <Text
             style={{
-              position: "absolute",
-              top: "80%",
-              left: "34%",
-              paddingHorizontal: 7,
-              paddingVertical: 5,
-              width: 140,
-              // maxWidth: 200,
-              // paddingHorizontal: 12,
-              justifyContent: "space-between",
-              backgroundColor: COLORS.mobile_theme_back,
-              // justifyContent: 'center',
-              alignItems: "center",
-              //   padding: 10,
-              borderRadius: 10,
-              flexDirection: "row",
+              fontSize: SIZES.form_section_input_fontsize,
+              color: COLORS.white,
+              fontWeight: "bold",
+              // left: 2,
+              bottom: 2,
+              // marginHorizontal: 3,
             }}
           >
-            <Ionicons
-              name="compass-outline"
-              size={25}
-              style={{ color: COLORS.white, top: 2 }}
-            />
-            <Text
-              style={{
-                fontSize: SIZES.form_button_text_fontSize,
-                color: COLORS.white,
-                fontWeight: "bold",
-
-                // marginHorizontal: 3,
-              }}
-            >
-              current location
-            </Text>
-          </TouchableOpacity>
-        )}
+            current location
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </KeyboardAvoidingView>
   );

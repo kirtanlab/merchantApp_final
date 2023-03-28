@@ -4,7 +4,7 @@ import * as newproperty_actions from "./newproperty_action";
 let initialState = {
   looking_form: {
     pg: false,
-    // mess: false,
+    mess: false,
     rent: true,
     Hostel: false,
   },
@@ -23,6 +23,8 @@ let initialState = {
     AC: false,
     hotwater: false,
     cooler: false,
+    // Watercooler: false,
+    isCleaning: false,
   },
   about_pg: "",
   terms_pg: [],
@@ -31,6 +33,7 @@ let initialState = {
     updating: false,
     property_id: "",
   },
+  mess_price: "",
   //Location Form
   house_no: "",
 
@@ -43,6 +46,8 @@ let initialState = {
   checked_Landmark: false,
   checked_Description_pg: false,
   focused_house_no: false,
+  checked_mess_price: false,
+  focused_mess_price: false,
 
   focused_propertyName: false,
   focused_Landmark: false,
@@ -51,6 +56,21 @@ let initialState = {
 
 const newproperty_reducer = (state = initialState, action) => {
   switch (action.type) {
+    case newproperty_actions.CHECKED_MESS_PRICE:
+      return {
+        ...state,
+        checked_mess_price: action.value,
+      };
+    case newproperty_actions.FOCUSED_MESS_PRICE:
+      return {
+        ...state,
+        focused_mess_price: action.value,
+      };
+    case newproperty_actions.UPDATE_MESS_PRICE:
+      return {
+        ...state,
+        mess_price: action.value,
+      };
     case newproperty_actions.UDPATE_PROPERTYID:
       return {
         ...state,
@@ -94,21 +114,28 @@ const newproperty_reducer = (state = initialState, action) => {
       if (typeof_pg == "HOSTEL") {
         obj = {
           pg: false,
-          // mess: false,
+          mess: false,
           rent: false,
           Hostel: true,
         };
       } else if (typeof_pg == "FAMILYROOMS") {
         obj = {
           pg: false,
-          // mess: false,
+          mess: false,
           rent: true,
+          Hostel: false,
+        };
+      } else if (typeof_pg == "MESS") {
+        obj = {
+          pg: false,
+          mess: true,
+          rent: false,
           Hostel: false,
         };
       } else {
         obj = {
           pg: true,
-          // mess: false,
+          mess: false,
           rent: false,
           Hostel: false,
         };
@@ -120,15 +147,18 @@ const newproperty_reducer = (state = initialState, action) => {
         female: female,
         both: male && female ? true : false,
       };
+
       let isAc = action.value.isAC;
       let isCooler = action.value.isCooler;
       let isWIFI = action.value.isWIFI;
-      let HotWater = action.value.HotWater;
+      let HotWater = action.value.isHotWater;
+      let isCleaning = action.value.isCleaning;
       let amneties = {
         wifi: isWIFI,
         AC: isAc,
         hotwater: HotWater,
         cooler: isCooler,
+        isCleaning: isCleaning,
       };
       let house_no = action.value.address.split("//")[0];
       let Landmark = action.value.address.split("//")[1];
@@ -138,6 +168,7 @@ const newproperty_reducer = (state = initialState, action) => {
         gender: gender_obj,
         amneties: amneties,
         looking_form: obj,
+        mess_price: action.value.price.toString(),
         about_pg: action.value.About,
         terms_pg: action.value.Rules,
         // about_pg: action.value.about_pg,
@@ -148,7 +179,7 @@ const newproperty_reducer = (state = initialState, action) => {
         checked_propertyName: true,
         checked_house_no: true,
         checked_Landmark: true,
-
+        checked_mess_price: true,
         // adharcard: action.value.adharcard,
       };
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Image,
   SafeAreaView,
@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from "react-native";
 import axios from "axios";
-
+import * as AuthActions from "../../store/auth/authActions";
 import { connect } from "react-redux";
 import icons from "../../constants/icons";
 import CustomButton from "../../components/CustomeButton";
@@ -17,7 +17,15 @@ import { COLORS, SIZES } from "../../constants";
 import { StatusBar } from "react-native";
 import AppLoader from "../../components/AppLoader";
 import { REACT_APP_OWNER_API } from "@env";
-const mobile_input = ({ token, navigation, phone, checked_phone }) => {
+import SmsRetriever from "react-native-sms-retriever";
+const mobile_input = ({
+  phone_checked,
+  update_phone,
+  token,
+  navigation,
+  phone,
+  checked_phone,
+}) => {
   const [loading, setLoading] = useState(false);
   const [err, setError] = useState(false);
   const handleLogin = async () => {
@@ -55,7 +63,32 @@ const mobile_input = ({ token, navigation, phone, checked_phone }) => {
       alert("Email or Password is empty.");
     }
   };
+  useEffect(
+    () => {
+      let timer1 = setTimeout(() => {
+        let _onPhoneNumberPressed = async () => {
+          try {
+            const phoneNumber = await SmsRetriever.requestPhoneNumber();
+            // console.log();
+            let phone = phoneNumber.slice(3, 13);
+            update_phone(phone);
+            phone_checked(true);
+          } catch (error) {
+            console.log(JSON.stringify(error));
+          }
+        };
 
+        _onPhoneNumberPressed();
+        console.log("cleared");
+      }, 200);
+      return () => {
+        clearTimeout(timer1);
+      };
+    },
+
+    // _onSmsListenerPressed();
+    []
+  );
   return (
     <>
       <ScrollView style={{ backgroundColor: "white" }}>
@@ -226,6 +259,13 @@ function mapStateToProps(state) {
   };
 }
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    update_phone: (value) => {
+      return dispatch(AuthActions.update_phone(value));
+    },
+    phone_checked: (value) => {
+      return dispatch(AuthActions.phone_checked(value));
+    },
+  };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(mobile_input);

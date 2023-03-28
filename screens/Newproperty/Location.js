@@ -33,6 +33,7 @@ import {
   showErrorToast,
 } from "../../components/NewProperty/ToastConfig";
 import Nav_Header from "../../components/NewProperty/Nav_Header";
+import AppLoader from "../../components/AppLoader";
 const Location = ({
   checked_Description_pg,
   checked_Location,
@@ -53,6 +54,7 @@ const Location = ({
   token,
   propertyName,
 }) => {
+  const [_intImg, setintImg] = React.useState([]);
   // useEffect(() => {
   //   checked_ele_bill && console.log("checked_ele_bill", checked_ele_bill);
   // }, [checked_ele_bill]);
@@ -80,15 +82,51 @@ const Location = ({
     );
   }, [Location, Landmark, house_no, elebill]);
 
+  const [loading, setLoading] = React.useState(false);
   // const [imgUri, setimgUri] = React.useState(undefined);
-  const [img_url, setimg_url] = React.useState(elebill ? elebill[0]?.uri : "");
+  const [img_url, setimg_url] = React.useState(elebill ? elebill?.uri : "");
+  const upload_ele_bill = async () => {
+    try {
+      console.log("entered");
+      setLoading(true);
+      let ele_bill_obj = {
+        name: _intImg[0].name,
+        uri: _intImg[0].uri,
+        type: _intImg[0].type,
+      };
+      console.log(ele_bill_obj);
+      const formData = new FormData();
+      // formData.append("name", "pic");
+      formData.append("pic", ele_bill_obj);
+      const data = await axios.post(
+        `${REACT_APP_OWNER_API}/api/v1/addaddressproof`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("good", data);
+      setLoading(false);
+    } catch (e) {
+      console.log("upload_ele_bill", e.response.data.msg);
+      setLoading(false);
+    }
+  };
   console.log("elebill", elebill);
   function next_page() {
     navigation.navigate("MoreProperty");
     console.log("next pagee");
   }
-  function onPress_for() {
+  async function onPress_for() {
     if (checked_Landmark && checked_house_no && checked_ele_bill) {
+      if (_intImg.length > 0) {
+        await upload_ele_bill();
+        3;
+      }
+
       console.log("Done");
       next_page();
     } else {
@@ -107,9 +145,14 @@ const Location = ({
         type: [DocumentPicker.types.images],
       });
       console.log(res);
-      setimg_url(res[0].uri);
-      checkedElebill(true);
-      await updateElebill(res);
+      if (res[0].size <= 10000000) {
+        setimg_url(res[0].uri);
+        checkedElebill(true);
+        await updateElebill(res);
+        setintImg(res);
+      } else {
+        showErrorToast((title = "File size limit exceeded"));
+      }
     } catch (err) {
       if (DocumentPicker.isCancel(err)) {
         console.log("User cancelled", err);
@@ -134,142 +177,145 @@ const Location = ({
     }
   };
   return (
-    <ScrollView style={{ backgroundColor: "white" }}>
-      {/* <KeyboardAvoidingView
+    <>
+      <ScrollView style={{ backgroundColor: "white" }}>
+        {/* <KeyboardAvoidingView
         behavior="position"
         style={{backgroundColor: 'white'}}> */}
-      <View style={{}}>
-        <Toast config={toastConfig} ref={(ref) => Toast.setRef(ref)} />
-      </View>
-      <StatusBar
-        animated={true}
-        backgroundColor={COLORS.mobile_theme_back}
-        barStyle={"light-content"}
-      />
+        <View style={{}}>
+          <Toast config={toastConfig} ref={(ref) => Toast.setRef(ref)} />
+        </View>
+        <StatusBar
+          animated={true}
+          backgroundColor={COLORS.mobile_theme_back}
+          barStyle={"light-content"}
+        />
 
-      <SafeAreaView
-        style={{
-          height: SIZES.height * 0.03,
-          backgroundColor: COLORS.mobile_theme_back,
-          elevation: 1,
-        }}
-      />
-      <View>
-        <Progress.Bar
-          progress={0.5}
-          color={COLORS.progress_bar}
-          width={SIZES.width}
-          height={SIZES.height * 0.01}
-          style={{ position: "absolute", top: -1 }}
+        <SafeAreaView
+          style={{
+            height: SIZES.height * 0.03,
+            backgroundColor: COLORS.mobile_theme_back,
+            elevation: 1,
+          }}
         />
-        <Nav_Header
-          onPress_forward={onPress_for}
-          onPress_back={back_page}
-          color={
-            checked_Landmark && checked_house_no && checked_ele_bill
-              ? COLORS.mobile_theme_back
-              : COLORS.lightGray3
-          }
-          icon_color={
-            checked_Landmark && checked_house_no && checked_ele_bill
-              ? COLORS.mobile_theme_back
-              : COLORS.lightGray3
-          }
-          back={true}
-        />
-      </View>
-      <View style={{ padding: 15, marginTop: 25 }}>
         <View>
-          <Header
-            step={2}
-            subtitle={"Your House Number,Landmark,Location & Document"}
-            title={"Add Location Details"}
+          <Progress.Bar
+            progress={0.5}
+            color={COLORS.progress_bar}
+            width={SIZES.width + 20}
+            height={SIZES.height * 0.01}
+            style={{ position: "relative", right: 10, top: -1 }}
+          />
+          <Nav_Header
+            onPress_forward={onPress_for}
+            onPress_back={back_page}
+            color={
+              checked_Landmark && checked_house_no && checked_ele_bill
+                ? COLORS.mobile_theme_back
+                : COLORS.lightGray3
+            }
+            icon_color={
+              checked_Landmark && checked_house_no && checked_ele_bill
+                ? COLORS.mobile_theme_back
+                : COLORS.lightGray3
+            }
+            back={true}
           />
         </View>
-        <View style={{ marginTop: 30 }}>
-          <NumericInput navigation={navigation} />
-        </View>
-        {/* Bijli ka bil*/}
-        <View
-          style={{
-            flexDirection: "row",
-            // backgroundColor: COLORS.mobile_theme_back,
-            // minWidth: 100,
-            // width: '100%',
-            minHeight: 40,
-            borderRadius: 10,
-            // marginTop: 25,
-            maxHeight: 200,
-            // alignItems: 'center',
-            padding: 5,
-
-            marginBottom: 10,
-          }}
-        >
-          <Text
+        <View style={{ padding: 15, marginTop: 25 }}>
+          <View>
+            <Header
+              step={2}
+              subtitle={"Your House Number,Landmark,Location & Document"}
+              title={"Add Location Details"}
+            />
+          </View>
+          <View style={{ marginTop: 30 }}>
+            <NumericInput navigation={navigation} />
+          </View>
+          {/* Bijli ka bil*/}
+          <View
             style={{
-              fontSize: SIZES.form_section_title_fontsize,
-              color: COLORS.black,
-              //   bottom: 8,
-              // marginTop: 5,
-              flex: 1,
+              flexDirection: "row",
+              // backgroundColor: COLORS.mobile_theme_back,
+              // minWidth: 100,
+              // width: '100%',
+              minHeight: 40,
+              borderRadius: 10,
+              // marginTop: 25,
+              maxHeight: 200,
+              // alignItems: 'center',
+              padding: 5,
+
+              // marginBottom: 10,
             }}
           >
-            Electricity Bill
-          </Text>
-          {img_url !== "" && (
-            <TouchableOpacity
+            <Text
               style={{
-                // marginTop: 18,
-                height: 36,
-                width: 40,
-                // padding: 10,
-                justifyContent: "center",
-                alignItems: "center",
-                // paddingTop: 5,
-                // left: 20,
-                backgroundColor: COLORS.white,
-                borderRadius: 10,
-                color: COLORS.mobile_theme_back,
-                fontSize: SIZES.h2,
-                // marginTop: 25,
-              }}
-              onPress={async () => {
-                var pattern = /^((https):\/\/)/;
-
-                if (pattern.test(img_url)) {
-                  try {
-                    const data = await axios.delete(
-                      `${REACT_APP_OWNER_API}/api/v1/deleteaddressproof`,
-                      {
-                        headers: {
-                          Authorization: `Bearer ${token}`,
-                        },
-                        data: { name: elebill.name },
-                      }
-                    );
-                    console.log("data", data);
-                  } catch (err) {
-                    console.log("deleteroom video", err);
-                  }
-                }
-                setimg_url("");
-                checkedElebill(false);
-                await updateElebill("");
+                fontSize: SIZES.form_section_title_fontsize,
+                color: COLORS.black,
+                //   bottom: 8,
+                // marginTop: 5,
+                flex: 1,
+                // top: 5,
               }}
             >
-              <Ionicons
-                name="close-circle-outline"
-                size={35}
-                color={true ? COLORS.mobile_theme_back : "lightgray"}
-                style={{ flex: 1 }}
-              />
-            </TouchableOpacity>
-          )}
-        </View>
-        {img_url === "" && (
-          <View style={{ top: -10 }}>
-            {/* <Text
+              Electricity Bill (Maximum Image size is 10MB)
+            </Text>
+            {img_url !== "" && (
+              <TouchableOpacity
+                style={{
+                  // marginTop: 18,
+                  height: 36,
+                  width: 56,
+                  // padding: 10,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  // paddingTop: 5,
+                  // left: 20,
+                  backgroundColor: COLORS.white,
+                  borderRadius: 10,
+                  color: COLORS.mobile_theme_back,
+                  fontSize: SIZES.h2,
+                  // marginTop: 25,
+                }}
+                onPress={async () => {
+                  var pattern = /^((https):\/\/)/;
+
+                  if (pattern.test(img_url)) {
+                    try {
+                      const data = await axios.delete(
+                        `${REACT_APP_OWNER_API}/api/v1/deleteaddressproof`,
+                        {
+                          headers: {
+                            Authorization: `Bearer ${token}`,
+                          },
+                          data: { name: elebill.name },
+                        }
+                      );
+                      console.log("data", data);
+                    } catch (err) {
+                      console.log("deleteroom video", err.response);
+                    }
+                  }
+                  setimg_url("");
+                  checkedElebill(false);
+                  await updateElebill("");
+                  setintImg([]);
+                }}
+              >
+                <Ionicons
+                  name="close-circle-outline"
+                  size={25}
+                  color={true ? COLORS.mobile_theme_back : "lightgray"}
+                  style={{ flex: 1 }}
+                />
+              </TouchableOpacity>
+            )}
+          </View>
+          {img_url === "" && (
+            <View style={{}}>
+              {/* <Text
               style={{
                 fontSize: SIZES.h2,
                 color: COLORS.mobile_theme_back,
@@ -277,59 +323,57 @@ const Location = ({
               }}>
               Upload Adhar(image or pdf form)
             </Text> */}
-            <TouchableOpacity
-              style={{
-                // marginTop: 15,
-                borderColor: COLORS.mobile_theme,
-                borderWidth: SIZES.form_button_borderWidth,
-                borderRadius: SIZES.form_button_borderRadius,
-                maxWidth: SIZES.form_button_maxWidth,
-                alignItems: SIZES.form_button_alignItems,
-                justifyContent: SIZES.form_button_justifyContent,
-                backgroundColor: COLORS.mobile_theme_back,
-              }}
-              onPress={() => {
-                selectDoc();
-                console.log("doc clicked");
-              }}
-            >
-              <Text
+              <TouchableOpacity
                 style={{
-                  lineHeight: SIZES.form_button_text_lineHeight,
-                  fontFamily: FONTS.fontFamily_black,
-                  color: COLORS.font_color,
-                  fontSize: SIZES.form_button_text_fontSize,
-                  marginVertical: SIZES.form_button_text_marginVertical,
-                  marginHorizontal: SIZES.form_button_text_marginHorizontal,
+                  // marginTop: 15,
+                  borderColor: COLORS.mobile_theme,
+                  borderWidth: SIZES.form_button_borderWidth,
+                  borderRadius: SIZES.form_button_borderRadius,
+                  maxWidth: SIZES.form_button_maxWidth,
+                  alignItems: SIZES.form_button_alignItems,
+                  justifyContent: SIZES.form_button_justifyContent,
+                  backgroundColor: COLORS.mobile_theme_back,
+                }}
+                onPress={() => {
+                  selectDoc();
+                  console.log("doc clicked");
                 }}
               >
-                Select File
-              </Text>
-            </TouchableOpacity>
-          </View>
-        )}
+                <Text
+                  style={{
+                    lineHeight: SIZES.form_button_text_lineHeight,
+                    fontFamily: FONTS.fontFamily_black,
+                    color: COLORS.font_color,
+                    fontSize: SIZES.form_button_text_fontSize,
+                    marginVertical: SIZES.form_button_text_marginVertical,
+                    marginHorizontal: SIZES.form_button_text_marginHorizontal,
+                  }}
+                >
+                  Select File
+                </Text>
+              </TouchableOpacity>
+            </View>
+          )}
 
-        {img_url !== "" && (
-          <View
-            style={{
-              // marginTop: 30,
-              borderWidth: 1,
-              borderColor: COLORS.lightGray3,
-              borderRadius: 10,
-              width: SIZES.width - 50,
-              // height: 300,
-              marginLeft: 5,
-              top: -10,
-            }}
-          >
+          {img_url !== "" && (
             <Image
               source={{ uri: img_url }}
-              style={{ height: 300, borderRadius: 10, width: SIZES.width - 50 }}
+              style={{
+                height: 200,
+                borderRadius: 10,
+                borderWidth: 1,
+                borderColor: COLORS.lightGray3,
+                borderRadius: 10,
+                width: SIZES.width - 50,
+                // height: 300,
+                marginLeft: 5,
+              }}
             />
-          </View>
-        )}
-      </View>
-    </ScrollView>
+          )}
+        </View>
+      </ScrollView>
+      {loading && <AppLoader />}
+    </>
   );
 };
 function mapStateToProps(state) {

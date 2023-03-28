@@ -8,6 +8,7 @@ import AdharCard_reducer from "./AdharCard/AdharCard_reducer";
 import room_vidImage_reducer from "./room_vidImage/room_vidImage_reducer";
 import Location_reducer from "./Location/Locations_reducer";
 import Newproperty_ext_reducer from "../store/Newproperty_ext/Newproperty_ext_reducer";
+import mess_vidImage_reducer from "./mess_vidImage/mess_vidImage_reducer";
 const rootReducer = combineReducers({
   authReducer,
   newproperty_reducer,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   room_vidImage_reducer,
   AdharCard_reducer,
   Location_reducer,
+  mess_vidImage_reducer,
 });
 // const _persistedReducer = persistReducer(persistConfig, rootReducer);
 export default rootReducer;

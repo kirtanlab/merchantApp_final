@@ -131,7 +131,7 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
                   fontFamily: FONTS.fontFamily_regular,
                 }}
               >
-                +91{phone_number}
+                {phone_number}
               </Text>
             </Text>
           </View>

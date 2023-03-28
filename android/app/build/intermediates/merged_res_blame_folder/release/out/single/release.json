@@ -1,346 +1,350 @@
 [
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/raw_assets_icons_facebook.svg.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/raw/assets_icons_facebook.svg"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_folder.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_folder.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_briefcase_dark.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_briefcase_dark.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_no_image.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_no_image.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_send.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_send.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/raw_assets_icons_login.svg.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/raw/assets_icons_login.svg"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_bottomvignette.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_bottomvignette.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_volume.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_volume.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_newpass.jpeg.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_newpass.jpeg"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_back.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_back.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_pause.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_pause.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_erroricon.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_erroricon.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_back.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_back.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_erroricon.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_erroricon.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable_rn_edit_text_material.xml.flat",
-        "source": "com.merchantapp-main-39:/drawable/rn_edit_text_material.xml"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_no_notification.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_no_notification.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_back.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_back.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_home.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_home.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_bottomvignette.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_bottomvignette.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_profile_dark.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_profile_dark.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/raw_assets_icons_google.svg.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/raw/assets_icons_google.svg"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_close.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_close.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_otp_email.jpeg.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_otp_email.jpeg"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/raw_assets_icons_registration.svg.flat",
-        "source": "com.merchantapp-react-33:/raw/assets_icons_registration.svg"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_home_dark.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_home_dark.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_back.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_back.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_play.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_play.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_shrink.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_shrink.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_bottomvignette.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_bottomvignette.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_verified.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_verified.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_back.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_back.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.merchantapp-main-39:/mipmap-hdpi/ic_launcher.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_loadericon.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_loadericon.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_no_notification.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_no_notification.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_hotel.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_hotel.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_topvignette.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_topvignette.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_pause.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_pause.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_dataanalysis.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_dataanalysis.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_volume.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_volume.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_pause.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_pause.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_topvignette.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_topvignette.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_market_dark.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_market_dark.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_otp_mobile.jpeg.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_otp_mobile.jpeg"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_shrink.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_shrink.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_uparrow.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_uparrow.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_home_dark.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_home_dark.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_play.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_play.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.merchantapp-main-39:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_pause.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_pause.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.merchantapp-main-39:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/raw_assets_icons_login.svg.flat",
-        "source": "com.merchantapp-react-33:/raw/assets_icons_login.svg"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_play.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_play.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_erroricon.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_erroricon.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_market.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_market.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_market_dark.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_market_dark.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_signup.jpeg.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_signup.jpeg"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable_rn_edit_text_material.xml.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/drawable/rn_edit_text_material.xml"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_expand.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_expand.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_pause.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_pause.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_mobile_input_.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_mobile_input_.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_play.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_play.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_logo_rent.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_logo_rent.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_erroricon.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_erroricon.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/raw_assets_icons_google.svg.flat",
-        "source": "com.merchantapp-react-33:/raw/assets_icons_google.svg"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_play.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_play.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_topvignette.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_topvignette.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_login.jpeg.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_login.jpeg"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_topvignette.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_topvignette.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_loadericon.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_loadericon.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_pause.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_pause.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_briefcase_dark.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_briefcase_dark.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_erroricon.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_erroricon.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_home.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_home.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_dataanalysis.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_dataanalysis.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_hotel.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_hotel.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_bottomvignette.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_bottomvignette.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_send.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_send.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_volume.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_volume.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_forgetpass.jpeg.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_forgetpass.jpeg"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_loadericon.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_loadericon.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_shrink.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_shrink.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable_autofill_highlight.xml.flat",
-        "source": "com.merchantapp-main-39:/drawable/autofill_highlight.xml"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_login.jpeg.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_login.jpeg"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_market.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_market.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_otp_email.jpeg.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_otp_email.jpeg"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_logo_rent.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_logo_rent.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_play.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_play.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.merchantapp-main-39:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_profile.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_profile.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_forgetpass.jpeg.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_forgetpass.jpeg"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_verified.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_verified.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.merchantapp-main-39:/mipmap-mdpi/ic_launcher.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_expand.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_expand.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/raw_assets_icons_facebook.svg.flat",
-        "source": "com.merchantapp-react-33:/raw/assets_icons_facebook.svg"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_uparrow.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_uparrow.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_mobile_input.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_mobile_input.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_topvignette.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_topvignette.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_expand.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_expand.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_bottomvignette.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_bottomvignette.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_otp_mobile.jpeg.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_otp_mobile.jpeg"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_mobile_input_.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_mobile_input_.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.merchantapp-main-39:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_close.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_close.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_loadericon.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_loadericon.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/raw_assets_icons_registration.svg.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/raw/assets_icons_registration.svg"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.merchantapp-main-39:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_mobile_input.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_mobile_input.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_bottomvignette.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_bottomvignette.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_briefcase.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_briefcase.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_rightarrow.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_rightarrow.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_trade.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_trade.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_volume.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_volume.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_signup.jpeg.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_signup.jpeg"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.merchantapp-main-39:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_shrink.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_shrink.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_erroricon.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_erroricon.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/raw_assets_icons_twitter.svg.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/raw/assets_icons_twitter.svg"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.merchantapp-main-39:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_topvignette.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_topvignette.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_volume.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_volume.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_volume.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_volume.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_newpass.jpeg.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_newpass.jpeg"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_expand.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_expand.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativepaper_src_assets_backchevron.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativepaper_src_assets_backchevron.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_no_image.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_no_image.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_folder.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_folder.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/raw_assets_icons_twitter.svg.flat",
-        "source": "com.merchantapp-react-33:/raw/assets_icons_twitter.svg"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_expand.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_expand.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_loadericon.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_loadericon.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_rightarrow.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_rightarrow.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_trade.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_trade.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_withdraw.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_withdraw.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_briefcase.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_briefcase.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_assets_icons_profile_dark.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/assets_icons_profile_dark.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_node_modules_reactnativepaper_src_assets_backchevron.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/node_modules_reactnativepaper_src_assets_backchevron.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_back.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_back.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_profile.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_profile.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xhdpi_node_modules_reactnativevideocontrols_assets_img_shrink.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xhdpi/node_modules_reactnativevideocontrols_assets_img_shrink.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.merchantapp-main-39:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable_autofill_highlight.xml.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/drawable/autofill_highlight.xml"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-mdpi_assets_icons_withdraw.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-mdpi/assets_icons_withdraw.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-main-38:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xhdpi_node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xhdpi/node_modules_reactnativegoogleplacesautocomplete_images_powered_by_google_on_white.png"
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_expand.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_expand.png"
     },
     {
-        "merged": "com.merchantapp-merged_res-38:/drawable-xxhdpi_node_modules_reactnativevideocontrols_assets_img_shrink.png.flat",
-        "source": "com.merchantapp-react-33:/drawable-xxhdpi/node_modules_reactnativevideocontrols_assets_img_shrink.png"
+        "merged": "com.merchantapp-merged_res-37:/xml_network_security_config.xml.flat",
+        "source": "com.merchantapp-main-38:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-merged_res-37:/drawable-mdpi_node_modules_reactnativevideocontrols_assets_img_loadericon.png.flat",
+        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.merchantapp-react-32:/drawable-mdpi/node_modules_reactnativevideocontrols_assets_img_loadericon.png"
     }
 ]

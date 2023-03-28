@@ -8,6 +8,7 @@ import * as NewRoomActions from "../store/NewRooms/Newrooms_actions";
 function InputField({
   label,
   value,
+  show,
   icon,
   inputType,
   defaultValue,
@@ -90,6 +91,10 @@ function InputField({
   Landmark,
   price,
   about_room,
+  checkedMessPrice,
+  focusedMessPrice,
+  updateMessPrice,
+  mess_price,
 }) {
   let [sign_name_color, set_sign_name_color] = useState("#ccc");
   let err = false;
@@ -150,7 +155,7 @@ function InputField({
             // paddingBottom: 0,
             fontSize: SIZES.form_section_input_fontsize,
           }}
-          secureTextEntry={true}
+          secureTextEntry={false}
           onChange={(value) => {
             value = value.nativeEvent.text;
             value = value.trimEnd();
@@ -386,14 +391,15 @@ function InputField({
           keyboardType={keyboardType}
           defaultValue={defaultValue}
           style={{
-            flex: 1,
+            flex: 0.85,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            paddingBottom: 4,
+            // paddingBottom: 4,
+
             fontSize: SIZES.form_section_input_fontsize,
           }}
-          secureTextEntry={true}
+          secureTextEntry={show}
           onChange={(value) => {
             onChange,
               // console.log('handeled', value.nativeEvent.text);
@@ -429,7 +435,7 @@ function InputField({
             paddingVertical: 0,
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
-            paddingBottom: -10,
+            // paddingBottom: -10,
             marginTop: 6,
             left: -5,
             fontSize: SIZES.form_section_input_fontsize,
@@ -470,8 +476,8 @@ function InputField({
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             marginTop: 6,
-            paddingBottom: -10,
-            left: -5,
+            // paddingBottom: -10,
+            left: -10,
             fontSize: SIZES.form_section_input_fontsize,
           }}
           // value={propertyName}
@@ -673,6 +679,50 @@ function InputField({
               // sign_password_focused(false);
             } else {
               checkedPrices(false);
+            }
+          }}
+        />
+      );
+    }
+    if (type == "mess_prices") {
+      return (
+        <TextInput
+          onFocus={() => {
+            console.log("Entering focued");
+            focusedMessPrice(true);
+            // gen_sign_err_method(false);
+          }}
+          onBlur={() => {
+            console.log("!Entering focued");
+            focusedMessPrice(false);
+          }}
+          placeholder={label}
+          keyboardType={keyboardType}
+          style={{
+            flex: 1,
+            paddingVertical: 0,
+            borderBottomColor: "#ccc",
+            marginTop: 6,
+            borderBottomWidth: 1,
+            paddingBottom: 4,
+            fontSize: SIZES.form_section_input_fontsize,
+          }}
+          value={mess_price}
+          // secureTextEntry={true}
+
+          onChange={(value) => {
+            let value_string = value.nativeEvent.text;
+            // console.log('handeled', value.nativeEvent.text.length);
+            // value = Number(value_string);
+            updateMessPrice(value_string);
+            console.log("value_prices", value_string);
+            if (Number(value_string) >= 10 && Number(value_string) % 1 == 0) {
+              console.log("etnereed green");
+              checkedMessPrice(true);
+              // gen_sign_err_method(false);
+              // sign_password_focused(false);
+            } else {
+              checkedMessPrice(false);
             }
           }}
         />
@@ -975,7 +1025,9 @@ function InputField({
             color: COLORS.mobile_theme_back,
             // fontWeight: "bold",
             // left: 100,
-            marginTop: 15,
+            position: "absolute",
+            marginTop: 10,
+            marginLeft: 4,
             fontSize: 14,
           }}
         >
@@ -1000,6 +1052,7 @@ function mapStateToProps(state) {
     occupancy: state.Newrooms_reducer.occupancy,
     house_no: state.newproperty_reducer.house_no,
     price: state.Newrooms_reducer.price,
+    mess_price: state.newproperty_reducer.mess_price,
     Landmark: state.newproperty_reducer.Landmark,
     // propertyName: state.newproperty_reducer.propertyName,
     // propertyName: state.newproperty_reducer.propertyName,
@@ -1011,6 +1064,15 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
+    checkedMessPrice: (value) => {
+      return dispatch(NewPropertyActions.checkedMessPrice(value));
+    },
+    focusedMessPrice: (value) => {
+      return dispatch(NewPropertyActions.focusedMessPrice(value));
+    },
+    updateMessPrice: (value) => {
+      return dispatch(NewPropertyActions.updateMessPrice(value));
+    },
     updateAboutRoom: (value) => {
       dispatch(NewRoomActions.updateAboutRoom(value));
     },

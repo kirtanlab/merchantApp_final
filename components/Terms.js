@@ -58,46 +58,41 @@ const Terms = ({
   };
   return (
     <SafeAreaView>
-      <View style={{ flexDirection: "row", alignContent: "center" }}>
+      <View style={{ flexDirection: "row", alignItems: "center" }}>
         <CheckBox
           status={baseTerms.govt ? "checked" : "unchacked"}
           onPress={checkBox1}
         />
-        <View style={{}}>
-          <Text
-            style={{
-              top: 3,
-              fontSize: SIZES.form_section_title_fontsize + 2,
-              color: COLORS.mobile_theme_back,
-              // fontWeight: "bold",
-            }}
-          >
-            I accept goverments T&C
-          </Text>
-        </View>
+
+        <Text
+          style={{
+            fontSize: SIZES.form_section_title_fontsize + 2,
+            color: COLORS.mobile_theme_back,
+          }}
+        >
+          I accept Goverments T&C
+        </Text>
       </View>
       <View
         style={{
           flexDirection: "row",
           width: SIZES.width,
-          // alignContent: 'center',v
+          alignItems: "center",
         }}
       >
         <CheckBox
           status={baseTerms.myApp ? "checked" : "unchacked"}
           onPress={checkBox2}
         />
-        <View style={{ width: SIZES.width }}>
-          <Text
-            style={{
-              top: 3,
-              fontSize: SIZES.form_section_title_fontsize + 2,
-              color: COLORS.mobile_theme_back,
-            }}
-          >
-            I accept myapp T&C
-          </Text>
-        </View>
+
+        <Text
+          style={{
+            fontSize: SIZES.form_section_title_fontsize + 2,
+            color: COLORS.mobile_theme_back,
+          }}
+        >
+          I accept Shelterhub Business app T&C
+        </Text>
       </View>
     </SafeAreaView>
   );

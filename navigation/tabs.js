@@ -51,7 +51,7 @@ const Tabs = () => {
               <TabIcon
                 focused={focused}
                 icon_name={"notifications"}
-                subtitle="Notifications"
+                subtitle="Notification"
               />
             );
           },
@@ -71,7 +71,7 @@ const Tabs = () => {
               <TabIcon
                 focused={focused}
                 icon_name={"person"}
-                subtitle="Profile"
+                subtitle="Setting"
               />
             );
           },

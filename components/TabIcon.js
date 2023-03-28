@@ -39,7 +39,7 @@ const TabIcon = ({ focused, icon_name, iconStyle, subtitle, isTrade }) => {
         style={{
           color: focused ? COLORS.mobile_theme_back : "#e0e9ff",
           fontSize: 13,
-
+          top: -2,
           // fontWeight: "bold",
         }}
       >

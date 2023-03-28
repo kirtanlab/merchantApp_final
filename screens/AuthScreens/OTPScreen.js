@@ -8,7 +8,9 @@ import {
   KeyboardAvoidingView,
   View,
   ScrollView,
+  PermissionsAndroid,
 } from "react-native";
+
 import { connect } from "react-redux";
 import icons from "../../constants/icons";
 import CustomButton from "../../components/CustomeButton";
@@ -23,11 +25,11 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from "react-native-confirmation-code-field";
-
 const ForgetPass = ({ route, navigation }) => {
   const { email } = route.params;
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+
   const CELL_COUNT = 4;
   const [value, setValue] = useState("");
   const ref = useBlurOnFulfill({ value, cellCount: CELL_COUNT });
@@ -37,6 +39,24 @@ const ForgetPass = ({ route, navigation }) => {
     value,
     setValue,
   });
+  async function requestReadSmsPermission() {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.READ_SMS,
+        {
+          title: "Read SMS permission",
+          message: "App needs permission to read SMS messages",
+        }
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log("Read SMS permission granted");
+      } else {
+        console.log("Read SMS permission denied");
+      }
+    } catch (error) {
+      console.warn(error);
+    }
+  }
   const handleLogin = async () => {
     console.log("final", value.length);
     if (value.length == 4) {

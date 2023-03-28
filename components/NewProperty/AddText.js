@@ -200,7 +200,7 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
             // paddingRight: 10,
             lineHeight: 23,
             maxHeight: 200,
-            width: SIZES.width * 0.849,
+            maxWidth: SIZES.width * 0.842,
             //   borderRadius: SIZES.form_button_borderRadius,
             backgroundColor: COLORS.white,
             //   borderTopWidth: 0.5,
@@ -212,7 +212,7 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
           <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={true}>
             <TouchableOpacity
               style={{
-                marginTop: 3,
+                marginTop20: 3,
                 // padding: 2,
                 width: SIZES.width * 0.7,
 
@@ -265,7 +265,7 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
             >
               <Ionicons
                 name="trash-outline"
-                size={25}
+                size={20}
                 color={COLORS.mobile_theme_back}
                 style={{}}
               />
@@ -302,7 +302,7 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
   return (
     // <ScrollView style={{backgroundColor: 'white'}}>
 
-    <ScrollView keyboardShouldPersistTaps="handled" style={{ marginTop: 30 }}>
+    <ScrollView keyboardShouldPersistTaps="handled" style={{}}>
       {/* <Portal> */}
       <View style={{ flexDirection: "row" }}>
         <View style={{ flex: 1 }}>
@@ -418,7 +418,7 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
               fontSize: SIZES.form_section_title_fontsize,
             }}
           >
-            About PG
+            About Property
           </Text>
         </View>
         <ScrollView

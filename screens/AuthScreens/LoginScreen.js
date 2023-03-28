@@ -34,6 +34,7 @@ const LoginScreen = ({
 }) => {
   const [loading, setLoading] = useState(false);
   const [err, setError] = useState(false);
+  const [show, setShow] = useState(true);
   const [_password, setPass] = useState("");
   const setUser = async (token) => {
     return new Promise(function (resolve, reject) {
@@ -174,6 +175,7 @@ const LoginScreen = ({
             label={"Password"}
             type={"login_password"}
             defaultValue={password}
+            show={show}
             // defaultValue=""
             icon={
               <MaterialIcons
@@ -188,12 +190,33 @@ const LoginScreen = ({
             }}
             inputType="password"
             fieldType={"Button"}
-            fieldButtonLabel=" Forget?"
+            fieldButtonLabel={show ? "SHOW" : "   HIDE"}
             fieldButtonFunction={() => {
-              navigation.navigate("ForgetPassword");
+              // navigation.navigate("ForgetPassword");
+              console.log("clicked");
+              if (show) {
+                setShow(false);
+              } else {
+                setShow(true);
+              }
             }}
           />
-
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("ForgetPassword");
+            }}
+          >
+            <Text
+              style={{
+                color: COLORS.mobile_theme_back,
+                top: -20,
+                left: "66%",
+                fontSize: 14,
+              }}
+            >
+              Forget Password?
+            </Text>
+          </TouchableOpacity>
           {gen_login_err && (
             <View style={{ marginTop: -30, left: 25, marginBottom: 20 }}>
               <Text style={{ color: "red" }}>

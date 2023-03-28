@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.merchantapp-mergeDebugResources-35:/values-w480dp-port-v13/values-w480dp-port-v13.xml",
+            "outputFile": "com.merchantapp-mergeDebugResources-36:/values-w480dp-port-v13/values-w480dp-port-v13.xml",
             "map": [
                 {
                     "source": "/home/kirtan/.gradle/caches/transforms-3/ff06b511a3b64a9f992a538e90dfb504/transformed/material-1.1.0/res/values-w480dp-port-v13/values-w480dp-port-v13.xml",

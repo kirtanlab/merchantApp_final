@@ -81,7 +81,7 @@ const NotificationScreen = ({ token }) => {
             fontFamily: FONTS.fontFamily_regular,
           }}
         >
-          Notifications
+          Notification
         </Text>
       </View>
       <View style={{ paddingHorizontal: 7 }}>

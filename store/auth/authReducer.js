@@ -9,6 +9,7 @@ const initialState = {
   //   status: "loading",
   //   error: "error",
   // },
+  home_loading: false,
   updating_mobile: false,
   Room_token: "",
   token: "",
@@ -42,6 +43,11 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
+    case authActions.UPDATE_HOMELOADING:
+      return {
+        ...state,
+        home_loading: action.value,
+      };
     case authActions.UPDATING_MOBILE:
       return {
         ...state,

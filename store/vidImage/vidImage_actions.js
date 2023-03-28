@@ -2,6 +2,11 @@ export const UPDATE_OUTER_IMAGES = "UPDATE_OUTER_IMAGES";
 export const CHECKED_OUTER_IMAGES = "CHECKED_OUTER_IMAGES";
 export const UPDATE_OUTER_VIDEOS = "UPDATE_OUTER_VIDEOS";
 export const CHECKED_OUTER_VIDEOS = "CHECKED_OUTER_VIDEOS";
+export const VID_DOWNLOADED = "VID_DOWNLOADED";
+export const vidDownloaded = (value) => ({
+  type: VID_DOWNLOADED,
+  value: value,
+});
 
 export const updateOuterImages = (value) => ({
   type: UPDATE_OUTER_IMAGES,

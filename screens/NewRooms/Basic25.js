@@ -13,6 +13,7 @@ import {
   RefreshControl,
   PermissionsAndroid,
 } from "react-native";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Header from "../../components/NewProperty/Header";
 import * as Progress from "react-native-progress";
 import { COLORS, icons, SIZES, FONTS } from "../../constants";
@@ -51,6 +52,8 @@ const Basic25 = ({
   Room_token,
   navigation,
   room_updating,
+  singleordouble,
+  cooler,
 }) => {
   useEffect(() => {
     console.log(
@@ -79,69 +82,7 @@ const Basic25 = ({
   const [Bool, setBool] = useState(false);
   const [refreshing, setRefreshing] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
-  // console.log("roomOutervideos", room_outerVideos);
-  // useEffect(() => {
-  //   const downloadVideo = async () => {
-  //     const res = await RNFetchBlob.config({
-  //       fileCache: true,
-  //     }).fetch("GET", "http://example.com/video.mp4");
-  //     setVideoPath(res.path());
-  //   };
-  //   downloadVideo();
-  // }, []);
-  // const playVideo = () => {
-  //   if (videoref.current) {
-  //     // videoref.current.seek(0);
-  //     videoref.current.pause = false;
-  //   }
-  // // };
-  const checkPermission = async () => {
-    // Function to check the platform
-    // If iOS then start downloading
-    // If Android then ask for permission
 
-    if (Platform.OS === "ios") {
-      // downloadVideo();
-    } else {
-      try {
-        const granted = await PermissionsAndroid.request(
-          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-          {
-            title: "Storage Permission Required",
-            message: "App needs access to your storage to download Photos",
-          }
-        );
-        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-          // Once user grant the permission start downloading
-          console.log("Storage Permission Granted.");
-          // downloadVideo();
-        } else {
-          // If permission denied then show alert
-          alert("Storage Permission Not Granted");
-        }
-      } catch (err) {
-        // To handle permission related exception
-        console.warn(err);
-      }
-    }
-  };
-
-  // const downloadVideo = async () => {
-  //   const res = await RNFetchBlob.config({
-  //     fileCache: true,
-  //   }).fetch("GET", room_outerVideos[0].uri, {
-  //     Authorization: `Bearer ${token}`,
-  //   });
-  //   setVideoPath(res.path());
-  //   console.log("videopath:", res.path());
-  // };
-  useEffect(() => {
-    // console.log("roomOuterImage,vide", room_outerVideos);
-    // let bool = room_updating?.updating;
-    // checkPermission();
-    // if (bool) {downloadVideo();}
-    // setBool(true)
-  }, []);
   const upload_outer_videos = async () => {
     if (intvid.length > 0) {
       try {
@@ -189,7 +130,7 @@ const Basic25 = ({
           res(vid_obj);
         });
       } catch (e) {
-        console.log("upload_outer_videos", e);
+        console.log("upload_outer_videos", e.response.data.msg);
         setLoading(false);
       }
     }
@@ -414,8 +355,8 @@ const Basic25 = ({
         <TouchableOpacity
           style={{
             position: "absolute",
-            left: "82%",
-            borderRadius: 10,
+            left: "88.5%",
+            // borderRadius: 10,
 
             fontSize: SIZES.h2,
             backgroundColor: COLORS.mobile_theme_back,
@@ -456,10 +397,10 @@ const Basic25 = ({
             await updateRoomOuterVideos(copy_vidUri);
           }}
         >
-          <Ionicons
-            name="close-circle-outline"
-            size={35}
-            color={true ? COLORS.white : "lightgray"}
+          <MaterialIcons
+            name="delete"
+            size={26}
+            color={true ? COLORS.white : "red"}
             style={{}}
           />
         </TouchableOpacity>
@@ -491,8 +432,8 @@ const Basic25 = ({
         <TouchableOpacity
           style={{
             position: "absolute",
-            left: "82%",
-            borderRadius: 10,
+            left: "88.5%",
+            // borderRadius: 10,
 
             fontSize: SIZES.h2,
             backgroundColor: COLORS.mobile_theme_back,
@@ -532,10 +473,10 @@ const Basic25 = ({
             await updateRoomOuterImages(copy_imgUri);
           }}
         >
-          <Ionicons
-            name="close-circle-outline"
-            size={35}
-            color={true ? COLORS.white : "lightgray"}
+          <MaterialIcons
+            name="delete"
+            size={26}
+            color={true ? COLORS.white : "red"}
             style={{}}
           />
         </TouchableOpacity>
@@ -575,25 +516,27 @@ const Basic25 = ({
           <Progress.Bar
             progress={1}
             color={COLORS.progress_bar}
-            width={SIZES.width}
+            width={SIZES.width + 10}
             height={SIZES.height * 0.006}
-            style={{ position: "absolute", top: -1 }}
+            style={{ position: "absolute", left: -5, top: -1 }}
           />
-          <Nav_Header
-            onPress_forward={onPress_for}
-            onPress_back={back_page}
-            color={
-              checkedRoomOuterImages && checkedRoomOuterVideos
-                ? COLORS.mobile_theme_back
-                : COLORS.lightGray3
-            }
-            icon_color={
-              checkedRoomOuterImages && checkedRoomOuterVideos
-                ? COLORS.mobile_theme_back
-                : COLORS.lightGray3
-            }
-            back={true}
-          />
+          <View style={{ top: 10 }}>
+            <Nav_Header
+              onPress_forward={onPress_for}
+              onPress_back={back_page}
+              color={
+                checkedRoomOuterImages && checkedRoomOuterVideos
+                  ? COLORS.mobile_theme_back
+                  : COLORS.lightGray3
+              }
+              icon_color={
+                checkedRoomOuterImages && checkedRoomOuterVideos
+                  ? COLORS.mobile_theme_back
+                  : COLORS.lightGray3
+              }
+              back={true}
+            />
+          </View>
         </View>
         <View style={{ padding: 15, marginTop: 25 }}>
           <View>
@@ -764,6 +707,8 @@ function mapStateToProps(state) {
     room_outerImages: state.room_vidImage_reducer.room_outerImages,
     checked_room_outer_video:
       state.room_vidImage_reducer.checked_room_outer_video,
+    singleordouble: state.Newrooms_reducer.singleordouble,
+    cooler: state.Newrooms_reducer.cooler,
     room_outerVideos: state.room_vidImage_reducer.room_outerVideos,
   };
 }

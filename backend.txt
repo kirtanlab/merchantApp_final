@@ -23,3 +23,19 @@ propertytitle
 2)Url -> Uri
 
 140 --> 2000/Month, 20GB stored(7person /GB), 60GB Transferred
+
+1)AutoFill OTP
+2)Feedback 
+3)Mess 
+-->Mess with photo and Text box
+-->Pricing (monthly for tiffin)
+-->location 
+-->About Mess
+-->Images/Videos  
+4)Room 
+-->Single Room/Double Room boolean
+-->Select Cooler/No cooler boolean
+5)Amneties: 
+-->Watercooler boolean
+-->Regular Cleaning boolean
+8)Maps -> Current location --> Redirect to App settings page

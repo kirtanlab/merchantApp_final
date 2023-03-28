@@ -11,6 +11,7 @@ const no_notification = require("../assets/icons/no_notification.png");
 const folder = require("../assets/icons/folder.png");
 const no_image = require("../assets/icons/no_image.png");
 const Signup = require("../assets/icons/Signup.jpeg");
+const rightArrow = require("../assets/icons/right-arrow.png");
 const Newpass = require("../assets/icons/Newpass.jpeg");
 const OTP_email = require("../assets/icons/OTP_email.jpeg");
 const OTP_mobile = require("../assets/icons/OTP_mobile.jpeg");
@@ -22,6 +23,7 @@ export default {
   Signup,
   mobile_input,
   mobile_input_,
+  rightArrow,
   Newpass,
   OTP_email,
   OTP_mobile,

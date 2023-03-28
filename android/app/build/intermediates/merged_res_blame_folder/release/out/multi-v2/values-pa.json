@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.merchantapp-mergeReleaseResources-36:/values-pa/values-pa.xml",
+            "outputFile": "com.merchantapp-mergeReleaseResources-35:/values-pa/values-pa.xml",
             "map": [
                 {
                     "source": "/home/kirtan/.gradle/caches/transforms-3/9236ad2f2f8717584bf56cf373bbcbf6/transformed/jetified-play-services-basement-18.1.0/res/values-pa/values.xml",

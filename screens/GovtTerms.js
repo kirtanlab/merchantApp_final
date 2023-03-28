@@ -62,7 +62,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 // import { PRIMARY_COLOR } from "@env";
 import NAVHeader_BLOB from "../components/NavHeader_BLOB";
 import { COLORS } from "../constants";
-const GovtTerms = () => {
+const GovtTerms = ({ navigation }) => {
   let PRIMARY_COLOR = COLORS.mobile_theme_back;
   return (
     <ScrollView style={{ backgroundColor: "white", flex: 1, padding: 12 }}>

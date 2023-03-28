@@ -1,6 +1,8 @@
 export const UPDATE_title = "UPDATE_title";
 export const UPDATE_AC = "UPDATE_AC";
 export const UPDATE_ATTACHED = "UPDATE_ATTACHED";
+export const UPDATE_COOLER = "UPDATE_COOLER";
+export const UPDATE_SINGLEORDOUBLE = "UPDATE_SINGLEORDOUBLE";
 export const UPDATE_PRICES = "UPDATE_PRICES";
 export const UPDATE_EXTRA_DESCRIPTORS = "UPDATE_EXTRA_DESCRIPTORS";
 export const UPDATE_BASE_TERMS = "UPDATE_BASE_TERMS";
@@ -84,6 +86,14 @@ export const updatetitle = (value) => ({
 });
 export const updateAC = (value) => ({
   type: UPDATE_AC,
+  value: value,
+});
+export const updateCooler = (value) => ({
+  type: UPDATE_COOLER,
+  value: value,
+});
+export const updateSingleorDouble = (value) => ({
+  type: UPDATE_SINGLEORDOUBLE,
   value: value,
 });
 export const updatePrices = (value) => ({

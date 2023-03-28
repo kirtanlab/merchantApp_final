@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.merchantapp-mergeDebugResources-35:/values-fr/values-fr.xml",
+            "outputFile": "com.merchantapp-mergeDebugResources-36:/values-fr/values-fr.xml",
             "map": [
                 {
                     "source": "/home/kirtan/.gradle/caches/transforms-3/a74319f16e76beadbf53eb2669b709f5/transformed/core-1.7.0/res/values-fr/values-fr.xml",

@@ -146,7 +146,7 @@ const SignupScreen = ({
                 color={
                   checked_sign_name ? COLORS.mobile_theme_back : "lightgray"
                 }
-                style={{ marginTop: 18 }}
+                style={{ marginTop: 5 }}
               />
             </TouchableOpacity>
           </View>
@@ -183,7 +183,7 @@ const SignupScreen = ({
                 color={
                   checked_sign_email ? COLORS.mobile_theme_back : "lightgray"
                 }
-                style={{ marginTop: 18 }}
+                style={{ marginTop: 5 }}
               />
             </TouchableOpacity>
           </View>
@@ -221,7 +221,7 @@ const SignupScreen = ({
                 color={
                   checked_sign_pass ? COLORS.mobile_theme_back : "lightgray"
                 }
-                style={{ marginTop: 18 }}
+                style={{ marginTop: 5 }}
               />
             </TouchableOpacity>
           </View>
@@ -264,7 +264,7 @@ const SignupScreen = ({
                     ? COLORS.mobile_theme_back
                     : "lightgray"
                 }
-                style={{ marginTop: 18 }}
+                style={{ marginTop: 5 }}
               />
             </TouchableOpacity>
           </View>

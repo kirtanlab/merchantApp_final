@@ -17,7 +17,7 @@ const Amneties = ({ amneties, setAmneties }) => {
   let [AC, setAC] = useState(amneties_copy.AC);
   let [hotwater, sethotwater] = useState(amneties_copy.hotwater);
   let [cooler, setcooler] = useState(amneties_copy.cooler);
-
+  let [cleaning, setCleaning] = useState(amneties_copy.isCleaning);
   return (
     <SafeAreaView>
       <View>
@@ -222,6 +222,60 @@ const Amneties = ({ amneties, setAmneties }) => {
               }}
             >
               Cooler
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View>
+        {/* isCleaning */}
+        <View style={{ paddingTop: 10 }}>
+          <TouchableOpacity
+            style={{
+              borderColor: COLORS.mobile_theme_back,
+              borderWidth: SIZES.form_button_borderWidth,
+              borderRadius: SIZES.form_button_borderRadius,
+              maxWidth: SIZES.form_button_maxWidth + 50,
+              alignItems: SIZES.form_button_alignItems,
+              justifyContent: SIZES.form_button_justifyContent,
+              alignItems: SIZES.form_button_alignItems,
+              justifyContent: SIZES.form_button_justifyContent,
+              backgroundColor: cleaning ? COLORS.mobile_theme_back : "white",
+            }}
+            onPress={async () => {
+              if (!cleaning) {
+                setCleaning(true);
+                amneties_copy.wifi = wifi;
+                amneties_copy.AC = AC;
+                amneties_copy.hotwater = hotwater;
+                amneties_copy.cooler = cooler;
+                amneties_copy.isCleaning = true;
+                setamneties_copy(amneties_copy);
+                setAmneties(amneties_copy);
+              } else {
+                setCleaning(false);
+                amneties_copy.wifi = wifi;
+                amneties_copy.AC = AC;
+                amneties_copy.hotwater = hotwater;
+                amneties_copy.cooler = cooler;
+                amneties_copy.isCleaning = false;
+                setamneties_copy(amneties_copy);
+                setAmneties(amneties_copy);
+              }
+              console.log("Pressed0");
+            }}
+          >
+            <Text
+              style={{
+                lineHeight: SIZES.form_button_text_lineHeight,
+                fontFamily: FONTS.fontFamily_black,
+                fontWeight: SIZES.form_button_text_fontWeight,
+                fontSize: SIZES.form_button_text_fontSize,
+                marginVertical: SIZES.form_button_text_marginVertical,
+                marginHorizontal: SIZES.form_button_text_marginHorizontal,
+                color: cleaning ? COLORS.font_color : COLORS.lightGray3,
+              }}
+            >
+              Regular Cleaning
             </Text>
           </TouchableOpacity>
         </View>

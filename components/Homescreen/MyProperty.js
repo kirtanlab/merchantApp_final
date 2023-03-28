@@ -5,12 +5,13 @@ import Property_Listing from "./Property_Listings";
 import axios from "axios";
 import { connect } from "react-redux";
 import { REACT_APP_OWNER_API } from "@env";
-
+import * as AuthActions from "../../store/auth/authActions";
 import EmptyScreen from "../EmptyScreen";
 const MyProperty = ({
   navigation,
   token,
   nameasperaadhar,
+  updateHomeLoading,
   propertytitle,
   typeofpg,
   image,
@@ -85,7 +86,11 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    updateHomeLoading: (value) => {
+      dispatch(AuthActions.updateHomeLoading(value));
+    },
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyProperty);

@@ -10,6 +10,7 @@ import * as Newrooms_actions from "../../store/NewRooms/Newrooms_actions";
 import * as room_vidImage_actions from "../../store/room_vidImage/room_vidImage_actions";
 import { Provider } from "react-native-paper";
 import RNFetchBlob from "rn-fetch-blob";
+import * as AuthActions from "../../store/auth/authActions";
 const MyRooms = ({
   updateAll_vidimage,
   navigation,
@@ -20,6 +21,7 @@ const MyRooms = ({
   updateAll,
   agreed,
   onDelete,
+  updateHomeLoading,
   key,
   updateRoomOuterVideos,
 }) => {
@@ -92,6 +94,7 @@ const MyRooms = ({
               <Rooms_Listing
                 room_id={item._id}
                 onPress={async () => {
+                  updateHomeLoading(true);
                   console.log("Roomid", token);
                   let room_id = item._id;
                   const data = await axios.get(
@@ -150,13 +153,18 @@ const MyRooms = ({
                           })
                           .then(async () => {
                             await updateRoomOuterVideos(new_array);
+                            updateHomeLoading(false);
+                            navigation.navigate("NewRooms");
                           })
                           .catch((error) => {
                             console.log("catched", error);
                           });
                       });
+                    } else {
+                      updateHomeLoading(false);
+                      navigation.navigate("NewRooms");
                     }
-                    navigation.navigate("NewRooms");
+
                     // await updateRoomOuterVideos(new_array);
                     //
                   }
@@ -209,6 +217,9 @@ function mapDispatchToProps(dispatch) {
     },
     roomUpdating: (value) => {
       dispatch(Newrooms_actions.roomUpdating(value));
+    },
+    updateHomeLoading: (value) => {
+      dispatch(AuthActions.updateHomeLoading(value));
     },
   };
 }

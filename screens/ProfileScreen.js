@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   View,
@@ -14,6 +14,8 @@ import { HeaderBar } from "../components";
 import { FONTS, COLORS, SIZES, icons } from "../constants";
 import { connect } from "react-redux";
 import * as AuthActions from "../store/auth/authActions";
+import axios from "axios";
+import { REACT_APP_OWNER_API } from "@env";
 import Ionicons from "react-native-vector-icons/Ionicons";
 const SectionTitle = ({ title }) => {
   return (
@@ -27,7 +29,7 @@ const SectionTitle = ({ title }) => {
           color: COLORS.mobile_theme_back,
           // ...FONTS.h2,
           fontWeight: SIZES.form_button_text_fontWeight,
-          fontSize: SIZES.form_section_title_fontsize + 2,
+          fontSize: SIZES.form_section_title_fontsize,
           // fontWeight: "bold",
         }}
       >
@@ -66,31 +68,14 @@ const Setting = ({ title, value, type, onPress, icon_name }) => {
           {title}
         </Text>
 
-        <View
+        <Image
+          source={icons.rightArrow}
           style={{
-            flexDirection: "row",
-            alignItems: "center",
+            height: 12,
+            width: 12,
+            tintColor: COLORS.black,
           }}
-        >
-          <Text
-            style={{
-              marginRight: SIZES.radius,
-              color: COLORS.mobile_theme_back,
-              ...FONTS.h3,
-              // fontWeight: 'bold',
-            }}
-          >
-            {value}
-          </Text>
-          <Image
-            source={icons.rightArrow}
-            style={{
-              height: 12,
-              width: 12,
-              tintColor: COLORS.black,
-            }}
-          />
-        </View>
+        />
       </TouchableOpacity>
     );
   } else {
@@ -125,11 +110,38 @@ const ProfileScreen = ({
   auth_states,
   logout,
   navigation,
+  token,
   updatingMobile,
 }) => {
   const [faceId, setFaceId] = React.useState(true);
   const [isDarkMode, setisDarkMode] = React.useState(false);
   const [value, setValue] = React.useState("first");
+  const [name, setName] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const owner_fetch_details = async () => {
+    const instance = axios.create({
+      baseURL: `${REACT_APP_OWNER_API}/api/v1/owner/displayowner`,
+      // timeout: 1000,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Cache-Control": "no-cache",
+      },
+    });
+    // axios.defaults.cache = false;
+    const data = await instance.get();
+    // console.log("result", data.data.data.phoneno);
+    // console.log("result", data.data.data.nameasperaadhar);
+    setName(data.data.data.nameasperaadhar);
+    setPhone(data.data.data.phoneno);
+    // console.log("result_property", data.data.data);
+    // prop_setData(data.data.data);
+
+    // // console.log("result", data.data.data.address);
+    // setViews(data.data.data.views);
+    // setInterestedusers(data.data.data.interestedusers);
+    // prop_setImage(data.data.data?.photos[0]?.uri);
+  };
+
   const onShare = async () => {
     try {
       const result = await Share.share({
@@ -163,108 +175,59 @@ const ProfileScreen = ({
           size={90}
           style={{ color: COLORS.mobile_theme_back, top: 5, right: 9 }}
         />
-        <View style={{ flexDirection: "column", top: -5 }}>
+        <View
+          style={{ flexDirection: "column", alignItems: "center", top: -5 }}
+        >
           <View
             style={{
               flexDirection: "row",
               alignItems: "center",
-              left: 10,
-              // flex: 1,
+              left: 7,
             }}
           >
-            <Image
-              source={icons.verified}
-              style={{
-                // color: COLORS.mobile_theme_back,
-                height: 35,
-                width: 35,
-              }}
-            />
             <Text
               style={{
-                // marginLeft: SIZES.base,
-                // flex: 1,
                 color: COLORS.mobile_theme_back,
                 fontSize: SIZES.form_section_title_fontsize + 5,
                 fontWeight: SIZES.form_button_text_fontWeight,
-                // fontWeight: 'bold',
               }}
             >
               Verified
             </Text>
+            <Image
+              source={icons.verified}
+              style={{
+                // color: COLORS.mobile_theme_back,
+                height: 30,
+                width: 30,
+              }}
+            />
           </View>
           <Text
             style={{
               fontSize: SIZES.form_section_title_fontsize + 5,
-              // top: -5,
+              top: -5,
+              left: -5,
               color: COLORS.mobile_theme_back,
               fontWeight: SIZES.form_button_text_fontWeight,
             }}
           >
-            Kirtan Prajapati
+            {name}
           </Text>
-          <View style={{ flexDirection: "column", left: 25 }}>
-            <Text
-              style={{
-                // flex: 1,
-                fontSize: SIZES.form_section_title_fontsize,
-                color: COLORS.mobile_theme_back,
-                fontWeight: SIZES.form_button_text_fontWeight,
-                // top: -5,
-              }}
-            >
-              7016700396
-            </Text>
-          </View>
-        </View>
-        {/* <View>
-          
-        </View>
-        <View style={{ flexDirection: "column", flex: 2.7, top: 9 }}>
-          <Text style={{ fontSize: SIZES.h2, color: COLORS.mobile_theme_back }}>
-            Kirtan Prajapati
-          </Text>
-          <View style={{ flexDirection: "row" }}>
-            <Text
-              style={{
-                flex: 1,
-                fontSize: SIZES.h2,
-                color: COLORS.mobile_theme_back,
-              }}
-            >
-              7016700396
-            </Text>
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                top: -3,
-                // flex: 1,
-              }}
-            >
-              <Image
-                source={icons.verified}
-                style={{
-                  // color: COLORS.mobile_theme_back,
-                  height: 35,
-                  width: 35,
-                }}
-              />
-              <Text
-                style={{
-                  // marginLeft: SIZES.base,
-                  // flex: 1,
-                  color: COLORS.mobile_theme_back,
-                  fontSize: 18,
 
-                  // fontWeight: 'bold',
-                }}
-              >
-                Verified
-              </Text>
-            </View>
-          </View>
-        </View> */}
+          <Text
+            style={{
+              // flex: 1,
+              fontSize: SIZES.form_section_title_fontsize,
+              color: COLORS.mobile_theme_back,
+              fontWeight: SIZES.form_button_text_fontWeight,
+              top: -5,
+              left: -5,
+            }}
+          >
+            {phone}
+          </Text>
+        </View>
       </View>
     );
   };
@@ -303,7 +266,9 @@ const ProfileScreen = ({
   //     </View>
   //   );
   // };
-
+  useEffect(() => {
+    owner_fetch_details();
+  }, []);
   return (
     <View
       style={{
@@ -315,7 +280,7 @@ const ProfileScreen = ({
     >
       {/* Header */}
 
-      <HeaderBar title="Profile" />
+      <HeaderBar title="Setting" />
 
       {/* Details */}
 
@@ -469,7 +434,9 @@ function mapStateToProps(state) {
   //   return {
   //     auth_states: state.authReducer.auth_states,
   //   };
-  return {};
+  return {
+    token: state.authReducer.token,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
