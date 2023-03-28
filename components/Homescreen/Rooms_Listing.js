@@ -203,7 +203,7 @@ const Rooms_Listing = ({
               style={{
                 color: COLORS.lightGray3,
 
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 // fontWeight: 'bold',
                 fontSize: 14,
               }}
@@ -216,7 +216,7 @@ const Rooms_Listing = ({
               style={{
                 color: COLORS.lightGray3,
 
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 // fontWeight: 'bold',
                 fontSize: 14,
               }}
@@ -232,7 +232,7 @@ const Rooms_Listing = ({
           <Text
             style={{
               color: COLORS.lightGray2,
-              fontFamily: FONTS.fontFamily_black,
+              // fontFamily: FONTS.fontFamily_black,
               fontSize: 14,
             }}
           >
@@ -241,7 +241,7 @@ const Rooms_Listing = ({
           <Text
             style={{
               color: COLORS.lightGray2,
-              fontFamily: FONTS.fontFamily_black,
+              // fontFamily: FONTS.fontFamily_black,
               fontSize: 14,
             }}
           >
@@ -277,7 +277,7 @@ const Rooms_Listing = ({
             <Text
               style={{
                 lineHeight: 22,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
                 marginHorizontal: SIZES.form_button_text_marginHorizontal,
@@ -306,7 +306,7 @@ const Rooms_Listing = ({
             <Text
               style={{
                 lineHeight: 22,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
                 marginHorizontal: SIZES.form_button_text_marginHorizontal,
@@ -335,7 +335,7 @@ const Rooms_Listing = ({
             <Text
               style={{
                 lineHeight: 22,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
                 marginHorizontal: SIZES.form_button_text_marginHorizontal,

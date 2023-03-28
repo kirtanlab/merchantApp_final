@@ -583,7 +583,7 @@ const Basic25 = ({
                     <Text
                       style={{
                         lineHeight: SIZES.form_button_text_lineHeight,
-                        fontFamily: FONTS.fontFamily_black,
+                        // fontFamily: FONTS.fontFamily_black,
                         color: COLORS.font_color,
                         fontSize: SIZES.form_button_text_fontSize,
                         marginVertical: SIZES.form_button_text_marginVertical,
@@ -653,7 +653,7 @@ const Basic25 = ({
                     <Text
                       style={{
                         lineHeight: SIZES.form_button_text_lineHeight,
-                        fontFamily: FONTS.fontFamily_black,
+                        // fontFamily: FONTS.fontFamily_black,
                         color: COLORS.font_color,
                         fontSize: SIZES.form_button_text_fontSize,
                         marginVertical: SIZES.form_button_text_marginVertical,

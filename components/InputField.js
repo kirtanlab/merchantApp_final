@@ -664,7 +664,7 @@ function InputField({
             paddingBottom: 4,
             fontSize: SIZES.form_section_input_fontsize,
           }}
-          value={price}
+          value={price.toString()}
           // secureTextEntry={true}
           onChange={(value) => {
             let value_string = value.nativeEvent.text;
@@ -707,7 +707,7 @@ function InputField({
             paddingBottom: 4,
             fontSize: SIZES.form_section_input_fontsize,
           }}
-          value={mess_price}
+          value={mess_price.toString()}
           // secureTextEntry={true}
 
           onChange={(value) => {

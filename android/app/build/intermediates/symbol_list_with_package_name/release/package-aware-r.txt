@@ -1,4 +1,4 @@
-com.merchantapp
+com.shelterhub.business
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -924,6 +924,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1438,10 +1439,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable amu_bubble_mask
 drawable amu_bubble_shadow
-drawable assets_icons_briefcase
-drawable assets_icons_briefcase_dark
 drawable assets_icons_close
-drawable assets_icons_dataanalysis
 drawable assets_icons_folder
 drawable assets_icons_forgetpass
 drawable assets_icons_home
@@ -1449,8 +1447,6 @@ drawable assets_icons_home_dark
 drawable assets_icons_hotel
 drawable assets_icons_login
 drawable assets_icons_logo_rent
-drawable assets_icons_market
-drawable assets_icons_market_dark
 drawable assets_icons_mobile_input
 drawable assets_icons_mobile_input_
 drawable assets_icons_newpass
@@ -1461,12 +1457,8 @@ drawable assets_icons_otp_mobile
 drawable assets_icons_profile
 drawable assets_icons_profile_dark
 drawable assets_icons_rightarrow
-drawable assets_icons_send
 drawable assets_icons_signup
-drawable assets_icons_trade
-drawable assets_icons_uparrow
 drawable assets_icons_verified
-drawable assets_icons_withdraw
 drawable autofill_highlight
 drawable autofill_inline_suggestion_chip_background
 drawable avd_hide_password
@@ -2081,6 +2073,7 @@ layout view_wheel_date_picker
 menu example_menu
 menu example_menu2
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 raw amu_ballon_gx_prefix
@@ -2103,11 +2096,7 @@ raw amu_poly_style_boolean_numeric
 raw amu_unknwown_folder
 raw amu_unsupported
 raw amu_visibility_ground_overlay
-raw assets_icons_facebook
-raw assets_icons_google
 raw assets_icons_login
-raw assets_icons_registration
-raw assets_icons_twitter
 string Day
 string Month
 string Year

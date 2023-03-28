@@ -78,7 +78,7 @@ const Gender = ({ gender, udpate_gender }) => {
                 style={{
                   fontWeight: SIZES.form_button_text_fontWeight,
                   lineHeight: SIZES.form_button_text_lineHeight,
-                  fontFamily: FONTS.fontFamily_black,
+                  // fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
                   marginVertical: SIZES.form_button_text_marginVertical,
                   marginHorizontal: SIZES.form_button_text_marginHorizontal,
@@ -120,7 +120,7 @@ const Gender = ({ gender, udpate_gender }) => {
                 style={{
                   fontWeight: SIZES.form_button_text_fontWeight,
                   lineHeight: SIZES.form_button_text_lineHeight,
-                  fontFamily: FONTS.fontFamily_black,
+                  // fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
                   marginVertical: SIZES.form_button_text_marginVertical,
                   marginHorizontal: SIZES.form_button_text_marginHorizontal,
@@ -162,7 +162,7 @@ const Gender = ({ gender, udpate_gender }) => {
                 style={{
                   fontWeight: SIZES.form_button_text_fontWeight,
                   lineHeight: SIZES.form_button_text_lineHeight,
-                  fontFamily: FONTS.fontFamily_black,
+                  // fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
                   marginVertical: SIZES.form_button_text_marginVertical,
                   marginHorizontal: SIZES.form_button_text_marginHorizontal,

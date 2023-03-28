@@ -26,8 +26,8 @@ const HomeScreen_Header = ({
           style={{
             color: COLORS.lightGray3,
             fontSize: 14,
-            fontWeight: "bold",
-            fontFamily: FONTS.fontFamily_poppins,
+            // fontWeight: "bold",
+            // fontFamily: FONTS.fontFamily_poppins,
           }}
         >
           Hello,{"\n"}
@@ -35,7 +35,7 @@ const HomeScreen_Header = ({
             style={{
               color: COLORS.mobile_theme_back,
               fontSize: 19,
-              fontFamily: FONTS.fontFamily_poppins,
+              // fontFamily: FONTS.fontFamily_poppins,
             }}
           >
             {username}
@@ -86,7 +86,7 @@ const HomeScreen_Header = ({
           <Text
             style={{
               fontSize: SIZES.form_button_text_fontSize,
-              fontFamily: FONTS.fontFamily_poppins,
+              // fontFamily: FONTS.fontFamily_poppins,
               marginVertical: SIZES.form_button_text_marginVertical,
               marginHorizontal: SIZES.form_button_text_marginHorizontal,
               // fontWeight: SIZES.form_button_text_fontWeight,

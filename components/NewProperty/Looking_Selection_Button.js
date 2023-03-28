@@ -78,7 +78,7 @@ const Looking_Selection_Button = ({ looking_form, update_looking }) => {
               <Text
                 style={{
                   lineHeight: SIZES.form_button_text_lineHeight,
-                  fontFamily: FONTS.fontFamily_black,
+                  // fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
                   fontWeight: SIZES.form_button_text_fontWeight,
                   marginVertical: SIZES.form_button_text_marginVertical,
@@ -121,7 +121,7 @@ const Looking_Selection_Button = ({ looking_form, update_looking }) => {
               <Text
                 style={{
                   lineHeight: SIZES.form_button_text_lineHeight,
-                  fontFamily: FONTS.fontFamily_black,
+                  // fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
                   fontWeight: SIZES.form_button_text_fontWeight,
                   marginVertical: SIZES.form_button_text_marginVertical,
@@ -165,7 +165,7 @@ const Looking_Selection_Button = ({ looking_form, update_looking }) => {
               <Text
                 style={{
                   lineHeight: SIZES.form_button_text_lineHeight,
-                  fontFamily: FONTS.fontFamily_black,
+                  // fontFamily: FONTS.fontFamily_black,
                   fontWeight: SIZES.form_button_text_fontWeight,
                   fontSize: SIZES.form_button_text_fontSize,
                   marginVertical: SIZES.form_button_text_marginVertical,
@@ -208,7 +208,7 @@ const Looking_Selection_Button = ({ looking_form, update_looking }) => {
               <Text
                 style={{
                   lineHeight: SIZES.form_button_text_lineHeight,
-                  fontFamily: FONTS.fontFamily_black,
+                  // fontFamily: FONTS.fontFamily_black,
                   fontWeight: SIZES.form_button_text_fontWeight,
                   fontSize: SIZES.form_button_text_fontSize,
                   marginVertical: SIZES.form_button_text_marginVertical,

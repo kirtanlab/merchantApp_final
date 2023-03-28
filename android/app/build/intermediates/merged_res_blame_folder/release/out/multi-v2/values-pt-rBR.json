@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.merchantapp-mergeReleaseResources-35:/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "com.shelterhub.business.app-mergeReleaseResources-36:/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
                     "source": "/home/kirtan/.gradle/caches/transforms-3/390fec0296bc36742fba54a420c04065/transformed/appcompat-1.4.1/res/values-pt-rBR/values-pt-rBR.xml",

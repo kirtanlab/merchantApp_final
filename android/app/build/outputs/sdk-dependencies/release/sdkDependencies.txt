@@ -1199,6 +1199,45 @@ library {
 }
 library {
   maven_library {
+    groupId: "com.google.android.gms"
+    artifactId: "play-services-auth"
+    version: "17.0.0"
+  }
+  digests {
+    sha256: "\324\236\334\250\2063o\336c\274N\\\211Y\316be|\035\371\316R\342\004\353o\223\265\242\326\003\036"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
+    groupId: "com.google.android.gms"
+    artifactId: "play-services-auth-api-phone"
+    version: "17.0.0"
+  }
+  digests {
+    sha256: "\341?v\336Z\277ycB\307\272\352\200*\273^F\301\243\203\336\033~\337\000j\355\017_(\333\216"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
+    groupId: "com.google.android.gms"
+    artifactId: "play-services-auth-base"
+    version: "17.0.0"
+  }
+  digests {
+    sha256: "\304\224\322=\\\334~L3r\030wY(h\323\334\026\b\\\253S\\?X\234\003\005%$\3677"
+  }
+  repo_index {
+    value: 2
+  }
+}
+library {
+  maven_library {
     groupId: "com.github.adityaxjha"
     artifactId: "Android-ScalableVideoView"
     version: "10e7b4da8b"
@@ -1747,11 +1786,34 @@ library_dependencies {
 }
 library_dependencies {
   library_index: 92
-  library_dep_index: 16
+  library_dep_index: 24
+  library_dep_index: 27
+  library_dep_index: 93
+  library_dep_index: 94
+  library_dep_index: 72
+  library_dep_index: 73
+  library_dep_index: 74
 }
 library_dependencies {
   library_index: 93
-  library_dep_index: 94
+  library_dep_index: 72
+  library_dep_index: 73
+  library_dep_index: 74
+}
+library_dependencies {
+  library_index: 94
+  library_dep_index: 2
+  library_dep_index: 72
+  library_dep_index: 73
+  library_dep_index: 74
+}
+library_dependencies {
+  library_index: 95
+  library_dep_index: 16
+}
+library_dependencies {
+  library_index: 96
+  library_dep_index: 97
 }
 module_dependencies {
   module_name: "base"
@@ -1773,7 +1835,8 @@ module_dependencies {
   dependency_index: 86
   dependency_index: 87
   dependency_index: 92
-  dependency_index: 93
+  dependency_index: 95
+  dependency_index: 96
 }
 repositories {
   maven_repo {

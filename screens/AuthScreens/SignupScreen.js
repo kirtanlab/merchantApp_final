@@ -123,7 +123,7 @@ const SignupScreen = ({
           </Text>
           {/* UserName */}
           <View style={{ flexDirection: "row" }}>
-            <View style={{ width: SIZES.width * 0.82, marginLeft: 4 }}>
+            <View style={{ width: SIZES.width * 0.82, marginLeft: 0 }}>
               <InputField
                 label={"User Name"}
                 type={"sign_name"}
@@ -132,9 +132,9 @@ const SignupScreen = ({
                 icon={
                   <Ionicons
                     name="person-outline"
-                    size={26}
+                    size={20}
                     color={err ? COLORS.mobile_theme_back : "red"}
-                    style={{ marginTop: 3, marginLeft: 7 }}
+                    style={{ marginTop: 5, marginLeft: 7 }}
                   />
                 }
               />
@@ -160,7 +160,7 @@ const SignupScreen = ({
 
           {/* EmailSection */}
           <View style={{ flexDirection: "row" }}>
-            <View style={{ width: SIZES.width * 0.81, marginLeft: 8 }}>
+            <View style={{ width: SIZES.width * 0.81, marginLeft: 5 }}>
               <InputField
                 label={"Email ID"}
                 type={"sign_email"}
@@ -168,9 +168,9 @@ const SignupScreen = ({
                 icon={
                   <MaterialIcons
                     name="alternate-email"
-                    size={26}
+                    size={20}
                     color={err ? COLORS.mobile_theme_back : "red"}
-                    style={{ marginTop: 3 }}
+                    style={{ marginTop: 5 }}
                   />
                 }
                 keyboardType="email-address"
@@ -205,9 +205,9 @@ const SignupScreen = ({
                 icon={
                   <Ionicons
                     name="ios-lock-closed-outline"
-                    size={26}
+                    size={20}
                     color={true ? COLORS.mobile_theme_back : "red"}
-                    style={{ marginTop: 3 }}
+                    style={{ marginTop: 5 }}
                   />
                 }
                 inputType="password"
@@ -244,9 +244,9 @@ const SignupScreen = ({
                 icon={
                   <Ionicons
                     name="ios-lock-closed-outline"
-                    size={26}
+                    size={20}
                     color={err ? COLORS.mobile_theme_back : "red"}
-                    style={{ marginTop: 3 }}
+                    style={{ marginTop: 5 }}
                   />
                 }
                 inputType="password"
@@ -279,7 +279,7 @@ const SignupScreen = ({
               </View>
             )}
           {gen_sign_err && (
-            <View style={{ marginTop: -30, left: 35, marginBottom: 20 }}>
+            <View style={{ marginTop: -30, left: 25, marginBottom: 20 }}>
               <Text style={{ color: "red" }}>{_err}</Text>
             </View>
           )}

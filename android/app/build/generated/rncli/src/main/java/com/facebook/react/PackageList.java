@@ -43,6 +43,8 @@ import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
 // react-native-sms-retriever
 import me.furtado.smsretriever.RNSmsRetrieverPackage;
+// react-native-svg
+import com.horcrux.svg.SvgPackage;
 // react-native-vector-icons
 import com.oblador.vectoricons.VectorIconsPackage;
 // react-native-video
@@ -112,6 +114,7 @@ public class PackageList {
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new RNSmsRetrieverPackage(),
+      new SvgPackage(),
       new VectorIconsPackage(),
       new ReactVideoPackage(),
       new ReactNativeWheelPickerPackage(),

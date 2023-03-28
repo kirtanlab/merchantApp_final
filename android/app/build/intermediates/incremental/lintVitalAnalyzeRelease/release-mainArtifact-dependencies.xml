@@ -1,12 +1,12 @@
 <dependencies>
   <compile
-      roots="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-picker_picker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-enabler::release,com.facebook.react:react-android:0.71.3:release@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,com.facebook.react:hermes-android:0.71.3:release@aar,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-async-storage_async-storage::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_datetimepicker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_geolocation::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_netinfo::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-masked-view_masked-view::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:lottie-react-native::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-services-dialog-box::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-blob-util::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-document-picker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-gesture-handler::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-maps::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-safe-area-context::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-screens::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-vector-icons::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-video::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-wheel-pick::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:rn-fetch-blob::release,androidx.appcompat:appcompat:1.4.1@aar,androidx.appcompat:appcompat-resources:1.4.1@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,com.google.android.gms:play-services-location:20.0.0@aar,com.google.android.gms:play-services-base:18.1.0@aar,com.google.android.gms:play-services-tasks:18.0.2@aar,com.google.android.gms:play-services-basement:18.1.0@aar,androidx.fragment:fragment:1.3.6@aar,androidx.fragment:fragment:1.3.6@aar,androidx.activity:activity:1.2.4@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.core:core:1.7.0@aar,androidx.core:core:1.7.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.lifecycle:lifecycle-runtime:2.4.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.1@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.1@aar,androidx.lifecycle:lifecycle-livedata:2.1.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.1@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.1@aar,androidx.lifecycle:lifecycle-common:2.4.0@jar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.annotation:annotation:1.3.0@jar,androidx.annotation:annotation-experimental:1.1.0@aar,androidx.tracing:tracing:1.1.0@aar,androidx.autofill:autofill:1.1.0@aar,com.facebook.fbjni:fbjni:0.3.0@aar,com.facebook.soloader:soloader:0.10.4@aar,com.facebook.soloader:nativeloader:0.10.4@jar,com.facebook.fresco:fresco:2.5.0@aar,com.facebook.fresco:fbcore:2.5.0@aar,com.facebook.soloader:annotation:0.10.4@jar,com.facebook.fresco:ui-common:2.5.0@aar,com.facebook.fresco:drawee:2.5.0@aar,com.facebook.fresco:imagepipeline:2.5.0@aar,com.facebook.fresco:imagepipeline-base:2.5.0@aar,com.facebook.infer.annotation:infer-annotation:0.18.0@jar,com.google.code.findbugs:jsr305:3.0.2@jar,org.jetbrains.kotlin:kotlin-annotations-jvm:1.3.72@jar,com.facebook.fresco:imagepipeline-native:2.5.0@aar,com.facebook.fresco:memory-type-ashmem:2.5.0@aar,com.facebook.fresco:memory-type-native:2.5.0@aar,com.facebook.fresco:memory-type-java:2.5.0@aar,com.facebook.fresco:nativeimagefilters:2.5.0@aar,com.facebook.fresco:nativeimagetranscoder:2.5.0@aar,com.facebook.fresco:imagepipeline-okhttp3:2.5.0@aar,com.squareup.okhttp3:okhttp-urlconnection:4.9.2@jar,com.squareup.okhttp3:okhttp:4.9.2@jar,com.squareup.okio:okio:2.9.0@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21@jar,org.jetbrains.kotlin:kotlin-stdlib:1.6.21@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21@jar,org.jetbrains:annotations:13.0@jar,com.facebook.yoga:proguard-annotations:1.19.0@jar,javax.inject:javax.inject:1@jar">
+      roots="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-picker_picker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-enabler::release,com.facebook.react:react-android:0.71.3:release@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,com.facebook.react:hermes-android:0.71.3:release@aar,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-async-storage_async-storage::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_datetimepicker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_geolocation::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_netinfo::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-masked-view_masked-view::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:lottie-react-native::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-services-dialog-box::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-blob-util::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-document-picker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-gesture-handler::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-maps::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-safe-area-context::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-screens::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-sms-retriever::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-svg::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-vector-icons::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-video::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-wheel-pick::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:rn-fetch-blob::release,androidx.appcompat:appcompat:1.4.1@aar,androidx.appcompat:appcompat-resources:1.4.1@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,com.google.android.gms:play-services-location:20.0.0@aar,com.google.android.gms:play-services-base:18.1.0@aar,com.google.android.gms:play-services-tasks:18.0.2@aar,com.google.android.gms:play-services-basement:18.1.0@aar,androidx.fragment:fragment:1.3.6@aar,androidx.fragment:fragment:1.3.6@aar,androidx.activity:activity:1.2.4@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.core:core:1.7.0@aar,androidx.core:core:1.7.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.lifecycle:lifecycle-runtime:2.4.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.1@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.1@aar,androidx.lifecycle:lifecycle-livedata:2.1.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.1@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.1@aar,androidx.lifecycle:lifecycle-common:2.4.0@jar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.annotation:annotation:1.3.0@jar,androidx.annotation:annotation-experimental:1.1.0@aar,androidx.tracing:tracing:1.1.0@aar,androidx.autofill:autofill:1.1.0@aar,com.facebook.fbjni:fbjni:0.3.0@aar,com.facebook.soloader:soloader:0.10.4@aar,com.facebook.soloader:nativeloader:0.10.4@jar,com.facebook.fresco:fresco:2.5.0@aar,com.facebook.fresco:fbcore:2.5.0@aar,com.facebook.soloader:annotation:0.10.4@jar,com.facebook.fresco:ui-common:2.5.0@aar,com.facebook.fresco:drawee:2.5.0@aar,com.facebook.fresco:imagepipeline:2.5.0@aar,com.facebook.fresco:imagepipeline-base:2.5.0@aar,com.facebook.infer.annotation:infer-annotation:0.18.0@jar,com.google.code.findbugs:jsr305:3.0.2@jar,org.jetbrains.kotlin:kotlin-annotations-jvm:1.3.72@jar,com.facebook.fresco:imagepipeline-native:2.5.0@aar,com.facebook.fresco:memory-type-ashmem:2.5.0@aar,com.facebook.fresco:memory-type-native:2.5.0@aar,com.facebook.fresco:memory-type-java:2.5.0@aar,com.facebook.fresco:nativeimagefilters:2.5.0@aar,com.facebook.fresco:nativeimagetranscoder:2.5.0@aar,com.facebook.fresco:imagepipeline-okhttp3:2.5.0@aar,com.squareup.okhttp3:okhttp-urlconnection:4.9.2@jar,com.squareup.okhttp3:okhttp:4.9.2@jar,com.squareup.okio:okio:2.9.0@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21@jar,org.jetbrains.kotlin:kotlin-stdlib:1.6.21@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21@jar,org.jetbrains:annotations:13.0@jar,com.facebook.yoga:proguard-annotations:1.19.0@jar,javax.inject:javax.inject:1@jar">
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-picker_picker::release"
-        simpleName="merchantApp:react-native-picker_picker"/>
+        simpleName="Shelterhub Business:react-native-picker_picker"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-enabler::release"
-        simpleName="merchantApp:react-native-android-location-enabler"/>
+        simpleName="Shelterhub Business:react-native-android-location-enabler"/>
     <dependency
         name="com.facebook.react:react-android:0.71.3:release@aar"
         simpleName="com.facebook.react:react-android"/>
@@ -18,55 +18,61 @@
         simpleName="com.facebook.react:hermes-android"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-async-storage_async-storage::release"
-        simpleName="merchantApp:react-native-async-storage_async-storage"/>
+        simpleName="Shelterhub Business:react-native-async-storage_async-storage"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_datetimepicker::release"
-        simpleName="merchantApp:react-native-community_datetimepicker"/>
+        simpleName="Shelterhub Business:react-native-community_datetimepicker"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_geolocation::release"
-        simpleName="merchantApp:react-native-community_geolocation"/>
+        simpleName="Shelterhub Business:react-native-community_geolocation"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_netinfo::release"
-        simpleName="merchantApp:react-native-community_netinfo"/>
+        simpleName="Shelterhub Business:react-native-community_netinfo"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-masked-view_masked-view::release"
-        simpleName="merchantApp:react-native-masked-view_masked-view"/>
+        simpleName="Shelterhub Business:react-native-masked-view_masked-view"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:lottie-react-native::release"
-        simpleName="merchantApp:lottie-react-native"/>
+        simpleName="Shelterhub Business:lottie-react-native"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-services-dialog-box::release"
-        simpleName="merchantApp:react-native-android-location-services-dialog-box"/>
+        simpleName="Shelterhub Business:react-native-android-location-services-dialog-box"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-blob-util::release"
-        simpleName="merchantApp:react-native-blob-util"/>
+        simpleName="Shelterhub Business:react-native-blob-util"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-document-picker::release"
-        simpleName="merchantApp:react-native-document-picker"/>
+        simpleName="Shelterhub Business:react-native-document-picker"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-gesture-handler::release"
-        simpleName="merchantApp:react-native-gesture-handler"/>
+        simpleName="Shelterhub Business:react-native-gesture-handler"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-maps::release"
-        simpleName="merchantApp:react-native-maps"/>
+        simpleName="Shelterhub Business:react-native-maps"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-safe-area-context::release"
-        simpleName="merchantApp:react-native-safe-area-context"/>
+        simpleName="Shelterhub Business:react-native-safe-area-context"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-screens::release"
-        simpleName="merchantApp:react-native-screens"/>
+        simpleName="Shelterhub Business:react-native-screens"/>
+    <dependency
+        name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-sms-retriever::release"
+        simpleName="Shelterhub Business:react-native-sms-retriever"/>
+    <dependency
+        name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-svg::release"
+        simpleName="Shelterhub Business:react-native-svg"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-vector-icons::release"
-        simpleName="merchantApp:react-native-vector-icons"/>
+        simpleName="Shelterhub Business:react-native-vector-icons"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-video::release"
-        simpleName="merchantApp:react-native-video"/>
+        simpleName="Shelterhub Business:react-native-video"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-wheel-pick::release"
-        simpleName="merchantApp:react-native-wheel-pick"/>
+        simpleName="Shelterhub Business:react-native-wheel-pick"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:rn-fetch-blob::release"
-        simpleName="merchantApp:rn-fetch-blob"/>
+        simpleName="Shelterhub Business:rn-fetch-blob"/>
     <dependency
         name="androidx.appcompat:appcompat:1.4.1@aar"
         simpleName="androidx.appcompat:appcompat"/>
@@ -255,61 +261,67 @@
         simpleName="javax.inject:javax.inject"/>
   </compile>
   <package
-      roots="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-async-storage_async-storage::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_datetimepicker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_geolocation::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_netinfo::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-masked-view_masked-view::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-picker_picker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:lottie-react-native::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-enabler::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-blob-util::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-document-picker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-gesture-handler::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-maps::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-safe-area-context::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-screens::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-vector-icons::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-video::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-wheel-pick::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:rn-fetch-blob::release,com.facebook.react:react-android:0.71.3:release@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,com.facebook.react:hermes-android:0.71.3:release@aar,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-services-dialog-box::release,com.airbnb.android:lottie:5.1.1@aar,com.google.android.material:material:1.1.0@aar,com.github.adityaxjha:Android-ScalableVideoView:10e7b4da8b@aar,androidx.appcompat:appcompat:1.4.1@aar,androidx.appcompat:appcompat:1.4.1@aar,androidx.appcompat:appcompat-resources:1.4.1@aar,androidx.autofill:autofill:1.1.0@aar,com.google.android.gms:play-services-location:20.0.0@aar,com.google.android.gms:play-services-maps:18.0.2@aar,com.google.android.gms:play-services-base:18.1.0@aar,com.google.android.gms:play-services-tasks:18.0.2@aar,com.google.android.gms:play-services-basement:18.1.0@aar,androidx.viewpager2:viewpager2:1.0.0@aar,androidx.fragment:fragment:1.3.6@aar,androidx.fragment:fragment:1.3.6@aar,androidx.activity:activity:1.2.4@aar,androidx.work:work-runtime:2.7.1@aar,androidx.emoji2:emoji2-views-helper:1.0.0@aar,androidx.emoji2:emoji2:1.0.0@aar,androidx.lifecycle:lifecycle-process:2.4.0@aar,androidx.startup:startup-runtime:1.0.0@aar,androidx.tracing:tracing:1.1.0@aar,com.facebook.fbjni:fbjni:0.3.0@aar,com.facebook.fresco:fresco:2.5.0@aar,com.facebook.fresco:imagepipeline-okhttp3:2.5.0@aar,com.facebook.fresco:drawee:2.5.0@aar,com.facebook.fresco:middleware:2.5.0@aar,com.facebook.fresco:ui-common:2.5.0@aar,com.facebook.fresco:nativeimagefilters:2.5.0@aar,com.facebook.fresco:memory-type-native:2.5.0@aar,com.facebook.fresco:memory-type-java:2.5.0@aar,com.facebook.fresco:imagepipeline-native:2.5.0@aar,com.facebook.fresco:memory-type-ashmem:2.5.0@aar,com.facebook.fresco:imagepipeline:2.5.0@aar,com.facebook.fresco:nativeimagetranscoder:2.5.0@aar,com.facebook.fresco:imagepipeline-base:2.5.0@aar,com.facebook.infer.annotation:infer-annotation:0.18.0@jar,com.facebook.fresco:soloader:2.5.0@aar,com.facebook.soloader:soloader:0.10.4@aar,com.facebook.yoga:proguard-annotations:1.19.0@jar,com.google.code.findbugs:jsr305:3.0.2@jar,com.squareup.okhttp3:okhttp-urlconnection:4.9.2@jar,com.squareup.okhttp3:okhttp:4.9.2@jar,com.squareup.okio:okio:2.9.0@jar,javax.inject:javax.inject:1@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21@jar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.core:core-ktx:1.6.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.recyclerview:recyclerview:1.1.0@aar,androidx.customview:customview:1.0.0@aar,androidx.transition:transition:1.2.0@aar,androidx.loader:loader:1.0.0@aar,androidx.core:core:1.7.0@aar,androidx.core:core:1.7.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.1@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.1@aar,androidx.resourceinspection:resourceinspection-annotation:1.0.0@jar,androidx.room:room-runtime:2.2.5@aar,androidx.sqlite:sqlite-framework:2.1.0@aar,androidx.sqlite:sqlite:2.1.0@aar,androidx.cardview:cardview:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.concurrent:concurrent-futures:1.0.0@jar,androidx.lifecycle:lifecycle-livedata:2.1.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.1@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.1@aar,androidx.lifecycle:lifecycle-service:2.1.0@aar,androidx.lifecycle:lifecycle-runtime:2.4.0@aar,androidx.lifecycle:lifecycle-runtime:2.4.0@aar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.room:room-common:2.2.5@jar,androidx.lifecycle:lifecycle-common:2.4.0@jar,androidx.annotation:annotation:1.3.0@jar,org.apache.commons:commons-lang3:3.0@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21@jar,org.jetbrains.kotlin:kotlin-stdlib:1.6.21@jar,com.google.maps.android:android-maps-utils:0.5@aar,com.github.AigeStudio:WheelPicker:5913fa15fc@aar,com.facebook.soloader:nativeloader:0.10.4@jar,com.facebook.fresco:fbcore:2.5.0@aar,org.jetbrains.kotlin:kotlin-annotations-jvm:1.3.72@jar,com.facebook.soloader:annotation:0.10.4@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21@jar,org.jetbrains:annotations:13.0@jar,androidx.annotation:annotation-experimental:1.1.0@aar,com.google.guava:listenablefuture:1.0@jar,com.google.code.gson:gson:2.8.2@jar,com.parse.bolts:bolts-tasks:1.4.0@jar">
+      roots="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-async-storage_async-storage::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_datetimepicker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_geolocation::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_netinfo::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-masked-view_masked-view::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-picker_picker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:lottie-react-native::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-enabler::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-blob-util::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-document-picker::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-gesture-handler::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-maps::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-safe-area-context::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-screens::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-sms-retriever::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-svg::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-vector-icons::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-video::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-wheel-pick::release,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:rn-fetch-blob::release,com.facebook.react:react-android:0.71.3:release@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,com.facebook.react:hermes-android:0.71.3:release@aar,/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-services-dialog-box::release,com.airbnb.android:lottie:5.1.1@aar,com.google.android.material:material:1.1.0@aar,com.github.adityaxjha:Android-ScalableVideoView:10e7b4da8b@aar,androidx.appcompat:appcompat:1.4.1@aar,androidx.appcompat:appcompat:1.4.1@aar,androidx.appcompat:appcompat-resources:1.4.1@aar,androidx.autofill:autofill:1.1.0@aar,com.google.android.gms:play-services-location:20.0.0@aar,com.google.android.gms:play-services-maps:18.0.2@aar,com.google.android.gms:play-services-auth:17.0.0@aar,com.google.android.gms:play-services-auth-api-phone:17.0.0@aar,com.google.android.gms:play-services-auth-base:17.0.0@aar,com.google.android.gms:play-services-base:18.1.0@aar,com.google.android.gms:play-services-tasks:18.0.2@aar,com.google.android.gms:play-services-basement:18.1.0@aar,androidx.viewpager2:viewpager2:1.0.0@aar,androidx.fragment:fragment:1.3.6@aar,androidx.fragment:fragment:1.3.6@aar,androidx.activity:activity:1.2.4@aar,androidx.work:work-runtime:2.7.1@aar,androidx.emoji2:emoji2-views-helper:1.0.0@aar,androidx.emoji2:emoji2:1.0.0@aar,androidx.lifecycle:lifecycle-process:2.4.0@aar,androidx.startup:startup-runtime:1.0.0@aar,androidx.tracing:tracing:1.1.0@aar,com.facebook.fbjni:fbjni:0.3.0@aar,com.facebook.fresco:fresco:2.5.0@aar,com.facebook.fresco:imagepipeline-okhttp3:2.5.0@aar,com.facebook.fresco:drawee:2.5.0@aar,com.facebook.fresco:middleware:2.5.0@aar,com.facebook.fresco:ui-common:2.5.0@aar,com.facebook.fresco:nativeimagefilters:2.5.0@aar,com.facebook.fresco:memory-type-native:2.5.0@aar,com.facebook.fresco:memory-type-java:2.5.0@aar,com.facebook.fresco:imagepipeline-native:2.5.0@aar,com.facebook.fresco:memory-type-ashmem:2.5.0@aar,com.facebook.fresco:imagepipeline:2.5.0@aar,com.facebook.fresco:nativeimagetranscoder:2.5.0@aar,com.facebook.fresco:imagepipeline-base:2.5.0@aar,com.facebook.infer.annotation:infer-annotation:0.18.0@jar,com.facebook.fresco:soloader:2.5.0@aar,com.facebook.soloader:soloader:0.10.4@aar,com.facebook.yoga:proguard-annotations:1.19.0@jar,com.google.code.findbugs:jsr305:3.0.2@jar,com.squareup.okhttp3:okhttp-urlconnection:4.9.2@jar,com.squareup.okhttp3:okhttp:4.9.2@jar,com.squareup.okio:okio:2.9.0@jar,javax.inject:javax.inject:1@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21@jar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.core:core-ktx:1.6.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.recyclerview:recyclerview:1.1.0@aar,androidx.customview:customview:1.0.0@aar,androidx.transition:transition:1.2.0@aar,androidx.loader:loader:1.0.0@aar,androidx.core:core:1.7.0@aar,androidx.core:core:1.7.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.1@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.1@aar,androidx.resourceinspection:resourceinspection-annotation:1.0.0@jar,androidx.room:room-runtime:2.2.5@aar,androidx.sqlite:sqlite-framework:2.1.0@aar,androidx.sqlite:sqlite:2.1.0@aar,androidx.cardview:cardview:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.concurrent:concurrent-futures:1.0.0@jar,androidx.lifecycle:lifecycle-livedata:2.1.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.1@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.1@aar,androidx.lifecycle:lifecycle-service:2.1.0@aar,androidx.lifecycle:lifecycle-runtime:2.4.0@aar,androidx.lifecycle:lifecycle-runtime:2.4.0@aar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.room:room-common:2.2.5@jar,androidx.lifecycle:lifecycle-common:2.4.0@jar,androidx.annotation:annotation:1.3.0@jar,org.apache.commons:commons-lang3:3.0@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21@jar,org.jetbrains.kotlin:kotlin-stdlib:1.6.21@jar,com.google.maps.android:android-maps-utils:0.5@aar,com.github.AigeStudio:WheelPicker:5913fa15fc@aar,com.facebook.soloader:nativeloader:0.10.4@jar,com.facebook.fresco:fbcore:2.5.0@aar,org.jetbrains.kotlin:kotlin-annotations-jvm:1.3.72@jar,com.facebook.soloader:annotation:0.10.4@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21@jar,org.jetbrains:annotations:13.0@jar,androidx.annotation:annotation-experimental:1.1.0@aar,com.google.guava:listenablefuture:1.0@jar,com.google.code.gson:gson:2.8.2@jar,com.parse.bolts:bolts-tasks:1.4.0@jar">
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-async-storage_async-storage::release"
-        simpleName="merchantApp:react-native-async-storage_async-storage"/>
+        simpleName="Shelterhub Business:react-native-async-storage_async-storage"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_datetimepicker::release"
-        simpleName="merchantApp:react-native-community_datetimepicker"/>
+        simpleName="Shelterhub Business:react-native-community_datetimepicker"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_geolocation::release"
-        simpleName="merchantApp:react-native-community_geolocation"/>
+        simpleName="Shelterhub Business:react-native-community_geolocation"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-community_netinfo::release"
-        simpleName="merchantApp:react-native-community_netinfo"/>
+        simpleName="Shelterhub Business:react-native-community_netinfo"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-masked-view_masked-view::release"
-        simpleName="merchantApp:react-native-masked-view_masked-view"/>
+        simpleName="Shelterhub Business:react-native-masked-view_masked-view"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-picker_picker::release"
-        simpleName="merchantApp:react-native-picker_picker"/>
+        simpleName="Shelterhub Business:react-native-picker_picker"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:lottie-react-native::release"
-        simpleName="merchantApp:lottie-react-native"/>
+        simpleName="Shelterhub Business:lottie-react-native"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-enabler::release"
-        simpleName="merchantApp:react-native-android-location-enabler"/>
+        simpleName="Shelterhub Business:react-native-android-location-enabler"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-blob-util::release"
-        simpleName="merchantApp:react-native-blob-util"/>
+        simpleName="Shelterhub Business:react-native-blob-util"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-document-picker::release"
-        simpleName="merchantApp:react-native-document-picker"/>
+        simpleName="Shelterhub Business:react-native-document-picker"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-gesture-handler::release"
-        simpleName="merchantApp:react-native-gesture-handler"/>
+        simpleName="Shelterhub Business:react-native-gesture-handler"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-maps::release"
-        simpleName="merchantApp:react-native-maps"/>
+        simpleName="Shelterhub Business:react-native-maps"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-safe-area-context::release"
-        simpleName="merchantApp:react-native-safe-area-context"/>
+        simpleName="Shelterhub Business:react-native-safe-area-context"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-screens::release"
-        simpleName="merchantApp:react-native-screens"/>
+        simpleName="Shelterhub Business:react-native-screens"/>
+    <dependency
+        name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-sms-retriever::release"
+        simpleName="Shelterhub Business:react-native-sms-retriever"/>
+    <dependency
+        name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-svg::release"
+        simpleName="Shelterhub Business:react-native-svg"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-vector-icons::release"
-        simpleName="merchantApp:react-native-vector-icons"/>
+        simpleName="Shelterhub Business:react-native-vector-icons"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-video::release"
-        simpleName="merchantApp:react-native-video"/>
+        simpleName="Shelterhub Business:react-native-video"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-wheel-pick::release"
-        simpleName="merchantApp:react-native-wheel-pick"/>
+        simpleName="Shelterhub Business:react-native-wheel-pick"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:rn-fetch-blob::release"
-        simpleName="merchantApp:rn-fetch-blob"/>
+        simpleName="Shelterhub Business:rn-fetch-blob"/>
     <dependency
         name="com.facebook.react:react-android:0.71.3:release@aar"
         simpleName="com.facebook.react:react-android"/>
@@ -321,7 +333,7 @@
         simpleName="com.facebook.react:hermes-android"/>
     <dependency
         name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-android-location-services-dialog-box::release"
-        simpleName="merchantApp:react-native-android-location-services-dialog-box"/>
+        simpleName="Shelterhub Business:react-native-android-location-services-dialog-box"/>
     <dependency
         name="com.airbnb.android:lottie:5.1.1@aar"
         simpleName="com.airbnb.android:lottie"/>
@@ -346,6 +358,15 @@
     <dependency
         name="com.google.android.gms:play-services-maps:18.0.2@aar"
         simpleName="com.google.android.gms:play-services-maps"/>
+    <dependency
+        name="com.google.android.gms:play-services-auth:17.0.0@aar"
+        simpleName="com.google.android.gms:play-services-auth"/>
+    <dependency
+        name="com.google.android.gms:play-services-auth-api-phone:17.0.0@aar"
+        simpleName="com.google.android.gms:play-services-auth-api-phone"/>
+    <dependency
+        name="com.google.android.gms:play-services-auth-base:17.0.0@aar"
+        simpleName="com.google.android.gms:play-services-auth-base"/>
     <dependency
         name="com.google.android.gms:play-services-base:18.1.0@aar"
         simpleName="com.google.android.gms:play-services-base"/>

@@ -115,7 +115,7 @@ const Property_Listing = ({
                 // fontWeight: 'bold',
                 fontSize: 14,
                 // lineHeight: 22,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
               }}
             >
               {property_title}
@@ -131,7 +131,7 @@ const Property_Listing = ({
               <FontAwesome name="star" size={13} color={"#fabe1b"} />
               <Text
                 style={{
-                  fontFamily: "Poppins-Regular",
+                  // fontFamily: "Poppins-Regular",
                   color: "grey",
                   fontSize: 14,
                   // marginTop: 2,
@@ -148,7 +148,7 @@ const Property_Listing = ({
               style={{
                 color: COLORS.black,
 
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 // fontWeight: 'bold',
                 fontSize: 14,
               }}
@@ -406,7 +406,7 @@ const Property_Listing = ({
               <Text
                 style={{
                   lineHeight: 22,
-                  fontFamily: FONTS.fontFamily_black,
+                  // fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
                   marginVertical: SIZES.form_button_text_marginVertical,
                   marginHorizontal: SIZES.form_button_text_marginHorizontal,

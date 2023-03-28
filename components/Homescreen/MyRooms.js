@@ -78,7 +78,7 @@ const MyRooms = ({
             color: COLORS.mobile_theme_back,
             // fontWeight: "bold",
             // lineHeight: 22,
-            fontFamily: FONTS.fontFamily_black,
+            // fontFamily: FONTS.fontFamily_black,
             fontSize: SIZES.homescreen_header_fontsize,
           }}
         >

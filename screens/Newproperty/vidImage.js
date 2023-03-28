@@ -65,7 +65,7 @@ const vidImage = ({
   const [vidUri, setvidUri] = React.useState(outerVideos);
   const [mess_imgUri, setmess_imgUri] = React.useState(messImage);
   const [mess_url, setmess_url] = React.useState(
-    messImage ? messImage?.uri : undefined
+    mess_imgUri ? mess_imgUri?.uri : undefined
   );
   let [intMessimg, setintMessimg] = React.useState({});
   let [intvid, setintVid] = React.useState([]);
@@ -241,7 +241,7 @@ const vidImage = ({
   };
 
   function onPress_for() {
-    if (checked_menuImage && checked_outer_video && checked_outer_image) {
+    if (checked_mess_image && checked_outer_video && checked_outer_image) {
       console.log("Done");
       upload_all();
     } else {
@@ -250,7 +250,7 @@ const vidImage = ({
         "ckicked",
         checked_outer_video,
         checked_outer_image,
-        checked_menuImage
+        checked_mess_image
       );
     }
   }
@@ -267,7 +267,9 @@ const vidImage = ({
       if (res[0].size <= 10000000) {
         console.log("mess_img", res);
         setmess_imgUri(res);
+        setmess_url(res[0].uri);
         setintMessimg(res);
+        update_menuImage(res);
         await checked_menuImage(true);
         console.log("checked", res);
       } else {
@@ -365,7 +367,7 @@ const vidImage = ({
 
           <VideoPlayer
             source={{ uri: _vidUri }}
-            style={{ height: 200, borderRadius: 10, width: 230 }}
+            style={{ height: 150, borderRadius: 10, width: 180 }}
             repeat
             disableSeekbar
             disableVolume
@@ -455,7 +457,7 @@ const vidImage = ({
         >
           <Image
             source={{ uri: _imgUri }}
-            style={{ height: 200, borderRadius: 10, width: 230 }}
+            style={{ height: 150, borderRadius: 10, width: 180 }}
           />
         </View>
 
@@ -538,7 +540,7 @@ const vidImage = ({
         >
           <Image
             source={{ uri: _imgUri }}
-            style={{ height: 200, borderRadius: 10, width: 230 }}
+            style={{ height: 150, borderRadius: 10, width: 180 }}
           />
         </View>
 
@@ -658,18 +660,16 @@ const vidImage = ({
               <View
                 style={{
                   flexDirection: "row",
-
                   minHeight: 40,
                   borderRadius: 10,
                   marginTop: 25,
                   maxHeight: 200,
-
                   padding: 5,
                 }}
               >
                 <Text
                   style={{
-                    fontSize: SIZES.form_section_title_fontsize,
+                    fontSize: SIZES.form_section_input_fontsize,
                     color: COLORS.black,
                     //   bottom: 8,
                     // marginTop: 25,
@@ -680,7 +680,7 @@ const vidImage = ({
                   Menu Image (Maximum Image size is 10MB)
                 </Text>
 
-                {mess_imgUri !== undefined && (
+                {mess_url !== undefined && (
                   <TouchableOpacity
                     style={{
                       // marginTop: 18,
@@ -699,6 +699,7 @@ const vidImage = ({
                     }}
                     onPress={async () => {
                       // _setimg_url("");
+                      console.log("cleared");
                       var pattern = /^((https):\/\/)/;
 
                       if (pattern.test(mess_imgUri)) {
@@ -718,6 +719,7 @@ const vidImage = ({
                         }
                       }
                       setmess_imgUri(undefined);
+                      setmess_url(undefined);
                       checked_menuImage(false);
                       setintMessimg([]);
                     }}
@@ -730,50 +732,62 @@ const vidImage = ({
                     />
                   </TouchableOpacity>
                 )}
-              </View>
-              {mess_url === undefined && (
-                <TouchableOpacity
-                  style={{
-                    // marginTop: 15,
-                    borderColor: COLORS.mobile_theme,
-                    borderWidth: SIZES.form_button_borderWidth,
-                    borderRadius: SIZES.form_button_borderRadius,
-                    maxWidth: SIZES.form_button_maxWidth,
-                    alignItems: SIZES.form_button_alignItems,
-                    justifyContent: SIZES.form_button_justifyContent,
-                    backgroundColor: COLORS.mobile_theme_back,
-                  }}
-                  onPress={() => {
-                    selectDoc_mess_image();
-                    console.log("doc clicked");
-                  }}
-                >
-                  <Text
+
+                {mess_url === undefined && (
+                  <TouchableOpacity
                     style={{
-                      lineHeight: SIZES.form_button_text_lineHeight,
-                      fontFamily: FONTS.fontFamily_black,
-                      color: COLORS.font_color,
-                      fontSize: SIZES.form_button_text_fontSize,
-                      marginVertical: SIZES.form_button_text_marginVertical,
-                      marginHorizontal: SIZES.form_button_text_marginHorizontal,
+                      flex: 0.4,
+                      borderColor: COLORS.mobile_theme,
+                      borderWidth: SIZES.form_button_borderWidth,
+                      borderRadius: SIZES.form_button_borderRadius,
+                      maxWidth: SIZES.form_button_maxWidth,
+                      maxHeight: SIZES.form_button_maxHeight + 2.5,
+                      alignItems: SIZES.form_button_alignItems,
+                      justifyContent: SIZES.form_button_justifyContent,
+                      backgroundColor: COLORS.mobile_theme_back,
+                    }}
+                    onPress={() => {
+                      selectDoc_mess_image();
+                      console.log("doc clicked");
                     }}
                   >
-                    Select File
-                  </Text>
-                </TouchableOpacity>
-              )}
+                    <Text
+                      style={{
+                        lineHeight: SIZES.form_button_text_lineHeight,
+                        // fontFamily: FONTS.fontFamily_black,
+                        color: COLORS.font_color,
+                        fontSize: SIZES.form_button_text_fontSize,
+                        marginVertical: SIZES.form_button_text_marginVertical,
+                        marginHorizontal:
+                          SIZES.form_button_text_marginHorizontal,
+                      }}
+                    >
+                      Select Image
+                    </Text>
+                  </TouchableOpacity>
+                )}
+              </View>
+            </View>
+          )}
+
+          {mess_url === undefined && (
+            <View style={{}}>
+              <Image
+                style={{ height: 130, borderRadius: 10, width: 160 }}
+                source={icons.no_image}
+              />
             </View>
           )}
           {mess_url !== undefined && (
             <Image
               source={{ uri: mess_url }}
               style={{
-                height: 200,
+                height: 150,
                 borderRadius: 10,
                 borderWidth: 1,
                 borderColor: COLORS.lightGray3,
                 borderRadius: 10,
-                width: SIZES.width - 50,
+                width: 180,
                 // height: 300,
                 marginLeft: 5,
               }}
@@ -781,13 +795,13 @@ const vidImage = ({
           )}
 
           {/* Outer Images */}
-          <View style={{ flexDirection: "row" }}>
+          <View style={{ flexDirection: "row", marginTop: 15 }}>
             <Text
               style={{
                 color: COLORS.black,
-                fontSize: SIZES.form_section_title_fontsize,
+                fontSize: SIZES.form_section_input_fontsize,
                 // fontWeight: "bold",
-                marginTop: 25,
+                top: 7,
                 flex: 1,
               }}
             >
@@ -796,10 +810,9 @@ const vidImage = ({
 
             {imgUri === undefined ||
               (imgUri?.length <= 10 && (
-                <View style={{ marginTop: 11, flex: 0.4 }}>
+                <View style={{ flex: 0.4 }}>
                   <TouchableOpacity
                     style={{
-                      marginTop: 15,
                       borderColor: COLORS.mobile_theme,
                       borderWidth: SIZES.form_button_borderWidth,
                       borderRadius: SIZES.form_button_borderRadius,
@@ -816,7 +829,7 @@ const vidImage = ({
                     <Text
                       style={{
                         lineHeight: SIZES.form_button_text_lineHeight,
-                        fontFamily: FONTS.fontFamily_black,
+                        // fontFamily: FONTS.fontFamily_black,
                         color: COLORS.font_color,
                         fontSize: SIZES.form_button_text_fontSize,
                         marginVertical: SIZES.form_button_text_marginVertical,
@@ -850,13 +863,13 @@ const vidImage = ({
           />
 
           {/* Outer Videso */}
-          <View style={{ flexDirection: "row" }}>
+          <View style={{ marginTop: 15, flexDirection: "row" }}>
             <Text
               style={{
                 color: COLORS.black,
-                fontSize: SIZES.form_section_title_fontsize,
+                fontSize: SIZES.form_section_input_fontsize,
                 // fontWeight: "bold",
-                marginTop: 25,
+                top: 7,
                 flex: 1,
               }}
             >
@@ -865,10 +878,9 @@ const vidImage = ({
 
             {vidUri === undefined ||
               (vidUri?.length <= 2 && (
-                <View style={{ marginTop: 11, flex: 0.4 }}>
+                <View style={{ flex: 0.4 }}>
                   <TouchableOpacity
                     style={{
-                      marginTop: 15,
                       borderColor: COLORS.mobile_theme,
                       borderWidth: SIZES.form_button_borderWidth,
                       borderRadius: SIZES.form_button_borderRadius,
@@ -885,7 +897,7 @@ const vidImage = ({
                     <Text
                       style={{
                         lineHeight: SIZES.form_button_text_lineHeight,
-                        fontFamily: FONTS.fontFamily_black,
+                        // fontFamily: FONTS.fontFamily_black,
                         color: COLORS.font_color,
                         fontSize: SIZES.form_button_text_fontSize,
                         marginVertical: SIZES.form_button_text_marginVertical,

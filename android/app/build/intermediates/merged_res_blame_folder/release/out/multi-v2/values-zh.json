@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.merchantapp-mergeReleaseResources-35:/values-zh/values-zh.xml",
+            "outputFile": "com.shelterhub.business.app-mergeReleaseResources-36:/values-zh/values-zh.xml",
             "map": [
                 {
                     "source": "/home/kirtan/.gradle/caches/transforms-3/18cf9d16c40da748e2ad4936a0cee67e/transformed/jetified-WheelPicker-5913fa15fc/res/values-zh/values-zh.xml",

@@ -63,7 +63,7 @@ const AC_attached = ({
             <Text
               style={{
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 fontWeight: SIZES.form_button_text_fontWeight,
                 marginVertical: SIZES.form_button_text_marginVertical,
@@ -97,7 +97,7 @@ const AC_attached = ({
             <Text
               style={{
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 fontWeight: SIZES.form_button_text_fontWeight,
                 marginVertical: SIZES.form_button_text_marginVertical,
@@ -147,7 +147,7 @@ const AC_attached = ({
               style={{
                 fontWeight: SIZES.form_button_text_fontWeight,
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
                 marginHorizontal: SIZES.form_button_text_marginHorizontal,
@@ -181,7 +181,7 @@ const AC_attached = ({
               style={{
                 fontWeight: SIZES.form_button_text_fontWeight,
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
                 marginHorizontal: SIZES.form_button_text_marginHorizontal,
@@ -229,7 +229,7 @@ const AC_attached = ({
               style={{
                 fontWeight: SIZES.form_button_text_fontWeight,
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
                 marginHorizontal: SIZES.form_button_text_marginHorizontal,
@@ -263,7 +263,7 @@ const AC_attached = ({
               style={{
                 fontWeight: SIZES.form_button_text_fontWeight,
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
                 marginHorizontal: SIZES.form_button_text_marginHorizontal,
@@ -311,7 +311,7 @@ const AC_attached = ({
               style={{
                 fontWeight: SIZES.form_button_text_fontWeight,
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
                 marginHorizontal: SIZES.form_button_text_marginHorizontal,
@@ -345,7 +345,7 @@ const AC_attached = ({
               style={{
                 fontWeight: SIZES.form_button_text_fontWeight,
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
                 marginHorizontal: SIZES.form_button_text_marginHorizontal,

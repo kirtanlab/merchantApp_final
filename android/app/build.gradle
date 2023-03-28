@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.merchantapp"
+    namespace "com.shelterhub.business"
     defaultConfig {
-        applicationId "com.merchantapp"
+        applicationId "com.shelterhub.business"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

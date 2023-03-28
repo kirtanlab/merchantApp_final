@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.merchantapp-mergeDebugResources-36:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.shelterhub.business.app-mergeDebugResources-36:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/home/kirtan/.gradle/caches/transforms-3/33e3e8bce6dac0acb39163d218410194/transformed/jetified-play-services-auth-17.0.0/res/values-watch-v20/values.xml",

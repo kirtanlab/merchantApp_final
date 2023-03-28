@@ -25,7 +25,13 @@ import { Button, Dialog, Portal, Provider } from "react-native-paper";
 import { REACT_APP_OWNER_API } from "@env";
 import AppLoader from "../components/AppLoader";
 import * as vidImage_actions from "../store/vidImage/vidImage_actions";
-const HomeScreen = ({ navigation, home_loading, token, updateOuterVideos }) => {
+const HomeScreen = ({
+  checkedOuterVideos,
+  navigation,
+  home_loading,
+  token,
+  updateOuterVideos,
+}) => {
   const [key, setKey] = React.useState(0);
   const [prop_data, prop_setData] = useState([]);
   const [refreshing, setRefreshing] = React.useState(false);
@@ -75,6 +81,7 @@ const HomeScreen = ({ navigation, home_loading, token, updateOuterVideos }) => {
     setInterestedusers(data.data.data.interestedusers);
     prop_setImage(data.data.data?.photos[0]?.uri);
     let videos_array = data.data.data.videos;
+    let new_array = [];
     console.log("vid_array", videos_array);
     try {
       if (videos_array.length > 0) {
@@ -110,6 +117,7 @@ const HomeScreen = ({ navigation, home_loading, token, updateOuterVideos }) => {
             .then(async () => {
               console.log("done");
               await updateOuterVideos(new_array);
+              checkedOuterVideos(true);
               console.log("done1");
               setLoading(false);
             })
@@ -255,6 +263,9 @@ function mapDispatchToProps(dispatch) {
   return {
     updateOuterVideos: (value) => {
       dispatch(vidImage_actions.updateOuterVideos(value));
+    },
+    checkedOuterVideos: (value) => {
+      dispatch(vidImage_actions.checkedOuterVideos(value));
     },
   };
 }
