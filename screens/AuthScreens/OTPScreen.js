@@ -319,7 +319,7 @@ const ForgetPass = ({ route, navigation }) => {
                   marginBottom: 30,
                 }}
               >
-                <Text>New to the app?</Text>
+                <Text style={{ color: "grey" }}>New to the app?</Text>
                 <TouchableOpacity
                   onPress={() => navigation.navigate("LoginScreen")}
                 >

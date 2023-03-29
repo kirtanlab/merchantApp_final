@@ -20,7 +20,7 @@ const HeaderBar = ({ title }) => {
             fontSize: SIZES.form_section_title_fontsize + 10,
             // fontWeight: 'bold',
             borderBottomColor: COLORS.lightGray4,
-            borderBottomWidth: 1,
+            // borderBottomWidth: 1,
             paddingBottom: 10,
             paddingLeft: 10,
           }}

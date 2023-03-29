@@ -7,53 +7,62 @@ import { REACT_APP_OWNER_API } from "@env";
 import { connect } from "react-redux";
 import * as AuthActions from "../../store/auth/authActions";
 import { icons } from "../../constants";
+import SplashScreen from "react-native-splash-screen";
 
-const SplashScreen = ({ navigation, updateToken }) => {
+const _SplashScreen = ({ navigation, updateToken }) => {
+  useEffect(() => {}, []);
   useEffect(() => {
-    setTimeout(() => {
-      const _getUserFromStorage = async () => {
-        // setLoading(true);
-        let token = await AsyncStorage.getItem("token");
-        token = JSON.parse(token);
-        console.log("from splashscreen", token);
-        if (token == "" || token == null) {
-          navigation.replace("LoginScreen");
-        } else {
-          // console.log("from splashscreen", token);
-          updateToken(token);
-          const data = await axios.get(
-            `${REACT_APP_OWNER_API}/api/v1/owner/getstatus`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-                "Content-Type": "multipart/form-data",
-              },
-            }
-          );
-          let phone_status = data.data.data.phoneVerified;
-          let details_status = data.data.data.detailsEntered;
-          let roomFilled = data.data.data.roomFilled;
-          console.log(
-            "roomFilled",
-            roomFilled,
-            "phone_status",
-            phone_status,
-            "details_status",
-            details_status
-          );
-          if (!phone_status) {
-            navigation.replace("MobileOTP");
-          } else if (!details_status) {
-            navigation.replace("Newproperty");
-          } else if (!roomFilled) {
-            navigation.replace("NewRooms");
-          } else {
-            navigation.replace("MainScreens");
+    // setTimeout(() => {
+    // SplashScreen.hide();
+    const _getUserFromStorage = async () => {
+      // setLoading(true);
+      let token = await AsyncStorage.getItem("token");
+      token = JSON.parse(token);
+      console.log("from splashscreen", token);
+      if (token == "" || token == null) {
+        SplashScreen.hide();
+        navigation.replace("LoginScreen");
+      } else {
+        // console.log("from splashscreen", token);
+        updateToken(token);
+        const data = await axios.get(
+          `${REACT_APP_OWNER_API}/api/v1/owner/getstatus`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "multipart/form-data",
+            },
           }
+        );
+        let phone_status = data.data.data.phoneVerified;
+        let details_status = data.data.data.detailsEntered;
+        let roomFilled = data.data.data.roomFilled;
+        console.log(
+          "roomFilled",
+          roomFilled,
+          "phone_status",
+          phone_status,
+          "details_status",
+          details_status
+        );
+
+        if (!phone_status) {
+          navigation.replace("MobileOTP");
+          SplashScreen.hide();
+        } else if (!details_status) {
+          navigation.replace("Newproperty");
+          SplashScreen.hide();
+        } else if (!roomFilled) {
+          navigation.replace("NewRooms");
+          SplashScreen.hide();
+        } else {
+          navigation.replace("MainScreens");
+          SplashScreen.hide();
         }
-      };
-      _getUserFromStorage();
-    }, 2000);
+      }
+    };
+    _getUserFromStorage();
+    // }, 1000);
   }, []);
   console.log(icons.logo_rent);
   return (
@@ -64,16 +73,16 @@ const SplashScreen = ({ navigation, updateToken }) => {
         barStyle={"light-content"}
       />
       <View style={styles.splashScreenCont}>
-        <Image
+        {/* <Image
           source={icons.logo_rent}
           style={{
-            height: 350,
-            width: 350,
+            height: 400,
+            width: 400,
             borderRadius: 20,
-            marginTop: 30,
+            marginTop: 25,
             alignSelf: "center",
           }}
-        />
+        /> */}
       </View>
     </>
   );
@@ -103,4 +112,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SplashScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(_SplashScreen);

@@ -37,12 +37,16 @@ import com.reactnativedocumentpicker.DocumentPickerPackage;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-maps
 import com.airbnb.android.react.maps.MapsPackage;
+// react-native-pager-view
+import com.reactnativepagerview.PagerViewPackage;
 // react-native-safe-area-context
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
 import com.swmansion.rnscreens.RNScreensPackage;
 // react-native-sms-retriever
 import me.furtado.smsretriever.RNSmsRetrieverPackage;
+// react-native-splash-screen
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 // react-native-svg
 import com.horcrux.svg.SvgPackage;
 // react-native-vector-icons
@@ -111,9 +115,11 @@ public class PackageList {
       new DocumentPickerPackage(),
       new RNGestureHandlerPackage(),
       new MapsPackage(),
+      new PagerViewPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new RNSmsRetrieverPackage(),
+      new SplashScreenReactPackage(),
       new SvgPackage(),
       new VectorIconsPackage(),
       new ReactVideoPackage(),

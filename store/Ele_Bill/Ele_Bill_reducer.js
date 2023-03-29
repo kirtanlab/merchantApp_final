@@ -1,6 +1,6 @@
 import * as Ele_Bill_actions from "./Ele_Bill_actions";
 let initialState = {
-  elebill: { name: "", uri: "" },
+  elebill: null,
   checked_ele_bill: false,
 };
 

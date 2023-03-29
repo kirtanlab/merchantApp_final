@@ -143,12 +143,14 @@ function InputField({
           onBlur={() => {
             sign_password_focused(false);
           }}
+          placeholderTextColor="lightgray"
           value={value}
           defaultValue={defaultValue}
           placeholder={label}
           keyboardType={keyboardType}
           style={{
             flex: 1,
+            color: "#000000",
             paddingVertical: 0,
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
@@ -184,11 +186,13 @@ function InputField({
           onBlur={onBlur}
           placeholder={label}
           keyboardType={keyboardType}
+          placeholderTextColor="lightgray"
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
+            color: "#000000",
             // paddingBottom: 4,
             fontSize: SIZES.form_section_input_fontsize,
           }}
@@ -207,11 +211,13 @@ function InputField({
           onBlur={onBlur}
           placeholder={label}
           keyboardType={keyboardType}
+          placeholderTextColor="lightgray"
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
+            color: "#000000",
             // paddingBottom: 4,
             fontSize: SIZES.form_section_input_fontsize,
           }}
@@ -233,12 +239,14 @@ function InputField({
           onBlur={() => {
             sign_email_focused(false);
           }}
+          placeholderTextColor="lightgray"
           placeholder={label}
           keyboardType={keyboardType}
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             // paddingBottom: 4,
             fontSize: SIZES.form_section_input_fontsize,
@@ -269,6 +277,7 @@ function InputField({
           onBlur={() => {
             sign_name_focused(false);
           }}
+          placeholderTextColor="lightgray"
           value={value}
           defaultValue={defaultValue}
           placeholder={label}
@@ -277,6 +286,7 @@ function InputField({
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             // paddingBottom: 4,
             fontSize: SIZES.form_section_input_fontsize,
@@ -307,6 +317,7 @@ function InputField({
             sign_conf_pass_focused(false);
           }}
           value={value}
+          placeholderTextColor="lightgray"
           defaultValue={defaultValue}
           placeholder={label}
           keyboardType={keyboardType}
@@ -314,6 +325,7 @@ function InputField({
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             // paddingBottom: 4,
             fontSize: SIZES.form_section_input_fontsize,
@@ -342,10 +354,13 @@ function InputField({
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             paddingBottom: 4,
+
             fontSize: SIZES.form_section_input_fontsize,
           }}
+          placeholderTextColor="lightgray"
           value={value}
           defaultValue={defaultValue}
           onChange={(value) => {
@@ -370,10 +385,12 @@ function InputField({
         <TextInput
           placeholder={label}
           keyboardType={keyboardType}
+          placeholderTextColor="lightgray"
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             paddingBottom: 4,
             fontSize: SIZES.form_section_input_fontsize,
@@ -390,10 +407,12 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           defaultValue={defaultValue}
+          placeholderTextColor="lightgray"
           style={{
             flex: 0.85,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             // paddingBottom: 4,
 
@@ -429,8 +448,10 @@ function InputField({
             focused_adhar_name(false);
           }}
           placeholder={label}
+          placeholderTextColor="lightgray"
           keyboardType={keyboardType}
           style={{
+            color: "#000000",
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
@@ -464,6 +485,7 @@ function InputField({
             focused_PropertyName(true);
             // gen_sign_err_method(false);
           }}
+          placeholderTextColor="lightgray"
           onBlur={() => {
             console.log("!Entering focued");
             focused_PropertyName(false);
@@ -474,6 +496,7 @@ function InputField({
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             marginTop: 6,
             // paddingBottom: -10,
@@ -524,10 +547,12 @@ function InputField({
           value={totalRooms}
           placeholder={label}
           keyboardType={keyboardType}
+          placeholderTextColor="lightgray"
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             marginTop: 6,
             paddingBottom: 4,
@@ -568,10 +593,12 @@ function InputField({
           value={occupancy}
           placeholder={label}
           keyboardType={keyboardType}
+          placeholderTextColor="lightgray"
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             marginTop: 6,
             paddingBottom: 4,
@@ -608,6 +635,7 @@ function InputField({
             phone_focused(false);
           }}
           value={phone.toString()}
+          placeholderTextColor="lightgray"
           // defaultValue={defaultValue}
           placeholder={label}
           keyboardType={keyboardType}
@@ -615,6 +643,7 @@ function InputField({
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             paddingBottom: 4,
             fontSize: SIZES.form_section_input_fontsize,
@@ -655,10 +684,12 @@ function InputField({
           }}
           placeholder={label}
           keyboardType={keyboardType}
+          placeholderTextColor="lightgray"
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             marginTop: 6,
             borderBottomWidth: 1,
             paddingBottom: 4,
@@ -698,10 +729,13 @@ function InputField({
           }}
           placeholder={label}
           keyboardType={keyboardType}
+          placeholderTextColor="lightgray"
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
+
             marginTop: 6,
             borderBottomWidth: 1,
             paddingBottom: 4,
@@ -742,10 +776,12 @@ function InputField({
           }}
           placeholder={label}
           keyboardType={keyboardType}
+          placeholderTextColor="lightgray"
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             marginTop: 6,
             borderBottomWidth: 1,
             paddingBottom: 4,
@@ -784,11 +820,13 @@ function InputField({
             focused_house_no(false);
           }}
           placeholder={label}
+          placeholderTextColor="lightgray"
           keyboardType={keyboardType}
           defaultValue={house_no}
           style={{
             flex: 1,
             paddingVertical: 0,
+            color: "#000000",
             borderBottomColor: "#ccc",
             borderBottomWidth: 1,
             paddingBottom: 4,
@@ -829,10 +867,12 @@ function InputField({
           }}
           placeholder={label}
           keyboardType={keyboardType}
+          placeholderTextColor="lightgray"
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             paddingBottom: 4,
             fontSize: 19,
@@ -869,10 +909,12 @@ function InputField({
           }}
           placeholder={label}
           keyboardType={keyboardType}
+          placeholderTextColor="lightgray"
           style={{
             flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
+            color: "#000000",
             borderBottomWidth: 1,
             marginTop: 6,
             paddingBottom: 4,
@@ -903,6 +945,7 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           multiline={multiline ? true : false}
+          placeholderTextColor="lightgray"
           style={{
             // flex: 1,
             marginTop: 10,
@@ -915,6 +958,7 @@ function InputField({
             lineHeight: 23,
             flex: 2,
             textAlignVertical: "top",
+            color: "#000000",
             height: 200,
             borderRadius: SIZES.form_button_borderRadius,
             borderWidth: 1,
@@ -945,6 +989,7 @@ function InputField({
           placeholder={label}
           keyboardType={keyboardType}
           multiline={multiline ? true : false}
+          placeholderTextColor="lightgray"
           style={{
             paddingVertical: -2,
             borderBottomColor: COLORS.lightGray4,
@@ -954,6 +999,7 @@ function InputField({
             width: "95%",
             textAlignVertical: "top",
             height: 200,
+            color: "#000000",
             // alignContent: "center",
             // justifyContent: "center",
             // fontWeight: "bold",
@@ -981,6 +1027,7 @@ function InputField({
           value={about_room}
           placeholder={label}
           keyboardType={keyboardType}
+          placeholderTextColor="lightgray"
           multiline={multiline ? true : false}
           style={{
             paddingVertical: -2,
@@ -990,6 +1037,7 @@ function InputField({
             lineHeight: 23,
             width: SIZES.width * 0.88,
             textAlignVertical: "top",
+            color: "#000000",
             // minHeight: 50,
             minHeight: 180,
             // fontWeight: "bold",

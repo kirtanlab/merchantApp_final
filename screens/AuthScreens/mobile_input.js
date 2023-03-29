@@ -63,32 +63,32 @@ const mobile_input = ({
       alert("Email or Password is empty.");
     }
   };
-  useEffect(
-    () => {
-      let timer1 = setTimeout(() => {
-        let _onPhoneNumberPressed = async () => {
-          try {
-            const phoneNumber = await SmsRetriever.requestPhoneNumber();
-            // console.log();
-            let phone = phoneNumber.slice(3, 13);
-            update_phone(phone);
-            phone_checked(true);
-          } catch (error) {
-            console.log(JSON.stringify(error));
-          }
-        };
+  // useEffect(
+  //   () => {
+  //     let timer1 = setTimeout(() => {
+  //       let _onPhoneNumberPressed = async () => {
+  //         try {
+  //           const phoneNumber = await SmsRetriever.requestPhoneNumber();
+  //           // console.log();
+  //           let phone = phoneNumber.slice(3, 13);
+  //           update_phone(phone);
+  //           phone_checked(true);
+  //         } catch (error) {
+  //           console.log(JSON.stringify(error));
+  //         }
+  //       };
 
-        _onPhoneNumberPressed();
-        console.log("cleared");
-      }, 200);
-      return () => {
-        clearTimeout(timer1);
-      };
-    },
+  //       _onPhoneNumberPressed();
+  //       console.log("cleared");
+  //     }, 200);
+  //     return () => {
+  //       clearTimeout(timer1);
+  //     };
+  //   },
 
-    // _onSmsListenerPressed();
-    []
-  );
+  //   // _onSmsListenerPressed();
+  //   []
+  // );
   return (
     <>
       <ScrollView style={{ backgroundColor: "white" }}>

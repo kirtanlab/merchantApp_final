@@ -270,7 +270,7 @@ const ProfileScreen = ({
     owner_fetch_details();
   }, []);
   return (
-    <View
+    <ScrollView
       style={{
         // flex: 1,
         paddingHorizontal: 15,
@@ -427,7 +427,7 @@ const ProfileScreen = ({
         />
         {/* <View style={{ paddingBottom: 200 }} /> */}
       </ScrollView>
-    </View>
+    </ScrollView>
   );
 };
 function mapStateToProps(state) {

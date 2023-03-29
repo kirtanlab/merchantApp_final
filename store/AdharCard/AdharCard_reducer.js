@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { value } from "react-native-extended-stylesheet";
 import * as AdharCard_actions from "./AdharCard_actions";
 let initialState = {
-  adharcard: { uri: "", name: "" },
+  adharcard: null,
   checked_adhar_card: false,
 };
 

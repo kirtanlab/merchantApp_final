@@ -770,7 +770,7 @@ const vidImage = ({
             </View>
           )}
 
-          {mess_url === undefined && (
+          {mess_url && mess === undefined && (
             <View style={{}}>
               <Image
                 style={{ height: 130, borderRadius: 10, width: 160 }}
@@ -778,7 +778,7 @@ const vidImage = ({
               />
             </View>
           )}
-          {mess_url !== undefined && (
+          {mess_url && mess !== undefined && (
             <Image
               source={{ uri: mess_url }}
               style={{

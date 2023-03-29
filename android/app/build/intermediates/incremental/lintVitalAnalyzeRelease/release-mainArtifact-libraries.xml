@@ -26,6 +26,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-pager-view::release"
+      jars="/home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-pager-view/android/build/.transforms/df3e5b7aff0685a3d9c8c8213d44c0d7/transformed/out/jars/classes.jar:/home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-pager-view/android/build/.transforms/df3e5b7aff0685a3d9c8c8213d44c0d7/transformed/out/jars/libs/R.jar"
+      resolved="Shelterhub Business:react-native-pager-view:unspecified"
+      folder="/home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-pager-view/android/build/.transforms/df3e5b7aff0685a3d9c8c8213d44c0d7/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="com.facebook.react:react-android:0.71.3:release@aar"
       jars="/home/kirtan/.gradle/caches/transforms-3/c1d65957341fab1901066e324a540a74/transformed/jetified-react-android-0.71.3-release/jars/classes.jar"
       resolved="com.facebook.react:react-android:0.71.3"
@@ -238,6 +251,19 @@
       jars="/home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-sms-retriever/android/build/.transforms/4c6a45a13a1c90f426d093a338be962a/transformed/out/jars/classes.jar:/home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-sms-retriever/android/build/.transforms/4c6a45a13a1c90f426d093a338be962a/transformed/out/jars/libs/R.jar"
       resolved="Shelterhub Business:react-native-sms-retriever:unspecified"
       folder="/home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-sms-retriever/android/build/.transforms/4c6a45a13a1c90f426d093a338be962a/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android@@:react-native-splash-screen::release"
+      jars="/home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-splash-screen/android/build/.transforms/80b0d2fee33adb8afbf7b039e3fcd310/transformed/out/jars/classes.jar:/home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-splash-screen/android/build/.transforms/80b0d2fee33adb8afbf7b039e3fcd310/transformed/out/jars/libs/R.jar"
+      resolved="Shelterhub Business:react-native-splash-screen:unspecified"
+      folder="/home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-splash-screen/android/build/.transforms/80b0d2fee33adb8afbf7b039e3fcd310/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -927,13 +953,13 @@
       jars="/home/kirtan/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.6.21/568c1b78a8e17a4f35b31f0a74e2916095ed74c2/kotlin-stdlib-jdk7-1.6.21.jar"
       resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib:1.6.21@jar"
-      jars="/home/kirtan/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.6.21/11ef67f1900634fd951bad28c53ec957fabbe5b8/kotlin-stdlib-1.6.21.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.6.21"/>
+      name="org.jetbrains.kotlin:kotlin-stdlib:1.7.0@jar"
+      jars="/home/kirtan/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.7.0/a5f42c684ad9003160ef0d0f693ecf0ba7b13549/kotlin-stdlib-1.7.0.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.7.0"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21@jar"
-      jars="/home/kirtan/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.6.21/5e5b55c26dbc80372a920aef60eb774b714559b8/kotlin-stdlib-common-1.6.21.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21"/>
+      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.0@jar"
+      jars="/home/kirtan/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.7.0/51736992f422993a1e741051bdf3c12801bc1ca1/kotlin-stdlib-common-1.7.0.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.0"/>
   <library
       name="org.jetbrains:annotations:13.0@jar"
       jars="/home/kirtan/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"

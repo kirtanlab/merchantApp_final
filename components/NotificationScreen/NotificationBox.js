@@ -40,8 +40,9 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
     var msPerYear = msPerDay * 365;
 
     var elapsed = current - previous;
-
-    if (elapsed < msPerMinute) {
+    if (!elapsed || elapsed < 0) {
+      return "while ago";
+    } else if (elapsed < msPerMinute) {
       return Math.round(elapsed / 1000) + " seconds ago";
     } else if (elapsed < msPerHour) {
       return Math.round(elapsed / msPerMinute) + " minutes ago";
@@ -63,8 +64,8 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
       style={{
         flexDirection: "column",
         borderColor: COLORS.lightGray6,
-        borderWidth: 1,
-        marginTop: 6,
+        borderTopWidth: 1,
+        // marginTop: 6,
         paddingHorizontal: 15,
         paddingVertical: 2,
         borderRadius: 10,
@@ -74,13 +75,13 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
         <Text
           style={{
             color: COLORS.black,
-            fontSize: SIZES.form_section_title_fontsize - 1,
+            fontSize: SIZES.form_section_input_fontsize - 2,
           }}
         >
           <Text
             style={{
               color: COLORS.mobile_theme_back,
-              fontFamily: FONTS.fontFamily_regular,
+              // fontFamily: FONTS.fontFamily_regular,
             }}
           >
             {name}
@@ -89,7 +90,7 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
           <Text
             style={{
               color: COLORS.mobile_theme_back,
-              fontFamily: FONTS.fontFamily_regular,
+              // fontFamily: FONTS.fontFamily_regular,
             }}
           >
             {" "}
@@ -102,14 +103,14 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
           <Text
             style={{
               color: COLORS.black,
-              fontSize: SIZES.form_section_title_fontsize - 1,
+              fontSize: SIZES.form_section_input_fontsize - 2,
             }}
           >
             Email:{" "}
             <Text
               style={{
                 color: COLORS.mobile_theme_back,
-                fontFamily: FONTS.fontFamily_regular,
+                // fontFamily: FONTS.fontFamily_regular,
               }}
             >
               {email}
@@ -121,14 +122,14 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
             <Text
               style={{
                 color: COLORS.black,
-                fontSize: SIZES.form_section_title_fontsize - 1,
+                fontSize: SIZES.form_section_input_fontsize - 2,
               }}
             >
               Number:{" "}
               <Text
                 style={{
                   color: COLORS.mobile_theme_back,
-                  fontFamily: FONTS.fontFamily_regular,
+                  // fontFamily: FONTS.fontFamily_regular,
                 }}
               >
                 {phone_number}
@@ -143,9 +144,10 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
             <Text
               style={{
                 flex: 1,
-                fontSize: SIZES.form_section_input_fontsize - 3,
+                fontSize: SIZES.form_section_input_fontsize - 4,
                 color: COLORS.lightGray3,
-                fontFamily: FONTS.fontFamily_regular,
+                bottom: 2,
+                // fontFamily: FONTS.fontFamily_regular,
               }}
             >
               {relative_time}
@@ -153,6 +155,7 @@ const NotificationBox = ({ name, room_type, email, phone_number, time }) => {
           </View>
         </View>
       </View>
+      {/* <Divider /> */}
     </View>
   );
 };

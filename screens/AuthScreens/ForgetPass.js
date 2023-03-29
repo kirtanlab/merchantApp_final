@@ -177,7 +177,7 @@ const ForgetPass = ({ navigation }) => {
                   marginBottom: 30,
                 }}
               >
-                <Text>Already have account?</Text>
+                <Text style={{ color: "grey" }}>Already have account?</Text>
                 <TouchableOpacity
                   onPress={() => navigation.navigate("LoginScreen")}
                 >

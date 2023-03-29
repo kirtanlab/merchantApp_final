@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './store/persistReducer';
 import Tabs from './navigation/tabs';
-import SplashScreen from './screens/AuthScreens/SplashScreen';
+import _SplashScreen from './screens/AuthScreens/SplashScreen';
 import LoginScreen from './screens/AuthScreens/LoginScreen';
 import SignupScreen from './screens/AuthScreens/SignupScreen';
 import BasicDetails from './screens/Newproperty/BasicDetails';
@@ -27,7 +27,7 @@ import mobile_otp from './screens/AuthScreens/mobile_otp';
 import mobile_input from './screens/AuthScreens/mobile_input';
 import Basic25 from './screens/NewRooms/Basic25';
 import vidImage from './screens/Newproperty/vidImage';
-
+import SplashScreen from 'react-native-splash-screen'
 
 
 
@@ -104,7 +104,7 @@ const App = () => {
         <Stack.Screen
           options={{headerShown: false}}
           name="SplashScreen"
-          component={SplashScreen}
+          component={_SplashScreen}
         />
 
         <Stack.Screen
