@@ -84,7 +84,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyB4YIgptnJXoOkYHIwOFqLoche_OjufQbU" />
+            android:value="AIzaSyARrk6kY-nnnSpReeWotnQxCAo_MoI4qbU" />
 
         <provider
             android:name="com.ReactNativeBlobUtil.Utils.FileProvider"

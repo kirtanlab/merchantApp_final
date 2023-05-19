@@ -1,206 +1,118 @@
 [
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-hdpi/ic_launcher_foreground.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xxxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xxxhdpi_splash.jpg.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xxxhdpi/splash.jpg"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxxhdpi_launch_screen.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxxhdpi/launch_screen.jpg"
+        "merged": "com.shelterhub.business.app-merged_res-38:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.shelterhub.business.app-main-40:/drawable/rn_edit_text_material.xml"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xhdpi_splash.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xhdpi/splash.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xxhdpi_splash.jpg.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xxhdpi/splash.jpg"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-anydpi-v26_splash.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-anydpi-v26/splash.jpg"
+        "merged": "com.shelterhub.business.app-merged_res-38:/layout_launch_screen.xml.flat",
+        "source": "com.shelterhub.business.app-main-40:/layout/launch_screen.xml"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-mdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxhdpi/ic_launcher_foreground.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxxhdpi_launch_screen.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxxhdpi/launch_screen.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xhdpi_splash.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xhdpi/splash.jpg"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/drawable_autofill_highlight.xml.flat",
+        "source": "com.shelterhub.business.app-main-40:/drawable/autofill_highlight.xml"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/drawable_splash.jpg.flat",
+        "source": "com.shelterhub.business.app-main-40:/drawable/splash.jpg"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-mdpi_launch_screen.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-mdpi/launch_screen.jpg"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-mdpi_splash.jpg.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-mdpi/splash.jpg"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-hdpi_splash.jpg.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-hdpi/splash.jpg"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/drawable_launch_screen.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/drawable/launch_screen.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xhdpi_launch_screen.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xhdpi/launch_screen.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xhdpi_splash.jpg.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xhdpi/splash.jpg"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/drawable_launch_screen.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/drawable/launch_screen.jpg"
+        "merged": "com.shelterhub.business.app-merged_res-38:/xml_network_security_config.xml.flat",
+        "source": "com.shelterhub.business.app-main-40:/xml/network_security_config.xml"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-anydpi-v26_splash.jpg.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-anydpi-v26/splash.jpg"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/drawable_background_splash.xml.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/drawable/background_splash.xml"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/drawable_rn_edit_text_material.xml.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/drawable/rn_edit_text_material.xml"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-hdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/drawable_splash.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/drawable/splash.jpg"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/drawable_autofill_highlight.xml.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/drawable/autofill_highlight.xml"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-mdpi_splash.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-mdpi/splash.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-hdpi_splash.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-hdpi/splash.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxhdpi_launch_screen.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxhdpi/launch_screen.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxhdpi_launch_screen.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxhdpi/launch_screen.jpg"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-hdpi_splash.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-hdpi/splash.jpg"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xhdpi_launch_screen.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xhdpi/launch_screen.jpg"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-mdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/drawable_splash.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/drawable/splash.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-anydpi-v26_launch_screen.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-anydpi-v26/launch_screen.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/layout_launch_screen.xml.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/layout/launch_screen.xml"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-anydpi-v26/ic_launcher_round.xml"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/xml_network_security_config.xml.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/xml/network_security_config.xml"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxxhdpi_splash.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxxhdpi/splash.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxhdpi_splash.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxhdpi/splash.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-mdpi/ic_launcher_foreground.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xhdpi/ic_launcher_foreground.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-anydpi-v26_launch_screen.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-anydpi-v26/launch_screen.jpg"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-mdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-anydpi-v26_splash.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-anydpi-v26/splash.png"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-mdpi_splash.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-mdpi/splash.jpg"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-hdpi_launch_screen.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-hdpi/launch_screen.jpg"
-    },
-    {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-hdpi_launch_screen.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-hdpi/launch_screen.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
         "merged": "com.shelterhub.business.app-merged_res-38:/drawable_background_splash.xml.flat",
         "source": "com.shelterhub.business.app-main-40:/drawable/background_splash.xml"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxxhdpi_splash.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxxhdpi/splash.jpg"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-mdpi_launch_screen.png.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-mdpi/launch_screen.png"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-merged_res-38:/mipmap-xxhdpi_splash.jpg.flat",
-        "source": "/home/kirtan/.gradle/daemon/7.5.1/com.shelterhub.business.app-main-40:/mipmap-xxhdpi/splash.jpg"
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.shelterhub.business.app-merged_res-38:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.shelterhub.business.app-main-40:/mipmap-xhdpi/ic_launcher.png"
     }
 ]

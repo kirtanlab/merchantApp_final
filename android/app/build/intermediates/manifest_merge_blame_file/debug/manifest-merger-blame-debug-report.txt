@@ -9,32 +9,32 @@
 9        android:targetSdkVersion="33" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/debug/AndroidManifest.xml:5:5-77
-11-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/debug/AndroidManifest.xml:5:22-75
+11-->/home/kirtan/Documents/merchantApp_final/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/home/kirtan/Documents/merchantApp_final/android/app/src/debug/AndroidManifest.xml:5:22-75
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:3:5-67
-12-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:3:22-64
+12-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:3:5-67
+12-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:3:22-64
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:4:5-78
-13-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:4:22-76
+13-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:4:5-78
+13-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:4:22-76
 14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-14-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:5:5-7:4
-14-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:6:5-59
+14-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:5:5-7:4
+14-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:6:5-59
 15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:8:2-10:3
-15-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:9:3-59
+15-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:8:2-10:3
+15-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:9:3-59
 16
 17    <queries>
-17-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:48:5-53:11
+17-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:48:5-53:11
 18        <intent>
-18-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:49:5-52:14
+18-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:49:5-52:14
 19            <action android:name="android.intent.action.VIEW" />
-19-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:50:9-61
-19-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:50:17-58
+19-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:50:9-61
+19-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:50:17-58
 20
 21            <data android:mimeType="*/*" />
-21-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:51:9-40
-21-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:51:15-37
+21-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:51:9-40
+21-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:51:15-37
 22        </intent>
 23        <!-- Needs to be explicitly declared on Android R+ -->
 24        <package android:name="com.google.android.apps.maps" />
@@ -50,20 +50,20 @@
 30        (NOT to keep screen awake)
 31    -->
 32    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required to read and write the expansion files on shared storage for Android 11 -->
-32-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-68
-32-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:22-65
+32-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-68
+32-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:22-65
 33    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Required to to download files without a notification -->
-33-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:5-80
-33-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:22-77
+33-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:5-80
+33-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:22-77
 34    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" /> <!-- Required to access Google Play Licensing -->
-34-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:5-88
-34-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:22-85
+34-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:5-88
+34-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:22-85
 35    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
-35-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-73
-35-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-70
+35-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-73
+35-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-70
 36    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-36-->[:react-native-android-location-services-dialog-box] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-android-location-services-dialog-box/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
-36-->[:react-native-android-location-services-dialog-box] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-android-location-services-dialog-box/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
+36-->[:react-native-android-location-services-dialog-box] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-android-location-services-dialog-box/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+36-->[:react-native-android-location-services-dialog-box] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-android-location-services-dialog-box/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
 37    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 37-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:27:5-81
 37-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:27:22-78
@@ -79,67 +79,67 @@
 42-->[com.google.android.gms:play-services-maps:18.0.2] /home/kirtan/.gradle/caches/transforms-3/3e7589d542a98e9e7bd1681bd20dd252/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:28:9-32
 43
 44    <application
-44-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:12:5-46:19
+44-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:12:5-46:19
 45        android:name="com.shelterhub.business.MainApplication"
-45-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:13:7-38
+45-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:13:7-38
 46        android:allowBackup="false"
-46-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:18:7-34
+46-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:18:7-34
 47        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 47-->[androidx.core:core:1.7.0] /home/kirtan/.gradle/caches/transforms-3/a74319f16e76beadbf53eb2669b709f5/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
 48        android:debuggable="true"
 49        android:icon="@mipmap/ic_launcher"
-49-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:16:7-41
+49-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:16:7-41
 50        android:label="@string/app_name"
-50-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:14:7-39
+50-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:14:7-39
 51        android:roundIcon="@mipmap/ic_launcher_round"
-51-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:17:7-52
+51-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:17:7-52
 52        android:theme="@style/AppTheme"
-52-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:19:7-38
+52-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:19:7-38
 53        android:usesCleartextTraffic="true" >
-53-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:15:7-42
+53-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:15:7-42
 54        <activity
-54-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/debug/AndroidManifest.xml:11:9-111
+54-->/home/kirtan/Documents/merchantApp_final/android/app/src/debug/AndroidManifest.xml:11:9-111
 55            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-55-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/debug/AndroidManifest.xml:11:19-83
+55-->/home/kirtan/Documents/merchantApp_final/android/app/src/debug/AndroidManifest.xml:11:19-83
 56            android:exported="false" />
-56-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/debug/AndroidManifest.xml:11:84-108
+56-->/home/kirtan/Documents/merchantApp_final/android/app/src/debug/AndroidManifest.xml:11:84-108
 57        <activity
-57-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:20:7-29:18
+57-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:20:7-29:18
 58            android:name="com.shelterhub.business.SplashActivity"
-58-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:21:9-39
+58-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:21:9-39
 59            android:exported="true"
-59-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:24:9-32
+59-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:24:9-32
 60            android:label="@string/app_name"
-60-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:23:9-41
+60-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:23:9-41
 61            android:theme="@style/SplashTheme" >
-61-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:22:9-43
+61-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:22:9-43
 62            <intent-filter>
-62-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:25:9-28:25
+62-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:25:9-28:25
 63                <action android:name="android.intent.action.MAIN" />
-63-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:26:11-63
-63-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:26:19-60
+63-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:26:11-63
+63-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:26:19-60
 64
 65                <category android:name="android.intent.category.LAUNCHER" />
-65-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:27:11-71
-65-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:27:21-68
+65-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:27:11-71
+65-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:27:21-68
 66            </intent-filter>
 67        </activity>
 68        <activity
-68-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:30:7-42:18
+68-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:30:7-42:18
 69            android:name="com.shelterhub.business.MainActivity"
-69-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:31:9-37
+69-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:31:9-37
 70            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-70-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:34:9-118
+70-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:34:9-118
 71            android:exported="true"
-71-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:37:9-32
+71-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:37:9-32
 72            android:label="@string/app_name"
-72-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:33:9-41
+72-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:33:9-41
 73            android:launchMode="singleTask"
-73-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:35:9-40
+73-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:35:9-40
 74            android:networkSecurityConfig="@xml/network_security_config"
-74-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:32:9-69
+74-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:32:9-69
 75            android:windowSoftInputMode="adjustResize" >
-75-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:36:9-51
+75-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:36:9-51
 76
 77            <!--
 78        <intent-filter>
@@ -150,45 +150,45 @@
 83        </activity>
 84
 85        <meta-data
-85-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:43:7-45:63
+85-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:43:7-45:63
 86            android:name="com.google.android.geo.API_KEY"
-86-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:44:6-51
-87            android:value="AIzaSyB4YIgptnJXoOkYHIwOFqLoche_OjufQbU" />
-87-->/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app/src/main/AndroidManifest.xml:45:6-61
+86-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:44:6-51
+87            android:value="AIzaSyARrk6kY-nnnSpReeWotnQxCAo_MoI4qbU" />
+87-->/home/kirtan/Documents/merchantApp_final/android/app/src/main/AndroidManifest.xml:45:6-61
 88
 89        <provider
-89-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:9-45:20
+89-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:9-45:20
 90            android:name="com.ReactNativeBlobUtil.Utils.FileProvider"
-90-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-70
+90-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-70
 91            android:authorities="com.shelterhub.business.provider"
-91-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-60
+91-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-60
 92            android:exported="false"
-92-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-37
+92-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-37
 93            android:grantUriPermissions="true" >
-93-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-47
+93-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-47
 94            <meta-data
-94-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
+94-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
 95                android:name="android.support.FILE_PROVIDER_PATHS"
-95-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
+95-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
 96                android:resource="@xml/provider_paths" />
-96-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
+96-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
 97        </provider>
 98        <provider
-98-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-42:20
+98-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-42:20
 99            android:name="com.RNFetchBlob.Utils.FileProvider"
-99-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-62
+99-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-62
 100            android:authorities="com.shelterhub.business.provider"
-100-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-60
+100-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-60
 101            android:exported="false"
-101-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-37
+101-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-37
 102            android:grantUriPermissions="true" >
-102-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-47
+102-->[:rn-fetch-blob] /home/kirtan/Documents/merchantApp_final/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-47
 103            <meta-data
-103-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
+103-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44:58
 104                android:name="android.support.FILE_PROVIDER_PATHS"
-104-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
+104-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:17-67
 105                android:resource="@xml/provider_paths" />
-105-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
+105-->[:react-native-blob-util] /home/kirtan/Documents/merchantApp_final/node_modules/react-native-blob-util/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:17-55
 106        </provider>
 107        <provider
 107-->[androidx.work:work-runtime:2.7.1] /home/kirtan/.gradle/caches/transforms-3/449d4bffb41de115758819a20b4d148c/transformed/work-runtime-2.7.1/AndroidManifest.xml:31:9-39:20

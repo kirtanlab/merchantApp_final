@@ -39,10 +39,22 @@ const initialState = {
   checked_login_pass: false,
   checked_first_form: false,
   mobile_updating: false,
+  delete_reviewID: "",
+  changed: false,
 };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
+    case authActions.PROFILE_CHANGED:
+      return{
+        ...state,
+        changed: action.value
+      }
+    case authActions.DELETE_REVIEWID: 
+      return{
+        ...state,
+        delete_reviewID: action.value
+      }
     case authActions.UPDATE_HOMELOADING:
       return {
         ...state,

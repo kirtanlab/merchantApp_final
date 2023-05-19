@@ -202,7 +202,7 @@ const Basic25 = ({
   const upload_all = async () => {
     try {
       setLoading(true);
-      await upload_outer_videos();
+      // await upload_outer_videos();
       await upload_outer_images();
 
       setLoading(false);
@@ -216,7 +216,7 @@ const Basic25 = ({
     // navigation.replace("Basic3");
   }
   async function onPress_for() {
-    if (checked_room_outer_image && checked_room_outer_video) {
+    if (checked_room_outer_image) {
       await upload_all();
     } else {
       showErrorToast((title = "Fill Required Fields"));
@@ -618,7 +618,7 @@ const Basic25 = ({
           />
 
           {/* Outer Videso */}
-          <View style={{ flexDirection: "row" }}>
+          {/* <View style={{ flexDirection: "row" }}>
             <Text
               style={{
                 color: COLORS.black,
@@ -683,8 +683,8 @@ const Basic25 = ({
             renderItem={(video) =>
               render_video({ _vidUri: video.item.uri, video: video })
             }
-          />
-        </View>
+          />*/}
+        </View> 
       </ScrollView>
       {loading && <AppLoader />}
     </>

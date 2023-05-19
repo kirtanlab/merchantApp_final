@@ -138,6 +138,10 @@ const App = () => {
           name="NewPassword"
           component={NewPassword}
         />
+        <Stack.Screen 
+        options={{headerShown: false}} 
+        name="ChangeProfile" 
+        component={ChangeProfile} />
       </Stack.Navigator>
     );
   };
@@ -180,7 +184,7 @@ const App = () => {
           <Stack.Screen name="MainScreens" component={Tabs} />
           <Stack.Screen name="Appterms" component={AppTerms} />
           <Stack.Screen name="GovtTerms" component={GovtTerms} />
-          <Stack.Screen name="ChangeProfile" component={ChangeProfile} />
+          
         </Stack.Navigator>
       </NavigationContainer>
       

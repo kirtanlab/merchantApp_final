@@ -9,8 +9,9 @@ import {
   View,
   ScrollView,
   PermissionsAndroid,
+  Alert,
 } from "react-native";
-
+import * as AuthActions from '../../store/auth/authActions'
 import { connect } from "react-redux";
 import icons from "../../constants/icons";
 import CustomButton from "../../components/CustomeButton";
@@ -25,11 +26,14 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from "react-native-confirmation-code-field";
-const ForgetPass = ({ route, navigation }) => {
-  const { email } = route.params;
+import { changeProfile } from "../../store/auth/authActions";
+const ForgetPass = ({ updatelogin_email,route, navigation }) => {
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
-
+  let [email,setEmail] = useState(route.params?.obj?.email || route.params?.email)
+  let [name,setName] = useState(route.params?.obj?.name)
+  let token = route.params?.obj?.token
+  const [prev_screen,setPrevscreen] = useState(route.params?.obj?.prev_screen)
   const CELL_COUNT = 4;
   const [value, setValue] = useState("");
   const ref = useBlurOnFulfill({ value, cellCount: CELL_COUNT });
@@ -64,25 +68,63 @@ const ForgetPass = ({ route, navigation }) => {
       try {
         setLoading(true);
         const obj = {
-          email: email,
+          email: email.toLowerCase(),
           otp: Number(value),
         };
+        // console.log(obj);
         console.log(obj);
         const data = await axios.post(
           `${REACT_APP_OWNER_API}/api/v1/owner/verifyotp`,
           obj
         );
         console.log("data", data.data);
-
-        setLoading(false);
-        navigation.replace("NewPassword", { email: email });
+        console.log('token',token)
+        if(prev_screen === 'ChangeProfile'){
+          const data = await axios.post(
+            `${REACT_APP_OWNER_API}/api/v1/owner/verifynewemail`,
+            { email: email.toLowerCase(),otp: Number(value)},
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          // const _data = await axios.post(
+          //   `${REACT_APP_OWNER_API}/api/v1/owner/updateowner`,
+          //   { name:name},
+          //   {
+          //     headers: {
+          //       Authorization: `Bearer ${token}`,
+          //       "Content-Type": "application/json",
+          //     },
+          //   }
+          // ); 
+          // await updatelogin_email(email)
+          console.log('data updated',data.data)
+          setLoading(false);
+          navigation.replace('ProfileScreen')
+        }else{
+          navigation.replace("NewPassword", { email: email.toLowerCase() });
+        }
+        
       } catch (err) {
+        console.log('Entered in OTP SCreen Error');
         setLoading(false);
         console.log("lol", err.response.data);
         // navigation.replace("NewPassword");
         // gen_login_err_method(true);
         // setErr(err.response.data.msg);
+        if(err.response.data.msg.codeName === "DuplicateKey"){
+          Alert.alert("Email already in use")
+          navigation.replace('ChangeProfile')
+        }
+        if(err.response.data.msg === 'Please provide valid Email'){
+          Alert.alert("Email already in use")
+          navigation.replace('ChangeProfile')
+        }
         setErr(true);
+
       }
     } else {
       setError_num(true);
@@ -262,7 +304,7 @@ const ForgetPass = ({ route, navigation }) => {
                   <View
                     style={{
                       marginTop: 0,
-                      top: -15,
+                      top: -18,
                       left: 23,
                       marginBottom: 0,
                     }}
@@ -312,7 +354,7 @@ const ForgetPass = ({ route, navigation }) => {
                 />
               </View>
 
-              <View
+              {prev_screen !== 'ChangeProfile' && <View
                 style={{
                   flexDirection: "row",
                   justifyContent: "center",
@@ -333,7 +375,7 @@ const ForgetPass = ({ route, navigation }) => {
                     Back to Sign in
                   </Text>
                 </TouchableOpacity>
-              </View>
+              </View>}
             </View>
           </SafeAreaView>
         </KeyboardAvoidingView>
@@ -374,7 +416,11 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    updatelogin_email: (value) => {
+      return dispatch(AuthActions.updatelogin_email(value));
+    },
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ForgetPass);

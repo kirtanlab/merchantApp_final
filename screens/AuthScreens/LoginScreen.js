@@ -49,7 +49,7 @@ const LoginScreen = ({
         setLoading(true);
 
         const obj = {
-          email: email,
+          email: email.toLowerCase(),
           password: password,
         };
         const data = await axios.post(
@@ -57,14 +57,29 @@ const LoginScreen = ({
           obj,
           { headers: { "Content-Type": "application/json" } }
         );
+       
+
         console.log("data", data.data);
 
         updateToken(data.data.token);
         let token = data.data.token;
         await setUser(token);
 
+        const _data = await axios.get(
+          `${REACT_APP_OWNER_API}/api/v1/owner/getstatus`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
         let phoneVerified = data.data.user.phoneVerified;
         let detailsEntered = data.data.user.detailsEntered;
+        let typeofpg = _data.data.data.typeofpg;
+        let roomFilled = data.data.user.roomFilled;
+        console.log("userData", data.data.user);
+        console.log("_data",_data.data)
         setLoading(false);
         if (phoneVerified && !detailsEntered) {
           // navigation.navigate('Newproperty');
@@ -72,21 +87,24 @@ const LoginScreen = ({
           //   index: 0,
           //   routes: [{name: 'Newproperty'}],
           // });
-          navigation.replace("NewRooms");
-        } else if (phoneVerified && detailsEntered) {
+          navigation.replace("Newproperty");
+        }else if(!phoneVerified){
+          navigation.navigate("mobile_input");
+        }
+        else if (phoneVerified && detailsEntered && !roomFilled && typeofpg != MESS) {
           // navigation.replace('MainScreens');
 
-          navigation.replace("MainScreens");
+          navigation.replace("NewRooms");
           // navigation.reset({
           //   index: 0,
           //   routes: [{name: 'MainScreens'}],
           // });
         } else {
-          navigation.navigate("mobile_input");
+          navigation.replace("MainScreens");
         }
       } catch (err) {
         setLoading(false);
-        console.log("lol", err);
+        console.log("lol", err.response.data);
         gen_login_err_method(true);
         setError(err.response.data.msg);
       }
@@ -202,6 +220,11 @@ const LoginScreen = ({
             }}
           />
           <TouchableOpacity
+          style={{
+            // left: "100%",
+            top: -15,
+            left: "56%"
+          }}
             onPress={() => {
               navigation.navigate("ForgetPassword");
             }}
@@ -209,8 +232,6 @@ const LoginScreen = ({
             <Text
               style={{
                 color: COLORS.mobile_theme_back,
-                top: -20,
-                left: "66%",
                 fontSize: 14,
               }}
             >

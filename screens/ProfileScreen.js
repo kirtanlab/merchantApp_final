@@ -9,6 +9,7 @@ import {
   Switch,
   Share,
   Linking,
+  RefreshControl
 } from "react-native";
 import { HeaderBar } from "../components";
 import { FONTS, COLORS, SIZES, icons } from "../constants";
@@ -112,12 +113,15 @@ const ProfileScreen = ({
   navigation,
   token,
   updatingMobile,
+  changed,
+  changeProfile
 }) => {
   const [faceId, setFaceId] = React.useState(true);
   const [isDarkMode, setisDarkMode] = React.useState(false);
   const [value, setValue] = React.useState("first");
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
+  const [refreshing, setRefreshing] = React.useState(false);
   const owner_fetch_details = async () => {
     const instance = axios.create({
       baseURL: `${REACT_APP_OWNER_API}/api/v1/owner/displayowner`,
@@ -266,11 +270,31 @@ const ProfileScreen = ({
   //     </View>
   //   );
   // };
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    setTimeout(() => {
+      async function call_all() {
+        await owner_fetch_details();
+      }
+      call_all();
+      setRefreshing(false);
+    }, 2000);
+  }, []);
   useEffect(() => {
     owner_fetch_details();
   }, []);
+  useEffect(() => {
+    console.log('Changed Profile in profile Screen')
+    if(changeProfile){
+      owner_fetch_details();
+    }
+    changeProfile(false)
+  }, [changed]);
   return (
     <ScrollView
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }
       style={{
         // flex: 1,
         paddingHorizontal: 15,
@@ -344,7 +368,7 @@ const ProfileScreen = ({
           onPress={() => {
             // setModalVisible(true);
             // render_modal();
-            navigation.navigate("ChangeProfile");
+            navigation.navigate("Root",{screen: "ChangeProfile"});
             console.log("OnPressed");
           }}
         />
@@ -436,6 +460,7 @@ function mapStateToProps(state) {
   //   };
   return {
     token: state.authReducer.token,
+    changed: state.authReducer.changed
   };
 }
 
@@ -446,6 +471,9 @@ function mapDispatchToProps(dispatch) {
     },
     updateToken: (value) => {
       dispatch(AuthActions.updateToken(value));
+    },
+    changeProfile: (value) => {
+      return dispatch(AuthActions.changeProfile(value));
     },
     // logout: () => {
     //   dispatch(AuthActions.logout());

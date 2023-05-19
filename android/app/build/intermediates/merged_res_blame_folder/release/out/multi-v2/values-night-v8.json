@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/kirtan/Documents/merchantApp_final/merchantApp_final/node_modules/@react-native-community/datetimepicker/android/build/intermediates/packaged_res/release/values-night-v8/values-night-v8.xml",
+                    "source": "/home/kirtan/Documents/merchantApp_final/node_modules/@react-native-community/datetimepicker/android/build/intermediates/packaged_res/release/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,5",
                         "startColumns": "4,4",

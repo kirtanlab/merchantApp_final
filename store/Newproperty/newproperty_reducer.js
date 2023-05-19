@@ -142,9 +142,10 @@ const newproperty_reducer = (state = initialState, action) => {
       }
       let male = action.value.isMale;
       let female = action.value.isFemale;
+      console.log('male&Feamle',male, female);
       gender_obj = {
-        male: male || (!male && !female),
-        female: female,
+        male: male && !female || (!male && !female),
+        female: female && !male,
         both: male && female ? true : false,
       };
 
@@ -168,11 +169,11 @@ const newproperty_reducer = (state = initialState, action) => {
         gender: gender_obj,
         amneties: amneties,
         looking_form: obj,
-        mess_price: action.value.price.toString(),
-        about_pg: action.value.About,
-        terms_pg: action.value.Rules,
+        mess_price: action?.value?.price?.toString(),
+        about_pg: action.value?.About,
+        terms_pg: action.value?.Rules,
         // about_pg: action.value.about_pg,
-        propertyName: action.value.propertytitle,
+        propertyName: action.value?.propertytitle,
         house_no: house_no,
         Landmark: Landmark,
         // adharcard: action.value.adharcard,

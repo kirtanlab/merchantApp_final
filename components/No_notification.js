@@ -12,7 +12,7 @@ const No_notification = ({ title }) => {
         // borderColor: COLORS.lightGray6,
         minHeight: 200,
         maxHeight: 250,
-        marginTop: "50%",
+        marginTop: "5%",
 
         paddingBottom: 10,
       }}

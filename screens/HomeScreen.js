@@ -42,6 +42,7 @@ const HomeScreen = ({
   const [view, setViews] = React.useState("");
   const [agreed, setAgreed] = React.useState(false);
   const [interestedusers, setInterestedusers] = React.useState("");
+  const [isMESS,setIsMESS] = React.useState(false);
   const resetFlatList = () => {
     setKey(key + 1);
   };
@@ -53,6 +54,7 @@ const HomeScreen = ({
         setLoading(true);
         await room_fetch_details();
         await owner_fetch_details();
+        setLoading(false);
       }
       call_all();
       setRefreshing(false);
@@ -75,64 +77,68 @@ const HomeScreen = ({
     // console.log("result_property", data.data.data);
     prop_setData(data.data.data);
     setName(data.data.data.name);
-
+    console.log('typeofpg',data.data.data.typeofpg)
+    if(data.data.data.typeofpg === 'MESS'){
+      setIsMESS(true)
+    }
     // console.log("result", data.data.data.address);
     setViews(data.data.data.views);
     setInterestedusers(data.data.data.interestedusers);
     prop_setImage(data.data.data?.photos[0]?.uri);
-    let videos_array = data.data.data.videos;
-    let new_array = [];
-    console.log("vid_array", videos_array);
-    try {
-      if (videos_array.length > 0) {
-        console.log("ENTERING VIDEO");
-        const path = `${RNFetchBlob.fs.dirs.DocumentDir}`;
-        console.log("path", path);
-        await videos_array.forEach(async function (arrayItem) {
-          console.log("arrayItem", arrayItem);
-          let uri = arrayItem.uri;
-          let title = arrayItem.name.split(".")[0];
-          await RNFetchBlob.config({
-            // fileCache: true,
-            path: path + "/" + `${title}` + ".mp4",
-          })
-            .fetch("GET", uri, {
-              Authorization: `Bearer ${token}`,
-            })
-            .then((res) => {
-              console.log("res", res.respInfo.status);
-              if (res.respInfo.status !== 404) {
-                let local_path = res.path();
-                console.log("local_name_video", title);
-                console.log("LOCAL-PATH_video", local_path);
-                let obj = {
-                  name: arrayItem.name,
-                  uri: local_path,
-                };
-                new_array.push(obj);
-              } else {
-                new_array = [];
-              }
-            })
-            .then(async () => {
-              console.log("done");
-              await updateOuterVideos(new_array);
-              checkedOuterVideos(true);
-              console.log("done1");
-              setLoading(false);
-            })
-            .catch((error) => {
-              console.log("catched propert_listing", error);
-              setLoading(false);
-            });
-        });
-      } else {
-        console.log("entered else");
-        setLoading(false);
-      }
-    } catch (err) {
-      console.log("outside", err);
-    }
+    // let videos_array = data.data.data.videos;
+    // let new_array = [];
+    // console.log("vid_array", videos_array);
+    // try {
+    //   if (videos_array.length > 0) {
+    //     console.log("ENTERING VIDEO");
+    //     const path = `${RNFetchBlob.fs.dirs.DocumentDir}`;
+    //     console.log("path", path);
+    //     await videos_array.forEach(async function (arrayItem) {
+    //       console.log("arrayItem", arrayItem);
+    //       let uri = arrayItem.uri;
+    //       let title = arrayItem.name.split(".")[0];
+    //       await RNFetchBlob.config({
+    //         // fileCache: true,
+    //         path: path + "/" + `${title}` + ".mp4",
+    //       })
+    //         .fetch("GET", uri, {
+    //           Authorization: `Bearer ${token}`,
+    //         })
+    //         .then((res) => {
+    //           console.log("res", res.respInfo.status);
+    //           if (res.respInfo.status !== 404) {
+    //             let local_path = res.path();
+    //             console.log("local_name_video", title);
+    //             console.log("LOCAL-PATH_video", local_path);
+    //             let obj = {
+    //               name: arrayItem.name,
+    //               uri: local_path,
+    //             };
+    //             new_array.push(obj);
+    //           } else {
+    //             new_array = [];
+    //           }
+    //         })
+    //         .then(async () => {
+    //           console.log("done");
+    //           await updateOuterVideos(new_array);
+    //           checkedOuterVideos(true);
+    //           console.log("done1");
+    //           setLoading(false);
+    //         })
+    //         .catch((error) => {
+    //           console.log("catched propert_listing", error);
+    //           setLoading(false);
+    //         });
+    //     });
+    //   } else {
+    //     console.log("entered else");
+    //     setLoading(false);
+    //   }
+    // } 
+    // catch (err) {
+    //   console.log("outside", err);
+    // }
   };
 
   const room_fetch_details = async () => {
@@ -207,7 +213,7 @@ const HomeScreen = ({
             backgroundColor={COLORS.mobile_theme_back}
             barStyle={"light-content"}
           />
-          <HomeScreen_Header username={name} navigation={navigation} />
+          <HomeScreen_Header isMESS={isMESS} username={name} navigation={navigation} />
 
           <MyProperty
             propertytitle={prop_data.propertytitle}
@@ -219,7 +225,7 @@ const HomeScreen = ({
             status={prop_data ? "GOOD" : "BAD"}
             ratings={prop_data?.ratings?.$numberDecimal}
           />
-          <MyRooms
+          {!isMESS && <MyRooms
             data={room_data}
             key={key}
             status={room_data.length > 0 ? "GOOD" : "BAD"}
@@ -242,7 +248,7 @@ const HomeScreen = ({
               await room_fetch_details();
               resetFlatList();
             }}
-          />
+          />}
           <Notifications views={view} navigation={navigation} />
           <Intrests interestedusers={interestedusers} navigation={navigation} />
           {/* <PropertyDetail image={prop_image} property={prop_data} /> */}

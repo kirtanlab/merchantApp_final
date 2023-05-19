@@ -27,3 +27,14 @@ l 1)Change Password -> forget password -> clicked on back button -> navigate to 
 
 
 
+-->Bugs 4.0s
+1)Change Profile Section is not working
+2)getstatus
+3)lowercase the email
+4)Remove add rooms from top bar -->DONE
+5)Make sure to change to lowercase of Change password email
+6)Add setLoading in ChangeProfile
+
+-->Bugs 5.0s //in papa phone  
+1)SHOW BUTTON is not working
+2)REMOVE GO TO HOMESCREEN BUTTON

@@ -3,7 +3,11 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { COLORS, FONTS, SIZES } from "../../constants";
 import Ionicons from "react-native-vector-icons/Ionicons";
-const ReviewBox = ({ name, room_type, email, phone_number, time, review }) => {
+import axios from "axios";
+import { connect } from "react-redux";
+import { REACT_APP_OWNER_API } from "@env";
+import * as AuthActions from "../../store/auth/authActions";
+const ReviewBox = ({Deletereview,token, name, room_type,id, email, phone_number, time, review }) => {
   let [comment, setComment] = React.useState(false);
   let relative_time = "";
   let time_obj = new Date(time);
@@ -91,8 +95,14 @@ const ReviewBox = ({ name, room_type, email, phone_number, time, review }) => {
           commented on your property
         </Text>
         <TouchableOpacity
-          onPress={() => {
+          onPress={async () => {
             console.log("Pressed");
+            try{
+              
+              Deletereview(id)
+            }catch(err){
+              console.error('Err',err)
+            }
           }}
           style={{
             borderColor: COLORS.mobile_theme_back,
@@ -235,4 +245,19 @@ const ReviewBox = ({ name, room_type, email, phone_number, time, review }) => {
     </View>
   );
 };
-export default ReviewBox;
+
+function mapStateToProps(state) {
+  return {
+    token: state.authReducer.token,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    Deletereview: (value) => {
+      return dispatch(AuthActions.Deletereview(value));
+    },
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewBox);

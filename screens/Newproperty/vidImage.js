@@ -70,8 +70,9 @@ const vidImage = ({
   let [intMessimg, setintMessimg] = React.useState({});
   let [intvid, setintVid] = React.useState([]);
   let [intImg, setintImg] = React.useState([]);
-
+  let [NumImage,setNumImage] = React.useState(0);
   const [loading, setLoading] = React.useState(false);
+  console.log("NUmber image",imgUri.length);
   // console.log(vidUri);
   console.log("vidImage", messImage);
   function return_looking(looking_form) {
@@ -117,6 +118,7 @@ const vidImage = ({
     }
   };
   const upload_outer_images = async () => {
+    console.log("Number of Images",NumImage)
     if (intImg.length > 0) {
       try {
         intImg.forEach((element) => {
@@ -206,6 +208,7 @@ const vidImage = ({
         isCooler: amneties.cooler,
         Rules: terms_pg,
         price: mess_price,
+        About: about_pg
       };
       const data = await axios.post(
         `${REACT_APP_OWNER_API}/api/v1/owner/updateowner`,
@@ -224,24 +227,50 @@ const vidImage = ({
       setLoading(false);
     }
   };
-
+  function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
   const upload_all = async () => {
     try {
+      let delay_time=0;
+      if(intImg.length <= 3){
+        console.log("entered for 0-3")
+        delay_time = 10000;
+      }else if(intImg.length >= 4 && intImg.length <= 6){
+        console.log("entered for 4-6")
+        delay_time = 20000;
+      }
+      else{
+        console.log("entered for greater than 6")
+        delay_time = 30000;
+      }
       setLoading(true);
-      await upload_details();
-      await upload_menuImage();
-      await upload_outer_images();
-      await upload_outer_videos();
+      await delay(10000); // Wait for 10 seconds
+      const uploadPromises = [
+        upload_details(),
+        upload_menuImage(),
+        upload_outer_images()
+      ];
       setLoading(false);
+      await Promise.all(uploadPromises);
+      // await upload_details();
+      // await upload_menuImage();
+      // await upload_outer_images();
+      // await upload_outer_videos();
       navigation.replace("Thankyou");
     } catch (err) {
       setLoading(false);
       console.log("lol", err);
     }
   };
+  
+  
+
+   
+ 
 
   function onPress_for() {
-    if (checked_mess_image && checked_outer_video && checked_outer_image) {
+    if (checked_mess_image || checked_outer_image) {
       console.log("Done");
       upload_all();
     } else {
@@ -302,6 +331,8 @@ const vidImage = ({
         console.log("completed", temp);
         setimgUri(temp);
         setintImg(res);
+        console.log("NUmber image", res.length, " // ", imgUri.length);
+        setNumImage(res.length)
         console.log("completed1");
         updateOuterImages(temp);
         checkedOuterImages(true);
@@ -862,7 +893,7 @@ const vidImage = ({
             }
           />
 
-          {/* Outer Videso */}
+          {/* Outer Videso
           <View style={{ marginTop: 15, flexDirection: "row" }}>
             <Text
               style={{
@@ -928,7 +959,7 @@ const vidImage = ({
             renderItem={(video) =>
               render_video({ _vidUri: video.item.uri, video: video })
             }
-          />
+          /> */}
         </View>
       </ScrollView>
       {loading && <AppLoader />}

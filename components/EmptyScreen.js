@@ -24,7 +24,7 @@ const EmptyScreen = ({ title }) => {
           color: COLORS.lightGray3,
           lineHeight: 22,
           fontFamily: FONTS.fontFamily_black,
-          left: 5,
+          right: 15,
           top: 10,
         }}
       >

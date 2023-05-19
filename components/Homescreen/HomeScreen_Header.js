@@ -10,6 +10,7 @@ const HomeScreen_Header = ({
   navigation,
   username,
   roomUpdating,
+  isMESS
 }) => {
   return (
     <View
@@ -56,7 +57,7 @@ const HomeScreen_Header = ({
           justifyContent: SIZES.form_button_justifyContent,
         }}
       >
-        <TouchableOpacity
+        {!isMESS && <TouchableOpacity
           style={{
             borderColor: COLORS.mobile_theme_back,
             borderWidth: SIZES.form_button_borderWidth,
@@ -95,7 +96,7 @@ const HomeScreen_Header = ({
           >
             + Add new rooms
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity>}
       </View>
     </View>
   );

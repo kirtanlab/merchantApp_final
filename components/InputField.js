@@ -409,7 +409,7 @@ function InputField({
           defaultValue={defaultValue}
           placeholderTextColor="lightgray"
           style={{
-            flex: 0.85,
+            flex: 1,
             paddingVertical: 0,
             borderBottomColor: "#ccc",
             color: "#000000",
@@ -1043,6 +1043,7 @@ function InputField({
             // fontWeight: "bold",
             borderWidth: 1,
             borderColor: COLORS.lightGray4,
+            maxHeight: 180,
           }}
           returnKeyType="done"
           returnKeyLabel="done"
@@ -1061,7 +1062,7 @@ function InputField({
     <View
       style={{
         flexDirection: "row",
-        paddingBottom: 8,
+        // paddingBottom: 8,
         marginBottom: 25,
       }}
     >
@@ -1073,9 +1074,7 @@ function InputField({
             color: COLORS.mobile_theme_back,
             // fontWeight: "bold",
             // left: 100,
-            position: "absolute",
-            marginTop: 10,
-            marginLeft: 4,
+            position: "relative",
             fontSize: 14,
           }}
         >

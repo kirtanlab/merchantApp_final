@@ -29,7 +29,7 @@ const ForgetPass = ({ navigation }) => {
         setLoading(true);
 
         const obj = {
-          email: email,
+          email: email.toLowerCase(),
         };
         const data = await axios.patch(
           `${REACT_APP_OWNER_API}/api/v1/owner/forgotpassword`,

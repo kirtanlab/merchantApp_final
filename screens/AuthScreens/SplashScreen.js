@@ -35,8 +35,9 @@ const _SplashScreen = ({ navigation, updateToken }) => {
           }
         );
         let phone_status = data.data.data.phoneVerified;
-        let details_status = data.data.data.detailsEntered;
-        let roomFilled = data.data.data.roomFilled;
+        let details_status = data.data.data.detailsEntered; //for details of property
+        let roomFilled = data.data.data.roomFilled; //for room 
+        let typeofpg = data.data.data.typeofpg;
         console.log(
           "roomFilled",
           roomFilled,
@@ -45,14 +46,18 @@ const _SplashScreen = ({ navigation, updateToken }) => {
           "details_status",
           details_status
         );
-
+        let isMESS = false;
+        if(typeofpg === 'MESS'){
+          isMESS= true
+        }
+        console.log("typeofpg", data.data);
         if (!phone_status) {
-          navigation.replace("MobileOTP");
+          navigation.replace("mobile_input");
           SplashScreen.hide();
         } else if (!details_status) {
           navigation.replace("Newproperty");
           SplashScreen.hide();
-        } else if (!roomFilled) {
+        } else if (!roomFilled && isMESS == false) {
           navigation.replace("NewRooms");
           SplashScreen.hide();
         } else {

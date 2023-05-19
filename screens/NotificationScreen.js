@@ -6,6 +6,7 @@ import {
   FlatList,
   LogBox,
   RefreshControl,
+  Alert,
 } from "react-native";
 import NotificationBox from "../components/NotificationScreen/NotificationBox";
 import No_notification from "../components/No_notification";
@@ -15,8 +16,8 @@ import axios from "axios";
 import { REACT_APP_OWNER_API } from "@env";
 import { List } from "react-native-paper";
 import ReviewBox from "../components/NotificationScreen/ReviewBox";
-
-const NotificationScreen = ({ token }) => {
+import * as AuthActions from "../store/auth/authActions";
+const NotificationScreen = ({Deletereview, token,delete_reviewID }) => {
   const [refreshing, setRefreshing] = React.useState(false);
   const [notifications, setNotifications] = React.useState([]);
   const [reviews, setReviews] = React.useState([]);
@@ -24,12 +25,56 @@ const NotificationScreen = ({ token }) => {
   const [expanded1, setExpanded1] = React.useState(false);
   const handlePress = () => setExpanded(!expanded);
   const handlePress1 = () => setExpanded1(!expanded1);
+  useEffect(() => {
+    // Alert.alert('Are you sure to delete this review?');
+    // if(delete_reviewID !== ""){
+    //   let temp_review = reviews.filter(
+    //     (obj) => obj._id !== delete_reviewID
+    //   );
+    //   setReviews(temp_review)
+    // }
+    if(delete_reviewID != ""){
+      Alert.alert(
+      "Confirmation",
+      "Are you sure you want to delete the review?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel",
+          onPress: () => {
+            // Do nothing
+            Deletereview("")
+          },
+        },
+        {
+          text: "Yes",
+          onPress: async () => {
+            const data = await axios.delete(
+              `${REACT_APP_OWNER_API}/api/v1/owner/deletereview/${delete_reviewID}`,
+              {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              }
+            );
+            console.log(data);
+            if (delete_reviewID !== "") {
+              let temp_review = reviews.filter((obj) => obj._id !== delete_reviewID);
+              setReviews(temp_review);
+            }
+          },
+        },
+      ],
+      { cancelable: false }
+    );}
+  },[delete_reviewID])
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
 
     setTimeout(() => {
       async function call_all() {
         await room_fetch_details();
+        await review_details();
       }
       call_all();
       setRefreshing(false);
@@ -48,7 +93,7 @@ const NotificationScreen = ({ token }) => {
           },
         }
       );
-      console.log("notification", data.data.data);
+      console.log("notification", data.data);
       setNotifications(data.data.data);
     } catch (e) {
       console.log("error", e.response.data);
@@ -149,6 +194,7 @@ const NotificationScreen = ({ token }) => {
                 data={reviews}
                 inverted
                 renderItem={({ item }) => {
+                  // console.log(item)
                   return (
                     <ReviewBox
                       name={item.username}
@@ -157,6 +203,7 @@ const NotificationScreen = ({ token }) => {
                       phone_number={item.phoneno}
                       time={item.createdAt}
                       review={item.review}
+                      id={item._id}
                     />
                   );
                 }}
@@ -174,11 +221,16 @@ const NotificationScreen = ({ token }) => {
 function mapStateToProps(state) {
   return {
     token: state.authReducer.token,
+    delete_reviewID: state.authReducer.delete_reviewID,
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    Deletereview: (value) => {
+      return dispatch(AuthActions.Deletereview(value));
+    },
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NotificationScreen);

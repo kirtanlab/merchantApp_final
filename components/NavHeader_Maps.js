@@ -55,7 +55,7 @@ const NavHeader_Maps = ({
             </Text>
           </View>
         </TouchableOpacity>
-        <View style={{ left: "40%", width: 170 }}>
+        <View style={{ left: "0%", width: 180 }}>
           <Text
             style={{
               color: COLORS.mobile_theme_back,

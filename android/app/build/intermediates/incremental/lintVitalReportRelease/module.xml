@@ -1,6 +1,6 @@
 <lint-module
     format="1"
-    dir="/home/kirtan/Documents/merchantApp_final/merchantApp_final/android/app"
+    dir="/home/kirtan/Documents/merchantApp_final/android/app"
     name=":app"
     type="APP"
     maven="Shelterhub Business:app:"

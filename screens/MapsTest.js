@@ -129,11 +129,11 @@ const MapTest = ({
             // setLocationAddress(address);
             updateLocationAddress(address);
           } else {
-            reject("not found");
+            reject("not found in getting address 1");
           }
         })
         .catch((error) => {
-          reject(error);
+          reject(error,"not found in getting address 2");
         });
     });
   }
@@ -263,7 +263,7 @@ const MapTest = ({
               // setOrigin(dyn_position);
             }}
             ref={mapRef}
-          ></MapView>
+          />
           <View style={styles.searchContainer}>
             <View style={{ flex: 8 }}>
               <GooglePlacesAutocomplete
@@ -430,6 +430,7 @@ const styles = StyleSheet.create({
     top: "0%",
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height,
+    // ...StyleSheet.absoluteFillObject,
   },
   searchContainer: {
     shadowOpacity: 0.5,

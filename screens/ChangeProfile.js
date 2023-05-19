@@ -18,8 +18,9 @@ import { connect } from "react-redux";
 import { REACT_APP_OWNER_API } from "@env";
 import axios from "axios";
 import CustomButton_form from "../components/NewProperty/CustomButton_form";
-
-const ChangeProfile = ({ navigation, token }) => {
+import * as Authactions from '../store/auth/authActions'
+import AppLoader from "../components/AppLoader";
+const ChangeProfile = ({login_email,route, navigation, token,changeProfile }) => {
   const data = {
     name: "kirtan",
     number: 9998099893,
@@ -36,6 +37,12 @@ const ChangeProfile = ({ navigation, token }) => {
   const [nameChecked, setNameChecked] = React.useState(true);
   const [emailChecked, setEmailChecked] = React.useState(true);
   const [email, setEmail] = React.useState(data.email);
+  const [initEmail,setInitMail] = React.useState(data.email);
+  const [loading,setLoading] = React.useState(false);
+  
+  useEffect(()=>{
+    setEmail(login_email)
+  },[login_email])
   const fetch_details = async () => {
     console.log("token", token);
     const data = await axios.get(
@@ -46,9 +53,11 @@ const ChangeProfile = ({ navigation, token }) => {
         },
       }
     );
+   
     console.log("data", data.data.data);
     setName(data.data.data.name);
     setEmail(data.data.data.email);
+    setInitMail(data.data.data.email)
   };
   useEffect(() => {
     fetch_details();
@@ -85,6 +94,7 @@ const ChangeProfile = ({ navigation, token }) => {
     }
   };
   return (
+    <>
     <ScrollView
       keyboardShouldPersistTaps="handled"
       style={{
@@ -250,40 +260,76 @@ const ChangeProfile = ({ navigation, token }) => {
           }
           borderRadius
           onPress={async () => {
+            setLoading(true)
             try {
-              const data = await axios.post(
+              if(initEmail === email){
+                const data = await axios.post(
                 `${REACT_APP_OWNER_API}/api/v1/owner/updateowner`,
-                { name: name, email: email },
+                { name: name},
                 {
                   headers: {
                     Authorization: `Bearer ${token}`,
                     "Content-Type": "application/json",
                   },
                 }
+                
               );
               console.log("done", data.data.data.name);
+              setLoading(false)
               Alert.alert("profile updated");
-              // navigation.navigate.goBack();
+            }
+              else{
+                let prev_screen= "ChangeProfile"
+                console.log('email',email)
+                const obj = {
+                  email: email.toLowerCase(),
+                };
+                const data = await axios.post(
+                  `${REACT_APP_OWNER_API}/api/v1/owner/updateemail`,
+                  obj,
+                  { headers: { 
+                    Authorization: `Bearer ${token}`,
+                  "Content-Type": "application/json" } }
+                );
+                console.log('token in ChangeProfile',data)
+                setLoading(false)
+                changeProfile(true)
+                navigation.navigate("OTPScreen", {
+                  obj: {
+                    email: email,
+                    name: name,
+                    token: token,
+                    prev_screen: prev_screen
+                  },
+                });
+              }
             } catch (err) {
               console.log("error", err.response.data);
-
+              setLoading(false)
               Alert.alert("Email is already in use");
             }
           }}
         />
       </View>
     </ScrollView>
+    {loading && <AppLoader />}
+    </>
   );
 };
 
 function mapStateToProps(state) {
   return {
     token: state.authReducer.token,
+    login_email: state.authReducer.login_email,
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    changeProfile: (value) => {
+      return dispatch(Authactions.changeProfile(value));
+    },
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChangeProfile);

@@ -52,6 +52,17 @@ export const CHECKED_FIRST_FORM = "CHECKED_FIRST_FORM";
 export const RESET_TOKEN = "RESET_TOKEN";
 export const UPDATE_TOKEN = "UPDATE_TOKEN";
 export const UPDATE_ROOOM_TOKEN = "UPDATE_ROOOM_TOKEN";
+
+export const DELETE_REVIEWID = "DELETE_REVIEWID";
+export const PROFILE_CHANGED= "PROFILE_CHANGED";
+export const Deletereview = (value) => ({
+  type: DELETE_REVIEWID,
+  value: value
+})
+export const changeProfile = (value) => ({
+  type: PROFILE_CHANGED,
+  value: value
+})
 export const updatingMobile = (value) => ({
   type: UPDATING_MOBILE,
   value: value,

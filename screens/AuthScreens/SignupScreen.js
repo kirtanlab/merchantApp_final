@@ -43,7 +43,7 @@ const SignupScreen = ({
       try {
         setLoading(true);
         const obj = {
-          email: email,
+          email: email.toLowerCase(),
           password: password,
           name: name,
         };

@@ -244,7 +244,7 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
                   </SafeAreaView>
                 }
 
-                <TouchableOpacity
+                {/* <TouchableOpacity
                   onPress={() => _onSmsListenerPressed()}
                   style={{ height: 20, marginLeft: "75%", marginTop: 20 }}
                 >
@@ -257,7 +257,7 @@ const mobile_otp = ({ route, phone, token, navigation, updating_mobile }) => {
                   >
                     Get OTP
                   </Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <TouchableOpacity
                   onPress={() => handlereset()}
                   style={{ height: 20, marginLeft: "75%", marginTop: 20 }}
