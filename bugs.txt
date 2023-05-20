@@ -38,3 +38,4 @@ l 1)Change Password -> forget password -> clicked on back button -> navigate to 
 -->Bugs 5.0s //in papa phone  
 1)SHOW BUTTON is not working
 2)REMOVE GO TO HOMESCREEN BUTTON
+3)Remove Login Pass & Email after logout

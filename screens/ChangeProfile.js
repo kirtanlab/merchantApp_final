@@ -73,7 +73,7 @@ const ChangeProfile = ({login_email,route, navigation, token,changeProfile }) =>
     return regex.test(val);
   } //
   function validate_email(val) {
-    var regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return regex.test(val);
   }
   const selectDoc = async () => {
@@ -158,6 +158,7 @@ const ChangeProfile = ({login_email,route, navigation, token,changeProfile }) =>
                     paddingVertical: 0,
                     borderBottomColor: "#ccc",
                     marginTop: 5,
+                    color: "black",
                     borderBottomWidth: 1,
                     // paddingBottom: 4,
                     fontSize: SIZES.form_section_input_fontsize,
@@ -223,6 +224,7 @@ const ChangeProfile = ({login_email,route, navigation, token,changeProfile }) =>
                     borderBottomColor: "#ccc",
                     marginTop: 5,
                     borderBottomWidth: 1,
+                    color: "black",
                     // paddingBottom: 4,
                     fontSize: SIZES.form_section_input_fontsize,
                   }}

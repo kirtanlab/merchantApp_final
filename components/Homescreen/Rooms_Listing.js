@@ -260,7 +260,7 @@ const Rooms_Listing = ({
           </Text>
         </View> */}
         {/* Edit Buttons */}
-        <View style={{ marginTop: 10, marginBottom: 5, flexDirection: "row" }}>
+        <View style={{ marginTop: 10, height: 35,marginBottom: 5, flexDirection: "row" }}>
           <TouchableOpacity
             style={{
               borderColor: COLORS.mobile_theme_back,
@@ -268,6 +268,7 @@ const Rooms_Listing = ({
               borderRadius: SIZES.form_button_borderRadius,
               // minHeight: 10,
               // maxHeight: 38,
+              
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
               backgroundColor: true ? COLORS.mobile_theme_back : "white",
@@ -276,7 +277,8 @@ const Rooms_Listing = ({
           >
             <Text
               style={{
-                lineHeight: 22,
+                lineHeight: 15,
+
                 // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
@@ -305,7 +307,8 @@ const Rooms_Listing = ({
           >
             <Text
               style={{
-                lineHeight: 22,
+                // height: 15,
+                lineHeight: 15,
                 // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
@@ -334,7 +337,7 @@ const Rooms_Listing = ({
           >
             <Text
               style={{
-                lineHeight: 22,
+                lineHeight: 15,
                 // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,

@@ -22,7 +22,8 @@ import CustomButton_form from "../../components/NewProperty/CustomButton_form";
 
 import NumericInput from "../../components/NewProperty/NumericInput";
 import Custom_Animation from "../../components/NewProperty/Custom_Animation";
-const Thankyou = ({ navigation, property_updating }) => {
+const Thankyou = ({ route,navigation, property_updating }) => {
+  let {prev_screen,typeofpg} = route?.params
   function next_page() {
     if (property_updating.updating) {
       navigation.replace("MainScreens");
@@ -35,6 +36,7 @@ const Thankyou = ({ navigation, property_updating }) => {
   //   const data = new FormData();
 
   // }
+  console.log('updating',property_updating.updating)
 
   return (
     <ScrollView style={{ backgroundColor: "white" }}>
@@ -60,17 +62,17 @@ const Thankyou = ({ navigation, property_updating }) => {
         /> */}
       {/* </View> */}
       <View style={{ flexDirection: "column", marginTop: "20%" }}>
-        <View style={{ alignItems: "center" }}>
+        <View style={{ alignItems: 'center' }}>
           <Text
             style={{
-              fontSize: 30,
+              fontSize: 25,
               fontWeight: "bold",
               color: COLORS.mobile_theme_back,
             }}
           >
             {property_updating.updating
-              ? "Property Modified"
-              : "Thank you for Registering Property"}
+              ? "Property Updated"
+              : "Property Updated"}
           </Text>
         </View>
         <View>
@@ -81,7 +83,7 @@ const Thankyou = ({ navigation, property_updating }) => {
         <CustomButton_form
           fontColor={COLORS.font_color}
           backgroundColor={COLORS.mobile_theme_back}
-          label={property_updating ? "Go to Homescreen" : "Add Rooms Now "}
+          label={typeofpg === 'MESS' || property_updating.updating ? "Go to Homescreen" : "Add Rooms Now "}
           _borderColor={COLORS.mobile_theme}
           borderRadius
           onPress={() => {

@@ -115,7 +115,7 @@ const Location = ({
       setLoading(false);
     }
   };
-  console.log("elebill", elebill);
+  console.log("elebill", elebill,Location);
   function next_page() {
     navigation.navigate("MoreProperty");
     console.log("next pagee");
@@ -342,7 +342,7 @@ const Location = ({
                 <Text
                   style={{
                     lineHeight: SIZES.form_button_text_lineHeight,
-                    fontFamily: FONTS.fontFamily_black,
+                    // fontFamily: FONTS.fontFamily_black,
                     color: COLORS.font_color,
                     fontSize: SIZES.form_button_text_fontSize,
                     marginVertical: SIZES.form_button_text_marginVertical,

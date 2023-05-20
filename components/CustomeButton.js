@@ -7,7 +7,7 @@ export default function CustomButton({ label, onPress, color }) {
       onPress={onPress}
       style={{
         backgroundColor: color,
-        padding: 10,
+        // padding: 6,
         borderRadius: 10,
         marginBottom: 30,
       }}
@@ -16,6 +16,7 @@ export default function CustomButton({ label, onPress, color }) {
         style={{
           textAlign: "center",
           fontWeight: "400",
+          lineHeight: 35,
           fontSize: 17,
           color: "#fff",
         }}

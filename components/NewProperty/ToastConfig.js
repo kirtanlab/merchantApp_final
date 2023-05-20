@@ -21,25 +21,28 @@ export const toastConfig = {
 
   error: (props) => (
     <ErrorToast
-      {...props}
-      text1Style={{
-        fontSize: 13,
-        fontWeight: "bold",
-        color: "red",
-      }}
-      text2Style={{
-        fontSize: 13,
-        fontWeight: "bold",
-        color: "red",
-      }}
-      // contentContainerStyle={{padding: 1}}
-      style={{
-        maxWidth: 180,
-        top: 9,
-        height: 30,
-      }}
-      // renderLeadingIcon={''}
-    />
+    {...props}
+  text1Style={{
+    fontSize: 13,
+    // fontWeight: "bold",
+    color: "red",
+    maxWidth: 190, // Set a specific maximum width for the error text
+    textAlign: "center",
+  }}
+  text2Style={{
+    fontSize: 13,
+    // fontWeight: "bold",
+    color: "red",
+    maxWidth: 190, // Set a specific maximum width for the error text
+    textAlign: "center",
+  }}
+  style={{
+    maxWidth: 190,
+    minWidth: 180,
+    top: 9,
+    height: 30,
+  }}
+  />
   ),
 
   info: (props) => (

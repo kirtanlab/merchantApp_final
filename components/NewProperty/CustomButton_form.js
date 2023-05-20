@@ -15,7 +15,7 @@ export default function CustomButton({
       onPress={onPress}
       style={{
         backgroundColor: backgroundColor,
-        paddingVertical: 10,
+        paddingVertical: 5,
         marginTop: "20%",
         borderRadius: 10,
         marginBottom: 30,

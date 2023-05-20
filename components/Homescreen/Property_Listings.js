@@ -405,7 +405,7 @@ const Property_Listing = ({
             >
               <Text
                 style={{
-                  lineHeight: 22,
+                  lineHeight: 15,
                   // fontFamily: FONTS.fontFamily_black,
                   fontSize: SIZES.form_button_text_fontSize,
                   marginVertical: SIZES.form_button_text_marginVertical,

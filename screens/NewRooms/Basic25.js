@@ -233,10 +233,10 @@ const Basic25 = ({
         type: [DocumentPicker.types.images],
       });
       // console.log(res.length);
-      if (res?.length > 10) {
-        showErrorToast((title = "Maximum 10 Images"));
-      } else if (res?.length + imgUri?.length > 10) {
-        showErrorToast((title = "Maximum 10 Images"));
+      if (res?.length > 6) {
+        showErrorToast((title = "Maximum 6 Images"));
+      } else if (res?.length + imgUri?.length > 6) {
+        showErrorToast((title = "Maximum 6 Images"));
       } else {
         let temp = room_outerImages;
         temp = temp.concat(res);
@@ -262,10 +262,10 @@ const Basic25 = ({
       const res = await DocumentPicker.pickMultiple({
         type: [DocumentPicker.types.video],
       });
-      if (res?.length > 10) {
-        showErrorToast((title = "Maximum 10 Images"));
-      } else if (res?.length + vidUri?.length > 10) {
-        showErrorToast((title = "Maximum 10 Videos"));
+      if (res?.length > 6) {
+        showErrorToast((title = "Maximum 6 Images"));
+      } else if (res?.length + vidUri?.length > 6) {
+        showErrorToast((title = "Maximum 6 Videos"));
       } else {
         let temp = room_outerVideos;
         temp = temp.concat(res);
@@ -543,8 +543,8 @@ const Basic25 = ({
             <Header
               step={3}
               total={3}
-              subtitle={"Room's outer image,video"}
-              title={"Videos and Images of Rooms"}
+              subtitle={"Room's inner image"}
+              title={"Images of Room"}
             />
           </View>
           {/* Outer Images */}
@@ -558,11 +558,11 @@ const Basic25 = ({
                 flex: 1,
               }}
             >
-              Outer Images{"  "}({imgUri.length} out of 10)
+              Outer Images{"  "}({imgUri.length} out of 6)
             </Text>
 
             {imgUri === undefined ||
-              (imgUri?.length <= 10 && (
+              (imgUri?.length <= 6 && (
                 <View style={{ marginTop: 11, flex: 0.4 }}>
                   <TouchableOpacity
                     style={{

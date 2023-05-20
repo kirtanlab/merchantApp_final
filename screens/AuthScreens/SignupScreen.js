@@ -151,7 +151,7 @@ const SignupScreen = ({
             </TouchableOpacity>
           </View>
           {focused_sign_name === true && checked_sign_name == false && (
-            <View style={{ marginTop: -30, left: 40, marginBottom: 20 }}>
+            <View style={{ top: -20,left: 30,}}>
               <Text style={{ color: COLORS.lightGray3 }}>
                 Enter Minimum 5 Letter{"\n"}Include at least one alphabet
               </Text>
@@ -188,7 +188,7 @@ const SignupScreen = ({
             </TouchableOpacity>
           </View>
           {focused_sign_email && !checked_sign_email && (
-            <View style={{ marginTop: -30, left: 40, marginBottom: 20 }}>
+            <View style={{ top: -20,left: 30, }}>
               <Text style={{ color: COLORS.lightGray3 }}>
                 Enter Your Valid Email ID
               </Text>
@@ -226,7 +226,7 @@ const SignupScreen = ({
             </TouchableOpacity>
           </View>
           {focused_sign_pass && !checked_sign_pass && (
-            <View style={{ marginTop: -30, left: 40, marginBottom: 20 }}>
+            <View style={{ top: -20,left: 30, }}>
               <Text style={{ color: COLORS.lightGray3 }}>
                 Enter Atleast one number{"\n"}Enter Atleast One Symbol(!@#$%^&*)
                 {"\n"}Enter atleast 6 letters
@@ -272,14 +272,14 @@ const SignupScreen = ({
             checked_sign_conf_pass &&
             checked_sign_pass &&
             !(password == confirmPassword) && (
-              <View style={{ marginTop: -30, left: 40, marginBottom: 20 }}>
+              <View style={{ top: -20,left: 30, }}>
                 <Text style={{ color: COLORS.lightGray3 }}>
                   Shouldn't be empty {"\n"}Should match password entered above
                 </Text>
               </View>
             )}
           {gen_sign_err && (
-            <View style={{ marginTop: -30, left: 25, marginBottom: 20 }}>
+            <View style={{ top: -20,left: 30, }}>
               <Text style={{ color: "red" }}>{_err}</Text>
             </View>
           )}
@@ -321,7 +321,7 @@ const SignupScreen = ({
               marginBottom: 30,
             }}
           >
-            <Text>Already registered?</Text>
+            <Text style={{color: 'grey'}}>Already registered?</Text>
             <TouchableOpacity
               onPress={() => navigation.navigate("LoginScreen")}
             >

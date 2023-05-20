@@ -86,6 +86,7 @@ const HomeScreen_Header = ({
         >
           <Text
             style={{
+              lineHeight: 15,
               fontSize: SIZES.form_button_text_fontSize,
               // fontFamily: FONTS.fontFamily_poppins,
               marginVertical: SIZES.form_button_text_marginVertical,

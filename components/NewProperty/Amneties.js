@@ -68,7 +68,7 @@ const Amneties = ({ amneties, setAmneties }) => {
               style={{
                 fontWeight: SIZES.form_button_text_fontWeight,
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
                 marginHorizontal: SIZES.form_button_text_marginHorizontal,
@@ -115,7 +115,7 @@ const Amneties = ({ amneties, setAmneties }) => {
             <Text
               style={{
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
                 marginHorizontal: SIZES.form_button_text_marginHorizontal,
@@ -163,7 +163,7 @@ const Amneties = ({ amneties, setAmneties }) => {
             <Text
               style={{
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontWeight: SIZES.form_button_text_fontWeight,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
@@ -213,7 +213,7 @@ const Amneties = ({ amneties, setAmneties }) => {
             <Text
               style={{
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontWeight: SIZES.form_button_text_fontWeight,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,
@@ -267,7 +267,7 @@ const Amneties = ({ amneties, setAmneties }) => {
             <Text
               style={{
                 lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                // fontFamily: FONTS.fontFamily_black,
                 fontWeight: SIZES.form_button_text_fontWeight,
                 fontSize: SIZES.form_button_text_fontSize,
                 marginVertical: SIZES.form_button_text_marginVertical,

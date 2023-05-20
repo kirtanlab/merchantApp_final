@@ -192,12 +192,12 @@ const vidImage = ({
     try {
       console.log("upload", Location.latitude);
       const obj = {
-        nameasperaadhar: adhar_name,
+        nameasperaadhar: adhar_name.trimEnd(),
         typeofpg: return_looking(looking_form),
-        propertytitle: propertyName,
+        propertytitle: propertyName.trimEnd(),
         isMale: gender?.male || gender?.both ? true : false,
         isFemale: gender?.female || gender?.both ? true : false,
-        address: house_no + "//" + Landmark,
+        address: house_no + "//" + Landmark.trimEnd(),
         lat: Location.latitude.$numberDecimal,
         lng: Location.longitude.$numberDecimal,
         isWIFI: amneties.wifi,
@@ -206,9 +206,9 @@ const vidImage = ({
         detailsEntered: true,
         isHotWater: amneties.hotwater,
         isCooler: amneties.cooler,
-        Rules: terms_pg,
+        Rules: terms_pg.trimEnd(),
         price: mess_price,
-        About: about_pg
+        About: about_pg.trimEnd()
       };
       const data = await axios.post(
         `${REACT_APP_OWNER_API}/api/v1/owner/updateowner`,
@@ -257,17 +257,16 @@ const vidImage = ({
       // await upload_menuImage();
       // await upload_outer_images();
       // await upload_outer_videos();
-      navigation.replace("Thankyou");
+      navigation.replace("Thankyou",{
+        prev_screen: "vidImage",
+        typeofpg: return_looking(looking_form)
+
+      });
     } catch (err) {
       setLoading(false);
       console.log("lol", err);
     }
   };
-  
-  
-
-   
- 
 
   function onPress_for() {
     if (checked_mess_image || checked_outer_image) {
@@ -321,10 +320,10 @@ const vidImage = ({
         type: [DocumentPicker.types.images],
       });
       console.log(res.length);
-      if (res?.length > 10) {
-        showErrorToast((title = "Maximum 10 Images"));
-      } else if (res?.length + imgUri?.length > 10) {
-        showErrorToast((title = "Maximum 10 Images"));
+      if (res?.length > 6) {
+        showErrorToast((title = "Maximum 6 Images"));
+      } else if (res?.length + imgUri?.length > 6) {
+        showErrorToast((title = "Maximum 6 Images"));
       } else {
         let temp = outerImages;
         temp = temp.concat(res);
@@ -681,8 +680,8 @@ const vidImage = ({
           <View>
             <Header
               step={4}
-              subtitle={"Propertie's outer image,video"}
-              title={"Videos and Images of Property"}
+              subtitle={"Propertie's outer image"}
+              title={"Images of Property"}
             />
           </View>
           {/* MessImage */}
@@ -801,13 +800,13 @@ const vidImage = ({
             </View>
           )}
 
-          {mess_url && mess === undefined && (
-            <View style={{}}>
-              <Image
-                style={{ height: 130, borderRadius: 10, width: 160 }}
-                source={icons.no_image}
-              />
-            </View>
+          {mess_url === undefined && mess !== undefined && (
+              <View style={{ }}>
+                <Image
+                  style={{ height: 150, borderRadius: 10, width: 207 }}
+                  source={icons.no_image}
+                />
+              </View>
           )}
           {mess_url && mess !== undefined && (
             <Image
@@ -836,11 +835,11 @@ const vidImage = ({
                 flex: 1,
               }}
             >
-              Outer Images{"  "}({imgUri.length} out of 10)
+              Outer Images{"  "}({imgUri.length} out of 6)
             </Text>
 
             {imgUri === undefined ||
-              (imgUri?.length <= 10 && (
+              (imgUri?.length <= 6 && (
                 <View style={{ flex: 0.4 }}>
                   <TouchableOpacity
                     style={{
@@ -880,9 +879,9 @@ const vidImage = ({
             horizontal
             showsHorizontalScrollIndicator={false}
             ListEmptyComponent={
-              <View style={{ top: -40, left: -40 }}>
+              <View style={{ }}>
                 <Image
-                  style={{ height: 200, borderRadius: 10, width: 250 }}
+                  style={{ height: 150, borderRadius: 10, width: 207}}
                   source={icons.no_image}
                 />
               </View>

@@ -7,6 +7,7 @@ import {
   KeyboardAvoidingView,
   View,
   ScrollView,
+  Alert,
 } from "react-native";
 import { connect } from "react-redux";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -151,11 +152,13 @@ const ForgetPass = ({ navigation }) => {
               />
 
               {err && (
-                <View style={{ marginTop: -30, left: 34, marginBottom: 20 }}>
-                  <Text style={{ color: "red", fontWeight: "bold" }}>
-                    {err}
-                  </Text>
-                </View>
+                <View style={{ top: -23,left: 25 }}>
+                <Text style={{ color: "red" }}>
+                  {err ? err : "Invalid Email and Password"}
+                </Text>
+              </View>
+                
+                
               )}
               <CustomButton
                 label={"Submit"}

@@ -119,7 +119,7 @@ function InputField({
       return regex.test(val);
     }
     function validate_email(val) {
-      var regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+      var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       return regex.test(val);
     }
     function validate_password(val) {
@@ -256,6 +256,7 @@ function InputField({
           onChange={(value) => {
             value = value.nativeEvent.text;
             value = value.trimEnd();
+            value = value.toLowerCase();
             updatesign_email(value);
             if (validate_email(value)) {
               sign_email_checked(true);
@@ -1074,6 +1075,7 @@ function InputField({
             color: COLORS.mobile_theme_back,
             // fontWeight: "bold",
             // left: 100,
+            top: 6,
             position: "relative",
             fontSize: 14,
           }}

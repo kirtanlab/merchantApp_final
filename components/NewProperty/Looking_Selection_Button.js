@@ -36,25 +36,15 @@ const Looking_Selection_Button = ({ looking_form, update_looking }) => {
             flexDirection: "row",
             gap: 14,
             marginTop: 12,
-            // flex: 3,
-            // flexBasis: 33.333333,
-            // flexShrink: 1,
-            // overflow: 'auto',
-            // justifyConte,
-            // alignContent: 'center',
-            // justifyContent: 'space-between',
             position: "relative",
-            // paddingHorizontal: 10,
           }}
         >
           {/* rent */}
-          <View>
             <TouchableOpacity
               style={{
                 borderColor: COLORS.mobile_theme_back,
                 borderWidth: SIZES.form_button_borderWidth,
                 borderRadius: SIZES.form_button_borderRadius,
-
                 alignItems: SIZES.form_button_alignItems,
                 justifyContent: SIZES.form_button_justifyContent,
                 backgroundColor: rent ? COLORS.mobile_theme_back : "white",
@@ -71,7 +61,6 @@ const Looking_Selection_Button = ({ looking_form, update_looking }) => {
                   setpg(false);
                   await update_looking(looking_form_copy);
                 }
-
                 console.log("Pressed0");
               }}
             >
@@ -90,7 +79,7 @@ const Looking_Selection_Button = ({ looking_form, update_looking }) => {
                 Rent
               </Text>
             </TouchableOpacity>
-          </View>
+          
           {/* mess */}
           <View>
             <TouchableOpacity

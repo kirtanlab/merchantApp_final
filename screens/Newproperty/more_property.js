@@ -229,7 +229,7 @@ const more_property = ({
                   </View>
                 </View>
                 {focused_mess_price && !checked_mess_price && (
-                  <View style={{ top: -30, left: 35 }}>
+                  <View style={{ top: -20, left: 35 }}>
                     <Text
                       style={{
                         color: COLORS.lightGray3,

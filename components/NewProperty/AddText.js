@@ -305,9 +305,10 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
     <ScrollView keyboardShouldPersistTaps="handled" style={{}}>
       {/* <Portal> */}
       <View style={{ flexDirection: "row" }}>
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1,top: 7, }}>
           <Text
             style={{
+
               color: COLORS.black,
               fontSize: SIZES.form_section_title_fontsize,
             }}
@@ -322,7 +323,6 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
               borderColor: COLORS.mobile_theme_back,
               borderWidth: SIZES.form_button_borderWidth,
               borderRadius: SIZES.form_button_borderRadius,
-              maxHeight: SIZES.form_button_maxHeight,
               alignItems: SIZES.form_button_alignItems,
               justifyContent: SIZES.form_button_justifyContent,
               backgroundColor: true ? COLORS.mobile_theme_back : "white",
@@ -337,8 +337,8 @@ const AddText = ({ terms_pg, setTerms_pg, about_pg, setAbout_pg }) => {
           >
             <Text
               style={{
-                lineHeight: SIZES.form_button_text_lineHeight,
-                fontFamily: FONTS.fontFamily_black,
+                lineHeight: SIZES.form_button_text_lineHeight-2,
+                // fontFamily: FONTS.fontFamily_black,
                 fontSize: SIZES.form_button_text_fontSize,
                 // fontWeight: SIZES.form_button_text_fontWeight,
                 marginVertical: SIZES.form_button_text_marginVertical,

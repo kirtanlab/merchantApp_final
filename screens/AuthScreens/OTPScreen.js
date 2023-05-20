@@ -73,16 +73,20 @@ const ForgetPass = ({ updatelogin_email,route, navigation }) => {
         };
         // console.log(obj);
         console.log(obj);
-        const data = await axios.post(
-          `${REACT_APP_OWNER_API}/api/v1/owner/verifyotp`,
-          obj
-        );
-        console.log("data", data.data);
-        console.log('token',token)
+        // const data = await axios.post(
+        //   `${REACT_APP_OWNER_API}/api/v1/owner/verifyotp`,
+        //   obj
+        // );
+        // console.log("data", data.data);
+        // console.log('token',token)
         if(prev_screen === 'ChangeProfile'){
+          let obj ={
+            email: email.toLowerCase(),otp: Number(value)
+          }
+          console.log("prev_data", obj)
           const data = await axios.post(
             `${REACT_APP_OWNER_API}/api/v1/owner/verifynewemail`,
-            { email: email.toLowerCase(),otp: Number(value)},
+            obj,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -135,7 +139,7 @@ const ForgetPass = ({ updatelogin_email,route, navigation }) => {
     try {
       setLoading(true);
       const obj = {
-        email: email,
+        email: email.toLowerCase(),
       };
       const data = await axios.patch(
         `${REACT_APP_OWNER_API}/api/v1/owner/forgotpassword`,

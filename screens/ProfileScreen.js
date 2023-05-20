@@ -166,21 +166,35 @@ const ProfileScreen = ({
   };
   const Profile_Comp = () => {
     return (
-      <View
+      <ScrollView
+     
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }
         style={{
           flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
           top: -10,
+          borderBottomColor: 'black',
+          borderBottomWidth: 1,
+          // borderBottomWidth: 2
+          // borderBottomRadius: 12
+          borderBottomLeftRadius: 12,
+          borderBottomRightRadius: 12
         }}
       >
+        <View style={{
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
+
+        
         <Ionicons
           name="person-circle-outline"
           size={90}
-          style={{ color: COLORS.mobile_theme_back, top: 5, right: 9 }}
+          style={{ color: COLORS.mobile_theme_back, top: 5, right: 9}}
         />
         <View
-          style={{ flexDirection: "column", alignItems: "center", top: -5 }}
+          style={{ flexDirection: "column", alignItems: "center", top: -5, }}
         >
           <View
             style={{
@@ -232,7 +246,8 @@ const ProfileScreen = ({
             {phone}
           </Text>
         </View>
-      </View>
+        </View>
+      </ScrollView>
     );
   };
   // const Profile_About = () => {
@@ -292,14 +307,11 @@ const ProfileScreen = ({
   }, [changed]);
   return (
     <ScrollView
-      refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-      }
+      
       style={{
         // flex: 1,
         paddingHorizontal: 15,
         backgroundColor: COLORS.white,
-        paddingBottom: 1000,
       }}
     >
       {/* Header */}
@@ -310,9 +322,11 @@ const ProfileScreen = ({
 
       <Profile_Comp />
 
+
       <ScrollView
+       showsVerticalScrollIndicator={false}
         style={{
-          height: SIZES.height,
+          height: SIZES.height - 420,
           paddingVertical: 0,
           paddingHorizontal: 8,
         }}

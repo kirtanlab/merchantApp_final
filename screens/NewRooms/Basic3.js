@@ -41,16 +41,16 @@ const Basic3 = ({ navigation, room_updating }) => {
         />
       </View> */}
       <View style={{ marginTop: "30%", flexDirection: "column" }}>
-        <View style={{}}>
+        <View style={{alignItems:"center"}}>
           <Text
             style={{
-              fontSize: 34,
-              fontWeight: "bold",
+              fontSize: 25,
+              // fontWeight: "bold",
               color: COLORS.mobile_theme_back,
-              marginLeft: room_updating ? 70 : 0,
+              // marginLeft: room_updating ? 70 : 0,
             }}
           >
-            {room_updating ? "Room Modified" : "Thank you for Registering Room"}
+            {room_updating ? "Room Updated" : "Room Updated"}
           </Text>
         </View>
         <View>

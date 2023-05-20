@@ -279,18 +279,20 @@ const MapTest = ({
                   onChange: onChangeSearch,
                   value: value,
                   blurOnSubmit: false,
+                  placeholderTextColor: "grey",
                 }}
                 ref={google_ref}
                 fetchDetails
                 styles={{
                   description: {
                     // fontWeight: "bold",
+                    color: "grey",
                   },
                   textInput: {
                     // fontWeight: "bold",
                     fontSize: 15,
+                    color: "grey",
                   },
-
                   row: {
                     // display: 'none',
                     backgroundColor: "#FFFFFF",
@@ -298,6 +300,7 @@ const MapTest = ({
                     height: 44,
                     flexDirection: "row",
                     fontSize: 15,
+                    color:'black'
                     // fontSize: 20,
                   },
 
@@ -383,7 +386,7 @@ const MapTest = ({
             style={{
               fontSize: SIZES.form_section_input_fontsize,
               color: COLORS.white,
-              fontWeight: "bold",
+              // fontWeight: "bold",
               // left: 2,
               bottom: 2,
               // marginHorizontal: 3,

@@ -200,7 +200,7 @@ const LoginScreen = ({
                 name="lock-outline"
                 size={20}
                 color={COLORS.mobile_theme_back}
-                style={{ marginTop: 10 }}
+                style={{  }}
               />
             }
             onChange={(value) => {
@@ -223,7 +223,8 @@ const LoginScreen = ({
           style={{
             // left: "100%",
             top: -15,
-            left: "56%"
+            left: SIZES.width -170,
+            position: 'relative'
           }}
             onPress={() => {
               navigation.navigate("ForgetPassword");
@@ -239,7 +240,7 @@ const LoginScreen = ({
             </Text>
           </TouchableOpacity>
           {gen_login_err && (
-            <View style={{ marginTop: -30, left: 25, marginBottom: 20 }}>
+            <View style={{ top: -39,left: 25 }}>
               <Text style={{ color: "red" }}>
                 {err ? err : "Invalid Email and Password"}
               </Text>
