@@ -107,7 +107,7 @@ const ForgetPass = ({ updatelogin_email,route, navigation }) => {
           // await updatelogin_email(email)
           console.log('data updated',data.data)
           setLoading(false);
-          navigation.replace('ProfileScreen')
+          navigation.replace('Root',{screen: "ProfileScreen"})
         }else{
           navigation.replace("NewPassword", { email: email.toLowerCase() });
         }

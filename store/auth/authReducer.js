@@ -138,6 +138,20 @@ const authReducer = (state = initialState, action) => {
     case authActions.RESET_TOKEN:
       return {
         ...state,
+        login_email: "",
+        login_password: "",
+        sign_conf_password: "",
+        sign_email: "",
+        sign_name: "",
+        sign_password: "",
+        checked_sign_pass: false,
+        checked_sign_email: false,
+        checked_sign_conf_pass: false,
+        checked_login_pass: false,
+        checked_login_email: false,
+        checked_sign_name: false,
+        gen_login_err: false,
+        gen_sign_err: false,
       };
 
     //Reset Checked all

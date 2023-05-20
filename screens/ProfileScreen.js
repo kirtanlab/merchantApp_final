@@ -114,6 +114,7 @@ const ProfileScreen = ({
   token,
   updatingMobile,
   changed,
+  logout_dispatch,
   changeProfile
 }) => {
   const [faceId, setFaceId] = React.useState(true);
@@ -450,6 +451,7 @@ const ProfileScreen = ({
           icon_name={"log-out-outline"}
           onPress={async () => {
             // logout();
+            logout_dispatch();
             const setUser = async (token) => {
               return new Promise(function (resolve, reject) {
                 AsyncStorage.setItem("token", JSON.stringify(token))
@@ -492,6 +494,9 @@ function mapDispatchToProps(dispatch) {
     // logout: () => {
     //   dispatch(AuthActions.logout());
     // },
+    logout_dispatch: () => {
+      return dispatch(AuthActions.logout());
+    }
   };
 }
 // connect(mapStateToProps, mapDispatchToProps)

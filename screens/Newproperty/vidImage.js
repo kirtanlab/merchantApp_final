@@ -73,6 +73,7 @@ const vidImage = ({
   let [NumImage,setNumImage] = React.useState(0);
   const [loading, setLoading] = React.useState(false);
   console.log("NUmber image",imgUri.length);
+  console.log('messUrl,mess',mess_url,mess)
   // console.log(vidUri);
   console.log("vidImage", messImage);
   function return_looking(looking_form) {
@@ -143,7 +144,7 @@ const vidImage = ({
                 },
               }
             );
-            console.log("upload Images", data.data);
+            console.log("upload Images", data);
           };
           res(image_obj);
         });
@@ -206,10 +207,11 @@ const vidImage = ({
         detailsEntered: true,
         isHotWater: amneties.hotwater,
         isCooler: amneties.cooler,
-        Rules: terms_pg.trimEnd(),
+        Rules: terms_pg,
         price: mess_price,
         About: about_pg.trimEnd()
       };
+      console.log('Obj',obj)
       const data = await axios.post(
         `${REACT_APP_OWNER_API}/api/v1/owner/updateowner`,
         obj,
@@ -220,10 +222,10 @@ const vidImage = ({
           },
         }
       );
-      console.log("detailsdone", data.data.data);
+      console.log("detailsdone",data);
       // setLoading(false);
     } catch (e) {
-      console.log("upload_details", e.response.data.msg);
+      console.log("upload_details", e);
       setLoading(false);
     }
   };
@@ -251,8 +253,9 @@ const vidImage = ({
         upload_menuImage(),
         upload_outer_images()
       ];
-      setLoading(false);
+     
       await Promise.all(uploadPromises);
+      setLoading(false);
       // await upload_details();
       // await upload_menuImage();
       // await upload_outer_images();
@@ -260,8 +263,8 @@ const vidImage = ({
       navigation.replace("Thankyou",{
         prev_screen: "vidImage",
         typeofpg: return_looking(looking_form)
-
       });
+      // console.log("Done Vidimage");
     } catch (err) {
       setLoading(false);
       console.log("lol", err);
@@ -800,7 +803,7 @@ const vidImage = ({
             </View>
           )}
 
-          {mess_url === undefined && mess !== undefined && (
+          {mess_url === undefined && mess==false && (
               <View style={{ }}>
                 <Image
                   style={{ height: 150, borderRadius: 10, width: 207 }}
@@ -808,7 +811,7 @@ const vidImage = ({
                 />
               </View>
           )}
-          {mess_url && mess !== undefined && (
+          {mess_url && mess && (
             <Image
               source={{ uri: mess_url }}
               style={{

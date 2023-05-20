@@ -139,7 +139,6 @@ export const mobileUpdating = (value) => {
 };
 export const logout = () => {
   console.log("LOGOUT");
-
   return {
     type: RESET_TOKEN,
   };

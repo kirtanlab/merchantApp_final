@@ -311,7 +311,7 @@ const Basic2 = ({
                 </View>
               </View>
               {focused_price && !checked_price && (
-                <View style={{ marginTop: -30, left: 50, marginBottom: 20 }}>
+                <View style={{ top: -20, left: 30}}>
                   <Text style={{ color: COLORS.lightGray3 }}>
                     Enter Valid Prices
                   </Text>
