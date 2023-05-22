@@ -68,12 +68,13 @@ const vidImage = ({
   const [mess_url, setmess_url] = React.useState(
     mess_imgUri ? mess_imgUri?.uri : undefined
   );
+  const [count,setcount] = React.useState(0)
   let [intMessimg, setintMessimg] = React.useState({});
   let [intvid, setintVid] = React.useState([]);
   let [intImg, setintImg] = React.useState([]);
   let [NumImage,setNumImage] = React.useState(0);
   const [loading, setLoading] = React.useState(false);
-  console.log("NUmber image",imgUri.length);
+  console.log("NUmber image",imgUri.length,intImg.length);
   console.log('messUrl,mess',mess_url,mess)
   // console.log(vidUri);
   console.log("vidImage", messImage);
@@ -120,9 +121,10 @@ const vidImage = ({
     }
   };
   const upload_outer_images = async () => {
-    console.log("Number of Images",NumImage)
+    setLoading(true);
+    console.log("Number of Images",intImg.length)
     if (intImg.length > 0) {
-      try {
+      try { 
         intImg.forEach((element) => {
           let image_obj = {
             name: element.name,
@@ -146,9 +148,11 @@ const vidImage = ({
               }
             );
             console.log("upload Images", data);
-          };
+           
+          };         
           res(image_obj);
         });
+        setLoading(true)
       } catch (e) {
         console.log("upload_outer_images", e);
         setLoading(false);
@@ -237,37 +241,49 @@ const vidImage = ({
   const upload_all = async () => {
     try {
       let delay_time=0;
+      // console.log(intImg.length)
       if(intImg.length <= 3){
         console.log("entered for 0-3")
         delay_time = 10000;
       }else if(intImg.length >= 4 && intImg.length <= 6){
         console.log("entered for 4-6")
-        delay_time = 20000;
+        delay_time = 25000;
       }
       else{
         console.log("entered for greater than 6")
-        delay_time = 30000;
+        delay_time = 40000;
       }
       setLoading(true);
-      await delay(10000); // Wait for 10 seconds
-      const uploadPromises = [
-        upload_details(),
-        upload_menuImage(),
-        upload_outer_images()
-      ];
+      // await delay(delay_time); // Wait for 20 seconds
+      // const uploadPromises = [
+      
+      // ];
      
-      await Promise.all(uploadPromises);
-      setLoading(false);
+      // await Promise.all(uploadPromises);
+      await upload_details(),
+      await upload_menuImage(),
+      await upload_outer_images()
+      
       // await upload_details();
       // await upload_menuImage();
       // await upload_outer_images();
       // await upload_outer_videos();
-      navigation.replace("Thankyou",{
-        prev_screen: "vidImage",
-        typeofpg: return_looking(looking_form)
-      });
-      // console.log("Done Vidimage");
-    } catch (err) {
+     
+      
+      function replace(){
+        setLoading(false);
+        navigation.replace("Thankyou",{
+          prev_screen: "vidImage",
+          typeofpg: return_looking(looking_form)
+        });
+      }
+      // const timer = setTimeout(replace, delay_time);
+      // clearTimeout(timer);
+      setTimeout(() => {
+        replace()
+      },delay_time)
+      
+    } catch (err) { 
       setLoading(false);
       console.log("lol", err);
     }
@@ -331,10 +347,11 @@ const vidImage = ({
         showErrorToast((title = "Maximum 6 Images"));
       } else {
         let temp = outerImages;
+        let temp_toUpload = intImg.concat(res)
         temp = temp.concat(res);
         console.log("completed", temp);
         setimgUri(temp);
-        setintImg(res);
+        setintImg(temp_toUpload);
         console.log("NUmber image", res.length, " // ", imgUri.length);
         setNumImage(res.length)
         console.log("completed1");
@@ -715,12 +732,12 @@ const vidImage = ({
                   Menu Image (Maximum Image size is 10MB)
                 </Text>
 
-                {mess_url !== undefined && (
+                {mess && mess_url !== undefined && (
                   <TouchableOpacity
                     style={{
                       // marginTop: 18,
                       height: 36,
-                      width: 40,
+                      width: 40, 
                       // padding: 10,
                       justifyContent: "center",
                       alignItems: "center",
@@ -768,7 +785,7 @@ const vidImage = ({
                   </TouchableOpacity>
                 )}
 
-                {mess_url === undefined && (
+                {mess && mess_url === undefined  && (
                   <TouchableOpacity
                     style={{
                       flex: 0.4,
@@ -805,7 +822,7 @@ const vidImage = ({
             </View>
           )}
 
-          {mess_url === undefined && mess==false && (
+          {mess && mess_url === undefined && (
               <View style={{ }}>
                 <Image
                   style={{ height: 150, borderRadius: 10, width: 207 }}

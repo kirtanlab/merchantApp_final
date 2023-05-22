@@ -46,3 +46,5 @@ l 1)Change Password -> forget password -> clicked on back button -> navigate to 
 3)forgot pass & err message in login screen
 4)mess image is showing if hostel is selected
 5)check for enter valid price
+6)login screen after new password
+7)logout screen confirmation

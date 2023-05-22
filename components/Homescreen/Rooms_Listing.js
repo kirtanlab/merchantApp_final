@@ -46,12 +46,12 @@ const Rooms_Listing = ({
           onDismiss={hideDialog}
         >
           <Dialog.Title
-            style={{ fontSize: SIZES.form_section_title_fontsize + 5 }}
+            style={{ color: 'black',fontSize: SIZES.form_section_title_fontsize + 5 }}
           >
             Confirm
           </Dialog.Title>
           <Dialog.Content>
-            <Text style={{ fontSize: SIZES.form_section_title_fontsize }}>
+            <Text style={{ color: 'black',fontSize: SIZES.form_section_title_fontsize }}>
               Are you sure you want to delete {room_name}?
             </Text>
           </Dialog.Content>
@@ -61,8 +61,10 @@ const Rooms_Listing = ({
                 setAgreed(false);
                 hideDialog();
               }}
-            >
+            ><Text style={{color: 'black'}}>
               Cancel
+            </Text>
+              
             </Button>
             <Button
               onPress={() => {
@@ -71,7 +73,12 @@ const Rooms_Listing = ({
                 onDelete(room_id);
               }}
             >
-              Done
+              <Text style={{
+                color: 'black'
+              }}> 
+                 I'm sure
+              </Text>
+             
             </Button>
           </Dialog.Actions>
         </Dialog>

@@ -109,6 +109,12 @@ export const reset_checked = () => ({
   flag: false,
 });
 
+export const SET_PREV_SCREEN =  "SET_PREV_SCREEN";
+export const setPrevScreen= (value) => ({
+  type: SET_PREV_SCREEN,
+  value:  value,
+})
+
 export const update_adhar_name = (value) => ({
   type: UPDATE_ADHAR_NAME,
   value: value,
@@ -130,7 +136,6 @@ export const adhar_name_focused = (value) => {
   };
 };
 export const MOBILE_UPDATING = "MOBILE_UPDATING";
-
 export const mobileUpdating = (value) => {
   return {
     type: FOCUSED_ADHAR_NAME,

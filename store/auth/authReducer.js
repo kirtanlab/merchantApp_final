@@ -41,10 +41,16 @@ const initialState = {
   mobile_updating: false,
   delete_reviewID: "",
   changed: false,
+  prev_screen_name: "",
 };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
+    case authActions.SET_PREV_SCREEN:
+      return{
+        ...state,
+        prev_screen_name: action.value
+      }
     case authActions.PROFILE_CHANGED:
       return{
         ...state,

@@ -86,9 +86,12 @@ const Location = ({
       " "
     );
   }, [Location, Landmark, house_no, elebill]);
-  const options = ['Indraprastha', 'Vigyan Nagar', 'Jawahar Nagar', 'Rajeev Gandh Nagar', 'Indra Vihar', 'Talwandi', 'Kunhari',"other"];
+  const options = ['Indraprastha', 'Vigyan Nagar', 'Jawahar Nagar', 'Rajeev Gandhi Nagar', 'Indra Vihar', 'Talwandi', 'Kunhari',"None"];
   let temp_index = options.indexOf(areaname);
-  const [selectedIndex, setSelectedIndex] = React.useState(new IndexPath(temp_index) || new IndexPath(0));
+  console.log('areaname',areaname,'  temp_index',temp_index);
+
+  const [selectedIndex, setSelectedIndex] = React.useState(temp_index !== -1 ? new IndexPath(temp_index): new IndexPath(0));
+  // console.log('SelectedIndex',new IndexPath(2))
   const [loading, setLoading] = React.useState(false);
   
   const handleOptionSelect = (index) => {
@@ -269,7 +272,7 @@ const Location = ({
               <Select
                 selectedIndex={selectedIndex}
                 onSelect={(index) => handleOptionSelect(index)}
-                value={selectedIndex !== null ? options[selectedIndex -1] : ''}
+                value={selectedIndex !== null ? options[selectedIndex -1] : 'Select your area here'}
               >
                 {options.map((option, index) => (
                   <SelectItem key={index} title={option} />

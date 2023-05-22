@@ -18,6 +18,9 @@ import * as AuthActions from "../store/auth/authActions";
 import axios from "axios";
 import { REACT_APP_OWNER_API } from "@env";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import AppLoader from "../components/AppLoader";
+import { Button, Dialog, Portal, Provider } from "react-native-paper";
+
 const SectionTitle = ({ title }) => {
   return (
     <View
@@ -115,14 +118,80 @@ const ProfileScreen = ({
   updatingMobile,
   changed,
   logout_dispatch,
-  changeProfile
+  changeProfile,
+  setPrevScreen
 }) => {
   const [faceId, setFaceId] = React.useState(true);
   const [isDarkMode, setisDarkMode] = React.useState(false);
   const [value, setValue] = React.useState("first");
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
+  const [loading,setLoading] = React.useState(false);
   const [refreshing, setRefreshing] = React.useState(false);
+  const [email,setEmail] = React.useState("");
+  const [visible_confirm, setVisible_confirm] = React.useState(false);
+  const [agreed, setAgreed] = React.useState(false);
+  const ConfirmBox = () => {
+    const hideDialog = () => setVisible_confirm(false);
+    // console.log("called", visible_confirm);
+    return (
+      <Portal style={{ backgroundColor: COLORS.white }}>
+        <Dialog
+          style={{ backgroundColor: COLORS.white }}
+          visible={visible_confirm}
+          onDismiss={hideDialog}
+        >
+          <Dialog.Title
+            style={{ color: 'black',fontSize: SIZES.form_section_title_fontsize + 5 }}
+          >
+            Confirm
+          </Dialog.Title>
+          <Dialog.Content>
+            <Text style={{ color: 'black',fontSize: SIZES.form_section_title_fontsize }}>
+              Are you sure you want to logout?
+            </Text>
+          </Dialog.Content>
+          <Dialog.Actions>
+            <Button
+              onPress={() => {
+                setAgreed(false);
+                hideDialog();
+              }}
+            ><Text style={{color: 'black'}}>
+              Cancel
+            </Text>
+              
+            </Button>
+            <Button
+              onPress={() => {
+                setAgreed(true);
+                hideDialog();
+                logout_dispatch();
+                const setUser = async (token) => {
+                  return new Promise(function (resolve, reject) {
+                    AsyncStorage.setItem("token", JSON.stringify(token))
+                      .then(() => resolve(JSON.stringify(token)))
+                      .catch((err) =>
+                        reject("Logged in User data not persisted : ", err)
+                      );
+                  });
+                };
+                setUser("");
+                navigation.replace("Root", { screen: "LoginScreen" });
+              }}
+            >
+              <Text style={{
+                color: 'black'
+              }}> 
+                 I'm sure
+              </Text>
+             
+            </Button>
+          </Dialog.Actions>
+        </Dialog>
+      </Portal>
+    );
+  };
   const owner_fetch_details = async () => {
     const instance = axios.create({
       baseURL: `${REACT_APP_OWNER_API}/api/v1/owner/displayowner`,
@@ -138,6 +207,7 @@ const ProfileScreen = ({
     // console.log("result", data.data.data.nameasperaadhar);
     setName(data.data.data.nameasperaadhar);
     setPhone(data.data.data.phoneno);
+    setEmail(data.data.data.email)
     // console.log("result_property", data.data.data);
     // prop_setData(data.data.data);
 
@@ -307,8 +377,9 @@ const ProfileScreen = ({
     changeProfile(false)
   }, [changed]);
   return (
+    <>
+    <Provider>
     <ScrollView
-      
       style={{
         // flex: 1,
         paddingHorizontal: 15,
@@ -400,13 +471,33 @@ const ProfileScreen = ({
           }}
         />
         <SectionTitle title="SECURITY" />
+        <ConfirmBox />
         <Setting
           title="Change Password"
           type="button"
           icon_name={"lock-closed-outline"}
-          onPress={() => {
-            navigation.push("Root", { screen: "ForgetPassword" }),
-              console.log("OnPressed");
+          onPress={async () => {
+            setLoading(true);
+            const obj = {
+              email: email.toLowerCase(),
+            };
+            const data = await axios.patch(
+              `${REACT_APP_OWNER_API}/api/v1/owner/forgotpassword`,
+              obj,
+              { headers: { "Content-Type": "application/json" } }
+            );
+            console.log("data", data.data);    
+            await setPrevScreen('ProfileScreen')
+            setLoading(false);
+            navigation.navigate("Root", {
+              screen: 'OTPScreen',
+              params: {
+                email: email.toLowerCase(),
+              }
+            });
+            
+            // navigation.push("Root", { screen: "ForgetPassword" }),
+            //   console.log("OnPressed");
             // navigation.navigate('Nested Navigator 2', { screen: 'screen D' });
           }}
         />
@@ -450,24 +541,15 @@ const ProfileScreen = ({
           type="button"
           icon_name={"log-out-outline"}
           onPress={async () => {
-            // logout();
-            logout_dispatch();
-            const setUser = async (token) => {
-              return new Promise(function (resolve, reject) {
-                AsyncStorage.setItem("token", JSON.stringify(token))
-                  .then(() => resolve(JSON.stringify(token)))
-                  .catch((err) =>
-                    reject("Logged in User data not persisted : ", err)
-                  );
-              });
-            };
-            setUser("");
-            navigation.replace("Root", { screen: "LoginScreen" });
+            setVisible_confirm(true)
           }}
         />
         {/* <View style={{ paddingBottom: 200 }} /> */}
       </ScrollView>
     </ScrollView>
+    </Provider>
+      {loading && <AppLoader />}
+    </>
   );
 };
 function mapStateToProps(state) {
@@ -496,6 +578,9 @@ function mapDispatchToProps(dispatch) {
     // },
     logout_dispatch: () => {
       return dispatch(AuthActions.logout());
+    },
+    setPrevScreen: (value) => {
+      return dispatch(AuthActions.setPrevScreen(value))
     }
   };
 }

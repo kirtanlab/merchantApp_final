@@ -255,8 +255,8 @@ function InputField({
           defaultValue={defaultValue}
           onChange={(value) => {
             value = value.nativeEvent.text;
-            value = value.trimEnd();
-            value = value.toLowerCase();
+            // value = value.trimEnd();
+            // value = value.toLowerCase();
             updatesign_email(value);
             if (validate_email(value)) {
               sign_email_checked(true);

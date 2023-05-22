@@ -173,7 +173,7 @@ const ReviewBox = ({Deletereview,token, name, room_type,id, email, phone_number,
                   }
                 }}
               >
-                <Text>Hide comment</Text>
+                <Text style={{ color: COLORS.lightGray3,fontSize: SIZES.form_section_input_fontsize - 2}}>Hide comment</Text>
               </TouchableOpacity>
               <Text
                 style={{
@@ -224,7 +224,7 @@ const ReviewBox = ({Deletereview,token, name, room_type,id, email, phone_number,
                 }
               }}
             >
-              <Text style={{ fontSize: SIZES.form_section_input_fontsize - 2 }}>
+              <Text style={{  color: COLORS.lightGray3,fontSize: SIZES.form_section_input_fontsize - 2 }}>
                 Show comment
               </Text>
             </TouchableOpacity>

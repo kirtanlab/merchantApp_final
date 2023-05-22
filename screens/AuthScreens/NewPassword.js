@@ -7,6 +7,7 @@ import {
   KeyboardAvoidingView,
   View,
   ScrollView,
+  Alert,
 } from "react-native";
 import { connect } from "react-redux";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -17,9 +18,14 @@ import { COLORS, SIZES } from "../../constants";
 import { StatusBar } from "react-native";
 import AppLoader from "../../components/AppLoader";
 import { REACT_APP_OWNER_API } from "@env";
+import * as AuthActions from '../../store/auth/authActions'
 import axios from "axios";
-const ForgetPass = ({ navigation, route }) => {
+const ForgetPass = ({ navigation, route,prev_screen_name,setPrevScreenname }) => {
   const { email } = route.params;
+  const [prev_screen,setPrevScreen] = React.useState(prev_screen_name)
+  console.log('Prevscreen',prev_screen)
+  
+  
   const [loading, setLoading] = useState(false);
   const [err, setError] = useState(false);
   const [pass, setPass] = useState("");
@@ -46,7 +52,15 @@ const ForgetPass = ({ navigation, route }) => {
         console.log("data", data.data);
 
         setLoading(false);
-        navigation.replace("LoginScreen");
+        Alert.alert('Password changed')
+        if(prev_screen === "ProfileScreen"){
+          setPrevScreenname('')
+          navigation.replace("MainScreens",{screen: "ProfileScreen"});
+        }else{
+          navigation.replace("LoginScreen");
+        }
+        
+
       } catch (err) {
         setLoading(false);
         console.log("lol", err.response.data);
@@ -55,7 +69,7 @@ const ForgetPass = ({ navigation, route }) => {
         setError(true);
       }
     } else {
-      alert("Email or Password is empty.");
+      Alert.alert("Email or Password is empty.");
     }
   };
   const handle_pass = (e) => {
@@ -182,7 +196,7 @@ const ForgetPass = ({ navigation, route }) => {
                   keyboardType="email-address"
                 />
                 {focused_new && !checked_new && (
-                  <View style={{ marginTop: -30, left: 35, marginBottom: 20 }}>
+                  <View style={{ top: -20,left: 30 }}>
                     <Text style={{ color: COLORS.lightGray2 }}>
                       Enter Minimum 5 Letter{"\n"}Include at least one alphabet
                     </Text>
@@ -228,7 +242,7 @@ const ForgetPass = ({ navigation, route }) => {
                   keyboardType="email-address"
                 />
                 {focused_conf && !checked_conf && (
-                  <View style={{ marginTop: -30, left: 25, marginBottom: 20 }}>
+                  <View style={{ top: -20,left: 30 }}>
                     <Text style={{ color: COLORS.lightGray2 }}>
                       Both Field should matched
                     </Text>
@@ -286,11 +300,17 @@ const ForgetPass = ({ navigation, route }) => {
 };
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    prev_screen_name: state.authReducer.prev_screen_name
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    setPrevScreenname: (value) => {
+      return dispatch(AuthActions.setPrevScreen(value))
+    }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ForgetPass);

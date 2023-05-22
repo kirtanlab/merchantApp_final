@@ -82,7 +82,7 @@ const Basic25 = ({
   const [Bool, setBool] = useState(false);
   const [refreshing, setRefreshing] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
-
+  // console.log('intLength for room',imgUri.length)
   const upload_outer_videos = async () => {
     if (intvid.length > 0) {
       try {
@@ -146,10 +146,11 @@ const Basic25 = ({
     }, 2000);
   }, []);
   const upload_outer_images = async () => {
-    if (intImg.length > 0) {
+    if (imgUri.length > 0) {
+      setLoading(true)
       try {
         // console.log("room_outer_images ", room_outerImages);
-        intImg.forEach((element) => {
+        imgUri.forEach((element) => {
           let img_obj = {
             name: element.name,
             uri: element.uri,
@@ -192,6 +193,7 @@ const Basic25 = ({
           };
           res(img_obj);
         });
+        setLoading(true)
       } catch (e) {
         console.log("upload_outer_images", e);
         setLoading(false);
@@ -203,10 +205,30 @@ const Basic25 = ({
     try {
       setLoading(true);
       // await upload_outer_videos();
-      await upload_outer_images();
-
-      setLoading(false);
-      navigation.replace("Basic3");
+      let delay_time=0;
+      console.log('intLength for room',imgUri.length)
+      if(imgUri.length <= 3){
+        console.log("entered for 0-3")
+        delay_time = 10000;
+      }else if(imgUri.length >= 4 && imgUri.length <= 6){
+        console.log("entered for 4-6")
+        delay_time = 25000;
+      }
+      else{
+        console.log("entered for greater than 6")
+        delay_time = 30000;
+      }
+     setLoading(true)
+     await upload_outer_images();
+      function replace(){
+        setLoading(false);
+        navigation.replace("Basic3");
+      }
+      // const timer = setTimeout(replace, delay_time);
+      // clearTimeout(timer);
+      setTimeout(() => {
+        replace()
+      },delay_time)
     } catch (err) {
       setLoading(false);
       console.log("lol", err);

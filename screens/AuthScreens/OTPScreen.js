@@ -33,7 +33,7 @@ const ForgetPass = ({ updatelogin_email,route, navigation }) => {
   let [email,setEmail] = useState(route.params?.obj?.email || route.params?.email)
   let [name,setName] = useState(route.params?.obj?.name)
   let token = route.params?.obj?.token
-  const [prev_screen,setPrevscreen] = useState(route.params?.obj?.prev_screen)
+  const [prev_screen,setPrevscreen] = useState(route.params?.obj?.prev_screen || route.params?.prev_screen)
   const CELL_COUNT = 4;
   const [value, setValue] = useState("");
   const ref = useBlurOnFulfill({ value, cellCount: CELL_COUNT });
@@ -108,7 +108,14 @@ const ForgetPass = ({ updatelogin_email,route, navigation }) => {
           console.log('data updated',data.data)
           setLoading(false);
           navigation.replace('Root',{screen: "ProfileScreen"})
-        }else{
+          }
+          else if(prev_screen === "ProfileScreen"){
+            navigation.replace("NewPassword", { 
+              email: email.toLowerCase(),
+            });
+          }
+        else{
+          console.log('prev_Screen',prev_screen)
           navigation.replace("NewPassword", { email: email.toLowerCase() });
         }
         
@@ -358,7 +365,7 @@ const ForgetPass = ({ updatelogin_email,route, navigation }) => {
                 />
               </View>
 
-              {prev_screen !== 'ChangeProfile' && <View
+              {prev_screen !== 'ProfileScreen' || prev_screen !== 'ChangeProfile'  && <View
                 style={{
                   flexDirection: "row",
                   justifyContent: "center",
@@ -379,7 +386,8 @@ const ForgetPass = ({ updatelogin_email,route, navigation }) => {
                     Back to Sign in
                   </Text>
                 </TouchableOpacity>
-              </View>}
+              </View>
+              }
             </View>
           </SafeAreaView>
         </KeyboardAvoidingView>

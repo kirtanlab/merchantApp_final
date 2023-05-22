@@ -44,7 +44,7 @@ const SignupScreen = ({
       try {
         setLoading(true);
         const obj = {
-          email: email.toLowerCase(),
+          email: (email.toLowerCase()).trimEnd(),
           password: password,
           name: name,
         };
