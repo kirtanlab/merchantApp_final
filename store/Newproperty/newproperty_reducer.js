@@ -36,7 +36,7 @@ let initialState = {
   mess_price: "",
   //Location Form
   house_no: "",
-
+  areaname: "",
   Landmark: "",
   Description_pg: "",
   checked_propertyName: false,
@@ -52,10 +52,16 @@ let initialState = {
   focused_propertyName: false,
   focused_Landmark: false,
   focused_Description_pg: false,
+
 };
 
 const newproperty_reducer = (state = initialState, action) => {
   switch (action.type) {
+    case newproperty_actions.SET_AREA:
+      return{
+        ...state,
+        areaname: action.value
+      }
     case newproperty_actions.CHECKED_MESS_PRICE:
       return {
         ...state,

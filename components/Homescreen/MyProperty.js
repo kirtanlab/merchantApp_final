@@ -17,6 +17,7 @@ const MyProperty = ({
   image,
   status,
   ratings,
+  areaname,
   address,
 }) => {
   console.log("address", address);
@@ -61,6 +62,7 @@ const MyProperty = ({
             Landmark={Landmark}
             navigation={navigation}
             ratings={ratings}
+            areaname={areaname}
           />
         ) : (
           <EmptyScreen title={"Property"} />

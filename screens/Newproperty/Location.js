@@ -34,6 +34,9 @@ import {
 } from "../../components/NewProperty/ToastConfig";
 import Nav_Header from "../../components/NewProperty/Nav_Header";
 import AppLoader from "../../components/AppLoader";
+import Dropdown from "../../components/Dropdown";
+import { IndexPath, Layout, Select, SelectItem } from '@ui-kitten/components';
+
 const Location = ({
   checked_Description_pg,
   checked_Location,
@@ -53,6 +56,8 @@ const Location = ({
   looking_for,
   token,
   propertyName,
+  setArea,
+  areaname
 }) => {
   const [_intImg, setintImg] = React.useState([]);
   // useEffect(() => {
@@ -81,8 +86,20 @@ const Location = ({
       " "
     );
   }, [Location, Landmark, house_no, elebill]);
-
+  const options = ['Indraprastha', 'Vigyan Nagar', 'Jawahar Nagar', 'Rajeev Gandh Nagar', 'Indra Vihar', 'Talwandi', 'Kunhari',"other"];
+  let temp_index = options.indexOf(areaname);
+  const [selectedIndex, setSelectedIndex] = React.useState(new IndexPath(temp_index) || new IndexPath(0));
   const [loading, setLoading] = React.useState(false);
+  
+  const handleOptionSelect = (index) => {
+    setSelectedIndex(index);
+    setArea(options[index-1])
+  };
+  // useEffect(() => {
+  //   const temp_index = options.indexOf(areaname);
+  //   setSelectedIndex(temp_index)
+  // },[areaname])
+  
   // const [imgUri, setimgUri] = React.useState(undefined);
   const [img_url, setimg_url] = React.useState(elebill ? elebill?.uri : "");
   const upload_ele_bill = async () => {
@@ -176,6 +193,7 @@ const Location = ({
       }
     }
   };
+
   return (
     <>
       <ScrollView style={{ backgroundColor: "white" }}>
@@ -233,6 +251,61 @@ const Location = ({
           <View style={{ marginTop: 30 }}>
             <NumericInput navigation={navigation} />
           </View>
+
+
+          {/* Areas Selection */}
+          <View style={{
+
+          }}>
+            <Text style={{fontSize: SIZES.form_section_title_fontsize,
+                color: COLORS.black,}}>Select your area</Text>
+            <Layout
+              style={{
+                minHeight: 60,
+                top: 5,
+                width: "95%",
+              }}
+            >
+              <Select
+                selectedIndex={selectedIndex}
+                onSelect={(index) => handleOptionSelect(index)}
+                value={selectedIndex !== null ? options[selectedIndex -1] : ''}
+              >
+                {options.map((option, index) => (
+                  <SelectItem key={index} title={option} />
+                ))}
+              </Select>
+            </Layout>
+             {/* <Select style={{top: 5}}>
+              <SelectItem title={evaProps => 
+              <View style={{width: "90%"}}>
+                <View style={{borderBottomColor: "lightblue",borderBottomWidth: 0.8,width: "100%"}}>
+                  <Text style={{paddingBottom: 4,color:"black",fontSize:SIZES.form_section_title_fontsize, }}>Indraprastha</Text>
+                </View>
+                <View style={{borderBottomColor: "lightblue",borderBottomWidth: 0.8,width: "100%"}}>
+                  <Text style={{paddingBottom: 4,color:"black",fontSize:SIZES.form_section_title_fontsize, }}>Vigyan Nagar</Text>
+                </View>
+                <View style={{borderBottomColor: "lightblue",borderBottomWidth: 0.8,width: "100%"}}>
+                  <Text style={{paddingBottom: 4,color:"black",fontSize:SIZES.form_section_title_fontsize, }}>Jawahar Nagar</Text>
+                </View>
+                <View style={{borderBottomColor: "lightblue",borderBottomWidth: 0.8,width: "100%"}}>
+                  <Text style={{paddingBottom: 4,color:"black",fontSize:SIZES.form_section_title_fontsize, }}>Rajeev Gandh Nagar</Text>
+                </View>
+                <View style={{borderBottomColor: "lightblue",borderBottomWidth: 0.8,width: "100%"}}>
+                  <Text style={{paddingBottom: 4,color:"black",fontSize:SIZES.form_section_title_fontsize, }}>Indra Vihar</Text>
+                </View>
+                <View style={{borderBottomColor: "lightblue",borderBottomWidth: 0.8,width: "100%"}}>
+                  <Text style={{paddingBottom: 4,color:"black",fontSize:SIZES.form_section_title_fontsize, }}>Talwandi</Text>
+                </View>
+                <View style={{borderBottomColor: "lightblue",borderBottomWidth: 0.8,width: "100%"}}>
+                  <Text style={{paddingBottom: 4,color:"black",fontSize:SIZES.form_section_title_fontsize, }}>Kunhari</Text>
+                </View>
+              </View>
+              } />
+            </Select> */}
+          </View>
+
+
           {/* Bijli ka bil*/}
           <View
             style={{
@@ -246,7 +319,7 @@ const Location = ({
               maxHeight: 200,
               // alignItems: 'center',
               padding: 5,
-
+              // marginTop: 25
               // marginBottom: 10,
             }}
           >
@@ -378,6 +451,7 @@ const Location = ({
 };
 function mapStateToProps(state) {
   return {
+    areaname: state.newproperty_reducer.areaname,
     token: state.authReducer.token,
     elebill: state.Ele_Bill_reducer.elebill,
     checked_ele_bill: state.Ele_Bill_reducer.checked_ele_bill,
@@ -393,6 +467,7 @@ function mapStateToProps(state) {
     checked_Location: state.Newproperty_ext_reducer.checked_Location,
     checked_Landmark: state.newproperty_reducer.checked_Landmark,
     checked_Description_pg: state.newproperty_reducer.checked_Description_pg,
+
   };
 }
 
@@ -404,6 +479,9 @@ function mapDispatchToProps(dispatch) {
     updateElebill: (value) => {
       dispatch(Ele_Bill_actions.updateElebill(value));
     },
+    setArea: (value) => {
+      dispatch(newproperty_actions.setArea(value))
+    }
   };
 }
 

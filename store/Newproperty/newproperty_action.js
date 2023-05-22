@@ -131,6 +131,11 @@ export const updateAll = (value) => ({
   type: UPDATE_ALL,
   value: value,
 });
+export const SET_AREA = "SET_AREA";
+export const setArea = (value) => ({
+  type: SET_AREA,
+  value: value
+})
 
 //Location
 // SECOND_FORM

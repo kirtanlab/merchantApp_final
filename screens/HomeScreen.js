@@ -74,13 +74,14 @@ const HomeScreen = ({
     });
     // axios.defaults.cache = false;
     const data = await instance.get();
-    // console.log("result_property", data.data.data);
+    console.log("result_property", data.data.data);
     prop_setData(data.data.data);
     setName(data.data.data.name);
     console.log('typeofpg',data.data.data.typeofpg)
     if(data.data.data.typeofpg === 'MESS'){
       setIsMESS(true)
     }
+
     // console.log("result", data.data.data.address);
     setViews(data.data.data.views);
     setInterestedusers(data.data.data.interestedusers);
@@ -220,6 +221,7 @@ const HomeScreen = ({
             image={prop_image}
             nameasperaadhar={prop_data.nameasperaadhar}
             typeofpg={prop_data.typeofpg}
+            areaname={prop_data.areaname}
             address={prop_data.address}
             navigation={navigation}
             status={prop_data ? "GOOD" : "BAD"}

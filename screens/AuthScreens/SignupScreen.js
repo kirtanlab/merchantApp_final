@@ -34,6 +34,7 @@ const SignupScreen = ({
   checked_sign_conf_pass,
   gen_sign_err,
   gen_sign_err_method,
+  logout_dispatch
 }) => {
   let err = true;
   const [loading, setLoading] = useState(false);
@@ -58,11 +59,13 @@ const SignupScreen = ({
         );
         console.log(data.data.token);
         setLoading(false);
+        await logout_dispatch();
+        Alert.alert('Account created successfully')
         navigation.navigate("LoginScreen");
       } catch (err) {
         setLoading(false);
         console.log(err);
-
+        
         setError("Already Registered");
         gen_sign_err_method(true);
         Alert.alert("Email is already registered");
@@ -377,6 +380,9 @@ function mapDispatchToProps(dispatch) {
     reset_checked: () => {
       return dispatch(AuthActions.reset_checked());
     },
+    logout_dispatch: () => {
+      return dispatch(AuthActions.logout());
+    }
   };
 }
 

@@ -1,4 +1,4 @@
-#Sat May 20 21:32:18 IST 2023
+#Mon May 22 01:33:27 IST 2023
 base.1=/home/kirtan/Documents/merchantApp_final/android/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
 path.1=classes2.dex
 base.0=/home/kirtan/Documents/merchantApp_final/android/app/build/intermediates/dex/release/mergeDexRelease/classes.dex

@@ -79,9 +79,9 @@ const AppTerms = ({ navigation }) => {
           fontFamily: "Poppins-Regular",
         }}
       >
-        Welcome to Niwas! {"\n"}
+        Welcome to Shelterhub Business! {"\n"}
         {"\n"}These terms and conditions outline the rules and regulations for
-        the use of NIWAS's App, located at https://www.niwas.com/. {"\n"}
+        the use of Shelterhub Business's App, located at https://shelterhub.in/. {"\n"}
         {"\n"}By accessing this app we assume you accept these terms and
         conditions. Do not continue to use nivaas.com if you do not agree to
         take all of the terms and conditions stated on this page. {"\n"}
@@ -100,22 +100,22 @@ const AppTerms = ({ navigation }) => {
         capitalization and/or he/she or they, are taken as interchangeable and
         therefore as referring to same.{"\n"}
         {"\n"} Cookies {"\n"}We employ the use of cookies. By accessing
-        nivaas.com, you agreed to use cookies in agreement with the NIWAS's
+        nivaas.com, you agreed to use cookies in agreement with the Shelterhub Business's
         Privacy Policy. Most interactive apps use cookies to let us retrieve the
         user’s details for each visit. Cookies are used by our app to enable the
         functionality of certain areas to make it easier for people visiting our
         app. Some of our affiliate/advertising partners may also use cookies.
         {"\n"}
         {"\n"}
-        License {"\n"}Unless otherwise stated, NIWAS and/or its licensors own
+        License {"\n"}Unless otherwise stated, Shelterhub Business and/or its licensors own
         the intellectual property rights for all material on nivaas.com. All
         intellectual property rights are reserved. You may access this from
         nivaas.com for your own personal use subjected to restrictions set in
         these terms and conditions.{"\n"}
         {"\n"} You must not:{"\n"}
         {"\n"} Republish material from nivaas.com{"\n"} Sell, rent or
-        sub-license material from niwas.com{"\n"} Reproduce, duplicate or copy
-        material from niwas.com{"\n"}Redistribute content from niwas.com This
+        sub-license material from Shelterhub Business.com{"\n"} Reproduce, duplicate or copy
+        material from Shelterhub Business.com{"\n"}Redistribute content from Shelterhub Business.com This
         Agreement shall begin on the date hereof. Our Terms and Conditions were
         created with the help of the Free Terms and Conditions Generator.{"\n"}
         {"\n"}

@@ -28,6 +28,8 @@ import mobile_input from './screens/AuthScreens/mobile_input';
 import Basic25 from './screens/NewRooms/Basic25';
 import vidImage from './screens/Newproperty/vidImage';
 import SplashScreen from 'react-native-splash-screen'
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
 
 
 
@@ -147,8 +149,8 @@ const App = () => {
   };
   
   return (
+    <ApplicationProvider {...eva} theme={eva.light}>
     <Provider store={store}>
-      
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
@@ -189,6 +191,7 @@ const App = () => {
       </NavigationContainer>
       
     </Provider>
+    </ApplicationProvider>
   );
 };
 

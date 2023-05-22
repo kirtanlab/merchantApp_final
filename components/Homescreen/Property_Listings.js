@@ -19,6 +19,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import AppLoader from "../AppLoader";
 const Property_Listing = ({
   property_title,
+  setArea,
   adharname,
   typeof_pg,
   navigation,
@@ -43,6 +44,7 @@ const Property_Listing = ({
   vidDownloaded,
   updateHomeLoading,
   update_menuImage,
+  areaname,
   checked_menuImage,
 }) => {
   const stars = (ratings - Math.floor(ratings)).toFixed(1);
@@ -244,6 +246,7 @@ const Property_Listing = ({
                     latitude: data.data.data.lat,
                     longitude: data.data.data.lng,
                   });
+                  await setArea(data.data.data?.areaname);
                   console.log("adharcard_outside", data.data.data.aadhaarno);
                   await updateAdharCard(data.data.data.aadhaarno);
                   checkedAdharCard(true);
@@ -480,6 +483,10 @@ function mapDispatchToProps(dispatch) {
     update_menuImage: (value) => {
       dispatch(mess_vidImage_actions.update_menuImage(value));
     },
+    setArea: (value) => {
+      dispatch(Property_actions.setArea(value))
+    }
+
   };
 }
 

@@ -81,8 +81,8 @@ const GovtTerms = ({ navigation }) => {
           fontFamily: "Poppins-Regular",
         }}
       >
-        Welcome To Niwas {"\n"}
-        {"\n"}Niwas is a Professional rental solutions provider Platform. Here
+        Welcome To Shelterhub Business {"\n"}
+        {"\n"}Shelterhub Business is a Professional rental solutions provider Platform. Here
         we will provide you only interesting content, which you will like very
         much. We're dedicated to providing you the best of rental solutions
         provider, with a focus on dependability and Introducing our startup,

@@ -30,6 +30,7 @@ import {
   showErrorToast,
 } from "../../components/NewProperty/ToastConfig";
 const vidImage = ({
+  areaname,
   token,
   elebill,
   adhar_card,
@@ -199,6 +200,7 @@ const vidImage = ({
         isMale: gender?.male || gender?.both ? true : false,
         isFemale: gender?.female || gender?.both ? true : false,
         address: house_no + "//" + Landmark.trimEnd(),
+        areaname: areaname.trimEnd(),
         lat: Location.latitude.$numberDecimal,
         lng: Location.longitude.$numberDecimal,
         isWIFI: amneties.wifi,
@@ -994,6 +996,7 @@ function mapStateToProps(state) {
     terms_pg: state.newproperty_reducer.terms_pg,
     about_pg: state.newproperty_reducer.about_pg,
     mess_price: state.newproperty_reducer.mess_price,
+    areaname: state.newproperty_reducer.areaname,
   };
 }
 function mapDispatchToProps(dispatch) {

@@ -39,3 +39,10 @@ l 1)Change Password -> forget password -> clicked on back button -> navigate to 
 1)SHOW BUTTON is not working
 2)REMOVE GO TO HOMESCREEN BUTTON
 3)Remove Login Pass & Email after logout
+
+-->Bugs 6.0s
+1)Show Account added message while signup and remove field values 
+2)option 0 in aadding new property 
+3)forgot pass & err message in login screen
+4)mess image is showing if hostel is selected
+5)check for enter valid price
