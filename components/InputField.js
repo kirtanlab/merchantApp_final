@@ -742,7 +742,7 @@ function InputField({
             paddingBottom: 4,
             fontSize: SIZES.form_section_input_fontsize,
           }}
-          value={mess_price.toString()}
+          value={mess_price}
           // secureTextEntry={true}
 
           onChange={(value) => {

@@ -48,3 +48,4 @@ l 1)Change Password -> forget password -> clicked on back button -> navigate to 
 5)check for enter valid price
 6)login screen after new password
 7)logout screen confirmation
+8)Add Delete my account
