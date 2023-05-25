@@ -131,6 +131,7 @@ const ProfileScreen = ({
   const [email,setEmail] = React.useState("");
   const [visible_confirm, setVisible_confirm] = React.useState(false);
   const [agreed, setAgreed] = React.useState(false);
+  const [type,setType] = React.useState("");
   const ConfirmBox = () => {
     const hideDialog = () => setVisible_confirm(false);
     // console.log("called", visible_confirm);
@@ -148,7 +149,7 @@ const ProfileScreen = ({
           </Dialog.Title>
           <Dialog.Content>
             <Text style={{ color: 'black',fontSize: SIZES.form_section_title_fontsize }}>
-              Are you sure you want to logout?
+              {type==="logout" ? "Are you sure you want to logout?" : "Are you sure you want to delete your account?\n\nNote: Deleted account will not be recovered !"}
             </Text>
           </Dialog.Content>
           <Dialog.Actions>
@@ -163,9 +164,27 @@ const ProfileScreen = ({
               
             </Button>
             <Button
-              onPress={() => {
+              onPress={async () => {
                 setAgreed(true);
                 hideDialog();
+                if(type==='delete'){
+                  setLoading(true);
+                  const obj = {
+                    email: email.toLowerCase(),
+                  };
+                  try{
+                  const data = await axios.post(
+                    `${REACT_APP_OWNER_API}/api/v1/owner/deleteowner`,
+                    obj,
+                    { headers: { "Content-Type": "application/json" } }
+                  );
+                  console.log("deleted",data)
+                  }catch(e){
+                    console.log('error deleting owner',e)
+                  }
+                  
+                  setLoading(false)
+                }
                 logout_dispatch();
                 const setUser = async (token) => {
                   return new Promise(function (resolve, reject) {
@@ -531,7 +550,7 @@ const ProfileScreen = ({
           }}
         />
         <Setting
-          title="Share/Refer App to your firends"
+          title="Share/Refer App to your friends"
           type="button"
           icon_name={"share-outline"}
           onPress={onShare}
@@ -541,6 +560,16 @@ const ProfileScreen = ({
           type="button"
           icon_name={"log-out-outline"}
           onPress={async () => {
+            setType("logout")
+            setVisible_confirm(true)
+          }}
+        />
+        <Setting
+          title="Delete my account"
+          type="button"
+          icon_name={"trash-bin-outline"}
+          onPress={async () => {
+            setType("delete")
             setVisible_confirm(true)
           }}
         />
