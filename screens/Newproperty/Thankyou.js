@@ -24,8 +24,9 @@ import NumericInput from "../../components/NewProperty/NumericInput";
 import Custom_Animation from "../../components/NewProperty/Custom_Animation";
 const Thankyou = ({ route,navigation, property_updating }) => {
   let {prev_screen,typeofpg} = route?.params
+  console.log('typeofpg',typeofpg)
   function next_page() {
-    if (property_updating.updating) {
+    if (property_updating.updating || typeofpg == 'MESS') {
       navigation.replace("MainScreens");
     } else {
       navigation.replace("NewRooms");
