@@ -18,6 +18,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import * as AuthActions from "../../store/auth/authActions";
 import AppLoader from "../../components/AppLoader";
+import { REACT_APP_OWNER_API } from "@env";
 const SignupScreen = ({
   navigation,
   name,
@@ -50,8 +51,9 @@ const SignupScreen = ({
         };
         console.log(JSON.stringify(obj));
         // console.log(obj);
+        print("Api",`${REACT_APP_OWNER_API}/api/v1/owner/register`)
         const data = await axios.post(
-          `http://13.233.240.199:8000/api/v1/owner/register`,
+          `${REACT_APP_OWNER_API}/api/v1/owner/register`,
           obj,
           {
             headers: { "Content-Type": "application/json" },
