@@ -239,7 +239,7 @@ const ProfileScreen = ({
   const onShare = async () => {
     try {
       const result = await Share.share({
-        message: `Hey there! I found this Niwas App really very helpful. You may solve your PG/Hostel renting problem with this amazing app.${"\n"}${"\n"} Download now:${"\n"}https://play.google.com/store/apps/details?id=com.ssip.governmentsachivalay`,
+        message: `Hey there! I found this Niwas App really very helpful. You may solve your PG/Hostel renting problem with this amazing app.${"\n"}${"\n"} Download now:${"\n"}https://play.google.com/store/apps/details?id=com.shelterhub.business`,
       });
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
@@ -545,7 +545,7 @@ const ProfileScreen = ({
           icon_name={"logo-google-playstore"}
           onPress={() => {
             Linking.openURL(
-              "https://play.google.com/store/apps/details?id=com.ssip.governmentsachivalay"
+              "https://play.google.com/store/apps/details?id=com.shelterhub.business"
             );
           }}
         />
