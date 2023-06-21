@@ -231,7 +231,7 @@ const vidImage = ({
       console.log("detailsdone",data);
       // setLoading(false);
     } catch (e) {
-      console.log("upload_details", e);
+      console.log("upload_details", e.response);
       setLoading(false);
     }
   };

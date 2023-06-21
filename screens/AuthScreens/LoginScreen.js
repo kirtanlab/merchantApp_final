@@ -91,7 +91,7 @@ const LoginScreen = ({
         }else if(!phoneVerified){
           navigation.navigate("mobile_input");
         }
-        else if (phoneVerified && detailsEntered && !roomFilled && typeofpg != MESS) {
+        else if (phoneVerified && detailsEntered && !roomFilled && typeofpg != "MESS") {
           // navigation.replace('MainScreens');
 
           navigation.replace("NewRooms");
@@ -104,7 +104,7 @@ const LoginScreen = ({
         }
       } catch (err) {
         setLoading(false);
-        console.log("lol", err.response.data);
+        console.log("lol", err);
         gen_login_err_method(true);
         setError(err.response.data.msg);
       }

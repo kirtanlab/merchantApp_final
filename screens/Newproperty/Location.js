@@ -96,7 +96,7 @@ const Location = ({
   
   const handleOptionSelect = (index) => {
     setSelectedIndex(index);
-    setArea(options[index-1])
+    setArea(options[index-1] !== -1 ?options[index-1]  : 'Indraprastha')
   };
   // useEffect(() => {
   //   const temp_index = options.indexOf(areaname);
@@ -272,7 +272,7 @@ const Location = ({
               <Select
                 selectedIndex={selectedIndex}
                 onSelect={(index) => handleOptionSelect(index)}
-                value={selectedIndex !== null ? options[selectedIndex -1] : 'Select your area here'}
+                value={selectedIndex !== null ? options[selectedIndex-1] : 'Select your area here'}
               >
                 {options.map((option, index) => (
                   <SelectItem key={index} title={option} />
